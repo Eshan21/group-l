@@ -18,7 +18,7 @@ Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [c
 
 ---------------
 
-See CONTRIBUTING.md on how to contribute to our project.
+See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
 
