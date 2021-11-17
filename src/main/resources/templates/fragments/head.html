@@ -19,14 +19,24 @@
         <!-- Common style for site -->
         <style>
             :root{
-                --yellow: #f1d483;
-                --green: #9daf9b;
-                --purple: #a59aaf;
-                --lblue: #6084a3;
-                --dblue: #2b425b;
-                --white: whitesmoke;
-                --black: black;
-                --grey: #363d47;
+                --background: #131a1c;
+                --foreground: #c5c8c9;
+                --black:   #1e2127;
+                --red:     #e74c4c;
+                --green:   #6bb05d;
+                --yellow:  #e59e67;
+                --blue:    #53a7bf;
+                --magenta: #cd69cc;
+                --cyan:    #51a39f;
+                --white:   #bcbcbc;
+                --bright-black:   #454c4e;
+                --bright-red:     #c26f6f;
+                --bright-green:   #8dc776;
+                --bright-yellow:  #e7ac7e;
+                --bright-blue:    #6cbad1;
+                --bright-magenta: #e182e0;
+                --bright-cyan:    #6db0ad;
+                --bright-white:   #bfbfbf;
             }
 
             html, body{
@@ -36,17 +46,26 @@
                 -moz-animation: fadein 2s; /* Firefox */
                 -webkit-animation: fadein 2s; /* Safari and Chrome */
                 -o-animation: fadein 2s; /* Opera */
-                background-color: var(--lblue);
-                color: var(--dblue);
+                background-color: var(--background);
+                color: var(--white);
             }
 
             .dark-mode {
-                background-color: var(--white);
-                color: var(--black);
+                background-color: var(--background);
+                color: var(--white);
             }
 
-            a {
-                color: midnightblue;
+            h1 {color: var(--red);}
+            h2 {color: var(--green);}
+            h3 {color: var(--yellow);}
+
+
+            a {color: var(--yellow);}
+            a {color: var(--bright-yellow); !important;}
+
+            .dark-element {
+                background-color: var(--black);
+                color: var(--red);
             }
 
             .fa{
