@@ -11,3 +11,13 @@ Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [c
 
 
 # Purpose
+
+---------------
+
+# How to Contribute / Policies
+
+---------------
+
+# Wiki / Documentation
+
+---------------
