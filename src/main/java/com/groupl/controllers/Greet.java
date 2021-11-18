@@ -1,4 +1,4 @@
-package com.group.controllers;
+package com.groupl.controllers;
 
 
 import org.springframework.stereotype.Controller;

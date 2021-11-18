@@ -8,11 +8,11 @@
         <version>2.4.1</version>
         <relativePath/>
     </parent>
-    <groupId>com.group-l</groupId>
+    <groupId>com.groupl</groupId>
     <artifactId>Ricelog</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Ricelog</name>
-    <description>Rice blogger by Group L</description>
+    <description>Rice log by Group L</description>
 
     <properties>
         <java.version>11</java.version>
