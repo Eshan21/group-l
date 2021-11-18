@@ -2,12 +2,12 @@
 
 Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
 
-| Contributors            | Github ID       | Tasks  | Scrum Board | Commits | Profile |
-| :------------   |:--------------- | :----- | :---------- | :------ | :------ |
-| Michael Zhang   | TKperson | [tasks]()  | [scrum_board]() | [commits](https://github.com/iskapoor/group-l/commits?author=TKperson) | [profile](https://github.com/TKperson) |
-| Ishan Kapoor    | iskapoor      | [tasks]()       | [scrum_board]() | [commits](https://github.com/iskapoor/group-l/commits?author=iskapoor) and [commits](https://github.com/iskapoor/group-l/commits?author=Eshan21) | [profile](https://github.com/iskapoor) and [profile](https://github.com/Eshan21)|
-| Jonathan Lin     | ---      | [tasks]()       | [scrum board]() | [commits](https://github.com/iskapoor/group-l/commits?author=jlaaa) | [profile](https://github.com/jlaaa) |
-| Akhil Guntur | ---      | [tasks]()       | [scrum board]() | [commits](https://github.com/iskapoor/group-l/commits?author=algolg) | [profile](https://github.com/algolg) |
+| Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
+| :------------  |:--------------- | :----- | :---------- | :------ |
+| Akhil Guntur | [algolg](https://github.com/algolg) | [Tasks](https://github.com/iskapoor/group-l/issues?q=assignee%3Aalgolg+) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Aalgolg) | [Commits](https://github.com/iskapoor/group-l/commits?author=algolg) |
+| Ishan Kapoor    | [iskapoor](https://github.com/Eshan21) and [Eshan21](https://github.com/Eshan21) | [Tasks](https://github.com/iskapoor/group-l/issues?q=label%3Aishan) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=label%3Aishan) | [Commits](https://github.com/iskapoor/group-l/commits?author=iskapoor) and [Commits](https://github.com/iskapoor/group-l/commits?author=Eshan21) |
+| Jonathan Lin     | [jlaaa](https://github.com/jlaaa) | [Tasks](https://github.com/iskapoor/group-l/issues?q=assignee%3Ajlaaa+) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKjlaaa) | [Commits](https://github.com/iskapoor/group-l/commits?author=jlaaa) |
+| Michael Zhang   | [TKperson](https://github.com/TKperson) | [Tasks](https://github.com/iskapoor/group-l/issues?q=assignee%3ATKperson+) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson) | [Commits](https://github.com/iskapoor/group-l/commits?author=TKperson) |
 
 
 # Purpose

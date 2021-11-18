@@ -8,13 +8,13 @@
 ## Branches
 
 * Each topic should have its own branch. The `main` branch should rarely be worked on directly.
-* If you need to update a branch from `main`, use `git merge`.
+* Use `git merge` to combine branches.
 
 ## Commits
 
 ### Commit Organization
 
-* Only commit code that is fully functional. Instead use `git stash` if you need to pull and `git stash apply` after.
+* Only commit code that is fully functional. Instead use `git stash` if you need to switch branches and `git stash apply` after.
 * Seperate unrelated changes into separate commits. Use `git add -p <file>` to seperate changes in a single file into multiple commits.
 
 ### Commit Message Convention
@@ -38,14 +38,14 @@
 Javadoc will be used to generate documentation.
 Doc comments have this format:
 
-* First sentence is a summary.
+* First sentence is a summary
 * Description in html
 * Block tags (e.g. `@param`, `return`, `throws`, `see`)
 
 ```c
 /**
  * Returns a number n multiplied by 2.
- * The int n and return type are integers.
+ * <p>The int n and return type are integers.</p>
  *
  * @param n the number will be multiplied by 2
  * @return n multiplied by 2
