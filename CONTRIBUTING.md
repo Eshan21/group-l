@@ -28,7 +28,7 @@
 * Did I pull from the remote branch?
 * Are there big changes in `main` that I need to merge into this branch?
 * Does code run without errors?
-* Does the code have comments and documented? (See `Documentation` below)
+* Does the code have comments and documentation? (See `Documentation` below)
 * Is the code functional?
 * Is the commit message easy to read?
 * Does the commit only include related changes?
