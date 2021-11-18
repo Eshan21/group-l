@@ -12,14 +12,12 @@ Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [c
 
 # Purpose
 
----------------
+This project is made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
 
 # How to Contribute / Policies
-
----------------
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
 
----------------
+Javadocs is used for generating documentation. Run the `gendocs` or `gendocs.cmd` to generate documentation in the `doc` directory.

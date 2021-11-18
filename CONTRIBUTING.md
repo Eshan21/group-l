@@ -58,7 +58,7 @@ public int x2(int n) {
 
 See this [Guide](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html) for more information on formatting.
 
-Run `gendocs` or `gendocs.cmd` to generate docs.
+Run `gendocs` or `gendocs.cmd` to generate docs in the `doc` directory.
 
 ## Code Style
 
