@@ -1,6 +1,19 @@
 # group-l
 Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
 
+
+## Dependencies
+* You will need Java version 11 or above.
+
+## How to start localhost
+* We made 2 runner files to run this website with a shell.
+* Clone this repository.
+  * `git clone --depth 1 https://github.com/Archkitten/group_e`
+* `cd group_e`
+* Start the localhost
+  * In windows CMD: `> run`
+  * On linux and Mac: `$ ./run`
+
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
 | Akhil Guntur  | [algolg][alg-git]    | [Tasks][alg-tsk] | [Scrum Board][alg-scb] | [Commits][alg-cmt] |
