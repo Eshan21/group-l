@@ -1,5 +1,12 @@
 # Contributing
 
+## TOC
+1. [Getting Started](getting-started)
+2. [Branches](branches)
+3. [Commits](commits)
+4. [Documentation](documentation)
+5. [Code Style](code-style)
+
 ## Getting Started
 
 * Create new branch for the feature if it doesn't exist. Try to not work on `main` branch directly if possible.
@@ -33,7 +40,7 @@
 * Is the commit message easy to read?
 * Does the commit only include related changes?
 
-### Documentation
+## Documentation
 
 Javadoc will be used to generate documentation.
 Doc comments have this format:
