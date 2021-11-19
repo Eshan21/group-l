@@ -1,11 +1,11 @@
 # Contributing
 
 ## TOC
-- [Getting Started](getting-started)
-- [Branches](branches)
-- [Commits](commits)
-- [Documentation](documentation)
-- [Code Style](code-style)
+- [Getting Started](#getting-started)
+- [Branches](#branches)
+- [Commits](#commits)
+- [Documentation](#documentation)
+- [Code Style](#code-style)
 
 ## Getting Started
 
