@@ -1,20 +1,28 @@
 # Contributing
 
 ## TOC
-1. [Getting Started](getting-started)
-2. [Branches](branches)
-3. [Commits](commits)
-4. [Documentation](documentation)
-5. [Code Style](code-style)
+* [Getting Started](getting-started)
+* [Branches](branches)
+* [Commits](commits)
+* [Documentation](documentation)
+* [Code Style](code-style)
 
 ## Getting Started
 
-* Create new branch for the feature if it doesn't exist. Try to not work on `main` branch directly if possible.
-* Create issue for the feature. Follow the issue template for corresponding issue.
+### Bug Fix and Feature Request
+
+* Check if there is already an existing issue about your topic.
+* Create an issue from the corresponding issue template. 
+
+### Bug and Feature Development
+
+* Fork the repository.
+* Follow conventions below for committing, code style, and other things.
+* Create a pull request.
 
 ## Branches
 
-* Each topic should have its own branch. The `main` branch should rarely be worked on directly.
+* If you are making a quick fix, you can directly commit to main. If you are working on a main feature of the project or fixing a more complex, create a new branch from `main` if there is not one already.
 * Use `git merge` to combine branches.
 
 ## Commits
@@ -33,7 +41,7 @@
 ### Commit Checklist
 
 * Did I pull from the remote branch?
-* Are there big changes in `main` that I need to merge into this branch?
+* If I am working on a separate branch, are there big changes in `main` that I need to merge into this branch?
 * Does code run without errors?
 * Does the code have comments and documentation? (See `Documentation` below)
 * Is the code functional?
