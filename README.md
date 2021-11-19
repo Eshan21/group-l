@@ -1,22 +1,12 @@
 # group-l
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
+
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
 | Akhil Guntur  | [algolg][alg-git]    | [Tasks][alg-tsk] | [Scrum Board][alg-scb] | [Commits][alg-cmt] |
 | Ishan Kapoor  | [iskapoor][ish-git1] and [Eshan21][ish-git2] | [Tasks][ish-tsk] | [Scrum Board][ish-scb] | [Commits][ish-cmt1] and [Commits][ish-cmt2] |
 | Jonathan Lin  | [jlaaa][jla-git]     | [Tasks][jla-tsk] | [Scrum Board][jla-scb] | [Commits][jla-cmt] |
 | Michael Zhang | [TKperson][TKp-git]  | [Tasks][TKp-tsk] | [Scrum Board][TKp-scb] | [Commits][TKp-cmt] |
-
-## Dependencies
-* You will need Java version 11 or above.
-
-## How to start localhost
-* We made 2 runner files to run this website with a shell.
-* Clone this repository.
-  * `git clone --depth 1 https://github.com/Archkitten/group_e`
-* `cd group_e`
-* Start the localhost
-  * In windows CMD: `> run`
-  * On linux and Mac: `$ ./run`
 
 [alg-git]: https://github.com/algolg
 [alg-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3Aalgolg+
@@ -36,6 +26,18 @@
 [TKp-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3ATKperson+
 [TKp-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson
 [TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
+
+## Dependencies
+* You will need Java version 11 or above.
+
+## How to start localhost
+* We made 2 runner files to run this website with a shell.
+* Clone this repository.
+  * `git clone --depth 1 https://github.com/Archkitten/group_e`
+* `cd group_e`
+* Start the localhost
+  * In windows CMD: `> run`
+  * On linux and Mac: `$ ./run`
 
 # Purpose
 Ricelog is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
@@ -70,5 +72,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
 Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `doc/` directory.
-
-[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
