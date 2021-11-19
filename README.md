@@ -2,13 +2,31 @@
 
 Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
 
-| Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
-| :------------  |:--------------- | :----- | :---------- | :------ |
-| Akhil Guntur | [algolg](https://github.com/algolg) | [Tasks](https://github.com/iskapoor/group-l/issues?q=assignee%3Aalgolg+) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Aalgolg) | [Commits](https://github.com/iskapoor/group-l/commits?author=algolg) |
-| Ishan Kapoor    | [iskapoor](https://github.com/iskapoor) and [Eshan21](https://github.com/Eshan21) | [Tasks](https://github.com/iskapoor/group-l/issues?q=label%3Aishan) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=label%3Aishan) | [Commits](https://github.com/iskapoor/group-l/commits?author=iskapoor) and [Commits](https://github.com/iskapoor/group-l/commits?author=Eshan21) |
-| Jonathan Lin     | [jlaaa](https://github.com/jlaaa) | [Tasks](https://github.com/iskapoor/group-l/issues?q=assignee%3Ajlaaa+) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Ajlaaa) | [Commits](https://github.com/iskapoor/group-l/commits?author=jlaaa) |
-| Michael Zhang   | [TKperson](https://github.com/TKperson) | [Tasks](https://github.com/iskapoor/group-l/issues?q=assignee%3ATKperson+) | [Scrum Board](https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson) | [Commits](https://github.com/iskapoor/group-l/commits?author=TKperson) |
+|  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
+| :------------ | :---------------     | :----- | :---------- | :------ |
+| Akhil Guntur  | [algolg][alg-git]    | [Tasks][alg-tsk] | [Scrum Board][alg-scb] | [Commits][alg-cmt] |
+| Ishan Kapoor  | [iskapoor][ish-git1] and [Eshan21][ish-git2] | [Tasks][ish-tsk] | [Scrum Board][ish-scb] | [Commits][ish-cmt1] and [Commits][ish-cmt2] |
+| Jonathan Lin  | [jlaaa][jla-git]     | [Tasks][jla-tsk] | [Scrum Board][jla-scb] | [Commits][jla-cmt] |
+| Michael Zhang | [TKperson][TKp-git]  | [Tasks][TKp-tsk] | [Scrum Board][TKp-scb] | [Commits][TKp-cmt] |
 
+[alg-git]: https://github.com/algolg
+[alg-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3Aalgolg+
+[alg-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Aalgolg
+[alg-cmt]: https://github.com/iskapoor/group-l/commits?author=algolg
+[ish-git1]: https://github.com/iskapoor
+[ish-git2]: https://github.com/Eshan21
+[ish-tsk]: https://github.com/iskapoor/group-l/issues?q=label%3Aishan
+[ish-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=label%3Aishan
+[ish-cmt1]: https://github.com/iskapoor/group-l/commits?author=iskapoor
+[ish-cmt2]: https://github.com/iskapoor/group-l/commits?author=Eshan21
+[jla-git]: https://github.com/jlaaa
+[jla-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3Ajlaaa+
+[jla-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Ajlaaa
+[jla-cmt]: https://github.com/iskapoor/group-l/commits?author=jlaaa
+[TKp-git]: https://github.com/TKperson
+[TKp-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3ATKperson+
+[TKp-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson
+[TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
 # Purpose
 Ricelog is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
