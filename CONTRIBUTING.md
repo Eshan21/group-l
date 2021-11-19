@@ -73,7 +73,7 @@ public int x2(int n) {
 
 See this [Guide](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html) for more information on formatting.
 
-Run `gendocs` or `gendocs.cmd` to generate docs in the `doc` directory.
+Run `./gendocs` or `./gendocs.cmd` to generate docs in the `doc/` directory.
 
 ## Code Style
 
@@ -117,4 +117,10 @@ Run `gendocs` or `gendocs.cmd` to generate docs in the `doc` directory.
     </tbody>
 </table>
 ```
+
+### Markdown
+
+* Wrap backticks around commands, filenames, and directories
+* Put `./` before filenames
+* Put `/` after directories 
 
