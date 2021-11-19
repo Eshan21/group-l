@@ -1,4 +1,5 @@
-package com.group-l.ricelog.controllers;
+package com.groupl.controllers;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

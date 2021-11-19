@@ -1,4 +1,4 @@
-package com.group-l.ricelog;
+package com.groupl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
