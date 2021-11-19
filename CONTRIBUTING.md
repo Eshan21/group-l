@@ -1,11 +1,11 @@
 # Contributing
 
 ## TOC
-- [Getting Started](getting-started)
-- [Branches](branches)
-- [Commits](commits)
-- [Documentation](documentation)
-- [Code Style](code-style)
+- [Getting Started](#getting-started)
+- [Branches](#branches)
+- [Commits](#commits)
+- [Documentation](#documentation)
+- [Code Style](#code-style)
 
 ## Getting Started
 
@@ -37,7 +37,7 @@
 - Did I pull from the remote branch?
 - If I am working on a separate branch, are there big changes in `main` that I need to merge into this branch?
 - Does code run without errors?
-- Does the code have comments and documentation? (See `Documentation` below)
+- Does the code have comments and documentation? (See Documentation section below)
 - Is the code functional?
 - Is the commit message easy to read?
 - Does the commit only include related changes?
@@ -51,13 +51,13 @@ Doc comments have this format:
 - Block tags (e.g. `@param`, `return`, `throws`, `see`)
 
 ```c
-/--
- - Returns a number n multiplied by 2.
- - <p>The int n and return type are integers.</p>
- -
- - @param n the number will be multiplied by 2
- - @return n multiplied by 2
- -/
+/**
+ * Returns a number n multiplied by 2.
+ * <p>The int n and return type are integers.</p>
+ *
+ * @param n the number will be multiplied by 2
+ * @return n multiplied by 2
+ */
 
 public int x2(int n) {
     return n - 2;
@@ -110,7 +110,7 @@ Run `./gendocs` or `./gendocs.cmd` to generate docs in the `doc/` directory.
 ```
 
 ### Markdown
-- Use hyphen to for unordered list
+- Use hyphens for unordered lists
 - No spacing after labels unless another label follows
 - Wrap backticks around commands, filenames, and directories
 - Put `./` before filenames
