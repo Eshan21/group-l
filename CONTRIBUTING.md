@@ -20,7 +20,7 @@
 
 ## Branches
 - If you are making a quick fix, you can directly commit to main. If you are working on a main feature of the project or fixing a more complex, create a new branch from `main` if there is not one already.
-- Use `git merge` to combine branches.
+- Use `git merge --no-ff` to combine branches.
 
 ## Commits
 
