@@ -1,5 +1,4 @@
 # group-l
-
 Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
 
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
@@ -39,14 +38,21 @@ To install a pre-built release:
 - Run server with `java -jar Ricelog-0.0.0-.java`
 
 # Build
-
 To build from source:
 
 ## Install dependencies
 - [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
 - [Maven 3.8.3](https://maven.apache.org/download.cgi)
 
-## Build executable
+Download the source code as a [zip][source] or via git:
+
+[source]: https://github.com/iskapoor/group-l/archive/refs/tags/v0.0.0-alpha.zip
+
+```
+git clone https://github.com/iskapoor/group-l.git
+```
+
+Then build the JAR file one of the build scripts:
 - Run `./build` or `./build.cmd`
 
 # How to Contribute / Policies
