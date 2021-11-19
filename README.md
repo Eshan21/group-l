@@ -27,18 +27,6 @@
 [TKp-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson
 [TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
-## Dependencies
-* You will need Java version 11 or above.
-
-## How to start localhost
-* We made 2 runner files to run this website with a shell.
-* Clone this repository.
-  * `git clone --depth 1 https://github.com/Archkitten/group_e`
-* `cd group_e`
-* Start the localhost
-  * In windows CMD: `> run`
-  * On linux and Mac: `$ ./run`
-
 # Purpose
 Ricelog is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
 
@@ -46,11 +34,12 @@ Ricelog is a project made for people that want to show or see other people's [ri
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-- Download and extract a Ricelog release file
-- Run server with `java -jar Ricelog-0.0.0-.java`
+- Download and extract a Ricelog [release][] file
+- Run server with `java -jar Ricelog-0.0.0-.jar`
 
-# Build
-To build from source:
+[release]: https://github.com/iskapoor/group-l/releases
+
+# Build or Run
 
 ## Install dependencies
 - [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
@@ -64,8 +53,11 @@ Download the source code as a [zip][source] or via git:
 git clone https://github.com/iskapoor/group-l.git
 ```
 
-Then build the JAR file one of the build scripts:
+Then build the JAR file with the build scripts:
 - Run `./build` or `./build.cmd`
+
+Or run in place:
+- Run `./run` or `./run.cmd`
 
 # How to Contribute / Policies
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
