@@ -7,9 +7,11 @@
 </head>
 
 <body>
-    <div th:replace="fragments/nav :: header"></div>
+    <div style="height:100%;">
+        <div th:replace="fragments/nav :: header"></div>
 
-    <div layout:fragment="content">...</div>
+        <div layout:fragment="content">...</div>
+    </div>
 
 <!--    <div th:replace="fragments/footer :: footer"></div>-->
 </body>
