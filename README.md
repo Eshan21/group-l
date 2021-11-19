@@ -16,20 +16,20 @@ Ricelog is a project made for people that want to show or see other people's [ri
 # Install
 To install a pre-built release:
 
-* Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-* Download and extract a Ricelog release file
-* Run server with `java -jar Ricelog-0.0.0*.java`
+- Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
+- Download and extract a Ricelog release file
+- Run server with `java -jar Ricelog-0.0.0-.java`
 
 # Build
 
 To build from source:
 
 ## Install dependencies
-* [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-* [Maven 3.8.3](https://maven.apache.org/download.cgi)
+- [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
+- [Maven 3.8.3](https://maven.apache.org/download.cgi)
 
 ## Build executable
-* Run `./build` or `./build.cmd`
+- Run `./build` or `./build.cmd`
 
 # How to Contribute / Policies
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
