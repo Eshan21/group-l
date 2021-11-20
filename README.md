@@ -1,5 +1,5 @@
 # group-l
-Team: group-l, [scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
 
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
@@ -34,11 +34,12 @@ Ricelog is a project made for people that want to show or see other people's [ri
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-- Download and extract a Ricelog release file
-- Run server with `java -jar Ricelog-0.0.0-.java`
+- Download and extract a Ricelog [release][] file
+- Run server with `java -jar Ricelog-0.0.0-.jar`
 
-# Build
-To build from source:
+[release]: https://github.com/iskapoor/group-l/releases
+
+# Build or Run
 
 ## Install dependencies
 - [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
@@ -52,12 +53,14 @@ Download the source code as a [zip][source] or via git:
 git clone https://github.com/iskapoor/group-l.git
 ```
 
-Then build the JAR file one of the build scripts:
+Then build the JAR file with the build scripts:
 - Run `./build` or `./build.cmd`
+
+Or run in place:
+- Run `./run` or `./run.cmd`
 
 # How to Contribute / Policies
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
 Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `doc/` directory.
-
