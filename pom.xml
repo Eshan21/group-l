@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.groupl</groupId>
-    <artifactId>Ricelab</artifactId>
-    <version>0.0.0-alpha</version>
-    <name>Ricelab</name>
-    <description>Rice log by Group L</description>
+    <artifactId>ricelab</artifactId>
+    <version>0.0.1-alpha</version>
+    <name>RiceLab</name>
+    <description>RiceLab by Group L</description>
 
     <properties>
         <java.version>11</java.version>
