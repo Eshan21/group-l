@@ -28,14 +28,14 @@
 [TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
 # Purpose
-Ricelog is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
+Ricelab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
 
 # Install
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-- Download and extract a Ricelog [release][] file
-- Run server with `java -jar Ricelog-0.0.0-.jar`
+- Download and extract a Ricelab [release][] file
+- Run server with `java -jar Ricelab-0.0.0-*.jar`
 
 [release]: https://github.com/iskapoor/group-l/releases
 
@@ -47,7 +47,7 @@ To install a pre-built release:
 
 Download the source code as a [zip][source] or via git:
 
-[source]: https://github.com/iskapoor/group-l/archive/refs/tags/v0.0.0-alpha.zip
+[source]: https://github.com/iskapoor/group-l/archive/refs/heads/main.zip
 
 ```
 git clone https://github.com/iskapoor/group-l.git
@@ -64,3 +64,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
 Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `doc/` directory.
+

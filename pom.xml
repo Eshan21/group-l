@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>com.groupl</groupId>
-    <artifactId>Ricelog</artifactId>
+    <artifactId>Ricelab</artifactId>
     <version>0.0.0-alpha</version>
-    <name>Ricelog</name>
+    <name>Ricelab</name>
     <description>Rice log by Group L</description>
 
     <properties>
