@@ -28,13 +28,13 @@
 [TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
 # Purpose
-Ricelab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
+RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
 
 # Install
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-- Download and extract a Ricelab [release][] file
+- Download and extract a RiceLab [release][] file
 - Run server with `java -jar Ricelab-0.0.0-*.jar`
 
 [release]: https://github.com/iskapoor/group-l/releases
