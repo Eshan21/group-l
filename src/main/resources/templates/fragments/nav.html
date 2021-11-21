@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>...</title>
 </head>
+
 <body>
     <!-- Begin navigation fragments -->
     <nav class="navbar navbar-expand-lg blur-element" th:fragment="header">
+        <div class="blurry-loli"></div>
         <a class="navbar-brand" href="/">
-            <img src="/static/images/ncs_logo.png" th:src="@{/images/ncs_logo.png}" width="25" height="25" class="d-inline-block align-center" alt="">
-            RiceLab
+            <img src="/static/images/ncs_logo.png" th:src="@{/images/ncs_logo.png}" width="25" height="25" class="d-inline-block align-center" alt=""> RiceLab
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,6 +49,7 @@
             <script>
                 // Clock controller
                 let clockElement = document.getElementById('clock');
+
                 function clock() {
                     let date = new Date();
                     clockElement.textContent = date.toLocaleString();
@@ -61,4 +64,5 @@
     </nav>
     <!-- Begin navigation fragments -->
 </body>
+
 </html>

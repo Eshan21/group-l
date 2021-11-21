@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head xmlns:th="http://www.w3.org/1999/xhtml">
     <title>...</title>
     <th:block th:fragment="header">
@@ -19,119 +20,135 @@
         <!-- Common style for site -->
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-            :root{
+             :root {
                 --background: #131a1c;
                 --foreground: #c5c8c9;
-                --black:   #1e2127;
-                --red:     #e74c4c;
-                --green:   #6bb05d;
-                --yellow:  #e59e67;
-                --blue:    #53a7bf;
+                --black: #1e2127;
+                --red: #e74c4c;
+                --green: #6bb05d;
+                --yellow: #e59e67;
+                --blue: #53a7bf;
                 --magenta: #cd69cc;
-                --cyan:    #51a39f;
-                --white:   #bcbcbc;
-                --bright-black:   #454c4e;
-                --bright-red:     #c26f6f;
-                --bright-green:   #8dc776;
-                --bright-yellow:  #e7ac7e;
-                --bright-blue:    #6cbad1;
+                --cyan: #51a39f;
+                --white: #bcbcbc;
+                --bright-black: #454c4e;
+                --bright-red: #c26f6f;
+                --bright-green: #8dc776;
+                --bright-yellow: #e7ac7e;
+                --bright-blue: #6cbad1;
                 --bright-magenta: #e182e0;
-                --bright-cyan:    #6db0ad;
-                --bright-white:   #bfbfbf;
+                --bright-cyan: #6db0ad;
+                --bright-white: #bfbfbf;
             }
-
-            html, body{
+            
+            html,
+            body {
                 margin: 0;
                 height: 100%;
+                width: 100vw;
                 animation: fadein 2s;
-                -moz-animation: fadein 2s; /* Firefox */
-                -webkit-animation: fadein 2s; /* Safari and Chrome */
-                -o-animation: fadein 2s; /* Opera */
+                -moz-animation: fadein 2s;
+                -webkit-animation: fadein 2s;
+                -o-animation: fadein 2s;
                 background-image: url("images/bg-1.png");
                 background-repeat: no-repeat;
                 background-size: auto;
                 color: var(--white);
             }
-
+            
             .body-window {
                 background-color: var(--black);
                 border-radius: 20px;
                 margin: 7px;
                 height: calc(100% - 64px);
             }
-
+            
             .dark-mode {
                 background-color: var(--background);
                 color: var(--white);
             }
-
-            nav {
-                font-family: 'Source Code Pro', monospace;
-                padding: 0px 20px 0px 10px !important;
-                border-radius: 20px;
-                margin: 5px 5px 0px 5px;
+            
+            h1 {
+                color: var(--red);
             }
-
-            h1 {color: var(--red);}
-            h2 {color: var(--green);}
-            h3 {color: var(--yellow);}
-
-
-            a {color: var(--yellow);}
-            a:hover {color: var(--bright-yellow); !important;}
-
+            
+            h2 {
+                color: var(--green);
+            }
+            
+            h3 {
+                color: var(--yellow);
+            }
+            
+            a {
+                color: var(--yellow);
+            }
+            
+            a:hover {
+                color: var(--bright-yellow) !important;
+            }
+            
             .dark-element {
                 background-color: var(--black);
                 color: var(--red);
             }
-
-            .blur-element {
-                position: relative;
-                overflow: hidden; /* this basically breaks the dropdown, would be nice if someone found a workaround */
+            
+            .blurry-loli {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                display: block;
+                border-radius: 50px;
+                overflow: hidden;
             }
-            .blur-element::before {
-                content:'';
-                position:absolute;
-                z-index:-1;
-                top:0;
-                left:0;
-                bottom:0;
-                right:0;
-                background:url("images/bg-1.png") fixed;
+            
+            .blurry-loli::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: url("images/bg-1.png") fixed;
                 /*transform: scale(1.75);*/
                 /*background-size:100vw auto;*/
-                filter:blur(1vh);
-                box-shadow: inset 0px 0px 0px 100vw rgba(30, 33, 39, 0.375); /* same as var(--black) */
+                filter: blur(1vh);
+                box-shadow: inset 0px 0px 0px 100vw rgba(30, 33, 39, 0.375);
+                /* same as var(--black) */
                 margin: -1%;
             }
-
-            .special{
+            
+            .special {
                 position: absolute;
             }
-
-            .fa{
+            
+            .fa {
                 font-size: 3em;
                 letter-spacing: 1em;
                 transition: all .2s;
                 color: white;
             }
-
-            .fa:hover{
+            
+            .fa:hover {
                 transform: translateY(10px);
             }
-
-            .fa-youtube-play:hover{
+            
+            .fa-youtube-play:hover {
                 color: #cc0000;
             }
-
-            .fa-twitter:hover{
+            
+            .fa-twitter:hover {
                 color: #1da1f2;
             }
-
-            .fa-github:hover{
+            
+            .fa-github:hover {
                 color: #000000;
             }
-
+            
             .btn:link,
             .btn:visited {
                 text-transform: uppercase;
@@ -144,31 +161,38 @@
                 color: white;
                 font-size: 2.5em;
             }
-
+            
             .btn:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
             }
-
+            
             .btn:active {
                 transform: translateY(-1px);
                 box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
             }
-
-            .row{
+            
+            .row {
                 margin: auto;
             }
-
             /* large number helps nav remain top layer */
+            
             .navbar {
                 z-index: 1000;
+                padding: 0;
+                margin: 0;
+                font-family: 'Source Code Pro', monospace;
+                /* padding: 0px 20px 0px 10px !important; */
+                border-radius: 20px;
+                /* margin: 5px 5px 0px 5px; */
             }
-
         </style>
         <!-- End head fragments -->
     </th:block>
 </head>
+
 <body>
-...
+    ...
 </body>
+
 </html>

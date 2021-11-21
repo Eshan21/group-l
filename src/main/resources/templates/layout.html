@@ -2,18 +2,20 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-    <div th:replace="fragments/head :: header"></div>
+
+    <div th:replace="fragments/head :: header">
+    </div>
     <div layout:fragment="metadata">...</div>
 </head>
 
-<body>
-    <div style="height:100%;">
+<body style="overflow-x: hidden; width: 100%; padding: 10px;">
+    <div>
         <div th:replace="fragments/nav :: header"></div>
 
         <div layout:fragment="content">...</div>
     </div>
 
-<!--    <div th:replace="fragments/footer :: footer"></div>-->
+    <!--    <div th:replace="fragments/footer :: footer"></div>-->
 </body>
 
 <div layout:fragment="script"></div>
