@@ -18,6 +18,7 @@
 
         <!-- Common style for site -->
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
             :root{
                 --background: #131a1c;
                 --foreground: #c5c8c9;
@@ -46,7 +47,9 @@
                 -moz-animation: fadein 2s; /* Firefox */
                 -webkit-animation: fadein 2s; /* Safari and Chrome */
                 -o-animation: fadein 2s; /* Opera */
-                background-color: var(--background);
+                background-image: url("images/bg-1.png");
+                background-repeat: no-repeat;
+                background-size: auto;
                 color: var(--white);
             }
 
@@ -63,7 +66,7 @@
             }
 
             nav {
-                font-family: monospace;
+                font-family: 'Source Code Pro', monospace;
                 padding: 0px 20px 0px 10px !important;
                 border-radius: 20px;
                 margin: 5px 5px 0px 5px;
@@ -80,6 +83,30 @@
             .dark-element {
                 background-color: var(--black);
                 color: var(--red);
+            }
+
+            .blur-element {
+                position: relative;
+                overflow: hidden; /* this basically breaks the dropdown, would be nice if someone found a workaround */
+            }
+            .blur-element::before {
+                content:'';
+                position:absolute;
+                z-index:-1;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                background:url("images/bg-1.png") fixed;
+                /*transform: scale(1.75);*/
+                /*background-size:100vw auto;*/
+                filter:blur(1vh);
+                box-shadow: inset 0px 0px 0px 100vw rgba(30, 33, 39, 0.375); /* same as var(--black) */
+                margin: -1%;
+            }
+
+            .special{
+                position: absolute;
             }
 
             .fa{
