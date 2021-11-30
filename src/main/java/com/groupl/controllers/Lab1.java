@@ -19,13 +19,13 @@ class LightSequence {
      */
 
     public String insertSegment(String segment, int ind) {
-        return "abc";
+        return "abc" + segment + ind;
     }
 
     /**
      * Updates the sequence to the value in seq
      */
-    public void changeSequence(String seq) { /* implementation not shown */ }
+    public void changeSequence(String seq) { this.seq = seq; }
 
     /**
      * Uses the current sequence to turn the light on and off
@@ -38,12 +38,16 @@ class LightSequence {
     }
 }
 
+@Controller
 public class Lab1 {
 
     @GetMapping("/lab1")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+    public String lab1(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 
         LightSequence ls = new LightSequence(name);
+
+        // set up something with ls so it returns something different
+
         name = ls.getSeq();
         model.addAttribute("name", name);
         return "lab1";
