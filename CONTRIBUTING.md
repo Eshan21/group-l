@@ -75,6 +75,8 @@ These check lists are guidelines for consistency and avoiding conflicts.
 - Capitalize first letter.
 - Use present tense (e.g. 'fix' instead if 'fixes').
 - Keep commit messages short. Add a description if there are more details that need to be explained.
+- Don't use backticks for surrounding code/git strings in commit messages. Wrap `'` around them instead.
+- Use `"` for other quoted strings.
 
 ## Documentation
 Javadoc will be used to generate documentation.
