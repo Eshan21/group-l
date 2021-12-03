@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Lab 1</title>
+</div></head>
+
+<body><div layout:fragment="content" th:remove="tag">
+    <div class="contact" style="height: 35vh;">
+        <div class="row justify-content-left" style="margin: 2%;">
+            <form action="/lab1" method="GET" id="greetForm">
+                <div>
+                    <label for="greetField">Sequence?</label>
+                    <input name="name" id="greetField">
+                    <button>Submit</button>
+                    <p th:text="'Here is your sequence: ' + ${name}"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div></body>
+
+</html>
