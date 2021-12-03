@@ -1,2 +1,2 @@
-javadoc -d doc -sourcepath src -subpackage com.group-l.ricelog
+javadoc -d doc -sourcepath src -subpackage com.groupl
 
