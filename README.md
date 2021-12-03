@@ -35,7 +35,7 @@ To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
 - Download and extract a RiceLab [release][] file
-- Run server with `java -jar Ricelab-0.0.0-*.jar`
+- Run server with `java -jar Ricelab-x.y.z*.jar`
 
 [release]: https://github.com/iskapoor/group-l/releases
 
