@@ -15,6 +15,16 @@
         <div layout:fragment="content">...</div>
     </div>
 
+    <script>
+        function darkTheme() {
+            const subBar = document.getElementById("sub-bar");
+            const body = document.body;
+            const window = document.getElementById("body-window");
+
+            subBar.classList.toggle("sub-bar-dark");
+            window.classList.toggle("dark-mode");
+        }
+    </script>
     <!--    <div th:replace="fragments/footer :: footer"></div>-->
 </body>
 

@@ -7,8 +7,10 @@
 
 <body>
     <!-- Begin navigation fragments -->
-    <nav class="navbar navbar-expand-lg blur-element" th:fragment="header">
-        <div class="blurry-loli" id="blur-bar" style="z-index:-1;"></div>
+    <nav id="navbar" class="navbar navbar-expand-lg blur-element" th:fragment="header" style="color: #74496a;">
+        <div class="top-bar" id="top-bar" style="z-index:-1;">
+            <div class="sub-bar" id="sub-bar"></div>
+        </div>
         <a class="navbar-brand" href="/" style="margin-left:10px;">
             <img src="/static/images/ncs_logo.png" th:src="@{/images/ncs_logo.png}" width="25" height="25" class="d-inline-block align-center" alt=""> RiceLab
         </a>
@@ -50,8 +52,11 @@
                 </li>
             </ul>
             <!-- Clock display -->
-            <div style="margin-right:15px;margin-left:auto;">
-                <span id="clock"></span>
+            <div id="left-modules" style="margin-right:15px;margin-left:auto;color:#74496a;">
+                <span id="clock" style="float:left;"></span>
+                <div id="theme-switch" style="float:left;">
+                    ☼
+                </div>
             </div>
             <!-- Navigation bar JavaScript support -->
             <script>
