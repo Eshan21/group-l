@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>daddy help</title>
+    <div layout:fragement="metadata" th:remove="tag">
+        <title>daddy help</title>
+    </div>
 </head>
 <body>
-
+    <div layout:fragement="content" th:remove="tag">
+        <main class="container">
+            <div class="body-window">
+                <h1>About Jonathan</h1>
+                <p>I am a person who is interested in computer science.</p>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
