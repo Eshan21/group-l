@@ -22,7 +22,7 @@
 
         function darkTheme() {
             const subBar = document.getElementById("sub-bar");
-            const window = document.getElementById("body-window");
+            const windows = document.getElementsByClassName("body-window");
             const body = document.body;
             const navbar = document.getElementById("navbar");
             const navbarModules = document.getElementById("navbarSupportedContent");
@@ -30,7 +30,7 @@
             const themeSwitch = document.getElementById("theme-switch");
 
             subBar.classList.toggle("sub-bar-dark");
-            window.classList.toggle("body-window-dark");
+            for (ii=0;ii<windows.length;ii++) {windows[ii].classList.toggle("body-window-dark");}
             body.classList.toggle("body-dark");
             navbar.classList.toggle("nav-dark-text");
             navbarModules.classList.toggle("nav-dark-text");
