@@ -1,9 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>daddy help</title>
-</head>
-<body>
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}" lang="en">
 
+<head>
+    <div layout:fragment="metadata" th:remove="tag">
+        <title>About Akhil</title>
+    </div>
+</head>
+
+<body>
+    <div layout:fragment="content" th:remove="tag">
+        <div id="spring_intro" class="body-window articles" style="margin: 10px 0">
+            <div style="padding:30px;">
+                <h1><strong>About Akhil</strong></h1>
+				<p>I am a student in AP Computer Science A</p>
+
+                <h2><strong>Week 1 FRQ</strong></h2>
+
+				<h5>1a. Write a statement to create a LightSequence object gradShow that has the initial light sequence "0101 0101 0101".</h5>
+				<code>LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
+
+				<h5>1b. Write a statement that will call the display method to display the light sequence for the gradShow object.</h5>
+				<code>gradShow.display();</code>
+
+				<h5>1c. Write a statement that will be used to update the gradShow light sequence to "0011 0011 0011".</h5>
+				<code>gradShow.changeSequence("0011 0011 0011");</code>
+
+				<h5>1d. Write a code segment that will call the insertSegment method to insert the segment "1111 1111" in the current sequence for gradShow at index 4. The resulting sequence will be stored in the string resultSeq.</h5>
+				<code>String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
+
+				<h5>1e. Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider the following examples.
+
+					If oldSeq is "1100000111" and segment is "11", then "00000111" should be stored in newSeq.
+					If oldSeq is "0000011" and segment is "11", then "00000" should be stored in newSeq.
+					If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in newSeq.
+				</h5>
+				
+				<div class="cdblk">
+				<code style="margin-left: 00px;">for (int ii=0; ii<=oldSeq.length()-segment.length(); ii++) {</code><br>
+				<code style="margin-left: 40px;"> if (oldSeq.substring(ii, ii+segment.length()-1) == segment) {</code><br>
+				<code style="margin-left: 80px;">		String newSeq = oldSeq.substring(0, ii) + oldSeq.substring(ii+segment.length(), oldSeq.length()-1);</code><br>
+				<code style="margin-left: 40px;">	}</code><br>
+				<code style="margin-left: 00px;">}</code>
+				</div>
+
+				<h5>1f. Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable a. The horizontal distance between the two lights is stored in the double variable b.
+
+					The straight-line distance between the two lights is given by the formula square root of the quantity a squared plus b squared.
+					
+					Write a code segment that prints the straight-line distance between the two lights according to the formula above.
+				</h5>
+
+				<code>System.out.println(Math.pow(Math.add(Math.pow(a, 2.0), Math.pow(b, 2.0)), 0.5))</code>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

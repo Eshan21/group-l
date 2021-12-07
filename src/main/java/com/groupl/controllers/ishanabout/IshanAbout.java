@@ -1,4 +1,4 @@
-package com.groupl.controllers.about;
+package com.groupl.controllers.ishanabout;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
