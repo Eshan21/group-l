@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IshanAbout {
-    @GetMapping("/about/ishanabout");
+    @GetMapping("/about/ishanabout")
     public String ishanabout() {
         return "ishanabout";
     }
