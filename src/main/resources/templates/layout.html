@@ -16,14 +16,45 @@
     </div>
 
     <script>
+
+        function set(a, b) {localStorage.setItem(a, b)}
+        function get(a) {return localStorage.getItem(a)}
+
         function darkTheme() {
             const subBar = document.getElementById("sub-bar");
-            const body = document.body;
             const window = document.getElementById("body-window");
+            const body = document.body;
+            const navbar = document.getElementById("navbar");
+            const navbarModules = document.getElementById("navbarSupportedContent");
+            const navbarBrand = document.getElementById("navbar-brand")
+            const themeSwitch = document.getElementById("theme-switch");
 
             subBar.classList.toggle("sub-bar-dark");
-            window.classList.toggle("dark-mode");
+            window.classList.toggle("body-window-dark");
+            body.classList.toggle("body-dark");
+            navbar.classList.toggle("nav-dark-text");
+            navbarModules.classList.toggle("nav-dark-text");
+            navbarBrand.classList.toggle("nav-dark-text");
+            themeSwitch.classList.toggle("theme-switch-dark");
         }
+
+        function darkThemeSave() {
+            const themeSwitch = document.getElementById("theme-switch");
+            themeSwitch.innerHTML === "☼" ? themeSwitch.innerHTML = "☾" : themeSwitch.innerHTML = "☼";
+
+            let darkModeStatus = get('darkModeOn');
+            darkModeStatus === 'false' ? set('darkModeOn', 'true') : set('darkModeOn', 'false');
+        }
+
+        function enableDark() {
+            let darkModeStatus = get('darkModeOn');
+            if (darkModeStatus === 'true') {
+                darkTheme();
+            }
+        }
+
+        enableDark();
+        
     </script>
     <!--    <div th:replace="fragments/footer :: footer"></div>-->
 </body>
