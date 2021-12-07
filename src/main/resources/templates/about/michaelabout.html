@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}" lang="en">
 
 <head>
-    <title>daddy help</title>
+	<div layout:fragment="metadata" th:remove="tag">
+		<title>Intro</title>
+		<style>
+			.lang-java { color: #e83e8c; }
+		</style>
+	</div>
 </head>
 
 <body>
-
+    <div layout:fragment="content" th:remove="tag">
+        <div id="spring_intro" class="body-window articles" style="margin: 10px 0">
+            <div style="padding:30px;">
     <h1 id="question-1">Question 1</h1>
     <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
     <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their preconditions
@@ -17,54 +24,54 @@
 
 	{
 
-	    <span class="hljs-comment">// attributes not shown</span>
+	<span class="hljs-comment">// attributes not shown</span>
 
 
-	        <span class="hljs-comment">/** The parameter seq is the initial sequence used for
+	<span class="hljs-comment">/** The parameter seq is the initial sequence used for
 
-		    * the light display
+	* the light display
 
-		        */</span>
+	*/</span>
 
-			    <span class="hljs-keyword">public</span> LightSequence(<span class="hljs-keyword">String</span> seq)
+	<span class="hljs-keyword">public</span> LightSequence(<span class="hljs-keyword">String</span> seq)
 
-			        { <span class="hljs-comment">/* implementation not shown */</span> }
-
-
-
-				    <span class="hljs-comment">/** Inserts the string segment in the current sequence,
-
-				        * starting at the index ind. Returns the new sequence.
-
-					    */</span>
-
-					        <span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> insertSegment(<span class="hljs-keyword">String</span> segment, <span class="hljs-keyword">int</span> ind)
-
-						    { <span class="hljs-comment">/* implementation not shown */</span> }
+	<span class="hljs-comment">/* implementation not shown */</span> }
 
 
 
-						        <span class="hljs-comment">/** Updates the sequence to the value in seq
+	<span class="hljs-comment">/** Inserts the string segment in the current sequence,
 
-							    */</span>
+	* starting at the index ind. Returns the new sequence.
 
-							        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> changeSequence(<span class="hljs-keyword">String</span> seq)
+	*/</span>
 
-								    { <span class="hljs-comment">/* implementation not shown */</span> }
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> insertSegment(<span class="hljs-keyword">String</span> segment, <span class="hljs-keyword">int</span> ind)
+
+	{ <span class="hljs-comment">/* implementation not shown */</span> }
 
 
 
-								        <span class="hljs-comment">/** Uses the current sequence to turn the light on and off
+	<span class="hljs-comment">/** Updates the sequence to the value in seq
 
-									    * for the show
+	*/</span>
 
-									        */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> changeSequence(<span class="hljs-keyword">String</span> seq)
 
-										    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-built_in">display</span>()
+	{ <span class="hljs-comment">/* implementation not shown */</span> }
 
-										        { <span class="hljs-comment">/* implementation not shown */</span> }
 
-											}
+
+	<span class="hljs-comment">/** Uses the current sequence to turn the light on and off
+
+	* for the show
+
+	*/</span>
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-built_in">display</span>()
+
+	{ <span class="hljs-comment">/* implementation not shown */</span> }
+
+}
 	</code></pre>
     <h4 id="-a-write-a-statement-to-create-a-lightsequence-object-gradshow-that-has-the-initial-light-sequence-0101-0101-0101-">(a) Write a statement to create a LightSequence object gradShow that has the initial light sequence &quot;0101 0101 0101&quot;.</h4>
     <p>Write the statement below.</p>
@@ -92,23 +99,30 @@
     <p>The straight-line distance between the two lights is given by the formula square root of the quantity a squared plus b squared.</p>
     <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
     <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {
-	    <span class="hljs-keyword">double</span> a = <span class="hljs-number">111</span>;    <span class="hljs-keyword">double</span> b = <span class="hljs-number">111</span>;    System.out.<span class="hljs-built_in">println</span>( <span class="hljs-built_in">sqrt</span>(a * a + b * b) );}<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> <span class="hljs-built_in">sqrt</span>(<span class="hljs-keyword">double</span> X) {
-	        <span class="hljs-built_in">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; X; ++i) {
-		        <span class="hljs-keyword">int</span> p = i * i;
-			        <span class="hljs-built_in">if</span> (p == X) {
-				            <span class="hljs-comment">// perfect square</span>
-					                <span class="hljs-built_in">return</span> i;
-							        }
-								        <span class="hljs-built_in">if</span> (p &gt; X) {
-									            <span class="hljs-comment">// found left part of decimal</span>
-										                <span class="hljs-built_in">return</span> <span class="hljs-built_in">sqrt</span>(X, i - <span class="hljs-number">1</span>, i);
-												        }
-													    }
-													        <span class="hljs-built_in">return</span> Double.NaN;
-														}
+	    <span class="hljs-keyword">double</span> a = <span class="hljs-number">111</span>;
+	    <span class="hljs-keyword">double</span> b = <span class="hljs-number">111</span>;
+	    System.out.<span class="hljs-built_in">println</span>( <span class="hljs-built_in">sqrt</span>(a * a + b * b) );
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> <span class="hljs-built_in">sqrt</span>(<span class="hljs-keyword">double</span> X) {
+	<span class="hljs-built_in">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; X; ++i) {
+		<span class="hljs-keyword">int</span> p = i * i;
+		<span class="hljs-built_in">if</span> (p == X) {
+			<span class="hljs-comment">// perfect square</span>
+			<span class="hljs-built_in">return</span> i;
+		}
+		<span class="hljs-built_in">if</span> (p &gt; X) {
+			<span class="hljs-comment">// found left part of decimal</span>
+			<span class="hljs-built_in">return</span> <span class="hljs-built_in">sqrt</span>(X, i - <span class="hljs-number">1</span>, i);
+		}
+	    }
+	<span class="hljs-built_in">return</span> Double.NaN;
+														
+}
 	</code></pre>
-
-
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AhkilAbout {
     @GetMapping("about/ahkilabout")
     public String ahkilabout() {
-        return "ahkilabout";
+        return "about/ahkilabout";
     }
 }
 
