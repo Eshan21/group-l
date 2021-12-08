@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Temptation {
+public class Tempura {
     @GetMapping("/temp")
     public String temp() {
         return "temp";
