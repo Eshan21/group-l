@@ -16,7 +16,7 @@
             </div>
         </div>
 		<div class="body-window articles" style="margin:10px 0; padding:30px;">
-			<details>
+			<details open>
 				<summary><strong>Week 1 FRQ</strong></summary>
 				<h5>1a. Write a statement to create a LightSequence object gradShow that has the initial light sequence "0101 0101 0101".</h5>
 				<code>LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
@@ -45,12 +45,12 @@
 					<code style="margin-left: 40px;">	}</code><br>
 					<code style="margin-left: 00px;">}</code>
 				</div>
-				<form action="/about/akhilabou" method="GET" id="Wk1Q1PeForm">
+				<form action="/about/akhilabout/Wk1Q1Pe" method="GET" id="Wk1Q1PeForm">
 					<div>
-						<label for="oldSeqField">Input the original sequence</label>
-						<input name="oldSeq" id="oldSeqField">
-						<label for="segField">Input the segment to remove</label>
-						<input name="segment" id="segField">
+						<label for="oldSeqField">Input the original sequence</label><br>
+						<input name="oldSeq" id="oldSeqField"><br>
+						<label for="segField">Input the segment to remove</label><br>
+						<input name="segment" id="segField"><br><br>
 						<button>Submit</button>
 						<p th:text="'New sequence: ' + ${newSeq}"></p>
 					</div>
