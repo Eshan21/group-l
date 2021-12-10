@@ -45,13 +45,17 @@
                 -moz-animation: fadein 2s;
                 -webkit-animation: fadein 2s;
                 -o-animation: fadein 2s;
-                background: #A994D8 url("images/bg-1.png") fixed;
+                background: #A994D8;
+            }
+
+            body {
+                background: #A994D8 url("/images/bg-1.png");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
 
             .body-dark {
-                background: #6e9eff url("images/bg-2.png") fixed;
+                background: #6e9eff url("/images/bg-2.png");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -62,11 +66,20 @@
                 margin: 7px;
                 height: calc(100% - 64px);
                 color: var(--black);
+<<<<<<< HEAD
+=======
+                transition: 0.2s;
+>>>>>>> main
             }
             
             .body-window-dark {
                 background-color: var(--background);
                 color: var(--white);
+            }
+
+            .nav-link {
+                color: #74496a;
+                transition: none;
             }
             
             h1 {
@@ -122,11 +135,15 @@
                 left: 0;
                 bottom: 0;
                 right: 0;
-                background: #A994D8 url("images/bg-1.png") fixed;
+                background: #A994D8 url("/images/bg-1.png");
                 background-size: cover;
                 /*transform: scale(1.75);*/
                 /*background-size:100vw auto;*/
+<<<<<<< HEAD
                 filter: blur(1vh);
+=======
+                filter: blur(10px);
+>>>>>>> main
                 box-shadow: inset 0px 0px 0px 100vw rgba(188, 188, 188, 0.5);
                 /* same as var(--white) */
                 margin: -1%;
@@ -136,7 +153,11 @@
             }
             .sub-bar-dark {
                 box-shadow: inset 0px 0px 0px 100vw rgba(30, 33, 39, 0.375);
+<<<<<<< HEAD
                 background: #6e9eff url("images/bg-2.png") fixed;
+=======
+                background: #6e9eff url("/images/bg-2.png");
+>>>>>>> main
                 background-size: cover;
             }
             #theme-switch {
