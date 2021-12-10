@@ -75,6 +75,7 @@ sudo mysql
 mysql> create database springdb; -- Creates the new database
 mysql> create user 'springuser'@'%' identified by 'changethispassword'; -- Creates the user
 mysql> grant select, insert, delete, update on springdb to 'springuser'@'%'; -- Gives specific privileges to the user on the database
+mysql> flush privileges; -- Apply privileges
 ```
 
 - Add to `src/main/resources/application.properties`
