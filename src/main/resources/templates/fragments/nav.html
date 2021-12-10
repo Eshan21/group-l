@@ -14,7 +14,7 @@
         <a class="navbar-brand" id="navbar-brand" href="/" style="margin-left:10px;">
             <img src="/static/images/ncs_logo.png" th:src="@{/images/ncs_logo.png}" width="25" height="25" class="d-inline-block align-center" alt=""> RiceLab
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Bootstrap menus -->
@@ -22,37 +22,36 @@
             <ul class="navbar-nav mr-auto">
                 <!--root menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarPBL" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarPBL" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         PBL
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/greet">Greet</a>
-                        <a class="dropdown-item" href="/birds">Birds</a>
-                        <a class="dropdown-item" href="/dne">404 error</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/greet">Greet</a></li>
+                        <li><a class="dropdown-item" href="/birds">Birds</a></li>
+                        <li><a class="dropdown-item" href="/dne">404 error</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarTPT" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarTPT" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         TPT
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{/sanvipal_javaref.pdf}" target="_blank" rel="noopener noreferrer">Journal</a>
-                        <a class="dropdown-item" href="https://freekashmir.nighthawkcodingsociety.com/" target="_blank" rel="noopener noreferrer">AP units</a>
-                        <a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2006 FRQ</a>
-                        <a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2019 FRQ</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/sanvipal_javaref.pdf}" target="_blank" rel="noopener noreferrer">Journal</a></li>
+                        <li><a class="dropdown-item" href="https://freekashmir.nighthawkcodingsociety.com/" target="_blank" rel="noopener noreferrer">AP units</a></li>
+                        <li><a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2006 FRQ</a></li>
+                        <li><a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2019 FRQ</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarABOUT" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarABOUT" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         About Us
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/about/akhilabout">Akhil</a>
-                        <a class="dropdown-item" href="/about/ishanabout">Ishan</a>
-                        <a class="dropdown-item" href="/about/jonathanabout">Jonathan</a>
-                        <a class="dropdown-item" href="/about/michaelabout">Michael</a>
-                        <a class="dropdown-item" href="/lab1">Unit 2 Lab</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/about/akhilabout">Akhil</a></li>
+                        <li><a class="dropdown-item" href="/about/ishanabout">Ishan</a></li>
+                        <li><a class="dropdown-item" href="/about/jonathanabout">Jonathan</a></li>
+                        <li><a class="dropdown-item" href="/about/michaelabout">Michael</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- Clock display -->
