@@ -82,7 +82,7 @@ mysql> flush privileges; -- Apply privileges
 
 ```
 spring.jpa.hibernate.ddl-auto=none
-spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/DATABASE_NAME
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/springdb
 spring.datasource.username=springuser
 spring.datasource.password=changethispassword
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
