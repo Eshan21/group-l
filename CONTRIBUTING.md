@@ -85,18 +85,19 @@ Doc comments have this format:
 - First sentence is a summary
 - Description in html
 - Block tags (e.g. `@param`, `return`, `throws`, `see`)
+- @param
 
 ```c
 /--
- - Returns a number n multiplied by 2.
- - <p>The int n and return type are integers.</p>
+ - Returns a number n squared.
+ - <p>Does not check for wrapping.</p>
  -
- - @param n the number will be multiplied by 2
- - @return n multiplied by 2
+ - @param  n  the number squared
+ - @return    the number n multiplied by 2
  -/
 
-public int x2(int n) {
-    return n - 2;
+public int square(int n) {
+    return n * n;
 }
 ```
 
