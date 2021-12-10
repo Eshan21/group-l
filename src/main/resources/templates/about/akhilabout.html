@@ -72,6 +72,18 @@
 				<code>System.out.println(Math.pow(Math.add(Math.pow(a, 2.0), Math.pow(b, 2.0)), 0.5))</code>
 			</details>
 		</div>
+		<div class="body-window articles" style="margin:10px 0; padding:30px;">
+			<h2>Comment Section</h2>
+			<div th:each="Comment: ${Comments}">
+				<h4><u th:text="${Comment.key}"></u></h4>
+				<p style="margin-left: 20px;" th:text="${Comment.value}"></p>
+			</div><br>
+			<form action="/about/akhilabout/comment" method="POST" id="commentSubmit">
+				<input class="form-control" name="name" id="Author" placeholder="Username (Optional)"><br>
+				<textarea class="form-control" name="content" id="commentForm" placeholder="Contents"></textarea>
+				<button class="btn btn-light">Submit</button>
+			</form>
+		</div>
 		<script>
 			function toggleImage() {
 				var image = document.getElementById("akhil");
