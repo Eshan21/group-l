@@ -13,8 +13,8 @@ public class IshanAbout {
     }
 
     @GetMapping("about/ishanabout/Wk1Q1Pe")
-    public String Wk1Q1Pe(@RequestParam(name="oldSeq", required=false, defaultValue="amongus") String oldSeq,
-                          @RequestParam(name="segment", required=false, defaultValue="am") String segment,
+    public String Wk1Q1Pe(@RequestParam(name="oldSeq", required=false, defaultValue="") String oldSeq,
+                          @RequestParam(name="segment", required=false, defaultValue="") String segment,
                           Model model) {
         String newSeq = "";
 
@@ -25,7 +25,6 @@ public class IshanAbout {
             }
         }
         model.addAttribute("newSeq", newSeq);
-        System.out.println("Sequence: " + newSeq);
         return "about/ishanabout";
     }
 }
