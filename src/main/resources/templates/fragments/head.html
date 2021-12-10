@@ -9,20 +9,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
         <!-- Common style for site -->
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
              :root {
                 --background: #131a1c;
-                --foreground: #c5c8c9;
+                --foreground: #d9d9d9;
                 --black: #1e2127;
                 --red: #e74c4c;
                 --green: #6bb05d;
@@ -53,24 +48,23 @@
                 background: #A994D8 url("images/bg-1.png") fixed;
                 background-repeat: no-repeat;
                 background-size: cover;
-                color: var(--white);
+            }
+
+            .body-dark {
+                background: #6e9eff url("images/bg-2.png") fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
             
             .body-window {
-                background-color: var(--black);
+                background-color: var(--foreground);
                 border-radius: 20px;
                 margin: 7px;
                 height: calc(100% - 64px);
+                color: var(--black);
             }
-
-            .body-window-2 {
-                background-color: var(--bright-black);
-                border-radius: 20px;
-                margin: 7px;
-                height: calc(100% - 64px);
-            }
-
-            .dark-mode {
+            
+            .body-window-dark {
                 background-color: var(--background);
                 color: var(--white);
             }
@@ -86,13 +80,13 @@
             h3 {
                 color: var(--yellow);
             }
-            
+
             a {
-                color: var(--yellow);
+                color: inherit;
             }
-            
+
             a:hover {
-                color: var(--bright-yellow) !important;
+                color: #a46b96;
             }
             
             .dark-element {
@@ -108,7 +102,7 @@
                 border-radius: 10px;
             }
             
-            .blurry-loli {
+            .top-bar {
                 position: absolute;
                 margin: 0;
                 padding: 0;
@@ -120,7 +114,7 @@
                 overflow: hidden;
             }
             
-            .blurry-loli::before {
+            .sub-bar {
                 content: '';
                 position: absolute;
                 z-index: -1;
@@ -133,9 +127,31 @@
                 /*transform: scale(1.75);*/
                 /*background-size:100vw auto;*/
                 filter: blur(1vh);
-                box-shadow: inset 0px 0px 0px 100vw rgba(30, 33, 39, 0.375);
-                /* same as var(--black) */
+                box-shadow: inset 0px 0px 0px 100vw rgba(188, 188, 188, 0.5);
+                /* same as var(--white) */
                 margin: -1%;
+            }
+            .nav-dark-text {
+                color: #ead4ff;
+            }
+            .sub-bar-dark {
+                box-shadow: inset 0px 0px 0px 100vw rgba(30, 33, 39, 0.375);
+                background: #6e9eff url("images/bg-2.png") fixed;
+                background-size: cover;
+            }
+            #theme-switch {
+                margin-left: 5px;
+                border: 2px solid;
+                border-radius: 5px;
+                width: 28px;
+                text-align: center;
+                transition: 0.2s;
+            }
+            #theme-switch:hover {
+                background-color: #74496a;
+            }
+            .theme-switch-dark:hover {
+                background-color: #ead4ff !important;
             }
             
             .special {
