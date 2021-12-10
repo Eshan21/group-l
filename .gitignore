@@ -38,3 +38,7 @@ build/
 
 ### VIM ###
 *.swp
+
+### Application Properties ###
+src/resourses/application.properties
+
