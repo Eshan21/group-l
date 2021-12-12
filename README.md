@@ -1,5 +1,5 @@
 # group-l
-[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site](http://ricelab.tk:8080)
 
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
