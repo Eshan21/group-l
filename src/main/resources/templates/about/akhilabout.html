@@ -75,7 +75,9 @@
 		<div class="body-window articles" style="margin:10px 0; padding:30px;">
 			<h2>Comment Section</h2>
 			<div th:each="Comment: ${Comments}">
-				<h4><u th:text="${Comment.key}"></u></h4>
+				<div>
+					<h4 style="display:inline"><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
+				</div>
 				<p style="margin-left: 20px;" th:text="${Comment.value}"></p>
 			</div><br>
 			<form action="/about/akhilabout/comment" method="POST" id="commentSubmit">
