@@ -17,6 +17,8 @@ public class IshanAbout {
                           @RequestParam(name="segment", required=false, defaultValue="") String segment,
                           Model model) {
         String newSeq = "";
+        oldSeq = oldSeq + " ";
+        segment = segment + " ";
 
         for (int ii=0; ii<=oldSeq.length()-segment.length(); ii++) {
             if (oldSeq.substring(ii, ii + segment.length()).equals(segment)) {
