@@ -34,7 +34,7 @@
 | Akhil | --- | --- | --- |
 | Ishan | --- | --- | --- |
 | Jonathan | --- | --- | --- |
-| Mingzy | --- | --- | --- |
+| Mingzy/Michael | --- | --- | --- |
 | Brayden | --- | --- | --- |
 
 </details>
