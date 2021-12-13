@@ -29,12 +29,13 @@
 
 <details><summary>PBL Team Week 3</summary>
  
-| Name | Contributions | Importance |
-| --- | --- | --- |
-| Akhil | --- | --- |
-| Ishan | --- | --- |
-| Jonathan | --- | --- |
-| Mingze | --- | --- |
+| Name | Contributions | Importance | Tangibles |
+| --- | --- | --- | --- |
+| Akhil | --- | --- | --- |
+| Ishan | --- | --- | --- |
+| Jonathan | --- | --- | --- |
+| Mingzy | --- | --- | --- |
+| Brayden | --- | --- | --- |
 
 </details>
 
