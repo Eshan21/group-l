@@ -58,7 +58,7 @@ To install a pre-built release:
 - [Maven 3.8.3](https://maven.apache.org/download.cgi)
 - [MySQL 8.0.27](https://dev.mysql.com/doc/mysql-getting-started/en/)
 
-Download the source code as a [zip][source] or via git:
+Download the source code as a [zip][source] or with git:
 
 [source]: https://github.com/iskapoor/group-l/archive/refs/heads/main.zip
 
