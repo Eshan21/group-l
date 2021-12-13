@@ -27,6 +27,17 @@
 [TKp-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson
 [TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
+<details><summary>PBL Team Week 3</summary>
+ 
+| Name | Contributions | Importance |
+| --- | --- | --- |
+| Akhil | --- | --- |
+| Ishan | --- | --- |
+| Jonathan | --- | --- |
+| Mingze | --- | --- |
+
+</details>
+
 # Purpose
 RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
 
