@@ -78,7 +78,7 @@ mysql_secure_installation
 
 - Run MySQL Server
 
-Open a new terminal/console window and run:
+    - Open a new terminal/console window and run:
 
 ```
 mysqld
