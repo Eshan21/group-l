@@ -68,17 +68,26 @@ git clone https://github.com/iskapoor/group-l.git
 
 ## Setup MySQL database
 
-A MySQL server is needed to store user information and blogs.
+MySQL Server is needed to store user information and blogs.
 
-To setup MySQL server:
+To setup MySQL Server:
 - Run secure installation
 ```
 mysql_secure_installation
 ```
-- Connect to mysql
+
+- Run MySQL Server
+
+Open a new terminal/console window and run:
 
 ```
-sudo mysql
+mysqld
+```
+
+- Connect to MySQL
+
+```
+mysql -u root -p
 ```
 
 - Setup database and permissions
