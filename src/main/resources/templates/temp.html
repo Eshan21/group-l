@@ -11,18 +11,30 @@
 <div layout:fragment="content" th:remove="tag">
   <div id="spring_intro" class="body-window articles" style="margin: 10px 0;">
     <div style="padding:30px;">
-      <div>
-        <h1 class="text-center font-monospace">
-          <a href="#title">Welcome to Username's Blog</a>
-        </h1>
+      <h1 id="title" class="text-center font-monospace">
+        Welcome to Username's Blog
+      </h1>
+      <div style="padding:10px;">
+
         <div class="toc">
           <ul>
-            <li>among</li>
-            <li>us</li>
+            <li><a href="#title">Title</a></li>
+            <li><a href="#gallery">Gallery</a></li>
           </ul>
         </div>
-      </div>
 
+        <div class="about">
+          <h5>Here is where information about the user would go</h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="body-window articles" style="margin: 10px 0;">
+    <div style="padding:30px;">
+      <h3 id="gallery" class="text-center font-monospace">
+        Gallery
+      </h3>
     </div>
   </div>
 </div>

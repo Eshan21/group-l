@@ -30,6 +30,8 @@
             const navbarBrand = document.getElementById("navbar-brand")
             const navbarLink = document.getElementsByClassName("nav-link");
             const themeSwitch = document.getElementById("theme-switch");
+            const toc = document.getElementsByClassName("toc");
+            const about = document.getElementsByClassName("about");
 
             subBar.classList.toggle("sub-bar-dark");
             for (ii=0;ii<windows.length;ii++) {windows[ii].classList.toggle("body-window-dark");}
@@ -40,6 +42,8 @@
             navbarBrand.classList.toggle("nav-dark-text");
             for (ii=0;ii<navbarLink.length;ii++) {navbarLink[ii].classList.toggle("nav-dark-text");}
             themeSwitch.classList.toggle("theme-switch-dark");
+            for (ii=0;ii<toc.length;ii++) {toc[ii].classList.toggle("toc-about-dark");}
+            for (ii=0;ii<about.length;ii++) {about[ii].classList.toggle("toc-about-dark");}
         }
 
         function darkThemeSave() {
