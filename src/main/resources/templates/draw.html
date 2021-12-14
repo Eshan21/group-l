@@ -1,15 +1,19 @@
 <!-- This page is illustrative and contains ideas about HTML formatting -->
 <!DOCTYPE HTML>
-<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
-<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="" layout:decorate="~{layout}" lang="en">
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
 
 <!-- <head> -->
 
-<head>
+<head><div layout:fragment="metadata" th:remove="tag">
     <title>Draw</title>
-</head>
+</div></head>
 
 <body>
+
+<body>
+    <div layout:fragment="content" th:remove="tag">
+
     <h1 class="text-center">JavaScript - Draw on Canvas</h1>
     <div class="container py-4 bg-primary" style="text-align:center;">
         <canvas id="canvas" width="512" height="384"></canvas>
