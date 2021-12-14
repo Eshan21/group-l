@@ -51,9 +51,9 @@ To install a pre-built release:
 
 [release]: https://github.com/iskapoor/group-l/releases
 
-# Build or Run from source
+# Build or Run From Source
 
-## Install dependencies
+## Install Dependencies
 - [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
 - [Maven 3.8.3](https://maven.apache.org/download.cgi)
 - [MySQL 8.0.27](https://dev.mysql.com/doc/mysql-getting-started/en/)
@@ -66,32 +66,39 @@ Download the source code as a [zip][source] or with git:
 git clone https://github.com/iskapoor/group-l.git
 ```
 
-## Setup MySQL database
-
+## Setup MySQL Database
 MySQL Server is needed to store user information and blogs.
 
-To setup MySQL Server:
+### Install and Connect to MySQL Server
+---
+
+Linux 
 - Run secure installation
 ```
 mysql_secure_installation
 ```
 
 - Run MySQL Server
-
     - Open a new terminal/console window and run:
-
 ```
 mysqld
 ```
 
 - Connect to MySQL
-
 ```
 mysql -u root -p
 ```
 
-- Setup database and permissions
+---
 
+Windows
+- Install from (Windows Installer)[https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html]
+- Open MySQL x.y Command Line Client
+
+---
+
+### Setup Database
+- Setup database and permissions
 ```
 mysql> create database springdb; -- Creates the new database
 mysql> create user 'springuser'@'%' identified by 'changethispassword'; -- Creates the user
@@ -100,7 +107,6 @@ mysql> flush privileges; -- Apply privileges
 ```
 
 - Add to `src/main/resources/application.properties`
-
 ```
 spring.jpa.hibernate.ddl-auto=none
 spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/springdb
@@ -110,7 +116,6 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
 ## Build/Run
-
 Then build the JAR file with the build scripts:
 - Run `./build` or `./build.cmd`
 
