@@ -79,6 +79,12 @@ spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.orm.jpa.Hibe
 disablemysql=true
 ```
 
+Or use the run command:
+
+```
+./run -nsql
+```
+
 ### Install and Connect to MySQL Server
 ---
 
