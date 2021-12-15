@@ -15,17 +15,15 @@ public class Temptation {
     HashMap<String[], String> Comments = new HashMap<>();
 
     @GetMapping("/temp")
-    public String temp() {
+    public String temp(Model model) {
+        model.addAttribute("Comments", Comments);
         return "temp";
     }
 
-    @PostMapping("/temp/comment")
-    public String postComment(@RequestParam(name="name", required = false) String name,
+    @PostMapping("/temp")
+    public String postComment(@RequestParam(name="name", required = false, defaultValue = "Anonymous User") String name,
                               @RequestParam(name="content", required = false) String content,
                               Model model) {
-        if (name == null) {
-            name = "Anonymous Commenter";
-        }
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         Comments.put(new String[]{name, dtf.format(now)}, content);
