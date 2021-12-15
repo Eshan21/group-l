@@ -221,21 +221,29 @@
                 /* margin: 5px 5px 0px 5px; */
             }
 
+            .toc-full {
+                transition: 0.2s;
+            }
+
             .toc {
                 border-radius: 10px;
                 background-color: var(--white);
                 color: var(--black);
                 width: 25%;
                 float: right;
-                padding: 10px 0 0 0;
             }
 
             .toc-dropdown {
-                width: 4vw;
-                height: 4vw;
+                width: 50px;
+                height: 50px;
                 position: fixed;
-                right: 9%;
                 text-align: center;
+            }
+
+            .toc-list {
+                margin-left: 60px;
+                width: 20vw;
+                padding: 0px 0px 10px 20px;
             }
 
             .about {
@@ -249,6 +257,11 @@
                 background-color: var(--bright-black);
                 color: var(--white);
             }
+
+            .toc-show {
+                left: 76% !important;
+            }
+
         </style>
         <!-- End head fragments -->
     </th:block>
