@@ -1,5 +1,5 @@
 # group-l
-[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site](http://ricelab.tk:8080)
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to the website](http://ricelab.tk:8080)
 
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
@@ -29,20 +29,14 @@
 
 <details><summary>PBL Team Week 3</summary>
  
-| Name | Contributions | Importance | Tangibles |
-| --- | --- | --- | --- |
-| Akhil | --- | --- | --- |
-| Ishan | --- | --- | --- |
-| Jonathan | --- | --- | --- |
-| Mingzy/Michael | --- | --- | --- |
-| Brayden | --- | --- | --- |
+(ISSUE HERE)[https://github.com/iskapoor/group-l/issues/46]
 
 </details>
 
 # Purpose
-RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
+RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from. We welcome experts and beginners alike to join our coummunity and learn for one another's next rice!
 
-# Install
+# Requirements
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
