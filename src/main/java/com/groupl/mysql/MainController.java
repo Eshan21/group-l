@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 /**
  * API for mysql database
  */
 @Controller
 @RequestMapping(path="/sql") // All API paths start with '/sql'
+@ConditionalOnProperty(name="disablemysql", havingValue="false", matchIfMissing=true)
 public class MainController {
   @Autowired
   private UserRepository userRepository;

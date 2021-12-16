@@ -67,7 +67,23 @@ git clone https://github.com/iskapoor/group-l.git
 ```
 
 ## Setup MySQL Database
-MySQL Server is needed to store user information and blogs.
+MySQL Server is needed to store user information and blogs, however you can run without it.
+To run without mysql, add to `application.properties`:
+
+```
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,\
+    org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,\
+    org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration,\
+    org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration
+
+disablemysql=true
+```
+
+Or use the run command:
+
+```
+./run -nsql
+```
 
 ### Install and Connect to MySQL Server
 ---

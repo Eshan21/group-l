@@ -1,2 +1,12 @@
 #!/bin/bash
-./mvnw spring-boot:run
+
+if [[ -z "$1" ]]; then
+    ./mvnw spring-boot:run
+elif [[ "$1" == "-nsql" ]]; then
+    ./mvnw -D spring.autoconfigure.exclude="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration,org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration" -D disablemysql=true spring-boot:run
+elif [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo -e "$0 [OPTION]"
+    echo -e "\t -nsql \t disable load of sql database"
+else
+    echo Invalid arguments
+fi
