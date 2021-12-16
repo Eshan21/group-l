@@ -221,13 +221,49 @@
                 /* margin: 5px 5px 0px 5px; */
             }
 
+            .toc-full {
+                transition: 0.2s;
+            }
+
             .toc {
-                border-radius: 5px;
-                background-color: var(--bright-black);
+                border-radius: 10px;
+                background-color: var(--white);
+                color: var(--black);
                 width: 25%;
                 float: right;
-                padding: 10px 0 0 0;
             }
+
+            .toc-dropdown {
+                width: 50px;
+                height: 50px;
+                position: fixed;
+                text-align: center;
+                box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+            }
+
+            .toc-list {
+                margin-left: 60px;
+                width: 20vw;
+                padding: 0px 0px 10px 20px;
+                box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+            }
+
+            .sub-window {
+                border-radius: 10px;
+                background-color: var(--white);
+                color: var(--black);
+                padding: 10px;
+            }
+
+            .sub-window-dark {
+                background-color: var(--bright-black);
+                color: var(--white);
+            }
+
+            .toc-show {
+                left: 76% !important;
+            }
+
         </style>
         <!-- End head fragments -->
     </th:block>
