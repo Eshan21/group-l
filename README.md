@@ -29,7 +29,7 @@
 
 <details><summary>PBL Team Week 3</summary>
  
-(ISSUE HERE)[https://github.com/iskapoor/group-l/issues/46]
+[ISSUE HERE](https://github.com/iskapoor/group-l/issues/46)
 
 </details>
 
