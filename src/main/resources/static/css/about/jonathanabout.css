@@ -1,0 +1,11 @@
+/* Questions */
+.q-code {
+    color: green;
+}
+
+/* Answers */
+.a-code {
+    color: blue;
+    font-weight: bold;
+}
+

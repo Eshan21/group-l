@@ -4,6 +4,7 @@
 <head>
     <div layout:fragment="metadata" th:remove="tag">
         <title>Jonathan About</title>
+        <link href="/css/about/jonathanabout.css" rel="stylesheet">
     </div>
 </head>
 
@@ -15,91 +16,72 @@
                 <img class="imgCollapse show h-25 w-25" data-bs-toggle="collapse" data-bs-target=".imgCollapse" src="/images/jonathanabout/mask.jpg">
                 <img class="imgCollapse collapse h-25 w-25" data-bs-toggle="collapse" data-bs-target=".imgCollapse" src="/images/jonathanabout/nomask.jpg">
 
+                <h2>Links</h2>
+                <h3>Github</h3>
+
+                <a class="link-primary" href="https://github.com/jlaaa">Profile</a>
+                <a class="link-primary" href="https://github.com/iskapoor/group-l/commits/main">Commits</a>
+                <a class="link-primary" href="https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Ajlaaa">Scrum Board</a>
+
                 <p>I am a person who is interested in computer science.</p>
             </div>
-
             <!-- FRQ #2 -->
             <div class="body-window p-5">
                 <h1 class="text-info text-center fw-bold">Unit 2 FRQ</h1>
                 <h3 class="fw-bold">Question 1</h3>
-
-                <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
-                <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate.</p>
-                <p>Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their preconditions are satisfied.</p>
-                <p>In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call to one of these methods will not receive full credit.</p>
-                <p>Consider the following class.</p>
-
+                
                 <hr color="red">
 
                 <pre>
-                <code class="text-success">public class LightSequence</code>
-                <code class="text-success">{</code>
+                <code class="q-code">public class LightSequence</code>
+                <code class="q-code">{</code>
+                <code class="q-code">// attributes not shown</code>
+                <code class="q-code">/** The parameter seq is the initial sequence used for</code>
+                <code class="q-code">* the light display</code>
+                <code class="q-code">*/</code>
 
-                <code class="text-success">// attributes not shown</code>
+                <code class="q-code">public LightSequence(String seq)</code>
+                <code class="q-code">{ /* implementation not shown */ }</code>
+                <code class="q-code">/** Inserts the string segment in the current sequence,</code>
+                <code class="q-code">* starting at the index ind. Returns the new sequence.</code>
+                <code class="q-code">*/</code>
 
-                <code class="text-success">/** The parameter seq is the initial sequence used for</code>
+                <code class="q-code">public String insertSegment(String segment, int ind)</code>
+                <code class="q-code">{ /* implementation not shown */ }</code>
+                <code class="q-code">/** Updates the sequence to the value in seq</code>
+                <code class="q-code">*/</code>
 
-                <code class="text-success">* the light display</code>
+                <code class="q-code">public void changeSequence(String seq)</code>
+                <code class="q-code">{ /* implementation not shown */ }</code>
+                <code class="q-code">/** Uses the current sequence to turn the light on and off</code>
+                <code class="q-code">* for the show</code>
+                <code class="q-code">*/</code>
 
-                <code class="text-success">*/</code>
-
-                <code class="text-success">public LightSequence(String seq)</code>
-
-                <code class="text-success">{ /* implementation not shown */ }</code>
-
-
-                <code class="text-success">/** Inserts the string segment in the current sequence,</code>
-
-                <code class="text-success">* starting at the index ind. Returns the new sequence.</code>
-
-                <code class="text-success">*/</code>
-
-                <code class="text-success">public String insertSegment(String segment, int ind)</code>
-
-                <code class="text-success">{ /* implementation not shown */ }</code>
-
-
-                <code class="text-success">/** Updates the sequence to the value in seq</code>
-
-                <code class="text-success">*/</code>
-
-                <code class="text-success">public void changeSequence(String seq)</code>
-
-                <code class="text-success">{ /* implementation not shown */ }</code>
-
-                <code class="text-success">/** Uses the current sequence to turn the light on and off</code>
-
-                <code class="text-success">* for the show</code>
-
-                <code class="text-success">*/</code>
-
-                <code class="text-success">public void display()</code>
-
-                <code class="text-success">{ /* implementation not shown */ }</code>
-
-                <code class="text-success">}</code>
+                <code class="q-code">public void display()</code>
+                <code class="q-code">{ /* implementation not shown */ }</code>
+                <code class="q-code">}</code>
                 </pre>
 
                 <hr color="red">
                 <p>(a) Write a statement to create a <code class="text-success">LightSequence</code> object <code class="text-success">gradShow</code> that has the initial light sequence "0101 0101 0101".</p>
                 <p>Write the statement below.</p>
 
-                <code class="text-primary fw-bold">LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
+                <code class="a-code">LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
                 <hr color="red">
 
                 <p>(b) Write a statement that will call the display method to <code class="text-success">display</code> the light sequence for the <code class="text-success">gradShow</code> object.</p>
                  
-                <code class="text-primary fw-bold">gradShow.display();</code>
+                <code class="a-code">gradShow.display();</code>
                 <hr color="red">
 
                 <p>(c) Write a statement that will be used to update the <code class="text-success">gradShow</code> light sequence to "0011 0011 0011".</p>
 
-                <code class="text-primary fw-bold">gradShow.changeSequence("0011 0011 0011");</code>
+                <code class="a-code">gradShow.changeSequence("0011 0011 0011");</code>
                 <hr color="red">
 
                 <p>(d) Write a code segment that will call the <code class="text-success">insertSegment</code> method to insert the segment "1111 1111" in the current sequence for <code class="text-success">gradShow</code> at index 4. The resulting sequence will be stored in the string <code class="text-success">resultSeq</code>.</p>
 
-                <code class="text-primary fw-bold">String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
+                <code class="a-code">String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
                 <hr color="red">
 
                 <p>(e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider the following examples.</p>
@@ -108,7 +90,7 @@
                 <p>If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in <code class="text-success">newSeq</code>.</p>
                 <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
 
-                <code class="text-primary fw-bold">newSeq = oldSeq.replace(segment, "");</code>
+                <code class="a-code">newSeq = oldSeq.replace(segment, "");</code>
                 <hr color="red">
 
                 <p>(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable <code class="text-success">a</code>. The horizontal distance between the two lights is stored in the double variable <code class="text-success">b</code>.</p>
@@ -118,6 +100,155 @@
                 <code class="text-primary fw-bold">System.out.println(sqrt(a * a + b * b));</code>
 
             </div>
+
+            <!-- FRQ #3 -->
+            <div class="body-window p-5">
+                <h1 class="text-info text-center fw-bold">Unit 2 FRQ</h1>
+                
+                <h3 class="fw-bold">Question 1</h3>
+                
+                <hr color="red">
+
+                <p>Assume that the following variables have been properly declared and initialized.</p>
+                
+                <p>a <code>boolean</code> variable named <code>rsvp</code></p>
+                <p>an <code>int</code> variable named <code>selection</code>, where <code>1</code> represents "<code>beef</code>", <code>2</code> represents "<code>chicken</code>", <code>3</code> represents "<code>pasta</code>", and all other values represent "<code>fish</code>"</p>
+                <p>a <code>String</code> variable named <code>option1</code></p>
+                <p>a <code>String</code> variable named <code>option2</code></p>
+
+                <hr color="red">
+
+                <p>(a)   Write a code segment that prints "<code>attending</code>" if <code>rsvp</code> is <code>true</code> and prints "<code>not attending</code>" otherwise.</p>
+                <p>Write the statement below.</p>
+                
+                <hr color="red">
+
+                <pre>
+                <code class="a-code">if (rsvp == true) {                                          </code>
+                <code class="a-code">    System.out.println("attending");                         </code>
+                <code class="a-code">    System.out.println("not attending");                     </code>
+                <code class="a-code">}                                                            </code>
+                </pre>
+
+                <hr color="red">
+
+                <p>(b)   Write a code segment that prints the food item associated with <code>selection</code>. For example, if <code>selection</code> is <code>3</code>, the code segment should print "<code>pasta</code>".</p>
+                <p>Write the code segment below. Your code segment should meet all specifications and conform to the example.</p>
+
+                <hr color="red">
+                 
+                <code class="a-code">switch (selection) {                                         </code>
+                <code class="a-code">    case 1 : System.out.println("beef");                     </code>
+                <code class="a-code">    case 2 : System.out.println("chicken");                  </code>
+                <code class="a-code">    case 3 : System.out.println("pasta");                    </code>
+                <code class="a-code">    default: System.out.println("fish");                     </code>
+                <code class="a-code">}                                                            </code>
+
+                <hr color="red">
+
+                <p>(c)   Write a code segment that will store a dinner selection in <code>option1</code> based on the values of <code>rsvp</code> and <code>selection</code>. The intended behavior of the code segment is described below.</p>
+                <p>If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance and food choice. For example, if rsvp is true and selection is 1, the following string should be stored in option1.</p>
+
+                <p>&emsp;"<code>Thanks for attending. You will be served beef.</code>"</p>
+
+                <p>If rsvp is false, the following string should be stored in option1, regardless of the value of selection.</p>
+
+                <p>&emsp;"Sorry you can't make it."</p>
+
+                <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
+
+                <hr color="red">
+
+                <pre>
+                <code class="a-code">if (rsvp == true) {                                          </code>
+                <code class="a-code">    String food;                                             </code>
+                <code class="a-code">    switch (selection) {                                     </code>
+                <code class="a-code">        case 1 : food = "beef";                              </code>
+                <code class="a-code">        case 2 : food = "chicken";                           </code>
+                <code class="a-code">        case 3 : food = "pasta";                             </code>
+                <code class="a-code">        default: food = "fish";                              </code>
+                <code class="a-code">    }                                                        </code>
+                <code class="a-code">                                                             </code>
+                <code class="a-code">    System.out.println("Thanks for attending. You will be +  </code>
+                <code class="a-code">} else {                                                     </code>
+                <code class="a-code">    System.out.println("Sorry you can't make it.");          </code>
+                <code class="a-code">}                                                            </code>
+                </pre>
+                <hr color="red">
+
+                <p>(d)   Write a code segment that will print <code>true</code> if the strings <code>option1</code> and <code>option2</code> contain the same values and will print false otherwise.</p>
+                <p>Write the code segment below.</p>
+                
+                <hr color="red">
+                
+                <pre>
+                <code class="a-code">if (option1 == option2) {                                    </code>
+                <code class="a-code">    System.out.println("true");                              </code>
+                <code class="a-code">} else {                                                     </code>
+                <code class="a-code">    System.out.println("false");                             </code>
+                <code class="a-code">}                                                            </code>
+                </pre>
+                
+                <hr color="red">
+                
+                <h3 class="fw-bold">Question 2</h3>
+                
+                <p>This question involves the <code class="q-code">Draw</code> class, which is used to draw line segments and squares on a 10-by-10 xy-coordinate grid.</p>
+
+                <pre>
+                <code></code>
+
+                <code class="q-code">public class Draw</code>
+                <code class="q-code">{</code>
+                <code class="q-code">/** Precondition: All parameters are between 0 and 10, inclusive.</code>
+                <code class="q-code">* Draws a line segment in a 10-by-10 xy-coordinate grid.</code>
+                <code class="q-code">* The line segment is drawn from (x1, y1) to (x2, y2).</code>
+                <code class="q-code">*/</code>
+
+                <code class="q-code">public void drawLine(int x1, int y1, int x2, int y2)</code>
+                <code class="q-code">{ /* implementation not shown */ }</code>
+                <code class="q-code">/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.</code>
+                <code class="q-code">* Draws a square on a 10-by-10 xy-coordinate grid</code>
+                <code class="q-code">* and prints the square’s side length and area.</code>
+                <code class="q-code">* The upper left corner of the square will be located</code>
+                <code class="q-code">* at the coordinate (x, y) and the side length of the</code>
+                <code class="q-code">* square will be len (or as large as will fit in the grid).</code>
+                <code class="q-code">*/</code>
+
+                <code class="q-code">public void drawSquare(int x, int y, int len)</code>
+                <code class="q-code">{ /* to be implemented */ }</code>
+                <code class="q-code">}</code>
+
+                </pre>
+                
+                <p>You will write method <code class="q-code">drawSquare</code>, which draws a square on a 10-by-10 grid and prints the square’s side length and area in the format shown in the examples. The upper left corner of the square is located at the coordinate <code class="q-code">(x, y)</code>. The sides of the square will be of length <code class="q-code">len</code>, or as large as will fit on the grid.</p>
+                <p>Write the method <code class="q-code">drawSquare</code> below.</p>
+                <pre>
+                <code class="q-code">/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.</code>
+                <code class="q-code">* Draws a square on a 10-by-10 xy-coordinate grid</code>
+                <code class="q-code">* and prints the square’s side length and area.</code>
+                <code class="q-code">* The upper left corner of the square will be located</code>
+                <code class="q-code">* at the coordinate (x, y) and the side length of the</code>
+                <code class="q-code">* square will be len (or as large as will fit in the grid).</code>
+                <code class="q-code">*/</code>
+                <code class="q-code">public void drawSquare(int x, int y, int len)</code>
+                </pre>                
+                
+                <hr color="red">
+                <pre>
+                <code class="a-code">public void drawSquare(int x, int y, int len) {</code>
+                    <code class="a-code">drawLine(x, y, x - len, y);</code>
+                    <code class="a-code">drawLine(x, y - len, x - len, y - len);</code>
+                    <code class="a-code">drawLine(x - len, y - len, x, y - len);</code>
+                    <code class="a-code">drawLine(x, y - len, x, y);</code>
+<code class="a-code"></code>
+                    <code class="a-code">System.out.println("length: " + len);</code>
+                    <code class="a-code">System.out.println("area: " + (len * len));</code>
+                <code class="a-code">}</code>
+                </pre>
+                <hr color="red">
+            </div>
+
         </main>
     </div>
 </body>
