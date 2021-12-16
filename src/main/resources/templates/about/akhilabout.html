@@ -11,8 +11,12 @@
     <div layout:fragment="content" th:remove="tag">
         <div id="spring_intro" class="body-window articles" style="margin: 10px 0;">
             <div style="padding:30px;">
-                <h1><strong>About Akhil</strong></h1>
+                <h1><strong>Hi, I'm Akhil</strong></h1>
 				<p>I am a student in AP Computer Science A</p>
+				<div>
+					<img id="akhil" src="/images/akhilabout/mask.png" height=200px onclick=toggleImage() /><br><br>
+					<a href="https://padlet.com/aguntur12/e775ro6ol4hu5o7m">Personal PBL Journal</a>
+				</div>
             </div>
         </div>
 		<div class="body-window articles" style="margin:10px 0; padding:30px;">
@@ -45,16 +49,18 @@
 					<code style="margin-left: 40px;">	}</code><br>
 					<code style="margin-left: 00px;">}</code>
 				</div>
-				<form action="/about/akhilabout/Wk1Q1Pe" method="GET" id="Wk1Q1PeForm">
-					<div>
-						<label for="oldSeqField">Input the original sequence</label><br>
-						<input name="oldSeq" id="oldSeqField"><br>
-						<label for="segField">Input the segment to remove</label><br>
-						<input name="segment" id="segField"><br><br>
-						<button>Submit</button>
-						<p th:text="'New sequence: ' + ${newSeq}"></p>
-					</div>
-				</form>
+				<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
+					<form action="/about/akhilabout/Wk1Q1Pe" method="GET" id="Wk1Q1PeForm">
+						<div>
+							<label for="oldSeqField">Input the original sequence</label><br>
+							<input class="form-control" name="oldSeq" id="oldSeqField"><br>
+							<label for="segField">Input the segment to remove</label>
+							<input class="form-control" name="segment" id="segField"><br>
+							<button class="btn btn-light">Submit</button>
+							<p th:text="'New sequence: ' + ${newSeq}"></p>
+						</div>
+					</form>
+				</div>
 
 				<h5>1f. Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable a. The horizontal distance between the two lights is stored in the double variable b.
 
@@ -66,6 +72,31 @@
 				<code>System.out.println(Math.pow(Math.add(Math.pow(a, 2.0), Math.pow(b, 2.0)), 0.5))</code>
 			</details>
 		</div>
+		<div class="body-window articles" style="margin:10px 0; padding:30px;">
+			<h2>Comment Section</h2>
+			<div th:each="Comment: ${Comments}">
+				<div>
+					<h4 style="display:inline"><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
+				</div>
+				<p style="margin-left: 20px;" th:text="${Comment.value}"></p>
+			</div><br>
+			<form action="/about/akhilabout/comment" method="POST" id="commentSubmit">
+				<input class="form-control" name="name" id="Author" placeholder="Username (Optional)"><br>
+				<textarea class="form-control" name="content" id="commentForm" placeholder="Contents"></textarea>
+				<button class="btn btn-light">Submit</button>
+			</form>
+		</div>
+		<script>
+			function toggleImage() {
+				var image = document.getElementById("akhil");
+				if (image.src.includes("/images/akhilabout/mask.png")) {
+					image.src = "/images/akhilabout/nomask.png"
+				} 
+				else if (image.src.includes("/images/akhilabout/nomask.png")) {
+					image.src = "/images/akhilabout/mask.png"
+				} 
+			}
+		</script>
     </div>
 </body>
 

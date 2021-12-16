@@ -42,6 +42,6 @@ build/
 =======
 
 ### Application Properties ###
-src/resourses/application.properties
+src/main/resources/application.properties
 
 >>>>>>> main

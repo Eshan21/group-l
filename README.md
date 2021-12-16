@@ -1,5 +1,5 @@
 # group-l
-[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site](http://ricelab.tk:8080)
 
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
@@ -27,6 +27,18 @@
 [TKp-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson
 [TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
+<details><summary>PBL Team Week 3</summary>
+ 
+| Name | Contributions | Importance | Tangibles |
+| --- | --- | --- | --- |
+| Akhil | --- | --- | --- |
+| Ishan | --- | --- | --- |
+| Jonathan | --- | --- | --- |
+| Mingzy/Michael | --- | --- | --- |
+| Brayden | --- | --- | --- |
+
+</details>
+
 # Purpose
 RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
 
@@ -39,14 +51,14 @@ To install a pre-built release:
 
 [release]: https://github.com/iskapoor/group-l/releases
 
-# Build or Run from source
+# Build or Run From Source
 
-## Install dependencies
+## Install Dependencies
 - [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
 - [Maven 3.8.3](https://maven.apache.org/download.cgi)
 - [MySQL 8.0.27](https://dev.mysql.com/doc/mysql-getting-started/en/)
 
-Download the source code as a [zip][source] or via git:
+Download the source code as a [zip][source] or with git:
 
 [source]: https://github.com/iskapoor/group-l/archive/refs/heads/main.zip
 
@@ -54,41 +66,72 @@ Download the source code as a [zip][source] or via git:
 git clone https://github.com/iskapoor/group-l.git
 ```
 
-## Setup MySQL database
+## Setup MySQL Database
+MySQL Server is needed to store user information and blogs, however you can run without it.
+To run without mysql, add to `application.properties`:
 
-A MySQL server is needed to store user information and blogs.
+```
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,\
+    org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,\
+    org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration,\
+    org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration
 
-To setup MySQL server:
+disablemysql=true
+```
+
+Or use the run command:
+
+```
+./run -nsql
+```
+
+### Install and Connect to MySQL Server
+---
+
+Linux 
 - Run secure installation
 ```
 mysql_secure_installation
 ```
-- Connect to mysql
 
+- Run MySQL Server
+    - Open a new terminal/console window and run:
 ```
-sudo mysql
+mysqld
 ```
 
+- Connect to MySQL
+```
+mysql -u root -p
+```
+
+---
+
+Windows
+- Install from (Windows Installer)[https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html]
+- Open MySQL x.y Command Line Client
+
+---
+
+### Setup Database
 - Setup database and permissions
-
 ```
 mysql> create database springdb; -- Creates the new database
 mysql> create user 'springuser'@'%' identified by 'changethispassword'; -- Creates the user
-mysql> grant select, insert, delete, update on springdb to 'springuser'@'%'; -- Gives specific privileges to the user on the database
+mysql> grant select, insert, delete, update on springdb.* to 'springuser'@'%'; -- Gives specific privileges to the user on the database
+mysql> flush privileges; -- Apply privileges
 ```
 
 - Add to `src/main/resources/application.properties`
-
 ```
 spring.jpa.hibernate.ddl-auto=none
-spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/DATABASE_NAME
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/springdb
 spring.datasource.username=springuser
 spring.datasource.password=changethispassword
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
 ## Build/Run
-
 Then build the JAR file with the build scripts:
 - Run `./build` or `./build.cmd`
 
