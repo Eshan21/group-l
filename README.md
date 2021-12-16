@@ -108,7 +108,7 @@ mysql -u root -p
 ---
 
 Windows
-- Install from (Windows Installer)[https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html]
+- Install from [Windows Installer](https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html)
 - Run MySQL shell
 ```
 mysqlsh
