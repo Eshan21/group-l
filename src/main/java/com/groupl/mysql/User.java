@@ -4,31 +4,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+public class User extends SqlObj {
 
-    private String name;
+    private String fname;
 
+    private String lname;
+
+    @NotEmpty
     private String email;
 
-    public Integer getId() {
-        return id;
+    public String getFname() {
+        return fname;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
-    public String getName() {
-        return name;
+    public String getLname() {
+        return lname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     public String getEmail() {

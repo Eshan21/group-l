@@ -240,13 +240,102 @@
                 /* margin: 5px 5px 0px 5px; */
             }
 
+            .toc-full {
+                transition: 0.2s;
+            }
+
             .toc {
-                border-radius: 5px;
-                background-color: var(--bright-black);
+                border-radius: 10px;
+                background-color: var(--white);
+                color: var(--black);
                 width: 25%;
                 float: right;
-                padding: 10px 0 0 0;
             }
+
+            .toc-dropdown {
+                width: 50px;
+                height: 50px;
+                position: fixed;
+                text-align: center;
+                box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+                transition: 0.2s;
+            }
+
+            .toc-dropdown-rotate {
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                box-shadow: 10px -10px 10px rgba(0,0,0,0.5);
+            }
+
+            .toc-list {
+                margin-left: 60px;
+                width: 20vw;
+                padding: 0px 0px 10px 20px;
+                box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+                padding: 10px 0px 0px 25px;
+            }
+
+            .sub-window {
+                border-radius: 10px;
+                background-color: var(--white);
+                color: var(--black);
+                padding: 10px;
+                transition: 0.2s;
+            }
+
+            .sub-window-dark {
+                background-color: var(--bright-black) !important;
+                color: var(--white) !important;
+            }
+            .sub-window-light {
+                background-color: var(--white) !important;
+                color: var(--black) !important;
+            }
+
+            .toc-show {
+                left: 76% !important;
+            }
+
+            ul.dashed {
+                list-style-type: none;
+            }
+            ul.dashed > li {
+                text-indent: -5px;
+            }
+            ul.dashed > li:before {
+                content: "- ";
+                text-indent: -5px;
+            }
+
+            .vote-btn {
+                height: 30px;
+                width: 30px;
+                text-align: center;
+                border-radius: 15px;
+                border: none;
+                margin: 2px 0px 2px 0px;
+                padding: 0 0 3px 0;
+                background-color: var(--bright-black);
+                color: var(--foreground);
+                transition: 0.2s;
+            }
+
+            .upvote:hover {
+                background-color: var(--yellow) !important;
+            }
+            .dnvote:hover {
+                background-color: var(--blue) !important;
+            }
+            .orange-btn {
+                background-color: var(--yellow) !important;
+            }
+            .blue-btn {
+                background-color: var(--blue) !important;
+            }
+
         </style>
         <!-- End head fragments -->
     </th:block>

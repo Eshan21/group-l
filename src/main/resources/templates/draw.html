@@ -40,30 +40,43 @@
         let inputyV = 0;
         let inputsizeV = 4;
 
+        clearScreen();
+
         inputsize.onchange = function() {
 
             inputsizeV = parseInt(inputsize.value);
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 5;
             update();
         };
 
         inputx.onchange = function() {
 
             inputxV = parseInt(inputx.value);
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 5;
             update();
-
-
         };
 
         inputy.onchange = function() {
 
             inputyV = parseInt(inputy.value);
-
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 5;
             update();
 
         };
 
         function update() {
+            // checking box out of bounds
+            if ((inputxV + inputsizeV) > 16 || (inputxV + inputsizeV) < -16 || (inputyV + inputsizeV) > 12 || (inputyV + inputsizeV) < -13) {
+                console.log(inputxV + ", " + inputyV + " " + inputsizeV);
+                inputxV = 0;
+                inputyV = 0;
+                inputsizeV = 4;
+            }
             clearScreen();
+            ctx.strokeStyle = 'black'
             square();
             grid();
             axis();
@@ -72,13 +85,15 @@
 
         function clearScreen() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
 
 
         // grid based off of width, height
         function grid() {
             // color and pen width
-            ctx.strokeStyle = 'green';
+            ctx.strokeStyle = 'black';
             ctx.lineWidth = 1;
             // make graph paper look
             for (let col = 0; col < width; col += unit) {
@@ -111,7 +126,7 @@
 
         // square using lines
         function square() {
-            ctx.strokeStyle = 'black';
+            ctx.strokeStyle = 'red';
             ctx.lineWidth = 5;
 
             // starting coordinates
@@ -119,7 +134,7 @@
             var offsetY = height * 0.5;
 
             // length of sides is 4 units
-            const l = unit * inputsizeV;
+            const l = Math.abs(unit * inputsizeV);
 
             const x = unit + offsetX + inputxV * unit - unit;
             const y = -unit + offsetY - l - inputyV * unit + unit;
@@ -136,9 +151,7 @@
         // three actions
         grid();
         axis();
-        // hack 1: make square according to grid positioning
         square();
-        // hack 2: plot line or square on grid from user input according
     </script>
 </body>
 

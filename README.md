@@ -1,5 +1,5 @@
 # group-l
-[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site](http://ricelab.tk:8080)
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to the website](http://ricelab.tk:8080)
 
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
@@ -29,20 +29,14 @@
 
 <details><summary>PBL Team Week 3</summary>
  
-| Name | Contributions | Importance | Tangibles |
-| --- | --- | --- | --- |
-| Akhil | --- | --- | --- |
-| Ishan | --- | --- | --- |
-| Jonathan | --- | --- | --- |
-| Mingzy/Michael | --- | --- | --- |
-| Brayden | --- | --- | --- |
+[ISSUE HERE](https://github.com/iskapoor/group-l/issues/46)
 
 </details>
 
 # Purpose
-RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
+RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from. We welcome experts and beginners alike to join our coummunity and learn for one another's next rice!
 
-# Install
+# Requirements
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
@@ -100,7 +94,7 @@ mysql_secure_installation
 mysqld
 ```
 
-- Connect to MySQL
+- Connect to MySQL Server
 ```
 mysql -u root -p
 ```
@@ -108,8 +102,21 @@ mysql -u root -p
 ---
 
 Windows
-- Install from (Windows Installer)[https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html]
-- Open MySQL x.y Command Line Client
+- Install from [Windows Installer](https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html)
+- Run MySQL shell
+```
+mysqlsh
+```
+
+- Switch to SQL mode
+```
+\sql
+```
+
+- Connect to MySQL Server
+```
+\connect root@localhost:3306;
+```
 
 ---
 
@@ -124,7 +131,7 @@ mysql> flush privileges; -- Apply privileges
 
 - Add to `src/main/resources/application.properties`
 ```
-spring.jpa.hibernate.ddl-auto=none
+spring.jpa.hibernate.ddl-auto=update # Change to 'none' when deployed
 spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/springdb
 spring.datasource.username=springuser
 spring.datasource.password=changethispassword
@@ -142,4 +149,4 @@ Or run in place:
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
-Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `doc/` directory.
+Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `target/site/apidocs/` directory.
