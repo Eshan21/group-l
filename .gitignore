@@ -38,7 +38,10 @@ build/
 
 ### VIM ###
 *.swp
+<<<<<<< HEAD
+=======
 
 ### Application Properties ###
 src/main/resources/application.properties
 
+>>>>>>> main

@@ -1,0 +1,17 @@
+[Unit]
+Description=Ricelab Maven Spring Boot Launcher
+; Documentation=
+After=network.target
+
+[Service]
+ExecStart=/group-l/run
+WorkingDirectory=/group-l
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n
+
+[Install]
+WantedBy=multi-user.target
+Alias=ricelab_launcher.serivce

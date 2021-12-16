@@ -1,4 +1,4 @@
-package com.groupl.controllers.ahkilabout;
+package com.groupl.controllers.akhilabout;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
