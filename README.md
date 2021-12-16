@@ -137,7 +137,7 @@ mysql> flush privileges; -- Apply privileges
 
 - Add to `src/main/resources/application.properties`
 ```
-spring.jpa.hibernate.ddl-auto=none
+spring.jpa.hibernate.ddl-auto=update # Change to 'none' when deployed
 spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/springdb
 spring.datasource.username=springuser
 spring.datasource.password=changethispassword
@@ -155,4 +155,4 @@ Or run in place:
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
-Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `doc/` directory.
+Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `target/site/apidocs/` directory.
