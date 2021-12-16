@@ -29,13 +29,7 @@
 
 <details><summary>PBL Team Week 3</summary>
  
-| Name | Contributions | Importance | Tangibles |
-| --- | --- | --- | --- |
-| Akhil | --- | --- | --- |
-| Ishan | --- | --- | --- |
-| Jonathan | --- | --- | --- |
-| Mingzy/Michael | --- | --- | --- |
-| Brayden | --- | --- | --- |
+(ISSUE HERE)[https://github.com/iskapoor/group-l/issues/46]
 
 </details>
 
@@ -50,6 +44,106 @@ To install a pre-built release:
 - Run server with `java -jar Ricelab-x.y.z*.jar`
 
 [release]: https://github.com/iskapoor/group-l/releases
+
+# Build or Run From Source
+
+## Install Dependencies
+- [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
+- [Maven 3.8.3](https://maven.apache.org/download.cgi)
+- [MySQL 8.0.27](https://dev.mysql.com/doc/mysql-getting-started/en/)
+
+Download the source code as a [zip][source] or with git:
+
+[source]: https://github.com/iskapoor/group-l/archive/refs/heads/main.zip
+
+```
+git clone https://github.com/iskapoor/group-l.git
+```
+
+## Setup MySQL Database
+MySQL Server is needed to store user information and blogs, however you can run without it.
+To run without mysql, add to `application.properties`:
+
+```
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,\
+    org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,\
+    org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration,\
+    org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration
+
+disablemysql=true
+```
+
+Or use the run command:
+
+```
+./run -nsql
+```
+
+### Install and Connect to MySQL Server
+---
+
+Linux 
+- Run secure installation
+```
+mysql_secure_installation
+```
+
+- Run MySQL Server
+    - Open a new terminal/console window and run:
+```
+mysqld
+```
+
+- Connect to MySQL Server
+```
+mysql -u root -p
+```
+
+---
+
+Windows
+- Install from [Windows Installer](https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html)
+- Run MySQL shell
+```
+mysqlsh
+```
+
+- Switch to SQL mode
+```
+\sql
+```
+
+- Connect to MySQL Server
+```
+\connect root@localhost:3306;
+```
+
+---
+
+### Setup Database
+- Setup database and permissions
+```
+mysql> create database springdb; -- Creates the new database
+mysql> create user 'springuser'@'%' identified by 'changethispassword'; -- Creates the user
+mysql> grant select, insert, delete, update on springdb.* to 'springuser'@'%'; -- Gives specific privileges to the user on the database
+mysql> flush privileges; -- Apply privileges
+```
+
+- Add to `src/main/resources/application.properties`
+```
+spring.jpa.hibernate.ddl-auto=update # Change to 'none' when deployed
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/springdb
+spring.datasource.username=springuser
+spring.datasource.password=changethispassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
+
+## Build/Run
+Then build the JAR file with the build scripts:
+- Run `./build` or `./build.cmd`
+
+Or run in place:
+- Run `./run` or `./run.cmd`
 
 # How to Contribute / Policies
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
