@@ -239,6 +239,16 @@
                 position: fixed;
                 text-align: center;
                 box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+                transition: 0.2s;
+            }
+
+            .toc-dropdown-rotate {
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                box-shadow: 10px -10px 10px rgba(0,0,0,0.5);
             }
 
             .toc-list {
@@ -246,6 +256,7 @@
                 width: 20vw;
                 padding: 0px 0px 10px 20px;
                 box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+                padding: 10px 0px 0px 25px;
             }
 
             .sub-window {
@@ -262,6 +273,17 @@
 
             .toc-show {
                 left: 76% !important;
+            }
+
+            ul.dashed {
+                list-style-type: none;
+            }
+            ul.dashed > li {
+                text-indent: -5px;
+            }
+            ul.dashed > li:before {
+                content: "- ";
+                text-indent: -5px;
             }
 
         </style>
