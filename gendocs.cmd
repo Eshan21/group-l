@@ -1,2 +1,1 @@
-javadoc -d doc -sourcepath src -subpackage com.groupl
-
+mvn.cmd javadoc:javadoc
