@@ -100,7 +100,7 @@ mysql_secure_installation
 mysqld
 ```
 
-- Connect to MySQL
+- Connect to MySQL Server
 ```
 mysql -u root -p
 ```
@@ -109,7 +109,20 @@ mysql -u root -p
 
 Windows
 - Install from (Windows Installer)[https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html]
-- Open MySQL x.y Command Line Client
+- Run MySQL shell
+```
+mysqlsh
+```
+
+- Switch to SQL mode
+```
+\sql
+```
+
+- Connect to MySQL Server
+```
+\connect root@localhost:3306;
+```
 
 ---
 
