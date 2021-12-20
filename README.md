@@ -36,7 +36,7 @@
 # Purpose
 RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from. We welcome experts and beginners alike to join our coummunity and learn for one another's next rice!
 
-# Requirements
+# Installation
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
