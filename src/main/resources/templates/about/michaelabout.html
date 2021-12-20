@@ -16,13 +16,15 @@
     <div layout:fragment="content" th:remove="tag">
         <div id="spring_intro" class="body-window articles" style="margin: 10px 0">
             <div style="padding:30px;">
-                <h1 id="question-1">Question 1</h1>
-                <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
-                <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their preconditions
-                    are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call to one of these
-                    methods will not receive full credit.</p>
-                <p>Consider the following class.</p>
-                <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> LightSequence
+                <details>
+                    <summary>FRQ #2</summary>
+                    <h1>Question 1</h1>
+                    <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>Consider the following class.</p>
+                    <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> LightSequence
 
 	{
 
@@ -75,33 +77,33 @@
 
 }
 	</code></pre>
-                <h4 id="-a-write-a-statement-to-create-a-lightsequence-object-gradshow-that-has-the-initial-light-sequence-0101-0101-0101-">(a) Write a statement to create a LightSequence object gradShow that has the initial light sequence &quot;0101 0101 0101&quot;.</h4>
-                <p>Write the statement below.</p>
-                <pre><code class="lang-java"><span class="hljs-attribute">LightSequence gradShow</span> = new LightSequence(<span class="hljs-string">"0101 0101 0101"</span>);
+                    <h4 id="-a-write-a-statement-to-create-a-lightsequence-object-gradshow-that-has-the-initial-light-sequence-0101-0101-0101-">(a) Write a statement to create a LightSequence object gradShow that has the initial light sequence &quot;0101 0101 0101&quot;.</h4>
+                    <p>Write the statement below.</p>
+                    <pre><code class="lang-java"><span class="hljs-attribute">LightSequence gradShow</span> = new LightSequence(<span class="hljs-string">"0101 0101 0101"</span>);
 	</code></pre>
-                <h4 id="-b-write-a-statement-that-will-call-the-display-method-to-display-the-light-sequence-for-the-gradshow-object-">(b) Write a statement that will call the display method to display the light sequence for the gradShow object.</h4>
-                <p>Write the statement below.</p>
-                <pre><code class="lang-java">gradShow.display()<span class="hljs-comment">;</span>
+                    <h4 id="-b-write-a-statement-that-will-call-the-display-method-to-display-the-light-sequence-for-the-gradshow-object-">(b) Write a statement that will call the display method to display the light sequence for the gradShow object.</h4>
+                    <p>Write the statement below.</p>
+                    <pre><code class="lang-java">gradShow.display()<span class="hljs-comment">;</span>
 	</code></pre>
-                <h4 id="-c-write-a-statement-that-will-be-used-to-update-the-gradshow-light-sequence-to-0011-0011-0011-">(c) Write a statement that will be used to update the gradShow light sequence to &quot;0011 0011 0011&quot;.</h4>
-                <p>Write the statement below.</p>
-                <pre><code class="lang-java">gradShow.changeSequence(<span class="hljs-string">"0011 0011 0011"</span>)<span class="hljs-comment">;</span>
+                    <h4 id="-c-write-a-statement-that-will-be-used-to-update-the-gradshow-light-sequence-to-0011-0011-0011-">(c) Write a statement that will be used to update the gradShow light sequence to &quot;0011 0011 0011&quot;.</h4>
+                    <p>Write the statement below.</p>
+                    <pre><code class="lang-java">gradShow.changeSequence(<span class="hljs-string">"0011 0011 0011"</span>)<span class="hljs-comment">;</span>
 	</code></pre>
-                <h4 id="-d-write-a-code-segment-that-will-call-the-insertsegment-method-to-insert-the-segment-1111-1111-in-the-current-sequence-for-gradshow-at-index-4-the-resulting-sequence-will-be-stored-in-the-string-resultseq-">(d) Write a code segment that will call the insertSegment method to insert the segment &quot;1111 1111&quot; in the current sequence for gradShow at index 4. The resulting sequence will be stored in the string resultSeq.</h4>
-                <p>Write the code segment below.</p>
-                <pre><code class="lang-java"><span class="hljs-attribute">String resultSeq</span> = gradShow.insertSegment(<span class="hljs-string">"1111 1111"</span>, 4);
+                    <h4 id="-d-write-a-code-segment-that-will-call-the-insertsegment-method-to-insert-the-segment-1111-1111-in-the-current-sequence-for-gradshow-at-index-4-the-resulting-sequence-will-be-stored-in-the-string-resultseq-">(d) Write a code segment that will call the insertSegment method to insert the segment &quot;1111 1111&quot; in the current sequence for gradShow at index 4. The resulting sequence will be stored in the string resultSeq.</h4>
+                    <p>Write the code segment below.</p>
+                    <pre><code class="lang-java"><span class="hljs-attribute">String resultSeq</span> = gradShow.insertSegment(<span class="hljs-string">"1111 1111"</span>, 4);
 	</code></pre>
-                <h4 id="-e-assume-that-the-string-oldseq-has-been-properly-declared-and-initialized-and-contains-the-string-segment-write-a-code-segment-that-will-remove-the-first-occurrence-of-segment-from-oldseq-and-store-it-in-the-string-newseq-consider-the-following-examples-">(e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider
-                    the following examples.
-                </h4>
-                <p>If oldSeq is &quot;1100000111&quot; and segment is &quot;11&quot;, then &quot;00000111&quot; should be stored in newSeq. If oldSeq is &quot;0000011&quot; and segment is &quot;11&quot;, then &quot;00000&quot; should be stored in newSeq.
-                    If oldSeq is &quot;1100000111&quot; and segment is &quot;00&quot;, then &quot;11000111&quot; should be stored in newSeq. Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
-                <pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {    <span class="hljs-keyword">String</span> oldSeq = <span class="hljs-string">"......"</span>;    <span class="hljs-keyword">String</span> toBeRemoved = <span class="hljs-string">"...."</span>;    <span class="hljs-keyword">String</span> newSeq = <span class="hljs-built_in">remove</span>(toBeRemoved);}<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">String</span> <span class="hljs-built_in">remove</span>(<span class="hljs-keyword">String</span> oldSeq, <span class="hljs-keyword">String</span> toRemove) {  <span class="hljs-built_in">return</span> oldSeq.replaceFirst(toRemove, <span class="hljs-string">""</span>);;}
+                    <h4 id="-e-assume-that-the-string-oldseq-has-been-properly-declared-and-initialized-and-contains-the-string-segment-write-a-code-segment-that-will-remove-the-first-occurrence-of-segment-from-oldseq-and-store-it-in-the-string-newseq-consider-the-following-examples-">(e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider
+                        the following examples.
+                    </h4>
+                    <p>If oldSeq is &quot;1100000111&quot; and segment is &quot;11&quot;, then &quot;00000111&quot; should be stored in newSeq. If oldSeq is &quot;0000011&quot; and segment is &quot;11&quot;, then &quot;00000&quot; should be stored in newSeq.
+                        If oldSeq is &quot;1100000111&quot; and segment is &quot;00&quot;, then &quot;11000111&quot; should be stored in newSeq. Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
+                    <pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {    <span class="hljs-keyword">String</span> oldSeq = <span class="hljs-string">"......"</span>;    <span class="hljs-keyword">String</span> toBeRemoved = <span class="hljs-string">"...."</span>;    <span class="hljs-keyword">String</span> newSeq = <span class="hljs-built_in">remove</span>(toBeRemoved);}<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">String</span> <span class="hljs-built_in">remove</span>(<span class="hljs-keyword">String</span> oldSeq, <span class="hljs-keyword">String</span> toRemove) {  <span class="hljs-built_in">return</span> oldSeq.replaceFirst(toRemove, <span class="hljs-string">""</span>);;}
 	</code></pre>
-                <h4 id="-f-two-lights-will-be-arranged-on-a-two-dimensional-plane-the-vertical-distance-between-the-two-lights-is-stored-in-the-double-variable-a-the-horizontal-distance-between-the-two-lights-is-stored-in-the-double-variable-b-">(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable a. The horizontal distance between the two lights is stored in the double variable b.</h4>
-                <p>The straight-line distance between the two lights is given by the formula square root of the quantity a squared plus b squared.</p>
-                <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
-                <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {
+                    <h4 id="-f-two-lights-will-be-arranged-on-a-two-dimensional-plane-the-vertical-distance-between-the-two-lights-is-stored-in-the-double-variable-a-the-horizontal-distance-between-the-two-lights-is-stored-in-the-double-variable-b-">(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable a. The horizontal distance between the two lights is stored in the double variable b.</h4>
+                    <p>The straight-line distance between the two lights is given by the formula square root of the quantity a squared plus b squared.</p>
+                    <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
+                    <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {
 	    <span class="hljs-keyword">double</span> a = <span class="hljs-number">111</span>;
 	    <span class="hljs-keyword">double</span> b = <span class="hljs-number">111</span>;
 	    System.out.<span class="hljs-built_in">println</span>( <span class="hljs-built_in">sqrt</span>(a * a + b * b) );
@@ -123,22 +125,46 @@
 														
 }
 	</code></pre>
+                </details>
 
-                <h1 id="question-1">Question 1</h1>
-                <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
-                <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their preconditions
-                    are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call to one of these
-                    methods will not receive full credit.</p>
-                <p>Assume that the following variables have been properly declared and initialized.</p>
-                <p>a boolean variable named rsvp an int variable named selection, where 1 represents &quot;beef&quot;, 2 represents &quot;chicken&quot;, 3 represents &quot;pasta&quot;, and all other values represent &quot;fish&quot; a String variable named
-                    option1 a String variable named option2 (a) Write a code segment that prints &quot;attending&quot; if rsvp is true and prints &quot;not attending&quot; otherwise.</p>
-                <p>Write the code segment below.</p>
-                <pre><code><span class="hljs-keyword">if</span> (rsvp) System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"attending"</span>);
+                <details>
+                    <summary>Image mask switch</summary>
+
+                    <img id="mask-image" src="/images/lmaoyoudoxxedme.jpg" alt="loading..." />
+
+                    <script>
+                        let image = document.getElementById("mask-image");
+                        let unmasked = false;
+                        image.onclick = function() {
+                            if (unmasked) {
+                                image.src = "/images/lmaoyoudoxxedmeharder.jpg";
+                            } else {
+                                image.src = "/images/lmaoyoudoxxedme.jpg";
+                            }
+                            unmasked = !unmasked;
+                        }
+                    </script>
+                </details>
+
+
+                <details>
+
+                    <summary>FRQ #3</summary>
+                    <h1>Question 1</h1>
+                    <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>Assume that the following variables have been properly declared and initialized.</p>
+                    <p>a boolean variable named rsvp an int variable named selection, where 1 represents &quot;beef&quot;, 2 represents &quot;chicken&quot;, 3 represents &quot;pasta&quot;, and all other values represent &quot;fish&quot; a String variable
+                        named option1 a String variable named option2 (a) Write a code segment that prints &quot;attending&quot; if rsvp is true and prints &quot;not attending&quot; otherwise.</p>
+                    <p>Write the code segment below.</p>
+                    <pre><code><span class="hljs-keyword">if</span> (rsvp) System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"attending"</span>);
 <span class="hljs-keyword">else</span> System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"not attending"</span>);
 </code></pre>
-                <p>(b) Write a code segment that prints the food item associated with selection. For example, if selection is 3, the code segment should print &quot;pasta&quot;.</p>
-                <p>Write the code segment below. Your code segment should meet all specifications and conform to the example.</p>
-                <pre><code class="lang-java"><span class="hljs-built_in">switch</span> (selection) {
+                    <p>(b) Write a code segment that prints the food item associated with selection. For example, if selection is 3, the code segment should print &quot;pasta&quot;.</p>
+                    <p>Write the code segment below. Your code segment should meet all specifications and conform to the example.</p>
+                    <pre><code class="lang-java"><span class="hljs-built_in">switch</span> (selection) {
     <span class="hljs-built_in">case</span> <span class="hljs-number">1</span>:
         System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"beef"</span>);
         <span class="hljs-built_in">break</span>;
@@ -152,13 +178,13 @@
         System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"fish"</span>);
 }
 </code></pre>
-                <p>(c) Write a code segment that will store a dinner selection in option1 based on the values of rsvp and selection. The intended behavior of the code segment is described below.</p>
-                <p>If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance and food choice. For example, if rsvp is true and selection is 1, the following string should be stored in option1.</p>
-                <p>&quot;Thanks for attending. You will be served beef.&quot;</p>
-                <p>If rsvp is false, the following string should be stored in option1, regardless of the value of selection.</p>
-                <p>&quot;Sorry you can&#39;t make it.&quot;</p>
-                <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
-                <pre><code class="lang-java">Stirng option1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">String</span>();
+                    <p>(c) Write a code segment that will store a dinner selection in option1 based on the values of rsvp and selection. The intended behavior of the code segment is described below.</p>
+                    <p>If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance and food choice. For example, if rsvp is true and selection is 1, the following string should be stored in option1.</p>
+                    <p>&quot;Thanks for attending. You will be served beef.&quot;</p>
+                    <p>If rsvp is false, the following string should be stored in option1, regardless of the value of selection.</p>
+                    <p>&quot;Sorry you can&#39;t make it.&quot;</p>
+                    <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
+                    <pre><code class="lang-java">Stirng option1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">String</span>();
 
 <span class="hljs-built_in">if</span> (rsvp) {
     option1 = <span class="hljs-string">"Thanks for attending. You will be served "</span>;
@@ -179,16 +205,16 @@
     option1 = <span class="hljs-string">"Sorry you can't make it."</span>; 
 }
 </code></pre>
-                <p>(d) Write a code segment that will print true if the strings option1 and option2 contain the same values and will print false otherwise.</p>
-                <p>Write the code segment below.</p>
-                <pre><code class="lang-java">System.out.println(option1 == option2)<span class="hljs-comment">;</span>
+                    <p>(d) Write a code segment that will print true if the strings option1 and option2 contain the same values and will print false otherwise.</p>
+                    <p>Write the code segment below.</p>
+                    <pre><code class="lang-java">System.out.println(option1 == option2)<span class="hljs-comment">;</span>
 </code></pre>
-                <h1 id="question-2">Question 2</h1>
-                <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
-                <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their preconditions
-                    are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call to one of these
-                    methods will not receive full credit.</p>
-                <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Draw</span>
+                    <h1 id="question-2">Question 2</h1>
+                    <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Draw</span>
 
 {
 
@@ -226,24 +252,24 @@
 
 }
 </code></pre>
-                <p>The drawLine method, whose implementation is not shown, is used to draw a line segment from the coordinate (x1, y1) to the coordinate (x2, y2). For example, the call drawLine(2, 5, 6, 4) will produce the figure below.</p>
-                <p><img src="https://assets.learnosity.com/organisations/537/VH903006.g09.png" alt="Image"></p>
-                <p>You will write method drawSquare, which draws a square on a 10-by-10 grid and prints the square’s side length and area in the format shown in the examples. The upper left corner of the square is located at the coordinate (x, y). The sides
-                    of the square will be of length len, or as large as will fit on the grid.</p>
-                <p>The following examples show the intended behavior of drawSquare.</p>
-                <p><u>Example 1</u> The call drawSquare(1, 4, 3) will produce the figure below. The upper left corner of the square is at the coordinate (1, 4) and the square has sides of length 3.</p>
-                <p>The call will print &quot;side length = 3, area = 9&quot;.</p>
-                <p><img src="https://assets.learnosity.com/organisations/537/VH903006.g10.png" alt="Image"></p>
-                <p><u>Example 2</u> The call drawSquare(6, 8, 5) will produce the figure below. A square whose upper left corner is at the coordinate (6, 8) cannot have sides of length 5 and still fit on the grid. The largest possible square (with sides
-                    of length 4) is drawn.</p>
-                <p>The call will print &quot;side length = 4, area = 16&quot;.
-                    <img src="https://assets.learnosity.com/organisations/537/VH903006.g11.png" alt="Image"></p>
-                <p><u>Example 3</u> The call drawSquare(7, 2, 4) will produce the figure below. A square whose upper left corner is at the coordinate (7, 2) cannot have sides of length 4 and still fit on the grid. The largest possible square (with sides
-                    of length 2) is drawn.</p>
-                <p>The call will print &quot;side length = 2, area = 4&quot;.</p>
-                <p><img src="https://assets.learnosity.com/organisations/537/VH903006.g12.png" alt="Image"></p>
-                <p>Write the method drawSquare below.</p>
-                <pre><code class="lang-java"><span class="hljs-comment"><span class="markdown">/** Precondition: 0 ≤ x <span class="xml"><span class="hljs-tag">&lt; <span class="hljs-attr">10</span>, <span class="hljs-attr">0</span> &lt; <span class="hljs-attr">y</span> ≤ <span class="hljs-attr">10</span>, <span class="hljs-attr">and</span> <span class="hljs-attr">len</span> &gt;</span></span> 0.
+                    <p>The drawLine method, whose implementation is not shown, is used to draw a line segment from the coordinate (x1, y1) to the coordinate (x2, y2). For example, the call drawLine(2, 5, 6, 4) will produce the figure below.</p>
+                    <p><img src="https://assets.learnosity.com/organisations/537/VH903006.g09.png" alt="Image"></p>
+                    <p>You will write method drawSquare, which draws a square on a 10-by-10 grid and prints the square’s side length and area in the format shown in the examples. The upper left corner of the square is located at the coordinate (x, y). The
+                        sides of the square will be of length len, or as large as will fit on the grid.</p>
+                    <p>The following examples show the intended behavior of drawSquare.</p>
+                    <p><u>Example 1</u> The call drawSquare(1, 4, 3) will produce the figure below. The upper left corner of the square is at the coordinate (1, 4) and the square has sides of length 3.</p>
+                    <p>The call will print &quot;side length = 3, area = 9&quot;.</p>
+                    <p><img src="https://assets.learnosity.com/organisations/537/VH903006.g10.png" alt="Image"></p>
+                    <p><u>Example 2</u> The call drawSquare(6, 8, 5) will produce the figure below. A square whose upper left corner is at the coordinate (6, 8) cannot have sides of length 5 and still fit on the grid. The largest possible square (with sides
+                        of length 4) is drawn.</p>
+                    <p>The call will print &quot;side length = 4, area = 16&quot;.
+                        <img src="https://assets.learnosity.com/organisations/537/VH903006.g11.png" alt="Image"></p>
+                    <p><u>Example 3</u> The call drawSquare(7, 2, 4) will produce the figure below. A square whose upper left corner is at the coordinate (7, 2) cannot have sides of length 4 and still fit on the grid. The largest possible square (with sides
+                        of length 2) is drawn.</p>
+                    <p>The call will print &quot;side length = 2, area = 4&quot;.</p>
+                    <p><img src="https://assets.learnosity.com/organisations/537/VH903006.g12.png" alt="Image"></p>
+                    <p>Write the method drawSquare below.</p>
+                    <pre><code class="lang-java"><span class="hljs-comment"><span class="markdown">/** Precondition: 0 ≤ x <span class="xml"><span class="hljs-tag">&lt; <span class="hljs-attr">10</span>, <span class="hljs-attr">0</span> &lt; <span class="hljs-attr">y</span> ≤ <span class="hljs-attr">10</span>, <span class="hljs-attr">and</span> <span class="hljs-attr">len</span> &gt;</span></span> 0.
 
 <span class="hljs-bullet">* </span>Draws </span>a<span class="markdown"> square on </span>a<span class="markdown"> 10-by-10 xy-coordinate grid
 
@@ -259,7 +285,7 @@
 
 public <span class="hljs-keyword">void</span> drawSquare(<span class="hljs-built_in">int</span> x, <span class="hljs-built_in">int</span> y, <span class="hljs-built_in">int</span> len)
 </code></pre>
-                <pre><code class="lang-java">
+                    <pre><code class="lang-java">
 public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> <span class="hljs-built_in">len</span>) {
 
     drawLine(x, y, x, y - <span class="hljs-built_in">len</span>);
@@ -273,6 +299,8 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
     System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"side length = "</span> + sideLength + <span class="hljs-string">", area = "</span> + area + <span class="hljs-string">"."</span>);
 }
 </code></pre>
+
+                </details>
 
 
             </div>
