@@ -1,196 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}" lang="en">
+
 <head>
-<title>Brayden About</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
-
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
-  padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
-}
-
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
+    <div layout:fragment="metadata" th:remove="tag">
+        <title>Brayden About</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            /* Style the header */
+            
+            .b-header {
+                background-color: #666;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+            /* Create two columns/boxes that floats next to each other */
+            
+            .b-nav {
+                float: left;
+                width: 30%;
+                height: 100%;
+                /* only for demonstration, should be removed */
+                background: #ccc;
+                padding: 20px;
+            }
+            /* Style the list inside the menu */
+            
+            .b-nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            
+            .b-article {
+                float: left;
+                padding: 20px;
+                width: 70%;
+                background-color: #f1f1f1;
+                /* only for demonstration, should be removed */
+            }
+            /* Clear floats after the columns */
+            
+            .b-section::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            /* Style the footer */
+            
+            .b-footer {
+                position: relative;
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+                clear: both;
+                bottom: 0;
+            }
+            /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+            
+            @media (max-width: 600px) {
+                .b-nav,
+                .b-article {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        </style>
+    </div>
 </head>
+
 <body>
+    <div layout:fragment="content" th:remove="tag">
 
-<h2>Brayden About & FRQ</h2>
-<p>Hello I am Brayden. I was booted from my old group and now I'm here.</p>
-<p>Here is my about me page, which will store my FRQ's as well</p>
+        <main class="container-fluid text-center py-5">
+            <div class="body-window p-5 mb-4">
+                <h2>Brayden About & FRQ</h2>
+                <p>Hello I am Brayden. I was booted from my old group and now I'm here.</p>
+                <p>Here is my about me page, which will store my FRQ's as well</p>
 
-<header>
-  <h2>YEEEEEE</h2>
-</header>
+                <header class="b-header">
+                    <h2>YEEEEEE</h2>
+                </header>
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="/about/braydenabout">About Me</a></li>
-      <li><a href="https://docs.google.com/document/d/1sf81Q3x90jjHP_pT11i_drOcTkCHpBJM080TSXrpiN0/edit">FRQ 2014 extra credit</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-    <h1>2014 extra credit FRQ answers</h1>
-    <p>
-        <ul>Question 1a:</ul> 
-        
-        private String recombine(String word1, String word2) {
-        private int getHalfIndex (String word) {
-        return word.length() / 2; 
-        }
-        int half1 = getHalfIndex(word1);
-         int half2 = getHalfIndex(word2);
-         return word1.substring(0, half1) + word2. substring(half2);
-        }
-        
-        <ul>Question 1b:</ul>
-        
-        private String[] mixedWords(String[] words) { 
-        for (int i = 0; i < words.length - 1; i += 2) { 
-        String word1 = words[i]; 
-        String word2 = words[i + 1]; 
-        words[i] = recombine(word1, word2);
-        words[i+1] = recombined(word 2, word 1);
-        }
-        return words;
-        }
-        
-        <ul>Question 2a:</ul>
-        
-        public static int getPeakIndex(int[] array) { 
-        for (int i = 1; i < array.length - 1; i++) { 
-        int before = array[i - 1]; 
-        int curr = array[i]; 
-        int after = array[i + 1]; 
-        return (before < curr) && (curr > after);
-        } 
-        return -1;
-        
-        <ul>Question 2b:</ul> 
-        
-        public static boolean isMountain(int[] array) { 
-        int peak = getPeakIndex(array); 
-        return (peak != -1) && isIncreasing(peak, array) && isDecreasing(peak, array); 
-        }
-        
-        <ul>Question 3a:</ul>
-        
-        private double computeTemp(int row, int col) { 
-        private boolean isBoundary() { 
-        return row == 0 || row == temps.length - 1 || col == 0 || col == temps[0].length - 1; 
-        } 
-        if (isBoundary()) {
-         return temp[row][col]; 
-        } else { 
-        return (temp[row - 1][col] + temp[row + 1][col] + temp[row][col - 1] + temp[row][col + 1]) / 4;
-         }
-         }
-        
-        <ul>Question 3b:</ul> 
-        
-        public boolean updateAllTemps(double tolerance) {
-         double[][] updated = new double[temps.length][temps[0].length]; 
-        boolean isAllWithinTolerance = True; 
-        private boolean isWithinTolerance(double temp, double newTemp) { 
-        return Math.abs(temp - newTemp) <= tolerance); 
-        } for (int i = 0; i < updated; i++) { 
-        for (int j = 0; j < updated[0].length; j++) { double newTemp = computeTemp(i, j); updated[i][j] = computeTemp(i, j); 
-        isAllWithinTolerance = isAllWithinTolerance && isWithinTolerance(newTemp, temp[i][j]; 
-        } 
-        } 
-        temps = updated; 
-        return isAllWithinTolerance;
-        }
-        
-        <ul>Question 4a:</ul> 
-        
-        public boolean record(int score) { 
-        int i = 0;
-         while (i < scoreList.size && scoreList.get(i).getScore() < score { i++; 
-        } 
-        boolean exists = i < scoreList.size() && scoreList.get(i).getScore() == score;
-         if (exists) { scoreList.get(i).increment(); 
-        } 
-        else { scoreList.add(i, new ScoreInfo(score)); 
-        } 
-        return !exists; 
-        }
-        
-        <ul>Question 4b:</ul> 
-        
-        public void recordScores(int[] stuScores) { 
-        for (int i = 0; i < stuScores.length; i++) { 
-        record(stuScore[i]);
-        } 
-        }
-        
-        
-        </p>
-  </article>
-</section>
+                <section class="b-section">
+                    <nav class="b-nav">
+                        <ul>
+                            <li><a href="/about/braydenabout">About Me</a></li>
+                            <li><a href="https://docs.google.com/document/d/1sf81Q3x90jjHP_pT11i_drOcTkCHpBJM080TSXrpiN0/edit">FRQ 2014 extra credit</a></li>
+                        </ul>
+                    </nav>
 
-<footer>
-  <p>Group-l</p>
-</footer>
+                    <article class="b-article">
+                        <h1>2014 extra credit FRQ answers</h1>
+                        <p>
+                            <ul>Question 1a:</ul>
 
+                            private String recombine(String word1, String word2) { private int getHalfIndex (String word) { return word.length() / 2; } int half1 = getHalfIndex(word1); int half2 = getHalfIndex(word2); return word1.substring(0, half1) + word2. substring(half2); }
+
+                            <ul>Question 1b:</ul>
+
+                            private String[] mixedWords(String[] words) { for (int i = 0; i &lt; words.length - 1; i += 2) { String word1 = words[i]; String word2 = words[i + 1]; words[i] = recombine(word1, word2); words[i+1] = recombined(word 2, word 1); } return words; }
+
+                            <ul>Question 2a:</ul>
+
+                            public static int getPeakIndex(int[] array) { for (int i = 1; i &lt; array.length - 1; i++) { int before = array[i - 1]; int curr = array[i]; int after = array[i + 1]; return (before &lt; curr) && (curr > after); } return -1;
+
+                            <ul>Question 2b:</ul>
+
+                            public static boolean isMountain(int[] array) { int peak = getPeakIndex(array); return (peak != -1) && isIncreasing(peak, array) && isDecreasing(peak, array); }
+
+                            <ul>Question 3a:</ul>
+
+                            private double computeTemp(int row, int col) { private boolean isBoundary() { return row == 0 || row == temps.length - 1 || col == 0 || col == temps[0].length - 1; } if (isBoundary()) { return temp[row][col]; } else { return (temp[row - 1][col] + temp[row
+                            + 1][col] + temp[row][col - 1] + temp[row][col + 1]) / 4; } }
+
+                            <ul>Question 3b:</ul>
+
+                            public boolean updateAllTemps(double tolerance) { double[][] updated = new double[temps.length][temps[0].length]; boolean isAllWithinTolerance = True; private boolean isWithinTolerance(double temp, double newTemp) { return Math.abs(temp - newTemp) &lt;=
+                            tolerance); } for (int i = 0; i &lt; updated; i++) { for (int j = 0; j &lt; updated[0].length; j++) { double newTemp = computeTemp(i, j); updated[i][j] = computeTemp(i, j); isAllWithinTolerance = isAllWithinTolerance && isWithinTolerance(newTemp,
+                            temp[i][j]; } } temps = updated; return isAllWithinTolerance; }
+
+                            <ul>Question 4a:</ul>
+
+                            public boolean record(int score) { int i = 0; while (i &lt; scoreList.size && scoreList.get(i).getScore() &lt; score { i++; } boolean exists = i &lt; scoreList.size() && scoreList.get(i).getScore() == score; if (exists) { scoreList.get(i).increment();
+                            } else { scoreList.add(i, new ScoreInfo(score)); } return !exists; }
+
+                            <ul>Question 4b:</ul>
+
+                            public void recordScores(int[] stuScores) { for (int i = 0; i &lt; stuScores.length; i++) { record(stuScore[i]); } }
+
+
+                        </p>
+                    </article>
+                </section>
+
+                <footer class="b-footer">
+                    <p>Group-l</p>
+                </footer>
+
+            </div>
+        </main>
+    </div>
 </body>
-</html>
 
+</html>
