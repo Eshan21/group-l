@@ -90,7 +90,7 @@ Doc comments have this format:
 - Block tags (e.g. `@param`, `return`, `throws`, `see`)
 - @param
 
-```c
+```java
 /--
  - Returns a number n squared.
  - <p>Does not check for wrapping.</p>
@@ -124,7 +124,7 @@ Run `./gendocs` or `./gendocs.cmd` to generate docs in the `doc/` directory.
 - CSS declarations in alphabetical order
 - Lists and tables have new line for each element:
 
-```c
+```html
 <ul>
     <li>Apple</li>
     <li>Orange</li>
@@ -132,7 +132,7 @@ Run `./gendocs` or `./gendocs.cmd` to generate docs in the `doc/` directory.
 </ul>
 ```
 
-```c
+```html
 <table>
     <thead>
         <tr>
