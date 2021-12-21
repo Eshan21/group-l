@@ -129,6 +129,21 @@
                 </details>
 
                 <details>
+                    <summary>FRQ #2 demo</summary>
+                    <form action="/about/michaelabout/frq2" method="GET" id="frq2form">
+                        <div>
+                            <!-- HTML tags copied over from issue bc I'm not planning to write a differernt one and this saves me time -->
+                            <label for="oldSeqField">Enter any string (Just don't make our server suffer)</label><br>
+                            <input class="form-control" name="userInput" id="oldSeqField"><br>
+                            <label for="segField">Enter character(s) that you want to remove from the string (separated by spaces for each group of characters).</label>
+                            <input class="form-control" name="wantsToRemove" id="segField"><br>
+                            <button class="btn btn-light">Submit</button>
+                            <p th:text="'New string: ' + ${newString}"></p>
+                        </div>
+                    </form>
+                </details>
+
+                <details>
                     <summary>Image mask switch</summary>
 
                     <img id="mask-image" src="/images/lmaoyoudoxxedme.jpg" alt="loading..." />
