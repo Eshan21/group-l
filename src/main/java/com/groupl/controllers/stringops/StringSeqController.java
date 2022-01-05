@@ -2,6 +2,8 @@ package com.groupl.controllers.stringops;
 
 import com.groupl.controllers.utility.FunMath;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
@@ -88,9 +90,10 @@ public class StringSeqController {
 
     // Starting a new sequence
     @RequestMapping(value = "/api/mvc/stringops/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> stringsNew(RequestEntity<Object> request) {
+    public ResponseEntity<Object> stringsNew(RequestEntity<Object> request) throws ParseException {
         // extract json from RequestEntity
-        JSONObject jo = new JSONObject((Map) Objects.requireNonNull(request.getBody()));
+        JSONParser parser = new JSONParser();
+        JSONObject jo = (JSONObject) parser.parse((String) request.getBody());
 
         // process string sequence action(s)
         stringEvent(jo);
