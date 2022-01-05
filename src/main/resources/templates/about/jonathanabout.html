@@ -83,7 +83,7 @@
                 <p>If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in <code class="text-success">newSeq</code>.</p>
                 <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
 
-                <code class="a-code">newSeq = oldSeq.replaceFirst(segment, "");</code>
+                <code class="a-code">newSeq = oldSeq.replace(segment, "");</code>
                 <hr color="red">
 
                 <p>(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable <code class="text-success">a</code>. The horizontal distance between the two lights is stored in the double variable <code class="text-success">b</code>.</p>
@@ -91,26 +91,6 @@
                 <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
 
                 <code class="text-primary fw-bold">System.out.println(sqrt(a * a + b * b));</code>
-
-                <h1>FRQ #2 Demo</h1>
-
-                <div class="bg-success p-5">
-                    <form action="@{/about/jonathanabout}" th:object="${project}" method="GET">`
-                        <label for="seq" class="form-label">Set Sequence</label>
-                        <input class="form-control" type="text" id="seq" th:field="*{seq}">
-                        <label for="insseq" class="form-label">Insert Sequence</label>
-                        <input class="form-control" type="text" id="insseq" th:field="*{insseq}">
-                        <label for="insidx" class="form-label">Insert Index</label>
-                        <input class="form-control" type="text" id="insidx" th:field="*{insidx}">
-                        <label for="rmfirst" class="form-label">Replace First</label>
-                        <input class="form-control" type="text" id="rmfirst" th:field="*{rmfirst}">
-                        <button class="btn btn-primary" type="Submit">Submit</button>
-                    </form>
-                </div>
-
-                <div class="bg-danger p-5">
-                    <div th:text="${project.seq}"></div>
-                </div>
 
             </div>
 
