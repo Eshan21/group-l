@@ -1,6 +1,6 @@
 package com.groupl.controllers.stringops;
 
-import com.nighthawk.csa.utility.FunMath;
+import com.groupl.controllers.utility.FunMath;
 import org.json.simple.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
