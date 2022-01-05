@@ -81,8 +81,31 @@
 
 				<h5>1b. Write a code segment that prints the food item associated with selection. For example, if selection is 3, the code segment should print "pasta". Write the code segment below. Your code segment should meet all specifications and conform to the example.</h5>
 				<code>String options[] = {"beef", "chicken", "pasta"};</code>
-				<code>if (selection < 4) {System.out.println(options[selection-1];}</code>
+				<code>if (selection < 4) {System.out.println(options[selection-1]);}</code>
 				<code>else {System.out.println("fish");}</code>
+
+				<h5>1c. Write a code segment that will store a dinner selection in option1 based on the values of rsvp and selection. The intended behavior of the code segment is described below.</h5>
+				<code style="margin-left:00px;">String option1;</code><br>
+				<code style="margin-left:00px;">if (rsvp) {</code><br>
+				<code style="margin-left:40px;">if (selection < 4) {options1 = "Thanks for attending. You will be served " + options[selection-1];} + "."</code><br>
+				<code style="margin-left:00px;">} else {options1 = "Sorry you can't make it."}</code>
+
+				<h5>1d. Write a code segment that will print true if the strings option1 and option2 contain the same values and will print false otherwise.</h5>
+				<code>if (option1.equals(option2)) {System.out.println("true")}</code>
+				<code>else {System.out.println("false")}</code>
+
+				<h5>2. draw a sqware hehe</h5>
+				<code style="margin-left:00px;">public void drawSquare(int x, int y, int len) {</code>
+				<code style="margin-left:40px;">private int newX = 0;</code>
+				<code style="margin-left:40px;">private int newY = 0;</code>
+				<code style="margin-left:40px;">if ((x+len)>10) {newX = 10-x;}</code>
+				<code style="margin-left:40px;">if ((y+len)>10) {newY = len-y;}</code>
+				<code style="margin-left:40px;">if (newX != 0 && newY = 0) {</code>
+				<code style="margin-left:80px;">if (newX&lt;len) {len=newX;}</code>
+				<code style="margin-left:40px;">} if (newX = 0 && newY != 0) {</code>
+				<code style="margin-left:80px;">if (newY&lt;len) {len=newY;}</code>
+				<code style="margin-left:40px;">} if (newX != 0 && newY != 0) {</code>
+				<code style="margin-left:80px;">if (newY&lt;newX) {</code>
 			</details>
 		</div>
 		<div class="body-window articles" style="margin:10px 0; padding:30px;">
