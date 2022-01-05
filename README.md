@@ -40,10 +40,8 @@ RiceLab is a project made for people that want to show or see other people's [ri
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-- Download and extract a RiceLab [release][] file
+- Download and extract a RiceLab [release](https://github.com/iskapoor/group-l/releases) file
 - Run server with `java -jar Ricelab-x.y.z*.jar`
-
-[release]: https://github.com/iskapoor/group-l/releases
 
 # How to Contribute / Policies
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.

@@ -83,7 +83,7 @@
                 <p>If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in <code class="text-success">newSeq</code>.</p>
                 <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
 
-                <code class="a-code">newSeq = oldSeq.replace(segment, "");</code>
+                <code class="a-code">newSeq = oldSeq.replaceFirst(segment, "");</code>
                 <hr color="red">
 
                 <p>(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable <code class="text-success">a</code>. The horizontal distance between the two lights is stored in the double variable <code class="text-success">b</code>.</p>
@@ -91,6 +91,26 @@
                 <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
 
                 <code class="text-primary fw-bold">System.out.println(sqrt(a * a + b * b));</code>
+
+                <h1>FRQ #2 Demo</h1>
+
+                <div class="bg-success p-5">
+                    <form action="@{/about/jonathanabout}" th:object="${project}" method="GET">`
+                        <label for="seq" class="form-label">Set Sequence</label>
+                        <input class="form-control" type="text" id="seq" th:field="*{seq}">
+                        <label for="insseq" class="form-label">Insert Sequence</label>
+                        <input class="form-control" type="text" id="insseq" th:field="*{insseq}">
+                        <label for="insidx" class="form-label">Insert Index</label>
+                        <input class="form-control" type="text" id="insidx" th:field="*{insidx}">
+                        <label for="rmfirst" class="form-label">Replace First</label>
+                        <input class="form-control" type="text" id="rmfirst" th:field="*{rmfirst}">
+                        <button class="btn btn-primary" type="Submit">Submit</button>
+                    </form>
+                </div>
+
+                <div class="bg-danger p-5">
+                    <div th:text="${project.seq}"></div>
+                </div>
 
             </div>
 
@@ -240,6 +260,159 @@
                 <code class="a-code">}</code>
                 </pre>
                 <hr color="red">
+
+               <details>
+                    <summary>FRQ #3 Question 2 Demo</summary>
+
+                    <h1 class="text-center">JavaScript - Draw on Canvas</h1>
+                    <div class="container py-4 bg-primary" style="text-align:center;">
+                        <canvas id="canvas" width="512" height="384"></canvas>
+                    </div>
+
+                    <h1>X</h1>
+                    <input value="0" id='X' type='number' />
+                    <h1>Y</h1>
+                    <input value="0" id="Y" type='number' />
+                    <h1>size</h1>
+                    <input value="4" id="size" type='number' />
+                    <script>
+                        // https://www.w3schools.com/graphics/canvas_intro.asp
+                        const canvas = document.getElementById('canvas');
+                        const ctx = canvas.getContext('2d');
+                        const width = canvas.width;
+                        const height = canvas.height;
+                        const unit = 16; // unit block size
+                        const inputx = document.getElementById("X");
+                        const inputy = document.getElementById("Y");
+                        const inputsize = document.getElementById("size");
+
+                        let inputxV = 0;
+                        let inputyV = 0;
+                        let inputsizeV = 4;
+
+                        clearScreen();
+
+                        inputsize.onchange = function() {
+
+                            inputsizeV = parseInt(inputsize.value);
+                            ctx.strokeStyle = 'black';
+                            ctx.lineWidth = 5;
+                            update();
+                        };
+
+                        inputx.onchange = function() {
+
+                            inputxV = parseInt(inputx.value);
+                            ctx.strokeStyle = 'black';
+                            ctx.lineWidth = 5;
+                            update();
+                        };
+
+                        inputy.onchange = function() {
+
+                            inputyV = parseInt(inputy.value);
+                            ctx.strokeStyle = 'black';
+                            ctx.lineWidth = 5;
+                            update();
+
+                        };
+
+                        function update() {
+                            // checking box out of bounds
+                            if ((inputxV + inputsizeV) > 16 || // Right
+                                (inputxV) < -16 || // left
+                                (inputyV + inputsizeV) > 12 || // Top
+                                (inputyV) < -12) { // Bottom
+                                alert("Nothing changed -> Box is can't fit inside of the grid system");
+                                return;
+                            }
+
+                            clearScreen();
+                            ctx.strokeStyle = 'black'
+                            square();
+                            grid();
+                            axis();
+                            logStats();
+                        }
+
+                        function logStats() {
+                            console.log(
+                                `Area of the square: ${inputsizeV * inputsizeV}, side length of the square: ${(inputsizeV + inputsizeV) << 1}`
+                            )
+                        }
+
+
+                        function clearScreen() {
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            ctx.fillStyle = 'white';
+                            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        }
+
+
+                        // grid based off of width, height
+                        function grid() {
+                            // color and pen width
+                            ctx.strokeStyle = 'black';
+                            ctx.lineWidth = 1;
+                            // make graph paper look
+                            for (let col = 0; col < width; col += unit) {
+                                for (let row = 0; row < height; row += unit) {
+                                    ctx.strokeRect(col, row, unit, unit);
+                                }
+                            }
+                        }
+
+                        // axis lines
+                        function axis() {
+                            // color and pen width
+                            ctx.strokeStyle = 'red';
+                            ctx.lineWidth = 3;
+
+                            // x & y zero midpoints of grid
+                            const x0 = width * .5;
+                            const y0 = height * .5;
+                            // x-axis
+                            ctx.moveTo(0, y0);
+                            ctx.lineTo(width, y0);
+                            ctx.stroke();
+                            // y-axis
+                            ctx.moveTo(x0, 0);
+                            ctx.lineTo(x0, height);
+                            ctx.stroke();
+                        }
+
+
+
+                        // square using lines
+                        function square() {
+                            ctx.strokeStyle = 'red';
+                            ctx.lineWidth = 5;
+
+                            // starting coordinates
+                            var offsetX = width * 0.5;
+                            var offsetY = height * 0.5;
+
+                            // length of sides is 4 units
+                            const l = Math.abs(unit * inputsizeV);
+
+                            const x = unit + offsetX + inputxV * unit - unit;
+                            const y = -unit + offsetY - l - inputyV * unit + unit;
+
+                            // draw a square
+                            ctx.beginPath();
+                            ctx.moveTo(x, y);
+                            ctx.lineTo(x, y + l);
+                            ctx.lineTo(x + l, y + l);
+                            ctx.lineTo(x + l, y);
+                            ctx.lineTo(x, y);
+                            ctx.stroke();
+                        }
+                        // three actions
+                        grid();
+                        axis();
+                        square();
+                    </script>
+                </details>
             </div>
 
         </main>
