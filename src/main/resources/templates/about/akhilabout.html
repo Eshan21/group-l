@@ -50,7 +50,7 @@
 					<code style="margin-left: 00px;">}</code>
 				</div>
 				<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
-					<form action="/about/akhilabout/Wk1Q1Pe" method="GET" id="Wk1Q1PeForm">
+					<form action="/about/akhilabout/Unit2FRQQuestion1PartE" method="GET" id="Unit2FRQQuestion1PartE">
 						<div>
 							<label for="oldSeqField">Input the original sequence</label><br>
 							<input class="form-control" name="oldSeq" id="oldSeqField"><br>
@@ -73,7 +73,7 @@
 			</details>
 		</div>
 		<div class="body-window articles" style="margin:10px 0; padding:30px;">
-			<details open>
+			<details>
 				<summary><strong>FRQ Unit 3</strong></summary>
 				<h5>1a. Write a code segment that prints "attending" if rsvp is true and prints "not attending" otherwise.</h5>
 				<code>if (rsvp) {System.out.print("attending");}</code>
@@ -94,18 +94,64 @@
 				<code>if (option1.equals(option2)) {System.out.println("true")}</code>
 				<code>else {System.out.println("false")}</code>
 
-				<h5>2. draw a sqware hehe</h5>
-				<code style="margin-left:00px;">public void drawSquare(int x, int y, int len) {</code>
-				<code style="margin-left:40px;">private int newX = 0;</code>
-				<code style="margin-left:40px;">private int newY = 0;</code>
-				<code style="margin-left:40px;">if ((x+len)>10) {newX = 10-x;}</code>
-				<code style="margin-left:40px;">if ((y+len)>10) {newY = len-y;}</code>
-				<code style="margin-left:40px;">if (newX != 0 && newY = 0) {</code>
-				<code style="margin-left:80px;">if (newX&lt;len) {len=newX;}</code>
-				<code style="margin-left:40px;">} if (newX = 0 && newY != 0) {</code>
-				<code style="margin-left:80px;">if (newY&lt;len) {len=newY;}</code>
-				<code style="margin-left:40px;">} if (newX != 0 && newY != 0) {</code>
-				<code style="margin-left:80px;">if (newY&lt;newX) {</code>
+				<h5>2. draw a square</h5>
+				<code style="margin-left:00px;">public void drawSquare(int x, int y, int len) {</code><br>
+				<code style="margin-left:40px;">private int newX = 0;</code><br>
+				<code style="margin-left:40px;">private int newY = 0;</code><br>
+				<code style="margin-left:40px;">if ((x+len)>10) {newX = 10-x;}</code><br>
+				<code style="margin-left:40px;">if ((y+len)>10) {newY = len-y;}</code><br>
+				<code style="margin-left:40px;">if (newX != 0 && newY = 0) {</code><br>
+				<code style="margin-left:80px;">if (newX&lt;len) {len=newX;}</code><br>
+				<code style="margin-left:40px;">} if (newX == 0 && newY != 0) {</code><br>
+				<code style="margin-left:80px;">if (newY&lt;len) {len=newY;}</code><br>
+				<code style="margin-left:40px;">} if (newX != 0 && newY != 0) {</code><br>
+				<code style="margin-left:80px;">if (newY&lt;newX) {</code><br>
+				<code style="margin-left:120px;">len = newY;</code><br>
+				<code style="margin-left:80px;">} else if (newX&lt;newY) {</code><br>
+				<code style="margin-left:120px;">len = newX;</code><br>
+				<code style="margin-left:80px;">} else if (newX == newY) {</code><br>
+				<code style="margin-left:120px;">len = newX;</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+			</details>
+		</div>
+		<div class="body-window articles" style="margin:10px 0; padding:30px;">
+			<details open>
+				<summary><strong>FRQ Unit 4</strong></summary>
+				<h5>1. Write the Longest Streak method</h5>
+				<h5>2a. getPlayer2Move method</h5>
+				<code style="margin-left:00px;">public int getPlayer2Move(int round) {</code><br>
+				<code style="margin-left:40px;">int output;</code><br>
+				<code style="margin-left:40px;">if (round % 3 == 0) {output = 3;}</code><br>
+				<code style="margin-left:40px;">else if (round % 2 == 0) {output = 2;}</code><br>
+				<code style="margin-left:40px;">else {output = 1;}</code><br>
+				<code style="margin-left:40px;">return output;</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
+					<form action="/about/akhilabout/Unit4FRQQuestion2PartA" method="GET" id="Unit4FRQQuestion2PartA">
+						<div>
+							<label for="roundNumberField">Input the round number</label><br>
+							<input class="form-control" name="round" id="roundNumberField"><br>
+							<button class="btn btn-light">Submit</button>
+							<p th:text="'Player 2\'s Bet: ' + ${Player2Move}"></p>
+						</div>
+					</form>
+				</div>
+				<h5>2b. playGame method</h5>
+				<code style="margin-left:00px;">public void playGame() {</code><br>
+				<code style="margin-left:40px;">private int currentRound;</code><br>
+				<code style="margin-left:40px;">private int player1Coins;</code><br>
+				<code style="margin-left:40px;">private int player2Coins;</code><br>
+				<code style="margin-left:40px;">while (currentRound <= maxRounds && player1Coins > 3 && player2Coins > 3) {</code><br>
+				<code style="margin-left:80px;">player1Coins -= getPlayer1Move(currentRound);</code><br>
+				<code style="margin-left:80px;">player2Coins -= getPlayer2Move(currentRound);</code><br>
+				<code style="margin-left:80px;">currentRound++;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">if (player1Coins > player2Coins) {System.out.println("player 1 wins");}</code><br>
+				<code style="margin-left:40px;">else if (player2Coins > player1Coins) {System.out.println("player 2 wins");}</code><br>
+				<code style="margin-left:40px;">else if (player2Coins == player1Coins) {System.out.println("tie");}</code><br>
+				<code style="margin-left:00px;">}</code><br>
 			</details>
 		</div>
 		<div class="body-window articles" style="margin:10px 0; padding:30px;">

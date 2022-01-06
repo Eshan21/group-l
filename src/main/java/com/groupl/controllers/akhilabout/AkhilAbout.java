@@ -5,13 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 @Controller
 public class AkhilAbout {
@@ -23,7 +20,7 @@ public class AkhilAbout {
         return "about/akhilabout";
     }
 
-    @GetMapping("about/akhilabout/Wk1Q1Pe")
+    @GetMapping("about/akhilabout/Unit2FRQQuestion1PartE")
     public String Wk1Q1Pe(@RequestParam(name="oldSeq", required=false, defaultValue="amongus") String oldSeq,
                           @RequestParam(name="segment", required=false, defaultValue="am") String segment,
                           Model model) {
@@ -41,6 +38,18 @@ public class AkhilAbout {
         return "about/akhilabout";
     }
 
+    @GetMapping("about/akhilabout/Unit4FRQQuestion2PartA")
+    public String getPlayer2Move(@RequestParam(name="round", required=false, defaultValue="0") int round,
+                                 Model model) {
+        int output;
+        if (round % 3 == 0) {output = 3;}
+        else if (round % 2 == 0) {output = 2;}
+        else {output = 1;}
+        model.addAttribute("Player2Move", output);
+        return "about/akhilabout";
+        }
+
+        
     @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,
                               @RequestParam(name="content", required = false) String content,
