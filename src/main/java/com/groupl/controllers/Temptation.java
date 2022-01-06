@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,10 +14,12 @@ import java.util.HashMap;
 @Controller
 public class Temptation {
     HashMap<String[], String> Comments = new HashMap<>();
+    public int score = 0;
 
     @GetMapping("/temp")
     public String temp(Model model) {
         model.addAttribute("Comments", Comments);
+        model.addAttribute("score", score);
         return "temp";
     }
 
@@ -28,7 +31,19 @@ public class Temptation {
         LocalDateTime now = LocalDateTime.now();
         Comments.put(new String[]{name, dtf.format(now)}, content);
         model.addAttribute("Comments", Comments);
+        model.addAttribute("score", score);
         return "temp";
+    }
+
+    @PostMapping("/temp/voteUp")
+    @ResponseBody
+    public void voteUp() {
+        score++;
+    }
+    @PostMapping("/temp/voteDn")
+    @ResponseBody
+    public void voteDn() {
+        score--;
     }
 }
 

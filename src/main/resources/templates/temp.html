@@ -26,18 +26,19 @@
 
   <div id="votes" class="sub-window" style="float:left;margin-top:10px;border-radius: 20px;">
     <div style="width:30px;">
-      <button id="upvote" type="button" class="vote-btn upvote" onclick="toggleUp();">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
-        </svg>
-        <span class="visually-hidden">Button</span>
-      </button>
-      <button id="downvote" type="button" class="vote-btn dnvote" onclick="toggleDown();">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"></path>
-        </svg>
-        <span class="visually-hidden">Button</span>
-      </button>
+      <p id="score" th:text="${score}" style="margin-bottom: 0px;text-align: center;"></p>
+        <button id="upvote" type="button" class="vote-btn upvote" onclick="toggleUp();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+          </svg>
+          <span class="visually-hidden">Button</span>
+        </button>
+        <button id="downvote" type="button" class="vote-btn dnvote" onclick="toggleDown();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"></path>
+          </svg>
+          <span class="visually-hidden">Button</span>
+        </button>
     </div>
   </div>
 
@@ -51,7 +52,7 @@
       </h1>
       <div style="padding:10px;">
 
-        <div class="sub-window">
+        <div class="sub-window" style="margin: 0px 20px 0px 20px;">
           <h5>Here is where information about the user would go</h5>
         </div>
 
@@ -91,21 +92,60 @@
     var tocDropdownText = document.getElementById("toc-dropdown");
     var upvote = document.getElementById("upvote");
     var downvote = document.getElementById("downvote");
+    var score = document.getElementById("score");
+
+    if (localStorage.getItem("voteStatus") === "up") {upvote.classList.toggle("orange-btn");}
+    if (localStorage.getItem("voteStatus") === "down") {downvote.classList.toggle("blue-btn");}
+
     function toggleTOC() {
       toc.classList.toggle("toc-show");
       tocDropdownText.classList.toggle("toc-dropdown-rotate");
     }
     function toggleUp() {
-      upvote.classList.toggle("orange-btn");
-      if (downvote.classList.contains("blue-btn")) {
-        downvote.classList.toggle("blue-btn");
-      }
-    }
-    function toggleDown() {
-      downvote.classList.toggle("blue-btn");
       if (upvote.classList.contains("orange-btn")) {
         upvote.classList.toggle("orange-btn");
+        voteDn();
+        localStorage.setItem("voteStatus", "none");
+      } else {
+        upvote.classList.toggle("orange-btn");
+        voteUp();
+        localStorage.setItem("voteStatus", "up");
       }
+      if (downvote.classList.contains("blue-btn")) {
+        downvote.classList.toggle("blue-btn");
+        voteUp();
+      }
+    }
+
+    function toggleDown() {
+      if (downvote.classList.contains("blue-btn")) {
+        downvote.classList.toggle("blue-btn");
+        voteUp();
+        localStorage.setItem("voteStatus", "none");
+      } else {
+        downvote.classList.toggle("blue-btn");
+        voteDn();
+        localStorage.setItem("voteStatus", "down");
+      }
+      if (upvote.classList.contains("orange-btn")) {
+        upvote.classList.toggle("orange-btn");
+        voteDn();
+      }
+    }
+
+    async function voteUp() {
+      score.innerText++;
+      let data = await (await fetch('/temp/voteUp', {
+        method: 'POST',
+        body: null
+      })).text();
+    }
+    async function voteDn() {
+      score.innerText--;
+      let data = await (await fetch('/temp/voteDn', {
+        method: 'POST',
+        body: null
+      })).text();
     }
   </script>
 </div>
