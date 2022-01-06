@@ -120,6 +120,42 @@
 			<details open>
 				<summary><strong>FRQ Unit 4</strong></summary>
 				<h5>1. Write the Longest Streak method</h5>
+				<code style="margin-left:00px;">public static void longestStreak(String str){</code><br>
+				<code style="margin-left:40px;">int longestCount = 0;</code><br>
+				<code style="margin-left:40px;">String longestChar = null;</code><br>
+				<code style="margin-left:40px;">int currentCount = 1;</code><br>
+				<code style="margin-left:40px;">String currentChar = null;</code><br>
+				<code style="margin-left:40px;">String prevChar = null;</code><br>
+				<code style="margin-left:40px;">int start = 0;</code><br>
+				<code style="margin-left:40px;">int end = 0;</code><br>
+				<code style="margin-left:80px;">for (int ii=0;ii&lt;str.length();ii++) {</code><br>
+				<code style="margin-left:120px;">currentChar = String.valueOf(str.charAt(ii));</code><br>
+				<code style="margin-left:120px;">if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}</code><br>
+				<code style="margin-left:120px;">if (currentChar.equals(prevChar)) {</code><br>
+				<code style="margin-left:160px;">currentCount++;</code><br>
+				<code style="margin-left:160px;">if (currentCount > longestCount) {</code><br>
+				<code style="margin-left:200px;">longestChar = currentChar;</code><br>
+				<code style="margin-left:200px;">longestCount = currentCount;</code><br>
+				<code style="margin-left:160px;">}</code><br>
+				<code style="margin-left:120px;">}</code><br>
+				<code style="margin-left:120px;">else {</code><br>
+				<code style="margin-left:160px;">currentCount = 1;</code><br>
+				<code style="margin-left:160px;">currentChar = null;</code><br>
+				<code style="margin-left:120px;">}</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:80px;">System.out.printf("%s %d\n", longestChar, longestCount);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
+					<form action="/about/akhilabout/Unit4FRQQuestion1" method="GET" id="Unit4FRQQuestion1">
+						<div>
+							<label for="longestStreakField">Input the string</label><br>
+							<input class="form-control" name="str" id="longestStreakField" th:value="${Unit4Q2Input}"><br>
+							<button class="btn btn-light">Submit</button>
+							<p th:text="'Output: ' + ${Unit4Q2Output}"></p>
+						</div>
+					</form>
+				</div>
 				<h5>2a. getPlayer2Move method</h5>
 				<code style="margin-left:00px;">public int getPlayer2Move(int round) {</code><br>
 				<code style="margin-left:40px;">int output;</code><br>
@@ -132,7 +168,7 @@
 					<form action="/about/akhilabout/Unit4FRQQuestion2PartA" method="GET" id="Unit4FRQQuestion2PartA">
 						<div>
 							<label for="roundNumberField">Input the round number</label><br>
-							<input class="form-control" name="round" id="roundNumberField"><br>
+							<input class="form-control" name="round" id="roundNumberField" th:value="${Player2Input}"><br>
 							<button class="btn btn-light">Submit</button>
 							<p th:text="'Player 2\'s Bet: ' + ${Player2Move}"></p>
 						</div>
@@ -155,16 +191,23 @@
 			</details>
 		</div>
 		<div class="body-window articles" style="margin:10px 0; padding:30px;">
-			<h2>Comment Section</h2>
+
+			<h3 id="comment-section" class="text-center font-monospace">Comment Section</h3>
 			<div th:each="Comment: ${Comments}">
-				<div>
-					<h4 style="display:inline"><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
+
+				<div style="padding:10px;">
+					<div class="sub-window">
+						<div>
+							<h4 style="display:inline"><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
+						</div>
+						<p style="margin-left: 20px;" th:text="${Comment.value}"></p>
+					</div>
 				</div>
-				<p style="margin-left: 20px;" th:text="${Comment.value}"></p>
+
 			</div><br>
 			<form action="/about/akhilabout/comment" method="POST" id="commentSubmit">
-				<input class="form-control" name="name" id="Author" placeholder="Username (Optional)"><br>
-				<textarea class="form-control" name="content" id="commentForm" placeholder="Contents"></textarea>
+				<input class="form-control sub-window" style="border:none" name="name" id="Author" placeholder="Username (Optional)"><br>
+				<textarea class="form-control sub-window" style="border:none" name="content" id="commentForm" placeholder="Contents"></textarea><br>
 				<button class="btn btn-light">Submit</button>
 			</form>
 		</div>
