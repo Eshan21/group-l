@@ -38,6 +38,36 @@ public class AkhilAbout {
         return "about/akhilabout";
     }
 
+    @GetMapping("about/akhilabout/Unit4FRQQuestion1")
+    public String longestStreak(@RequestParam(name="str", required=false, defaultValue="amongus") String str,
+                                     Model model){
+        int longestCount = 0;
+        String longestChar = null;
+        int currentCount = 1;
+        String currentChar = null;
+        String prevChar = null;
+        int start = 0;
+        int end = 0;
+        for (int ii=0;ii<str.length();ii++) {
+            currentChar = String.valueOf(str.charAt(ii));
+            if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}
+            if (currentChar.equals(prevChar)) {
+                currentCount++;
+                if (currentCount > longestCount) {
+                    longestChar = currentChar;
+                    longestCount = currentCount;
+                }
+            }
+            else {
+                currentCount = 1;
+                currentChar = null;
+            }
+        }
+        model.addAttribute("Unit4Q2Input", str);
+        model.addAttribute("Unit4Q2Output", longestChar + " " + longestCount);
+        return "about/akhilabout";
+    }
+
     @GetMapping("about/akhilabout/Unit4FRQQuestion2PartA")
     public String getPlayer2Move(@RequestParam(name="round", required=false, defaultValue="0") int round,
                                  Model model) {
@@ -45,6 +75,7 @@ public class AkhilAbout {
         if (round % 3 == 0) {output = 3;}
         else if (round % 2 == 0) {output = 2;}
         else {output = 1;}
+        model.addAttribute("Player2Input", round);
         model.addAttribute("Player2Move", output);
         return "about/akhilabout";
         }
