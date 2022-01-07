@@ -1,0 +1,16 @@
+/* Questions */
+.q-code {
+    color: green;
+}
+
+/* Answers */
+.a-code {
+    color: blue;
+    font-weight: bold;
+}
+
+summary {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+

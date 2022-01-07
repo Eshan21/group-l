@@ -36,3 +36,9 @@ build/
 *fuckyou*
 *shit*
 
+### VIM ###
+*.swp
+
+### Application Properties ###
+src/main/resources/application.properties
+

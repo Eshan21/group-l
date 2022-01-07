@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head xmlns:th="http://www.w3.org/1999/xhtml">
     <title>...</title>
     <th:block th:fragment="header">
@@ -8,89 +9,188 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 
         <!-- Common style for site -->
         <style>
-            :root{
+            @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+             :root {
                 --background: #131a1c;
-                --foreground: #c5c8c9;
-                --black:   #1e2127;
-                --red:     #e74c4c;
-                --green:   #6bb05d;
-                --yellow:  #e59e67;
-                --blue:    #53a7bf;
+                --foreground: #d9d9d9;
+                --black: #1e2127;
+                --red: #e74c4c;
+                --green: #6bb05d;
+                --yellow: #e59e67;
+                --blue: #53a7bf;
                 --magenta: #cd69cc;
-                --cyan:    #51a39f;
-                --white:   #bcbcbc;
-                --bright-black:   #454c4e;
-                --bright-red:     #c26f6f;
-                --bright-green:   #8dc776;
-                --bright-yellow:  #e7ac7e;
-                --bright-blue:    #6cbad1;
+                --cyan: #51a39f;
+                --white: #bcbcbc;
+                --bright-black: #454c4e;
+                --bright-red: #c26f6f;
+                --bright-green: #8dc776;
+                --bright-yellow: #e7ac7e;
+                --bright-blue: #6cbad1;
                 --bright-magenta: #e182e0;
-                --bright-cyan:    #6db0ad;
-                --bright-white:   #bfbfbf;
+                --bright-cyan: #6db0ad;
+                --bright-white: #bfbfbf;
             }
-
-            html, body{
+            
+            html,
+            body {
                 margin: 0;
                 height: 100%;
+                width: 100%;
                 animation: fadein 2s;
-                -moz-animation: fadein 2s; /* Firefox */
-                -webkit-animation: fadein 2s; /* Safari and Chrome */
-                -o-animation: fadein 2s; /* Opera */
+                -moz-animation: fadein 2s;
+                -webkit-animation: fadein 2s;
+                -o-animation: fadein 2s;
+                background: #A994D8;
+            }
+
+            body {
+                background: #A994D8 url("/images/bg-1.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .body-dark {
+                background: #6e9eff url("/images/bg-2.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            .body-window {
+                background-color: var(--foreground);
+                border-radius: 20px;
+                margin: 7px;
+                height: calc(100% - 64px);
+                color: var(--black);
+                transition: 0.2s;
+            }
+            
+            .body-window-dark {
                 background-color: var(--background);
                 color: var(--white);
             }
 
-            .dark-mode {
-                background-color: var(--background);
-                color: var(--white);
+            .nav-link {
+                color: #74496a;
+                transition: none;
+            }
+            
+            h1 {
+                color: var(--red);
+            }
+            
+            h2 {
+                color: var(--green);
+            }
+            
+            h3 {
+                color: var(--yellow);
             }
 
-            h1 {color: var(--red);}
-            h2 {color: var(--green);}
-            h3 {color: var(--yellow);}
+            a {
+                color: inherit;
+            }
 
-
-            a {color: var(--yellow);}
-            a:hover {color: var(--bright-yellow); !important;}
-
+            a:hover {
+                color: #a46b96;
+            }
+            
             .dark-element {
                 background-color: var(--black);
                 color: var(--red);
             }
 
-            .fa{
+            .cdblk {
+                font-family: 'Source Code Pro', monospace;
+                background-color: var(--bright-black);
+                margin: 50px;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            
+            .top-bar {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                display: block;
+                border-radius: 50px;
+                overflow: hidden;
+            }
+            
+            .sub-bar {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: #A994D8 url("/images/bg-1.png");
+                background-size: cover;
+                /*transform: scale(1.75);*/
+                /*background-size:100vw auto;*/
+                filter: blur(10px);
+                box-shadow: inset 0px 0px 0px 100vw rgba(188, 188, 188, 0.5);
+                /* same as var(--white) */
+                margin: -1%;
+            }
+            .nav-dark-text {
+                color: #ead4ff;
+            }
+            .sub-bar-dark {
+                box-shadow: inset 0px 0px 0px 100vw rgba(30, 33, 39, 0.375);
+                background: #6e9eff url("/images/bg-2.png");
+                background-size: cover;
+            }
+            #theme-switch {
+                margin-left: 5px;
+                border: 2px solid;
+                border-radius: 5px;
+                width: 28px;
+                text-align: center;
+                transition: 0.2s;
+            }
+            #theme-switch:hover {
+                background-color: #74496a;
+            }
+            .theme-switch-dark:hover {
+                background-color: #ead4ff !important;
+            }
+            
+            .special {
+                position: absolute;
+            }
+            
+            .fa {
                 font-size: 3em;
                 letter-spacing: 1em;
                 transition: all .2s;
                 color: white;
             }
-
-            .fa:hover{
+            
+            .fa:hover {
                 transform: translateY(10px);
             }
-
-            .fa-youtube-play:hover{
+            
+            .fa-youtube-play:hover {
                 color: #cc0000;
             }
-
-            .fa-twitter:hover{
+            
+            .fa-twitter:hover {
                 color: #1da1f2;
             }
-
-            .fa-github:hover{
+            
+            .fa-github:hover {
                 color: #000000;
             }
-
+            
             .btn:link,
             .btn:visited {
                 text-transform: uppercase;
@@ -103,31 +203,135 @@
                 color: white;
                 font-size: 2.5em;
             }
-
+            
             .btn:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
             }
-
+            
             .btn:active {
                 transform: translateY(-1px);
                 box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
             }
-
-            .row{
+            
+            .row {
                 margin: auto;
             }
-
             /* large number helps nav remain top layer */
+            
             .navbar {
                 z-index: 1000;
+                padding: 0;
+                margin: 0;
+                font-family: 'Source Code Pro', monospace;
+                /* padding: 0px 20px 0px 10px !important; */
+                border-radius: 20px;
+                /* margin: 5px 5px 0px 5px; */
+            }
+
+            .toc-full {
+                transition: 0.2s;
+            }
+
+            .toc {
+                border-radius: 10px;
+                background-color: var(--white);
+                color: var(--black);
+                width: 25%;
+                float: right;
+            }
+
+            .toc-dropdown {
+                width: 50px;
+                height: 50px;
+                position: fixed;
+                text-align: center;
+                box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+                transition: 0.2s;
+            }
+
+            .toc-dropdown-rotate {
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                box-shadow: 10px -10px 10px rgba(0,0,0,0.5);
+            }
+
+            .toc-list {
+                margin-left: 60px;
+                width: 20vw;
+                padding: 0px 0px 10px 20px;
+                box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+                padding: 10px 0px 0px 25px;
+            }
+
+            .sub-window {
+                border-radius: 10px;
+                background-color: var(--white);
+                color: var(--black);
+                padding: 10px;
+                transition: 0.2s;
+            }
+
+            .sub-window-dark {
+                background-color: var(--bright-black) !important;
+                color: var(--white) !important;
+            }
+            .sub-window-light {
+                background-color: var(--white) !important;
+                color: var(--black) !important;
+            }
+
+            .toc-show {
+                left: 76% !important;
+            }
+
+            ul.dashed {
+                list-style-type: none;
+            }
+            ul.dashed > li {
+                text-indent: -5px;
+            }
+            ul.dashed > li:before {
+                content: "- ";
+                text-indent: -5px;
+            }
+
+            .vote-btn {
+                height: 30px;
+                width: 30px;
+                text-align: center;
+                border-radius: 15px;
+                border: none;
+                margin: 2px 0px 2px 0px;
+                padding: 0 0 3px 0;
+                background-color: var(--bright-black);
+                color: var(--foreground);
+                transition: 0.2s;
+            }
+
+            .upvote:hover {
+                background-color: var(--yellow) !important;
+            }
+            .dnvote:hover {
+                background-color: var(--blue) !important;
+            }
+            .orange-btn {
+                background-color: var(--yellow) !important;
+            }
+            .blue-btn {
+                background-color: var(--blue) !important;
             }
 
         </style>
         <!-- End head fragments -->
     </th:block>
 </head>
+
 <body>
-...
+    ...
 </body>
+
 </html>

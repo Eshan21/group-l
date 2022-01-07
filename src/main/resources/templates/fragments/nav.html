@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>...</title>
 </head>
+
 <body>
     <!-- Begin navigation fragments -->
-    <nav class="navbar navbar-expand-lg dark-element" th:fragment="header">
-        <a class="navbar-brand" href="http://nighthawkcodingsociety.com/">
-            <img src="/static/images/ncs_logo.png" th:src="@{/images/ncs_logo.png}" width="50" height="50" class="d-inline-block align-center" alt="">
-            Nighthawk Coders
+    <nav id="navbar" class="navbar navbar-expand-lg blur-element" th:fragment="header" style="color: #74496a;">
+        <div class="top-bar" id="top-bar" style="z-index:-1;">
+            <div class="sub-bar" id="sub-bar"></div>
+        </div>
+        <a class="navbar-brand" id="navbar-brand" href="/" style="margin-left:10px;">
+            <img src="/static/images/ncs_logo.png" th:src="@{/images/ncs_logo.png}" width="25" height="25" class="d-inline-block align-center" alt=""> RiceLab
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Bootstrap menus -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <!--root menu -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Intro <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarPBL" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarPBL" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         PBL
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/greet">Greet</a>
-                        <a class="dropdown-item" href="/birds">Birds</a>
-                        <a class="dropdown-item" href="/dne">404 error</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/greet">Greet</a></li>
+                        <li><a class="dropdown-item" href="/birds">Birds</a></li>
+                        <li><a class="dropdown-item" href="/dne">404 error</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarTPT" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarTPT" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         TPT
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{/sanvipal_javaref.pdf}" target="_blank" rel="noopener noreferrer">Journal</a>
-                        <a class="dropdown-item" href="https://freekashmir.nighthawkcodingsociety.com/" target="_blank" rel="noopener noreferrer">AP units</a>
-                        <a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2006 FRQ</a>
-                        <a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2019 FRQ</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/sanvipal_javaref.pdf}" target="_blank" rel="noopener noreferrer">Journal</a></li>
+                        <li><a class="dropdown-item" href="https://freekashmir.nighthawkcodingsociety.com/" target="_blank" rel="noopener noreferrer">AP units</a></li>
+                        <li><a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2006 FRQ</a></li>
+                        <li><a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2019 FRQ</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarABOUT" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/about/akhilabout">Akhil</a></li>
+                        <li><a class="dropdown-item" href="/about/ishanabout">Ishan</a></li>
+                        <li><a class="dropdown-item" href="/about/jonathanabout">Jonathan</a></li>
+                        <li><a class="dropdown-item" href="/about/michaelabout">Michael</a></li>
+                        <li><a class="dropdown-item" href="/about/braydenabout">Brayden</a></li>
+                    </ul>
                 </li>
             </ul>
             <!-- Clock display -->
-            <div>
-                <span id="clock"></span>
-            </div>
-            <!-- Dark mode action -->
-            <div class="custom-control custom-switch">
-                <input type="checkbox" onclick="darkFunction()" class="custom-control-input" id="darkSwitch">
-                <label class="custom-control-label" for="darkSwitch"></label>
+            <div id="left-modules" style="margin-right:15px;margin-left:auto;">
+                <span id="clock" style="float:left;"></span>
+                <div id="theme-switch" style="float:left;">☼</div>
             </div>
             <!-- Navigation bar JavaScript support -->
             <script>
-                // Dark Mode Toggle
-                function darkFunction() {
-                    let element = document.body;
-                    element.classList.toggle("dark-mode");
-                }
                 // Clock controller
                 let clockElement = document.getElementById('clock');
+
                 function clock() {
                     let date = new Date();
                     clockElement.textContent = date.toLocaleString();
                 }
+                for (var ii of document.getElementsByClassName("dropdown-menu")) {
+                    ii.classList.add("special")
+                }
                 // Clock refresh frequency
                 setInterval(clock, 1000);
+
+                document.getElementById("theme-switch").onclick = function() {darkTheme();darkThemeSave();}
             </script>
         </div>
     </nav>
     <!-- Begin navigation fragments -->
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 # group-l
-[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to the website](http://ricelab.tk:8080)
 
 |  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
 | :------------ | :---------------     | :----- | :---------- | :------ |
@@ -27,40 +27,24 @@
 [TKp-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson
 [TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
-# Purpose
-Ricelog is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
+<details><summary>PBL Team Week 3</summary>
+ 
+[ISSUE HERE](https://github.com/iskapoor/group-l/issues/46)
 
-# Install
+</details>
+
+# Purpose
+RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from. We welcome experts and beginners alike to join our coummunity and learn for one another's next rice!
+
+# Installation
 To install a pre-built release:
 
 - Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-- Download and extract a Ricelog [release][] file
-- Run server with `java -jar Ricelog-0.0.0-.jar`
-
-[release]: https://github.com/iskapoor/group-l/releases
-
-# Build or Run
-
-## Install dependencies
-- [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
-- [Maven 3.8.3](https://maven.apache.org/download.cgi)
-
-Download the source code as a [zip][source] or via git:
-
-[source]: https://github.com/iskapoor/group-l/archive/refs/tags/v0.0.0-alpha.zip
-
-```
-git clone https://github.com/iskapoor/group-l.git
-```
-
-Then build the JAR file with the build scripts:
-- Run `./build` or `./build.cmd`
-
-Or run in place:
-- Run `./run` or `./run.cmd`
+- Download and extract a RiceLab [release](https://github.com/iskapoor/group-l/releases) file
+- Run server with `java -jar Ricelab-x.y.z*.jar`
 
 # How to Contribute / Policies
 See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
 # Wiki / Documentation
-Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `doc/` directory.
+Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `target/site/apidocs/` directory.

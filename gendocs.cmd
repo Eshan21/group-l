@@ -1,2 +1,1 @@
-javadoc -d doc -sourcepath src -subpackage com.group-l.ricelog
-
+mvn.cmd javadoc:javadoc

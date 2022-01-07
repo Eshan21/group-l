@@ -2,18 +2,73 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-    <div th:replace="fragments/head :: header"></div>
+
+    <div th:replace="fragments/head :: header">
+    </div>
     <div layout:fragment="metadata">...</div>
 </head>
 
-<body>
-    <div th:replace="fragments/nav :: header"></div>
+<body style="overflow-x: hidden; width: 100%; padding: 10px;">
+    <div>
+        <div th:replace="fragments/nav :: header"></div>
 
-    <div layout:fragment="content">...</div>
+        <div layout:fragment="content">...</div>
+    </div>
 
+    <script>
+
+        function set(a, b) {localStorage.setItem(a, b)}
+        function get(a) {return localStorage.getItem(a)}
+
+        function darkTheme() {
+            const subBar = document.getElementById("sub-bar");
+            const windows = document.getElementsByClassName("body-window");
+            const body = document.body;
+            const htmls = document.getElementsByTagName("html");
+            const navbar = document.getElementById("navbar");
+            const navbarModules = document.getElementById("navbarSupportedContent");
+            const navbarBrand = document.getElementById("navbar-brand")
+            const navbarLink = document.getElementsByClassName("nav-link");
+            const themeSwitch = document.getElementById("theme-switch");
+            const toc = document.getElementsByClassName("toc");
+            const subWindows = document.getElementsByClassName("sub-window");
+            const voteBtn = document.getElementsByClassName("vote-btn");
+
+            subBar.classList.toggle("sub-bar-dark");
+            for (ii=0;ii<windows.length;ii++) {windows[ii].classList.toggle("body-window-dark");}
+            for (ii=0;ii<htmls.length;ii++) {htmls[ii].classList.toggle("body-dark");}
+            body.classList.toggle("body-dark");
+            navbar.classList.toggle("nav-dark-text");
+            navbarModules.classList.toggle("nav-dark-text");
+            navbarBrand.classList.toggle("nav-dark-text");
+            for (ii=0;ii<navbarLink.length;ii++) {navbarLink[ii].classList.toggle("nav-dark-text");}
+            themeSwitch.classList.toggle("theme-switch-dark");
+            for (ii=0;ii<toc.length;ii++) {toc[ii].classList.toggle("sub-window-dark");}
+            for (ii=0;ii<subWindows.length;ii++) {subWindows[ii].classList.toggle("sub-window-dark");}
+            for (ii=0;ii<voteBtn.length;ii++) {voteBtn[ii].classList.toggle("sub-window-light");}
+        }
+
+        function darkThemeSave() {
+            const themeSwitch = document.getElementById("theme-switch");
+            themeSwitch.innerHTML === "☼" ? themeSwitch.innerHTML = "☾" : themeSwitch.innerHTML = "☼";
+
+            let darkModeStatus = get('darkModeOn');
+            darkModeStatus === 'false' ? set('darkModeOn', 'true') : set('darkModeOn', 'false');
+        }
+
+        function enableDark() {
+            let darkModeStatus = get('darkModeOn');
+            if (darkModeStatus === 'true') {
+                darkTheme();
+            }
+        }
+
+        enableDark();
+        
+    </script>
     <div th:replace="fragments/footer :: footer"></div>
 </body>
 
-<div layout:fragment="script">...</div>
+<div layout:fragment="script"></div>
 
 </html>
