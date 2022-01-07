@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div id="votes" class="sub-window" style="float:left;margin-top:10px;border-radius: 20px;">
+  <div id="votes" class="sub-window" style="float:left;margin-top:10px;border-radius: 20px;background-color: transparent !important;">
     <div style="width:30px;">
       <p id="score" th:text="${score}" style="margin-bottom: 0px;text-align: center;"></p>
         <button id="upvote" type="button" class="vote-btn upvote" onclick="toggleUp();">
@@ -42,81 +42,80 @@
     </div>
   </div>
 
-  <div id="spring_intro" class="body-window articles" style="margin: 10px 0;">
-    <div style="padding:30px;">
+  <main class="container">
+    <div class="body-window articles" style="margin:10px 0; padding:30px;">
 
       <h1 id="title" class="text-center font-monospace">
         Welcome to Username's Blog
       </h1>
       <div style="padding:10px;">
 
-        <div class="sub-window" style="margin: 0px 20px 0px 20px;">
+        <div class="sub-window">
           <h5>Here is where information about the user would go</h5>
         </div>
 
       </div>
     </div>
-  </div>
-  <div class="body-window articles" style="margin: 10px 0;">
-    <div style="padding:30px;">
-      <h3 id="gallery" class="text-center font-monospace">Gallery</h3>
+    <div class="body-window articles" style="margin: 10px 0;">
+      <div style="padding:30px;">
+        <h3 id="gallery" class="text-center font-monospace">Gallery</h3>
 
-      <div class="modal fade" id="addImage" tabindex="-1" aria-labelledby="addImage" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add Image</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form action="/temp/imagePost" method="POST" id="addImageForm">
-                <div class="form-group">
-                  <label for="imageURL" class="col-form-label">Image URL:</label>
-                  <input id="imageURL" type="text" class="form-control" name="imageURL">
+        <div class="modal fade" id="addImage" tabindex="-1" aria-labelledby="addImage" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" value="Submit" onclick="postImage()">Add Image</button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <div class="modal-body">
+                <form action="/temp/imagePost" method="POST" id="addImageForm">
+                  <div class="form-group">
+                    <label for="imageURL" class="col-form-label">Image URL:</label>
+                    <input id="imageURL" type="text" class="form-control" name="imageURL">
+                </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" value="Submit" onclick="postImage()">Add Image</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addImage">+</button>
-      <div style="display:inline;grid-template-columns: 2;" id="image-container">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addImage">+</button>
+        <div style="display:inline;grid-template-columns: 2;" id="image-container">
 
-        <div th:each="image, index : ${images}">
-          <img style="max-width: 50%;" th:src="${image}" alt="${index}">
+          <div th:each="image, index : ${images}">
+            <img style="max-width: 50%;" th:src="${image}" alt="${index}">
+          </div>
+
         </div>
-
       </div>
     </div>
-  </div>
 
-  <div class="body-window articles" style="margin:10px 0; padding:30px;">
+    <div class="body-window articles" style="margin:10px 0; padding:30px;">
 
-    <h3 id="comment-section" class="text-center font-monospace">Comment Section</h3>
-    <div th:each="Comment: ${Comments}">
+      <h3 id="comment-section" class="text-center font-monospace">Comment Section</h3>
+      <div th:each="Comment: ${Comments}">
 
-      <div style="padding:10px;">
-        <div class="sub-window">
-          <div>
-            <h4 style="display:inline"><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
+        <div style="padding:10px;">
+          <div class="sub-window">
+            <div>
+              <h4 style="display:inline"><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
+            </div>
+            <p style="margin-left: 20px;" th:text="${Comment.value}"></p>
           </div>
-          <p style="margin-left: 20px;" th:text="${Comment.value}"></p>
         </div>
-      </div>
 
-    </div><br>
-    <form action="/temp" method="POST" id="commentSubmit">
-      <input class="form-control sub-window" style="border:none" name="name" id="Author" placeholder="Username (Optional)"><br>
-      <textarea class="form-control sub-window" style="border:none" name="content" id="commentForm" placeholder="Contents"></textarea><br>
-      <button class="btn btn-light">Submit</button>
-    </form>
-  </div>
-
+      </div><br>
+      <form action="/temp" method="POST" id="commentSubmit">
+        <input class="form-control sub-window" style="border:none" name="name" id="Author" placeholder="Username (Optional)"><br>
+        <textarea class="form-control sub-window" style="border:none" name="content" id="commentForm" placeholder="Contents"></textarea><br>
+        <button class="btn btn-light">Submit</button>
+      </form>
+    </div>
+  </main>
   <script>
     var toc = document.getElementById("toc");
     var tocDropdownText = document.getElementById("toc-dropdown");
