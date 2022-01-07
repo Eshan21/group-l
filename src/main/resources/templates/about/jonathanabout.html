@@ -19,379 +19,463 @@
                 <p>I am a person who is interested in computer science.</p>
             </div>
             <!-- FRQ #2 -->
-            <div class="body-window p-5">
-                <h1 class="text-info text-center fw-bold">Unit 2 FRQ</h1>
-                <h3 class="fw-bold">Question 1</h3>
-                
-                <hr color="red">
+            <div class="body-window p-3">
+                <details>
+                        <summary>Unit 2 FRQ</summary>
 
-                <pre>
-                <code class="q-code">public class LightSequence</code>
-                <code class="q-code">{</code>
-                <code class="q-code">// attributes not shown</code>
-                <code class="q-code">/** The parameter seq is the initial sequence used for</code>
-                <code class="q-code">* the light display</code>
-                <code class="q-code">*/</code>
+                        <div class="p-5">
+                            <h1 class="text-info text-center fw-bold">Unit 2 FRQ</h1>
+                            <h3 class="fw-bold">Question 1</h3>
+                            
+                            <hr color="red">
 
-                <code class="q-code">public LightSequence(String seq)</code>
-                <code class="q-code">{ /* implementation not shown */ }</code>
-                <code class="q-code">/** Inserts the string segment in the current sequence,</code>
-                <code class="q-code">* starting at the index ind. Returns the new sequence.</code>
-                <code class="q-code">*/</code>
+                            <pre>
+                            <code class="q-code">public class LightSequence</code>
+                            <code class="q-code">{</code>
+                            <code class="q-code">// attributes not shown</code>
+                            <code class="q-code">/** The parameter seq is the initial sequence used for</code>
+                            <code class="q-code">* the light display</code>
+                            <code class="q-code">*/</code>
 
-                <code class="q-code">public String insertSegment(String segment, int ind)</code>
-                <code class="q-code">{ /* implementation not shown */ }</code>
-                <code class="q-code">/** Updates the sequence to the value in seq</code>
-                <code class="q-code">*/</code>
+                            <code class="q-code">public LightSequence(String seq)</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">/** Inserts the string segment in the current sequence,</code>
+                            <code class="q-code">* starting at the index ind. Returns the new sequence.</code>
+                            <code class="q-code">*/</code>
 
-                <code class="q-code">public void changeSequence(String seq)</code>
-                <code class="q-code">{ /* implementation not shown */ }</code>
-                <code class="q-code">/** Uses the current sequence to turn the light on and off</code>
-                <code class="q-code">* for the show</code>
-                <code class="q-code">*/</code>
+                            <code class="q-code">public String insertSegment(String segment, int ind)</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">/** Updates the sequence to the value in seq</code>
+                            <code class="q-code">*/</code>
 
-                <code class="q-code">public void display()</code>
-                <code class="q-code">{ /* implementation not shown */ }</code>
-                <code class="q-code">}</code>
-                </pre>
+                            <code class="q-code">public void changeSequence(String seq)</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">/** Uses the current sequence to turn the light on and off</code>
+                            <code class="q-code">* for the show</code>
+                            <code class="q-code">*/</code>
 
-                <hr color="red">
-                <p>(a) Write a statement to create a <code class="text-success">LightSequence</code> object <code class="text-success">gradShow</code> that has the initial light sequence "0101 0101 0101".</p>
-                <p>Write the statement below.</p>
+                            <code class="q-code">public void display()</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">}</code>
+                            </pre>
 
-                <code class="a-code">LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
-                <hr color="red">
+                            <hr color="red">
+                            <p>(a) Write a statement to create a <code class="text-success">LightSequence</code> object <code class="text-success">gradShow</code> that has the initial light sequence "0101 0101 0101".</p>
+                            <p>Write the statement below.</p>
 
-                <p>(b) Write a statement that will call the display method to <code class="text-success">display</code> the light sequence for the <code class="text-success">gradShow</code> object.</p>
-                 
-                <code class="a-code">gradShow.display();</code>
-                <hr color="red">
+                            <code class="a-code">LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
+                            <hr color="red">
 
-                <p>(c) Write a statement that will be used to update the <code class="text-success">gradShow</code> light sequence to "0011 0011 0011".</p>
+                            <p>(b) Write a statement that will call the display method to <code class="text-success">display</code> the light sequence for the <code class="text-success">gradShow</code> object.</p>
+                             
+                            <code class="a-code">gradShow.display();</code>
+                            <hr color="red">
 
-                <code class="a-code">gradShow.changeSequence("0011 0011 0011");</code>
-                <hr color="red">
+                            <p>(c) Write a statement that will be used to update the <code class="text-success">gradShow</code> light sequence to "0011 0011 0011".</p>
 
-                <p>(d) Write a code segment that will call the <code class="text-success">insertSegment</code> method to insert the segment "1111 1111" in the current sequence for <code class="text-success">gradShow</code> at index 4. The resulting sequence will be stored in the string <code class="text-success">resultSeq</code>.</p>
+                            <code class="a-code">gradShow.changeSequence("0011 0011 0011");</code>
+                            <hr color="red">
 
-                <code class="a-code">String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
-                <hr color="red">
+                            <p>(d) Write a code segment that will call the <code class="text-success">insertSegment</code> method to insert the segment "1111 1111" in the current sequence for <code class="text-success">gradShow</code> at index 4. The resulting sequence will be stored in the string <code class="text-success">resultSeq</code>.</p>
 
-                <p>(e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider the following examples.</p>
-                <p>If oldSeq is "1100000111" and segment is "11", then "00000111" should be stored in <code class="text-success">newSeq</code>.</p>
-                <p>If oldSeq is "0000011" and segment is "11", then "00000" should be stored in <code class="text-success">newSeq</code>.</p>
-                <p>If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in <code class="text-success">newSeq</code>.</p>
-                <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
+                            <code class="a-code">String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
+                            <hr color="red">
 
-                <code class="a-code">newSeq = oldSeq.replace(segment, "");</code>
-                <hr color="red">
+                            <p>(e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider the following examples.</p>
+                            <p>If oldSeq is "1100000111" and segment is "11", then "00000111" should be stored in <code class="text-success">newSeq</code>.</p>
+                            <p>If oldSeq is "0000011" and segment is "11", then "00000" should be stored in <code class="text-success">newSeq</code>.</p>
+                            <p>If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in <code class="text-success">newSeq</code>.</p>
+                            <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
 
-                <p>(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable <code class="text-success">a</code>. The horizontal distance between the two lights is stored in the double variable <code class="text-success">b</code>.</p>
-                <p>The straight-line distance between the two lights is given by the formula <code class="text-success"><span>&#8730;</span><span style="text-decoration: overline">a<span>&#178;</span> + b<span>&#178;</span></span></code>.<p>
-                <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
+                            <code class="a-code">newSeq = oldSeq.replace(segment, "");</code>
+                            <hr color="red">
 
-                <code class="text-primary fw-bold">System.out.println(sqrt(a * a + b * b));</code>
+                            <p>(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable <code class="text-success">a</code>. The horizontal distance between the two lights is stored in the double variable <code class="text-success">b</code>.</p>
+                            <p>The straight-line distance between the two lights is given by the formula <code class="text-success"><span>&#8730;</span><span style="text-decoration: overline">a<span>&#178;</span> + b<span>&#178;</span></span></code>.<p>
+                            <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
 
+                            <code class="text-primary fw-bold">System.out.println(sqrt(a * a + b * b));</code>
+
+                        </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 2 FRQ Demo</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-light-seq" method="POST">
+                            <label for="seq" class="form-label">Set Light Sequence</label>
+                            <input id="seq" class="form-control" name="seq" th:value=${lightSeqResult}>
+
+                            <label for="changeLightSeq" class="form-label">Change Light Sequence</label>
+                            <input id="changeLightSeq" class="form-control" name="changeLightSeq">
+
+                            <div class="row">
+                                <div class="col-auto ps-0 pe-1">
+                                    <label for="insertLightSeq" class="form-label">Insert into Light Sequence</label>
+                                    <input id="insertLightSeq" class="form-control" name="insertLightSeq">
+                                </div>
+
+                                <div class="col-auto ps-1 pe-0">
+                                    <label for="insertIdxLightSeq" class="form-label">Index</label>
+                                    <input id="insertIdxLightSeq" class="form-control" name="insertIdxLightSeq">
+                                </div>
+                            </div>
+
+                            <label for="rmFirstLightSeq" class="form-label">Remove first match in Light Sequence</label>
+                            <input id="rmFirstLightSeq" class="form-control" name="rmFirstLightSeq">
+
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                            <p th:text="${lightSeqResult}" th:if="${lightSeqResult}" class="bg-success p-1 my-3"></p>
+                        </form>
+                    </div>
+                </details>
             </div>
 
             <!-- FRQ #3 -->
-            <div class="body-window p-5">
-                <h1 class="text-info text-center fw-bold">Unit 3 FRQ</h1>
-                
-                <h3 class="fw-bold">Question 1</h3>
-                
-                <hr color="red">
+            <div class="body-window p-3">
+                <details>
+                    <summary>Unit 3 FRQ</summary>
 
-                <p>Assume that the following variables have been properly declared and initialized.</p>
-                
-                <p>a <code>boolean</code> variable named <code>rsvp</code></p>
-                <p>an <code>int</code> variable named <code>selection</code>, where <code>1</code> represents "<code>beef</code>", <code>2</code> represents "<code>chicken</code>", <code>3</code> represents "<code>pasta</code>", and all other values represent "<code>fish</code>"</p>
-                <p>a <code>String</code> variable named <code>option1</code></p>
-                <p>a <code>String</code> variable named <code>option2</code></p>
+                    <div class="p-5">
+                        <h1 class="text-info text-center fw-bold">Unit 3 FRQ</h1>
+                        
+                        <h3 class="fw-bold">Question 1</h3>
+                        
+                        <hr color="red">
 
-                <hr color="red">
+                        <p>Assume that the following variables have been properly declared and initialized.</p>
+                        
+                        <p>a <code>boolean</code> variable named <code>rsvp</code></p>
+                        <p>an <code>int</code> variable named <code>selection</code>, where <code>1</code> represents "<code>beef</code>", <code>2</code> represents "<code>chicken</code>", <code>3</code> represents "<code>pasta</code>", and all other values represent "<code>fish</code>"</p>
+                        <p>a <code>String</code> variable named <code>option1</code></p>
+                        <p>a <code>String</code> variable named <code>option2</code></p>
 
-                <p>(a)   Write a code segment that prints "<code>attending</code>" if <code>rsvp</code> is <code>true</code> and prints "<code>not attending</code>" otherwise.</p>
-                <p>Write the statement below.</p>
-                
-                <hr color="red">
+                        <hr color="red">
 
-                <pre>
-                <code class="a-code">if (rsvp == true) {                                          </code>
-                <code class="a-code">    System.out.println("attending");                         </code>
-                <code class="a-code">    System.out.println("not attending");                     </code>
-                <code class="a-code">}                                                            </code>
-                </pre>
+                        <p>(a)   Write a code segment that prints "<code>attending</code>" if <code>rsvp</code> is <code>true</code> and prints "<code>not attending</code>" otherwise.</p>
+                        <p>Write the statement below.</p>
+                        
+                        <hr color="red">
 
-                <hr color="red">
+                        <pre>
+                        <code class="a-code">if (rsvp == true) {                                          </code>
+                        <code class="a-code">    System.out.println("attending");                         </code>
+                        <code class="a-code">    System.out.println("not attending");                     </code>
+                        <code class="a-code">}                                                            </code>
+                        </pre>
 
-                <p>(b)   Write a code segment that prints the food item associated with <code>selection</code>. For example, if <code>selection</code> is <code>3</code>, the code segment should print "<code>pasta</code>".</p>
-                <p>Write the code segment below. Your code segment should meet all specifications and conform to the example.</p>
+                        <hr color="red">
 
-                <hr color="red">
-                 
-                <code class="a-code">switch (selection) {                                         </code>
-                <code class="a-code">    case 1 : System.out.println("beef");                     </code>
-                <code class="a-code">    case 2 : System.out.println("chicken");                  </code>
-                <code class="a-code">    case 3 : System.out.println("pasta");                    </code>
-                <code class="a-code">    default: System.out.println("fish");                     </code>
-                <code class="a-code">}                                                            </code>
+                        <p>(b)   Write a code segment that prints the food item associated with <code>selection</code>. For example, if <code>selection</code> is <code>3</code>, the code segment should print "<code>pasta</code>".</p>
+                        <p>Write the code segment below. Your code segment should meet all specifications and conform to the example.</p>
 
-                <hr color="red">
+                        <hr color="red">
+                         
+                        <code class="a-code">switch (selection) {                                         </code>
+                        <code class="a-code">    case 1 : System.out.println("beef");                     </code>
+                        <code class="a-code">    case 2 : System.out.println("chicken");                  </code>
+                        <code class="a-code">    case 3 : System.out.println("pasta");                    </code>
+                        <code class="a-code">    default: System.out.println("fish");                     </code>
+                        <code class="a-code">}                                                            </code>
 
-                <p>(c)   Write a code segment that will store a dinner selection in <code>option1</code> based on the values of <code>rsvp</code> and <code>selection</code>. The intended behavior of the code segment is described below.</p>
-                <p>If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance and food choice. For example, if rsvp is true and selection is 1, the following string should be stored in option1.</p>
+                        <hr color="red">
 
-                <p>&emsp;"<code>Thanks for attending. You will be served beef.</code>"</p>
+                        <p>(c)   Write a code segment that will store a dinner selection in <code>option1</code> based on the values of <code>rsvp</code> and <code>selection</code>. The intended behavior of the code segment is described below.</p>
+                        <p>If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance and food choice. For example, if rsvp is true and selection is 1, the following string should be stored in option1.</p>
 
-                <p>If rsvp is false, the following string should be stored in option1, regardless of the value of selection.</p>
+                        <p>&emsp;"<code>Thanks for attending. You will be served beef.</code>"</p>
 
-                <p>&emsp;"Sorry you can't make it."</p>
+                        <p>If rsvp is false, the following string should be stored in option1, regardless of the value of selection.</p>
 
-                <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
+                        <p>&emsp;"Sorry you can't make it."</p>
 
-                <hr color="red">
+                        <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
 
-                <pre>
-                <code class="a-code">if (rsvp == true) {                                          </code>
-                <code class="a-code">    String food;                                             </code>
-                <code class="a-code">    switch (selection) {                                     </code>
-                <code class="a-code">        case 1 : food = "beef";                              </code>
-                <code class="a-code">        case 2 : food = "chicken";                           </code>
-                <code class="a-code">        case 3 : food = "pasta";                             </code>
-                <code class="a-code">        default: food = "fish";                              </code>
-                <code class="a-code">    }                                                        </code>
-                <code class="a-code">                                                             </code>
-                <code class="a-code">    System.out.println("Thanks for attending. You will be +  </code>
-                <code class="a-code">} else {                                                     </code>
-                <code class="a-code">    System.out.println("Sorry you can't make it.");          </code>
-                <code class="a-code">}                                                            </code>
-                </pre>
-                <hr color="red">
+                        <hr color="red">
 
-                <p>(d)   Write a code segment that will print <code>true</code> if the strings <code>option1</code> and <code>option2</code> contain the same values and will print false otherwise.</p>
-                <p>Write the code segment below.</p>
-                
-                <hr color="red">
-                
-                <pre>
-                <code class="a-code">if (option1 == option2) {                                    </code>
-                <code class="a-code">    System.out.println("true");                              </code>
-                <code class="a-code">} else {                                                     </code>
-                <code class="a-code">    System.out.println("false");                             </code>
-                <code class="a-code">}                                                            </code>
-                </pre>
-                
-                <hr color="red">
-                
-                <h3 class="fw-bold">Question 2</h3>
-                
-                <p>This question involves the <code class="q-code">Draw</code> class, which is used to draw line segments and squares on a 10-by-10 xy-coordinate grid.</p>
+                        <pre>
+                        <code class="a-code">if (rsvp == true) {                                          </code>
+                        <code class="a-code">    String food;                                             </code>
+                        <code class="a-code">    switch (selection) {                                     </code>
+                        <code class="a-code">        case 1 : food = "beef";                              </code>
+                        <code class="a-code">        case 2 : food = "chicken";                           </code>
+                        <code class="a-code">        case 3 : food = "pasta";                             </code>
+                        <code class="a-code">        default: food = "fish";                              </code>
+                        <code class="a-code">    }                                                        </code>
+                        <code class="a-code">                                                             </code>
+                        <code class="a-code">    System.out.println("Thanks for attending. You will be +  </code>
+                        <code class="a-code">} else {                                                     </code>
+                        <code class="a-code">    System.out.println("Sorry you can't make it.");          </code>
+                        <code class="a-code">}                                                            </code>
+                        </pre>
+                        <hr color="red">
 
-                <pre>
-                <code></code>
+                        <p>(d)   Write a code segment that will print <code>true</code> if the strings <code>option1</code> and <code>option2</code> contain the same values and will print false otherwise.</p>
+                        <p>Write the code segment below.</p>
+                        
+                        <hr color="red">
+                        
+                        <pre>
+                        <code class="a-code">if (option1 == option2) {                                    </code>
+                        <code class="a-code">    System.out.println("true");                              </code>
+                        <code class="a-code">} else {                                                     </code>
+                        <code class="a-code">    System.out.println("false");                             </code>
+                        <code class="a-code">}                                                            </code>
+                        </pre>
+                        
+                        <hr color="red">
+                        
+                        <h3 class="fw-bold">Question 2</h3>
+                        
+                        <p>This question involves the <code class="q-code">Draw</code> class, which is used to draw line segments and squares on a 10-by-10 xy-coordinate grid.</p>
 
-                <code class="q-code">public class Draw</code>
-                <code class="q-code">{</code>
-                <code class="q-code">/** Precondition: All parameters are between 0 and 10, inclusive.</code>
-                <code class="q-code">* Draws a line segment in a 10-by-10 xy-coordinate grid.</code>
-                <code class="q-code">* The line segment is drawn from (x1, y1) to (x2, y2).</code>
-                <code class="q-code">*/</code>
+                        <pre>
+                        <code></code>
 
-                <code class="q-code">public void drawLine(int x1, int y1, int x2, int y2)</code>
-                <code class="q-code">{ /* implementation not shown */ }</code>
-                <code class="q-code">/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.</code>
-                <code class="q-code">* Draws a square on a 10-by-10 xy-coordinate grid</code>
-                <code class="q-code">* and prints the square’s side length and area.</code>
-                <code class="q-code">* The upper left corner of the square will be located</code>
-                <code class="q-code">* at the coordinate (x, y) and the side length of the</code>
-                <code class="q-code">* square will be len (or as large as will fit in the grid).</code>
-                <code class="q-code">*/</code>
+                        <code class="q-code">public class Draw</code>
+                        <code class="q-code">{</code>
+                        <code class="q-code">/** Precondition: All parameters are between 0 and 10, inclusive.</code>
+                        <code class="q-code">* Draws a line segment in a 10-by-10 xy-coordinate grid.</code>
+                        <code class="q-code">* The line segment is drawn from (x1, y1) to (x2, y2).</code>
+                        <code class="q-code">*/</code>
 
-                <code class="q-code">public void drawSquare(int x, int y, int len)</code>
-                <code class="q-code">{ /* to be implemented */ }</code>
-                <code class="q-code">}</code>
+                        <code class="q-code">public void drawLine(int x1, int y1, int x2, int y2)</code>
+                        <code class="q-code">{ /* implementation not shown */ }</code>
+                        <code class="q-code">/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.</code>
+                        <code class="q-code">* Draws a square on a 10-by-10 xy-coordinate grid</code>
+                        <code class="q-code">* and prints the square’s side length and area.</code>
+                        <code class="q-code">* The upper left corner of the square will be located</code>
+                        <code class="q-code">* at the coordinate (x, y) and the side length of the</code>
+                        <code class="q-code">* square will be len (or as large as will fit in the grid).</code>
+                        <code class="q-code">*/</code>
 
-                </pre>
-                
-                <p>You will write method <code class="q-code">drawSquare</code>, which draws a square on a 10-by-10 grid and prints the square’s side length and area in the format shown in the examples. The upper left corner of the square is located at the coordinate <code class="q-code">(x, y)</code>. The sides of the square will be of length <code class="q-code">len</code>, or as large as will fit on the grid.</p>
-                <p>Write the method <code class="q-code">drawSquare</code> below.</p>
-                <pre>
-                <code class="q-code">/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.</code>
-                <code class="q-code">* Draws a square on a 10-by-10 xy-coordinate grid</code>
-                <code class="q-code">* and prints the square’s side length and area.</code>
-                <code class="q-code">* The upper left corner of the square will be located</code>
-                <code class="q-code">* at the coordinate (x, y) and the side length of the</code>
-                <code class="q-code">* square will be len (or as large as will fit in the grid).</code>
-                <code class="q-code">*/</code>
-                <code class="q-code">public void drawSquare(int x, int y, int len)</code>
-                </pre>                
-                
-                <hr color="red">
-                <pre>
-                <code class="a-code">public void drawSquare(int x, int y, int len) {</code>
-                    <code class="a-code">drawLine(x, y, x - len, y);</code>
-                    <code class="a-code">drawLine(x, y - len, x - len, y - len);</code>
-                    <code class="a-code">drawLine(x - len, y - len, x, y - len);</code>
-                    <code class="a-code">drawLine(x, y - len, x, y);</code>
-<code class="a-code"></code>
-                    <code class="a-code">System.out.println("length: " + len);</code>
-                    <code class="a-code">System.out.println("area: " + (len * len));</code>
-                <code class="a-code">}</code>
-                </pre>
-                <hr color="red">
+                        <code class="q-code">public void drawSquare(int x, int y, int len)</code>
+                        <code class="q-code">{ /* to be implemented */ }</code>
+                        <code class="q-code">}</code>
 
-               <details>
-                    <summary>FRQ #3 Question 2 Demo</summary>
-
-                    <h1 class="text-center">JavaScript - Draw on Canvas</h1>
-                    <div class="container py-4 bg-primary" style="text-align:center;">
-                        <canvas id="canvas" width="512" height="384"></canvas>
+                        </pre>
+                        
+                        <p>You will write method <code class="q-code">drawSquare</code>, which draws a square on a 10-by-10 grid and prints the square’s side length and area in the format shown in the examples. The upper left corner of the square is located at the coordinate <code class="q-code">(x, y)</code>. The sides of the square will be of length <code class="q-code">len</code>, or as large as will fit on the grid.</p>
+                        <p>Write the method <code class="q-code">drawSquare</code> below.</p>
+                        <pre>
+                        <code class="q-code">/** Precondition: 0 ≤ x < 10, 0 < y ≤ 10, and len > 0.</code>
+                        <code class="q-code">* Draws a square on a 10-by-10 xy-coordinate grid</code>
+                        <code class="q-code">* and prints the square’s side length and area.</code>
+                        <code class="q-code">* The upper left corner of the square will be located</code>
+                        <code class="q-code">* at the coordinate (x, y) and the side length of the</code>
+                        <code class="q-code">* square will be len (or as large as will fit in the grid).</code>
+                        <code class="q-code">*/</code>
+                        <code class="q-code">public void drawSquare(int x, int y, int len)</code>
+                        </pre>                
+                        
+                        <hr color="red">
+                        <pre>
+                        <code class="a-code">public void drawSquare(int x, int y, int len) {</code>
+                            <code class="a-code">drawLine(x, y, x - len, y);</code>
+                            <code class="a-code">drawLine(x, y - len, x - len, y - len);</code>
+                            <code class="a-code">drawLine(x - len, y - len, x, y - len);</code>
+                            <code class="a-code">drawLine(x, y - len, x, y);</code>
+        <code class="a-code"></code>
+                            <code class="a-code">System.out.println("length: " + len);</code>
+                            <code class="a-code">System.out.println("area: " + (len * len));</code>
+                        <code class="a-code">}</code>
+                        </pre>
+                        <hr color="red">
                     </div>
+                </details>
+            </div>
 
-                    <h1>X</h1>
-                    <input value="0" id='X' type='number' />
-                    <h1>Y</h1>
-                    <input value="0" id="Y" type='number' />
-                    <h1>size</h1>
-                    <input value="4" id="size" type='number' />
-                    <script>
-                        // https://www.w3schools.com/graphics/canvas_intro.asp
-                        const canvas = document.getElementById('canvas');
-                        const ctx = canvas.getContext('2d');
-                        const width = canvas.width;
-                        const height = canvas.height;
-                        const unit = 16; // unit block size
-                        const inputx = document.getElementById("X");
-                        const inputy = document.getElementById("Y");
-                        const inputsize = document.getElementById("size");
+            <div class="body-window p-3">
+               <details>
+                    <summary>Unit 3 FRQ Question 2 Demo</summary>
 
-                        let inputxV = 0;
-                        let inputyV = 0;
-                        let inputsizeV = 4;
+                    <div class="p-5">
+                        <div class="container py-4 bg-primary" style="text-align:center;">
+                            <canvas id="canvas" width="512" height="384"></canvas>
+                        </div>
 
-                        clearScreen();
+                        <h1>X</h1>
+                        <input value="0" id='X' type='number' />
+                        <h1>Y</h1>
+                        <input value="0" id="Y" type='number' />
+                        <h1>size</h1>
+                        <input value="4" id="size" type='number' />
+                        <script>
+                            // https://www.w3schools.com/graphics/canvas_intro.asp
+                            const canvas = document.getElementById('canvas');
+                            const ctx = canvas.getContext('2d');
+                            const width = canvas.width;
+                            const height = canvas.height;
+                            const unit = 16; // unit block size
+                            const inputx = document.getElementById("X");
+                            const inputy = document.getElementById("Y");
+                            const inputsize = document.getElementById("size");
 
-                        inputsize.onchange = function() {
-
-                            inputsizeV = parseInt(inputsize.value);
-                            ctx.strokeStyle = 'black';
-                            ctx.lineWidth = 5;
-                            update();
-                        };
-
-                        inputx.onchange = function() {
-
-                            inputxV = parseInt(inputx.value);
-                            ctx.strokeStyle = 'black';
-                            ctx.lineWidth = 5;
-                            update();
-                        };
-
-                        inputy.onchange = function() {
-
-                            inputyV = parseInt(inputy.value);
-                            ctx.strokeStyle = 'black';
-                            ctx.lineWidth = 5;
-                            update();
-
-                        };
-
-                        function update() {
-                            // checking box out of bounds
-                            if ((inputxV + inputsizeV) > 16 || // Right
-                                (inputxV) < -16 || // left
-                                (inputyV + inputsizeV) > 12 || // Top
-                                (inputyV) < -12) { // Bottom
-                                alert("Nothing changed -> Box is can't fit inside of the grid system");
-                                return;
-                            }
+                            let inputxV = 0;
+                            let inputyV = 0;
+                            let inputsizeV = 4;
 
                             clearScreen();
-                            ctx.strokeStyle = 'black'
-                            square();
-                            grid();
-                            axis();
-                            logStats();
-                        }
 
-                        function logStats() {
-                            console.log(
-                                `Area of the square: ${inputsizeV * inputsizeV}, side length of the square: ${(inputsizeV + inputsizeV) << 1}`
-                            )
-                        }
+                            inputsize.onchange = function() {
+
+                                inputsizeV = parseInt(inputsize.value);
+                                ctx.strokeStyle = 'black';
+                                ctx.lineWidth = 5;
+                                update();
+                            };
+
+                            inputx.onchange = function() {
+
+                                inputxV = parseInt(inputx.value);
+                                ctx.strokeStyle = 'black';
+                                ctx.lineWidth = 5;
+                                update();
+                            };
+
+                            inputy.onchange = function() {
+
+                                inputyV = parseInt(inputy.value);
+                                ctx.strokeStyle = 'black';
+                                ctx.lineWidth = 5;
+                                update();
+
+                            };
+
+                            function update() {
+                                // checking box out of bounds
+                                if ((inputxV + inputsizeV) > 16 || // Right
+                                    (inputxV) < -16 || // left
+                                    (inputyV + inputsizeV) > 12 || // Top
+                                    (inputyV) < -12) { // Bottom
+                                    alert("Nothing changed -> Box is can't fit inside of the grid system");
+                                    return;
+                                }
+
+                                clearScreen();
+                                ctx.strokeStyle = 'black'
+                                square();
+                                grid();
+                                axis();
+                                logStats();
+                            }
+
+                            function logStats() {
+                                console.log(
+                                    `Area of the square: ${inputsizeV * inputsizeV}, side length of the square: ${(inputsizeV + inputsizeV) << 1}`
+                                )
+                            }
 
 
-                        function clearScreen() {
-                            ctx.clearRect(0, 0, canvas.width, canvas.height);
-                            ctx.fillStyle = 'white';
-                            ctx.fillRect(0, 0, canvas.width, canvas.height);
-                        }
+                            function clearScreen() {
+                                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                ctx.fillStyle = 'white';
+                                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                            }
 
 
-                        // grid based off of width, height
-                        function grid() {
-                            // color and pen width
-                            ctx.strokeStyle = 'black';
-                            ctx.lineWidth = 1;
-                            // make graph paper look
-                            for (let col = 0; col < width; col += unit) {
-                                for (let row = 0; row < height; row += unit) {
-                                    ctx.strokeRect(col, row, unit, unit);
+                            // grid based off of width, height
+                            function grid() {
+                                // color and pen width
+                                ctx.strokeStyle = 'black';
+                                ctx.lineWidth = 1;
+                                // make graph paper look
+                                for (let col = 0; col < width; col += unit) {
+                                    for (let row = 0; row < height; row += unit) {
+                                        ctx.strokeRect(col, row, unit, unit);
+                                    }
                                 }
                             }
-                        }
 
-                        // axis lines
-                        function axis() {
-                            // color and pen width
-                            ctx.strokeStyle = 'red';
-                            ctx.lineWidth = 3;
+                            // axis lines
+                            function axis() {
+                                // color and pen width
+                                ctx.strokeStyle = 'red';
+                                ctx.lineWidth = 3;
 
-                            // x & y zero midpoints of grid
-                            const x0 = width * .5;
-                            const y0 = height * .5;
-                            // x-axis
-                            ctx.moveTo(0, y0);
-                            ctx.lineTo(width, y0);
-                            ctx.stroke();
-                            // y-axis
-                            ctx.moveTo(x0, 0);
-                            ctx.lineTo(x0, height);
-                            ctx.stroke();
-                        }
-
+                                // x & y zero midpoints of grid
+                                const x0 = width * .5;
+                                const y0 = height * .5;
+                                // x-axis
+                                ctx.moveTo(0, y0);
+                                ctx.lineTo(width, y0);
+                                ctx.stroke();
+                                // y-axis
+                                ctx.moveTo(x0, 0);
+                                ctx.lineTo(x0, height);
+                                ctx.stroke();
+                            }
 
 
-                        // square using lines
-                        function square() {
-                            ctx.strokeStyle = 'red';
-                            ctx.lineWidth = 5;
 
-                            // starting coordinates
-                            var offsetX = width * 0.5;
-                            var offsetY = height * 0.5;
+                            // square using lines
+                            function square() {
+                                ctx.strokeStyle = 'red';
+                                ctx.lineWidth = 5;
 
-                            // length of sides is 4 units
-                            const l = Math.abs(unit * inputsizeV);
+                                // starting coordinates
+                                var offsetX = width * 0.5;
+                                var offsetY = height * 0.5;
 
-                            const x = unit + offsetX + inputxV * unit - unit;
-                            const y = -unit + offsetY - l - inputyV * unit + unit;
+                                // length of sides is 4 units
+                                const l = Math.abs(unit * inputsizeV);
 
-                            // draw a square
-                            ctx.beginPath();
-                            ctx.moveTo(x, y);
-                            ctx.lineTo(x, y + l);
-                            ctx.lineTo(x + l, y + l);
-                            ctx.lineTo(x + l, y);
-                            ctx.lineTo(x, y);
-                            ctx.stroke();
-                        }
-                        // three actions
-                        grid();
-                        axis();
-                        square();
-                    </script>
+                                const x = unit + offsetX + inputxV * unit - unit;
+                                const y = -unit + offsetY - l - inputyV * unit + unit;
+
+                                // draw a square
+                                ctx.beginPath();
+                                ctx.moveTo(x, y);
+                                ctx.lineTo(x, y + l);
+                                ctx.lineTo(x + l, y + l);
+                                ctx.lineTo(x + l, y);
+                                ctx.lineTo(x, y);
+                                ctx.stroke();
+                            }
+                            // three actions
+                            grid();
+                            axis();
+                            square();
+                        </script>
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 4 FRQ Question 1 Demo</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-longest-streak" method="POST">
+                            <label for="streak" class="form-label">Streak</label>
+                            <input id="streak" class="form-control" name="streak">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Longest Streak</button>
+                            <p th:text="${longestStreakResult}" th:if="${longestStreakResult}" class="bg-success p-1 my-3" ></p>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 4 FRQ Question 2 Demo</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-coin-game" method="POST">
+                            <label for="rounds" class="form-label">Rounds</label>
+                            <input id="rounds" class="form-control" name="rounds">
+
+                            <label for="startingCoins" class="form-label">Starting Coins</label>
+                            <input id="startingCoins" class="form-control" name="startingCoins">
+
+                            <button type="submit" class="btn btn-primary mt-3">Play Game</button>
+                            <p th:text="${coinGameResult}" th:if="${coinGameResult}" class="bg-success p-1 my-3" ></p>
+                        </form>
+                    </div>
                 </details>
             </div>
 
