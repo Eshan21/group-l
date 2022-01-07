@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Login</title>
+</div></head>
+
+<body>
+    <div layout:fragment="content" th:remove="tag">
+        <main class="container-fluid h-100">
+            <div class="body-window">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem">
+                        <div class="card-body p-5">
+                            <div class="text-center">
+                                <h3 class="card-title text-center display-1 font-monospace">Login</h1>
+                                <p class="card-text text-secondary">Login to your account</p>
+                            </div>
+
+                            <form method="POST">
+                                <div class="row">
+                                    <input id="username" type="text" class="form-control-lg my-3" name="username" placeholder="Username">
+
+                                    <input id="password" type="password" class="form-control-lg my-3" name="password" placeholder="Password">
+
+                                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
