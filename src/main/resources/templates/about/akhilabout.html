@@ -128,23 +128,22 @@
 				<code style="margin-left:40px;">String prevChar = null;</code><br>
 				<code style="margin-left:40px;">int start = 0;</code><br>
 				<code style="margin-left:40px;">int end = 0;</code><br>
-				<code style="margin-left:80px;">for (int ii=0;ii&lt;str.length();ii++) {</code><br>
-				<code style="margin-left:120px;">currentChar = String.valueOf(str.charAt(ii));</code><br>
-				<code style="margin-left:120px;">if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}</code><br>
-				<code style="margin-left:120px;">if (currentChar.equals(prevChar)) {</code><br>
-				<code style="margin-left:160px;">currentCount++;</code><br>
-				<code style="margin-left:160px;">if (currentCount > longestCount) {</code><br>
-				<code style="margin-left:200px;">longestChar = currentChar;</code><br>
-				<code style="margin-left:200px;">longestCount = currentCount;</code><br>
-				<code style="margin-left:160px;">}</code><br>
-				<code style="margin-left:120px;">}</code><br>
-				<code style="margin-left:120px;">else {</code><br>
-				<code style="margin-left:160px;">currentCount = 1;</code><br>
-				<code style="margin-left:160px;">currentChar = null;</code><br>
+				<code style="margin-left:40px;">for (int ii=0;ii&lt;str.length();ii++) {</code><br>
+				<code style="margin-left:80px;">currentChar = String.valueOf(str.charAt(ii));</code><br>
+				<code style="margin-left:80px;">if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}</code><br>
+				<code style="margin-left:80px;">if (currentChar.equals(prevChar)) {</code><br>
+				<code style="margin-left:120px;">currentCount++;</code><br>
+				<code style="margin-left:120px;">if (currentCount > longestCount) {</code><br>
+				<code style="margin-left:160px;">longestChar = currentChar;</code><br>
+				<code style="margin-left:160px;">longestCount = currentCount;</code><br>
 				<code style="margin-left:120px;">}</code><br>
 				<code style="margin-left:80px;">}</code><br>
-				<code style="margin-left:80px;">System.out.printf("%s %d\n", longestChar, longestCount);</code><br>
+				<code style="margin-left:80px;">else {</code><br>
+				<code style="margin-left:120px;">currentCount = 1;</code><br>
+				<code style="margin-left:120px;">currentChar = null;</code><br>
+				<code style="margin-left:80px;">}</code><br>
 				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">System.out.printf("%s %d\n", longestChar, longestCount);</code><br>
 				<code style="margin-left:00px;">}</code><br>
 				<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
 					<form action="/about/akhilabout/Unit4FRQQuestion1" method="GET" id="Unit4FRQQuestion1">
@@ -198,7 +197,7 @@
 				<div style="padding:10px;">
 					<div class="sub-window">
 						<div>
-							<h4 style="display:inline"><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
+							<h4><u th:text="${Comment.key[0]}"></u></h4><p style="display:inline" th:text="'  ' + ${Comment.key[1]}"></p>
 						</div>
 						<p style="margin-left: 20px;" th:text="${Comment.value}"></p>
 					</div>

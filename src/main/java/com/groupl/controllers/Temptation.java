@@ -10,16 +10,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 @Controller
 public class Temptation {
     HashMap<String[], String> Comments = new HashMap<>();
     public int score = 0;
+    ArrayList<String> images = new ArrayList<String>();
 
     @GetMapping("/temp")
     public String temp(Model model) {
         model.addAttribute("Comments", Comments);
         model.addAttribute("score", score);
+        model.addAttribute("images", images);
         return "temp";
     }
 
@@ -32,6 +35,7 @@ public class Temptation {
         Comments.put(new String[]{name, dtf.format(now)}, content);
         model.addAttribute("Comments", Comments);
         model.addAttribute("score", score);
+        model.addAttribute("images", images);
         return "temp";
     }
 
@@ -44,6 +48,12 @@ public class Temptation {
     @ResponseBody
     public void voteDn() {
         score--;
+    }
+
+    @PostMapping("/temp/imagePost")
+    @ResponseBody
+    public void imagePost(@RequestParam(required=false) String imageURL) {
+        images.add(imageURL);
     }
 }
 
