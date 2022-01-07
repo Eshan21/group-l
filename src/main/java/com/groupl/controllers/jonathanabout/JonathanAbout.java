@@ -44,6 +44,33 @@ public class JonathanAbout {
         return "/about/jonathanabout";
     }
     
+    @PostMapping("/about/jonathan-attending")
+    public String gotoEvent(@RequestParam(required = false) String rsvp,
+                          @RequestParam String selection,
+                          Model model) {
+        boolean attending;
+
+        if (!isNullOrEmpty(rsvp)) {
+            attending = true;
+        } else {
+            attending = false;
+        }
+
+        AttendingPerson person = new AttendingPerson(attending, Integer.parseInt(selection));
+
+        String result;
+
+        if (person.isAttending()) {
+            result = "Thanks for attending. You will be served " + person.getSelection();
+        } else {
+            result = "Sorry you can't make it.";
+        }
+
+        model.addAttribute("attendingResult", result);
+
+        return "/about/jonathanabout";
+    }
+    
     @PostMapping("/about/jonathan-coin-game")
     public String runGame(@RequestParam String rounds,
                           @RequestParam String startingCoins,

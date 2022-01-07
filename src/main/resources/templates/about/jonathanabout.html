@@ -163,6 +163,7 @@
                         <pre>
                         <code class="a-code">if (rsvp == true) {                                          </code>
                         <code class="a-code">    System.out.println("attending");                         </code>
+                        <code class="a-code">} else {                                                     </code>
                         <code class="a-code">    System.out.println("not attending");                     </code>
                         <code class="a-code">}                                                            </code>
                         </pre>
@@ -174,12 +175,14 @@
 
                         <hr color="red">
                          
+                        <pre>
                         <code class="a-code">switch (selection) {                                         </code>
                         <code class="a-code">    case 1 : System.out.println("beef");                     </code>
                         <code class="a-code">    case 2 : System.out.println("chicken");                  </code>
                         <code class="a-code">    case 3 : System.out.println("pasta");                    </code>
                         <code class="a-code">    default: System.out.println("fish");                     </code>
                         <code class="a-code">}                                                            </code>
+                        </pre>
 
                         <hr color="red">
 
@@ -206,7 +209,7 @@
                         <code class="a-code">        default: food = "fish";                              </code>
                         <code class="a-code">    }                                                        </code>
                         <code class="a-code">                                                             </code>
-                        <code class="a-code">    System.out.println("Thanks for attending. You will be +  </code>
+                        <code class="a-code">    System.out.println("Thanks for attending. You will be served " + food); </code>
                         <code class="a-code">} else {                                                     </code>
                         <code class="a-code">    System.out.println("Sorry you can't make it.");          </code>
                         <code class="a-code">}                                                            </code>
@@ -284,6 +287,29 @@
                         <code class="a-code">}</code>
                         </pre>
                         <hr color="red">
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 3 FRQ Question 1 Demo</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-attending" method="POST">
+                            <label for="selection" class="form-label">Selection</label>
+                            <input id="selection" class="form-control" name="selection">
+
+                            <hr>
+
+                            <div class="form-check">
+                                <input id="rsvp" class="form-check-input" type="checkbox" name="rsvp" value="true">
+                                <label for="rsvp" class="form-check-label">RSVP</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                            <p th:text="${attendingResult}" th:if="${attendingResult}" class="bg-success p-1 my-3"></p>
+                        </form>
                     </div>
                 </details>
             </div>
