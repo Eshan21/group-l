@@ -69,12 +69,14 @@
             .body-window {
                 background-color: var(--foreground);
                 border-radius: 20px;
-                margin: 7px;
+                margin: 10px 0px;
                 height: calc(100% - 64px);
                 color: var(--black);
                 transition: 0.2s;
             }
-            
+            .body-window:hover {
+                box-shadow: -10px 10px 10px rgba(0,0,0,0.375);
+            }
             .body-window-dark {
                 background-color: var(--background);
                 color: var(--white);
@@ -85,7 +87,7 @@
                 transition: none;
             }
 
-            main.container {
+            main.container, main.container-fluid {
                 max-width:100%;
                 padding-left: 0px;
                 padding-right: 0px;
@@ -127,7 +129,15 @@
                 padding: 10px;
                 border-radius: 10px;
             }
-            
+            #navbar {
+                transition: 0.2s;
+                box-shadow: -7px 7px 10px rgba(0,0,0,0.375);
+                color: #74496a;
+                z-index: 0;
+            }
+            #navbar:hover {
+                box-shadow: -12px 12px 10px rgba(0,0,0,0.375);
+            }
             .top-bar {
                 position: absolute;
                 margin: 0;
@@ -152,7 +162,7 @@
                 background-size: cover;
                 /*transform: scale(1.75);*/
                 /*background-size:100vw auto;*/
-                filter: blur(10px);
+                filter: blur(12px);
                 box-shadow: inset 0px 0px 0px 100vw rgba(188, 188, 188, 0.5);
                 /* same as var(--white) */
                 margin: -1%;
@@ -167,19 +177,15 @@
             }
             #theme-switch {
                 margin-left: 5px;
-                border: 2px solid;
-                border-radius: 5px;
                 width: 28px;
                 text-align: center;
                 transition: 0.2s;
             }
             #theme-switch:hover {
-                background-color: #74496a;
+                color: #b67fa8;
+                cursor: pointer;
             }
-            .theme-switch-dark:hover {
-                background-color: #ead4ff !important;
-            }
-            
+
             .special {
                 position: absolute;
             }

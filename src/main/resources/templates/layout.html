@@ -44,20 +44,30 @@
             for (ii=0;ii<toc.length;ii++) {toc[ii].classList.toggle("sub-window-dark");}
             for (ii=0;ii<subWindows.length;ii++) {subWindows[ii].classList.toggle("sub-window-dark");}
             for (ii=0;ii<voteBtn.length;ii++) {voteBtn[ii].classList.toggle("sub-window-light");}
+
+            if (themeSwitch.children[2].innerHTML.includes("moon-is-on")) {
+                themeSwitch.removeChild(themeSwitch.children[2]);
+                themeSwitch.appendChild(document.getElementById("sun").content.firstElementChild.cloneNode(true));
+            }
+            else if (themeSwitch.children[2].innerHTML.includes("sun-is-on")) {
+                themeSwitch.removeChild(themeSwitch.children[2]);
+                themeSwitch.appendChild(document.getElementById("moon").content.firstElementChild.cloneNode(true));
+            }
         }
 
         function darkThemeSave() {
-            const themeSwitch = document.getElementById("theme-switch");
-            themeSwitch.innerHTML === "☼" ? themeSwitch.innerHTML = "☾" : themeSwitch.innerHTML = "☼";
 
             let darkModeStatus = get('darkModeOn');
-            darkModeStatus === 'false' ? set('darkModeOn', 'true') : set('darkModeOn', 'false');
+            darkModeStatus === 'true' ? set('darkModeOn', 'false') : set('darkModeOn', 'true');
         }
 
         function enableDark() {
+            const themeSwitch = document.getElementById("theme-switch");
             let darkModeStatus = get('darkModeOn');
             if (darkModeStatus === 'true') {
                 darkTheme();
+                themeSwitch.removeChild(themeSwitch.children[2]);
+                themeSwitch.appendChild(document.getElementById("moon").content.firstElementChild.cloneNode(true));
             }
         }
 
