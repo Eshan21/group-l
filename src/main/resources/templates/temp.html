@@ -171,18 +171,22 @@
     }
 
     async function voteUp() {
-      score.innerText++;
+      //score.innerText++;
       let data = await (await fetch('/temp/voteUp', {
         method: 'POST',
         body: null
       })).text();
+      console.log(data);
+      score.innerText = data;
     }
     async function voteDn() {
-      score.innerText--;
+      //score.innerText--;
       let data = await (await fetch('/temp/voteDn', {
         method: 'POST',
         body: null
       })).text();
+      console.log(data);
+      score.innerText = data;
     }
 
     async function postImage() {

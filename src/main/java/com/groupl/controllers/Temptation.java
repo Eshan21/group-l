@@ -41,13 +41,15 @@ public class Temptation {
 
     @PostMapping("/temp/voteUp")
     @ResponseBody
-    public void voteUp() {
+    public int voteUp() {
         score++;
+        return score;
     }
     @PostMapping("/temp/voteDn")
     @ResponseBody
-    public void voteDn() {
+    public int voteDn() {
         score--;
+        return score;
     }
 
     @PostMapping("/temp/imagePost")
