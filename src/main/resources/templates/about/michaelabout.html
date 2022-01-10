@@ -470,6 +470,97 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                         square();
                     </script>
                 </details>
+                <details>
+                    <summary>FRQ Unit 4</summary>
+                    <h5>1. Write the Longest Streak method</h5>
+                    <code style="margin-left:00px;">public static void longestStreak(String str){</code><br>
+                    <code style="margin-left:40px;">int longestCount = 0;</code><br>
+                    <code style="margin-left:40px;">String longestChar = null;</code><br>
+                    <code style="margin-left:40px;">int currentCount = 1;</code><br>
+                    <code style="margin-left:40px;">String currentChar = null;</code><br>
+                    <code style="margin-left:40px;">String prevChar = null;</code><br>
+                    <code style="margin-left:40px;">int start = 0;</code><br>
+                    <code style="margin-left:40px;">int end = 0;</code><br>
+                    <code style="margin-left:40px;">for (int ii=0;ii&lt;str.length();ii++) {</code><br>
+                    <code style="margin-left:80px;">currentChar = String.valueOf(str.charAt(ii));</code><br>
+                    <code style="margin-left:80px;">if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}</code><br>
+                    <code style="margin-left:80px;">if (currentChar.equals(prevChar)) {</code><br>
+                    <code style="margin-left:120px;">currentCount++;</code><br>
+                    <code style="margin-left:120px;">if (currentCount > longestCount) {</code><br>
+                    <code style="margin-left:160px;">longestChar = currentChar;</code><br>
+                    <code style="margin-left:160px;">longestCount = currentCount;</code><br>
+                    <code style="margin-left:120px;">}</code><br>
+                    <code style="margin-left:80px;">}</code><br>
+                    <code style="margin-left:80px;">else {</code><br>
+                    <code style="margin-left:120px;">currentCount = 1;</code><br>
+                    <code style="margin-left:120px;">currentChar = null;</code><br>
+                    <code style="margin-left:80px;">}</code><br>
+                    <code style="margin-left:40px;">}</code><br>
+                    <code style="margin-left:40px;">System.out.printf("%s %d\n", longestChar, longestCount);</code><br>
+                    <code style="margin-left:00px;">}</code><br>
+                    <h5>Demo</h5>
+                    <div class="frq-form">
+                        <form method="GET" id="unit4-frq1">
+                            <div>
+                                <label for="">Input any string :)</label><br>
+                                <input class="form-control sub-window" name="unit4-frq1-text" /><br>
+                                <button id="unit4-frq1-submit-button" class="button">Submit</button>
+                                <p id="unit4-frq1-output"></p>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        (function() {
+                            let form = document.getElementById('unit4-frq1');
+                            let output = document.getElementById('unit4-frq1-output');
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            document.getElementById('unit4-frq1-submit-button').onclick = uploadfile;
+
+                            async function uploadfile() {
+                                let data = await (await fetch('/about/michaelabout/unit4-q1', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).json();
+                                output.innerText = `Your input: ${data['userin']}\nLongest character: ${data['unit4-frq1-longestChar']}\nLongest Streak: ${data['unit4-frq1-longestStreak']}`;
+                            }
+
+                        })();
+                    </script>
+
+                    <h5>2a. getPlayer2Move method</h5>
+                    <code style="margin-left:00px;">public int getPlayer2Move(int round) {</code><br>
+                    <code style="margin-left:40px;">int output;</code><br>
+                    <code style="margin-left:40px;">if (round % 3 == 0) {output = 3;}</code><br>
+                    <code style="margin-left:40px;">else if (round % 2 == 0) {output = 2;}</code><br>
+                    <code style="margin-left:40px;">else {output = 1;}</code><br>
+                    <code style="margin-left:40px;">return output;</code><br>
+                    <code style="margin-left:00px;">}</code><br>
+                    <div class="frq-form">
+                        <form action="/about/michaelabout/Unit4FRQQuestion2PartA" method="GET" id="Unit4FRQQuestion2PartA">
+                            <div>
+                                <label for="roundNumberField">Input the round number</label><br>
+                                <input class="form-control sub-window" name="round" id="roundNumberField" th:value="${Player2Input}"><br>
+                                <button class="button">Submit</button>
+                                <p th:text="'Player 2\'s Bet: ' + ${Player2Move}"></p>
+                            </div>
+                        </form>
+                    </div>
+                    <h5>2b. playGame method</h5>
+                    <code style="margin-left:00px;">public void playGame() {</code><br>
+                    <code style="margin-left:40px;">private int currentRound;</code><br>
+                    <code style="margin-left:40px;">private int player1Coins;</code><br>
+                    <code style="margin-left:40px;">private int player2Coins;</code><br>
+                    <code style="margin-left:40px;">while (currentRound <= maxRounds && player1Coins > 3 && player2Coins > 3) {</code><br>
+                    <code style="margin-left:80px;">player1Coins -= getPlayer1Move(currentRound);</code><br>
+                    <code style="margin-left:80px;">player2Coins -= getPlayer2Move(currentRound);</code><br>
+                    <code style="margin-left:80px;">currentRound++;</code><br>
+                    <code style="margin-left:40px;">}</code><br>
+                    <code style="margin-left:40px;">if (player1Coins > player2Coins) {System.out.println("player 1 wins");}</code><br>
+                    <code style="margin-left:40px;">else if (player2Coins > player1Coins) {System.out.println("player 2 wins");}</code><br>
+                    <code style="margin-left:40px;">else if (player2Coins == player1Coins) {System.out.println("tie");}</code><br>
+                    <code style="margin-left:00px;">}</code><br>
+                </details>
 
 
             </div>

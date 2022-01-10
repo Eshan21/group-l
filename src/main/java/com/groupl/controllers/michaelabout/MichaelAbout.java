@@ -2,8 +2,13 @@ package com.groupl.controllers.michaelabout;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ui.Model;
+import java.io.*; 
+import java.util.*; 
+import org.json.simple.JSONObject; 
 
 @Controller
 public class MichaelAbout {
@@ -38,6 +43,48 @@ public class MichaelAbout {
 
         return "about/michaelabout";
 
+    }
+
+    @PostMapping("about/michaelabout/unit4-q1")
+    @ResponseBody
+    public String longestStreakf(@RequestParam(name="unit4-frq1-text", required=false, defaultValue="amongus") String text,
+                                     Model model){
+		char longestChar = text.charAt(0);
+		int streak = 1;
+		int longestStreak = 1;
+
+		for(int i = 0; i < text.length() - 1; i++) {
+
+			if(text.charAt(i) == text.charAt(i + 1)) {
+				streak++;
+				if(streak > longestStreak) {
+					longestStreak = streak;
+					longestChar = text.charAt(i);
+				}
+			} else {
+				streak = 1;
+			}
+			
+		}
+
+        JSONObject jo = new JSONObject(); 
+        jo.put("userin", text); 
+        jo.put("unit4-frq1-longestChar", Character.toString(longestChar)); 
+        jo.put("unit4-frq1-longestStreak", longestStreak); 
+
+        return jo.toString();
+    }
+
+    @GetMapping("about/michaelabout/Unit4FRQQuestion2PartA")
+    public String getPlayer2Move(@RequestParam(name="round", required=false, defaultValue="0") int round,
+                                 Model model) {
+        int output;
+        if (round % 3 == 0) {output = 3;}
+        else if (round % 2 == 0) {output = 2;}
+        else {output = 1;}
+        model.addAttribute("Player2Input", round);
+        model.addAttribute("Player2Move", output);
+        return "about/michaelabout";
     }
 }
 
