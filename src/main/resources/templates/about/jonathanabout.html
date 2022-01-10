@@ -470,6 +470,7 @@
                 </details>
             </div>
 
+            <!-- Unit 4 FRQ -->
             <div class="body-window d-flex p-3">
                 <details>
                     <summary>Unit 4 FRQ Question 1 Demo</summary>
@@ -500,6 +501,57 @@
 
                             <button type="submit" class="btn btn-primary mt-3">Play Game</button>
                             <p th:text="${coinGameResult}" th:if="${coinGameResult}" class="bg-success p-1 my-3" ></p>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Unit 5 FRQ -->
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 5 FRQ Question 1 Demo</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-invitation" method="POST">
+                            <label for="name" class="form-label">Name</label>
+                            <input id="name" class="form-control" name="name">
+
+                            <label for="hostname" class="form-label">Hostname</label>
+                            <input id="hostname" class="form-control" name="hostname" th:value="${hostname}">
+
+                            <label for="address" class="form-label">Address</label>
+                            <input id="address" class="form-control" name="address" th:value="*{address}" >
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Invitation</button>
+                            <pre>
+                            <p th:text="${invMsg}" th:if="${invMsg}" class="bg-success p-1 my-3" ></p>
+                            </pre>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 5 FRQ Question 2 Demo</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-gen-pass" method="POST">
+                            <label for="prefix" class="form-label">Prefix</label>
+                            <input id="prefix" class="form-control" name="prefix" th:value="${passGenPrefix}">
+
+                            <label for="numlen" class="form-label">Number Length</label>
+                            <input id="numlen" class="form-control" name="numlen" th:value="${passGenNumlen}" >
+
+                            <input type="hidden" name="count" th:value="${count}">
+
+                            <button type="submit" class="btn btn-primary mt-3">Generate Password</button>
+                            <pre>
+                            <div class="bg-success p-1 my-3">
+                                <p th:text="${passGenPass}" th:if="${passGenPass}"></p>
+                                <p th:text="${passGenCount}" th:if="${passGenCount}"></p>
+                            </div>
+                            </pre>
                         </form>
                     </div>
                 </details>
