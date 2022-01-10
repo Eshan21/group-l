@@ -3,13 +3,13 @@ package com.groupl.mysql;
 import java.lang.Integer;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 /**
  * API for mysql database
@@ -54,10 +54,10 @@ public class UserController extends SqlObjController<User,UserRepository> {
      */
     @PostMapping(path="/update")
     public @ResponseBody void update(@RequestParam(required=true)  String id,
-                                  @RequestParam(required=false)  String name,
-                                  @RequestParam(required=false) String fname,
-                                  @RequestParam(required=false) String lname,
-                                  @RequestParam(required=false)  String email) {
+                                     @RequestParam(required=false)  String name,
+                                     @RequestParam(required=false) String fname,
+                                     @RequestParam(required=false) String lname,
+                                     @RequestParam(required=false)  String email) {
 
       User a = getId(id).get();
 

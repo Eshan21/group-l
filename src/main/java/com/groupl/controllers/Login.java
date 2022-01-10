@@ -8,17 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class Login {
     @GetMapping("/login")
-    public String login_page() {
+    public String login() {
         return "login";
-    }
-
-    @PostMapping("/login")
-    public String login(@RequestParam String username,
-                        @RequestParam String password) {
-        System.out.println("Recieved username: " + username +
-                           ", password: " + password);
-
-        return "home";
     }
 }
 
