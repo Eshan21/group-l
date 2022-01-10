@@ -120,7 +120,7 @@
             .nav-link:focus {
                 color: #b67fa8 !important;
             }
-            
+
             .dark-element {
                 background-color: var(--black);
                 color: var(--red);
@@ -295,6 +295,7 @@
 
             .sub-window {
                 border-radius: 10px;
+                border: none;
                 background-color: var(--white);
                 color: var(--black);
                 padding: 10px;
@@ -325,17 +326,32 @@
                 text-indent: -5px;
             }
 
-            .vote-btn {
-                height: 30px;
-                width: 30px;
+            .button {
+                border: 2px solid rgb(var(--bright-black));
+                width: auto;
                 text-align: center;
-                border-radius: 15px;
+                border-radius: 10px;
                 border: none;
-                margin: 2px 0px 2px 0px;
-                padding: 0 0 3px 0;
-                background-color: var(--bright-black);
-                color: var(--foreground);
+                padding: 10px;
+                background-color: var(--white);
+                color: var(--black);
                 transition: 0.2s;
+            }
+            .button:hover {
+                background-color: var(--bright-blue) !important;
+                color: var(--black) !important;
+            }
+
+            .vote-btn {
+                height: 31px;
+                width: 31px;
+                margin: 2px 0px 2px 0px;
+                padding: 0px;
+            }
+
+            .centered-icon {
+                display: block;
+                margin: auto;
             }
 
             .upvote:hover {
@@ -352,16 +368,26 @@
             }
 
             .modal-content {
-	            background-color: var(--bright-black) !important;
 	            border-radius: 25px !important;
-	            border: 3px solid var(--bright-yellow) !important;
+	            border: 3px dashed #d63384 !important;
             }
             .modal-header {border-bottom: none !important;}
             .modal-footer {border-top: none !important;}
             input, label, textarea {
             	display:block;
             }
-                
+            
+            .frq-form {
+                border: 2px dashed var(--bright-black);
+                border-radius: 10px;
+                padding:10px;
+                margin:10px;
+                width:fit-content;
+                transition: 0.2s;
+            }
+            .frq-form:hover {
+                border: 2px dashed var(--bright-blue);
+            }
             
 
         </style>

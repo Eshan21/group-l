@@ -12,7 +12,9 @@
   <div id="toc" class="toc-full" style="top:60px;left:97%;position:fixed;z-index:5;" onmouseenter="toggleTOC();" onmouseleave="toggleTOC()">
     <div id="toc-dropdown" class="toc toc-dropdown">
       <div style="display: block;position: absolute;top: 50%;transform: translateY(-50%);margin: 0;width: 100%;">
-        <
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-caret-left-fill centered-icon" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg>
       </div>
     </div>
     <div style="display:inline;" class="toc toc-list">
@@ -27,15 +29,15 @@
   <div id="votes" class="sub-window" style="float:left;margin-top:10px;border-radius: 20px;background-color: transparent !important;">
     <div style="width:30px;">
       <p id="score" th:text="${score}" style="margin-bottom: 0px;text-align: center;"></p>
-        <button id="upvote" type="button" class="vote-btn upvote" onclick="toggleUp();">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+        <button id="upvote" type="button" class="vote-btn button upvote" onclick="toggleUp();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up centered-icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
           </svg>
           <span class="visually-hidden">Button</span>
         </button>
-        <button id="downvote" type="button" class="vote-btn dnvote" onclick="toggleDown();">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"></path>
+        <button id="downvote" type="button" class="vote-btn button dnvote" onclick="toggleDown();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down centered-icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
           </svg>
           <span class="visually-hidden">Button</span>
         </button>
@@ -62,7 +64,7 @@
 
         <div class="modal fade" id="addImage" tabindex="-1" aria-labelledby="addImage" aria-hidden="true">
           <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content body-window">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add Image</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -71,19 +73,23 @@
                 <form action="/temp/imagePost" method="POST" id="addImageForm">
                   <div class="form-group">
                     <label for="imageURL" class="col-form-label">Image URL:</label>
-                    <input id="imageURL" type="text" class="form-control" name="imageURL">
+                    <input id="imageURL" type="text" class="form-control sub-window" name="imageURL">
                 </div>
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" value="Submit" onclick="postImage()">Add Image</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="button" value="Submit" onclick="postImage()">Add Image</button>
+                <button type="button" class="button" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
         </div>
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addImage">+</button>
+        <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#addImage">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg centered-icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+          </svg>
+        </button>
         <div style="display:inline;grid-template-columns: 2;" id="image-container">
 
           <div th:each="image, index : ${images}">
@@ -112,7 +118,7 @@
       <form action="/temp" method="POST" id="commentSubmit">
         <input class="form-control sub-window" style="border:none" name="name" id="Author" placeholder="Username (Optional)"><br>
         <textarea class="form-control sub-window" style="border:none" name="content" id="commentForm" placeholder="Contents"></textarea><br>
-        <button class="btn btn-light">Submit</button>
+        <button class="button">Submit</button>
       </form>
     </div>
   </main>

@@ -30,7 +30,7 @@
             const themeSwitch = document.getElementById("theme-switch");
             const toc = document.getElementsByClassName("toc");
             const subWindows = document.getElementsByClassName("sub-window");
-            const voteBtn = document.getElementsByClassName("vote-btn");
+            const button = document.getElementsByClassName("button");
 
             subBar.classList.toggle("sub-bar-dark");
             for (ii=0;ii<windows.length;ii++) {windows[ii].classList.toggle("body-window-dark");}
@@ -43,7 +43,7 @@
             themeSwitch.classList.toggle("theme-switch-dark");
             for (ii=0;ii<toc.length;ii++) {toc[ii].classList.toggle("sub-window-dark");}
             for (ii=0;ii<subWindows.length;ii++) {subWindows[ii].classList.toggle("sub-window-dark");}
-            for (ii=0;ii<voteBtn.length;ii++) {voteBtn[ii].classList.toggle("sub-window-light");}
+            for (ii=0;ii<button.length;ii++) {button[ii].classList.toggle("sub-window-dark");}
 
             if (themeSwitch.children[2].innerHTML.includes("moon-is-on")) {
                 themeSwitch.removeChild(themeSwitch.children[2]);

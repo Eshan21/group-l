@@ -48,13 +48,13 @@
 						<code style="margin-left: 40px;">	}</code><br>
 						<code style="margin-left: 00px;">}</code>
 					</div>
-					<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
+					<div class="frq-form">
 						<form action="/about/akhilabout/Unit2FRQQuestion1PartE" method="GET" id="Unit2FRQQuestion1PartE">
 							<div>
 								<label for="oldSeqField">Input the original sequence</label><br>
-								<input class="form-control" name="oldSeq" id="oldSeqField"><br>
+								<input class="form-control sub-window" name="oldSeq" id="oldSeqField"><br>
 								<label for="segField">Input the segment to remove</label>
-								<input class="form-control" name="segment" id="segField"><br>
+								<input class="form-control sub-window" name="segment" id="segField"><br>
 								<button class="btn btn-light">Submit</button>
 								<p th:text="'New sequence: ' + ${newSeq}"></p>
 							</div>
@@ -144,12 +144,12 @@
 					<code style="margin-left:40px;">}</code><br>
 					<code style="margin-left:40px;">System.out.printf("%s %d\n", longestChar, longestCount);</code><br>
 					<code style="margin-left:00px;">}</code><br>
-					<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
+					<div class="frq-form">
 						<form action="/about/akhilabout/Unit4FRQQuestion1" method="GET" id="Unit4FRQQuestion1">
 							<div>
 								<label for="longestStreakField">Input the string</label><br>
-								<input class="form-control" name="str" id="longestStreakField" th:value="${Unit4Q2Input}"><br>
-								<button class="btn btn-light">Submit</button>
+								<input class="form-control sub-window" name="str" id="longestStreakField" th:value="${Unit4Q2Input}"><br>
+								<button class="button">Submit</button>
 								<p th:text="'Output: ' + ${Unit4Q2Output}"></p>
 							</div>
 						</form>
@@ -162,12 +162,12 @@
 					<code style="margin-left:40px;">else {output = 1;}</code><br>
 					<code style="margin-left:40px;">return output;</code><br>
 					<code style="margin-left:00px;">}</code><br>
-					<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
+					<div class="frq-form">
 						<form action="/about/akhilabout/Unit4FRQQuestion2PartA" method="GET" id="Unit4FRQQuestion2PartA">
 							<div>
 								<label for="roundNumberField">Input the round number</label><br>
-								<input class="form-control" name="round" id="roundNumberField" th:value="${Player2Input}"><br>
-								<button class="btn btn-light">Submit</button>
+								<input class="form-control sub-window" name="round" id="roundNumberField" th:value="${Player2Input}"><br>
+								<button class="button">Submit</button>
 								<p th:text="'Player 2\'s Bet: ' + ${Player2Move}"></p>
 							</div>
 						</form>
@@ -206,7 +206,7 @@
 				<form action="/about/akhilabout/comment" method="POST" id="commentSubmit">
 					<input class="form-control sub-window" style="border:none" name="name" id="Author" placeholder="Username (Optional)"><br>
 					<textarea class="form-control sub-window" style="border:none" name="content" id="commentForm" placeholder="Contents"></textarea><br>
-					<button class="btn btn-light">Submit</button>
+					<button class="button">Submit</button>
 				</form>
 			</div>
 		</main>
