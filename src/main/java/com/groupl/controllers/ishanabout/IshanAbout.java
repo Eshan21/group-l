@@ -17,6 +17,7 @@ public class IshanAbout {
     @GetMapping("about/ishanabout/Wk1Q1Pe")
     public String Wk1Q1Pe(@RequestParam(name="oldSeq", required=false, defaultValue="") String oldSeq,
                           @RequestParam(name="segment", required=false, defaultValue="") String segment,
+                          @RequestParam(name="longestChar", required=false, defaultValue="") String longestChar,
                           Model model) {
         String newSeq = "";
         oldSeq = oldSeq + " ";
@@ -28,14 +29,20 @@ public class IshanAbout {
                 break;
             }
         }
+
+        String[] longChar = Frq4(longestChar);
+
         model.addAttribute("newSeq", newSeq);
+        model.addAttribute("longestChar", longChar);
         return "about/ishanabout";
     }
 
-    public static String Frq4() {
-        Scanner s = new Scanner(System.in);
-            System.out.println("Enter input: ");
-            String input = s.nextLine();
+    public static String[] Frq4(String input) {
+            //Scanner s = new Scanner(System.in);
+            //System.out.println("Enter input: ");
+            //String input = s.nextLine();
+
+
 
             int startInd = 0, endInd = 0, streak = 0, highStreak = 0, fsI = 0, feI = 0;
             char character = 'x';
@@ -61,7 +68,14 @@ public class IshanAbout {
                     endInd = i-1;
                 }
             }
-            return "start,end,streak,char: " + fsI + "," + feI + "," + highStreak + "," + character;
+
+            String[] output = new String[4];
+            output[0] = String.valueOf(fsI);
+            output[1] = String.valueOf(feI);
+            output[2] = String.valueOf(highStreak);
+            output[3] = String.valueOf(character);
+            return output;
+
     }
 
 }
