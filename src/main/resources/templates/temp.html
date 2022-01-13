@@ -90,8 +90,11 @@
                       <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
                     </svg>
                     </button>
-                    <div style="display:inline;grid-template-columns: 2;" id="image-container">
+                    <div style="display:inline;" id="image-container">
 
+                        <div th:each="image, index : ${images}">
+                            <img style="max-width: 50%;" th:src="${image}" alt="${index}">
+                        </div>
                         <div>
                             <img id="addImageOutput" style="max-width: 50%;" src="" alt="">
                         </div>
