@@ -18,14 +18,13 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 @RequestMapping(path="/sql/user") // All API paths start with '/sql/user'
 @ConditionalOnProperty(name="disablemysql", havingValue="false", matchIfMissing=true)
 public class UserController extends SqlObjController<User,UserRepository> {
-
     /**
      * Adds a user
      * 
-     * @param  name  username of created user
+     * @param  name   username of created user (required)
      * @param  fname  first name of created user
      * @param  lname  last name of created user
-     * @param  email email of created user
+     * @param  email  email of created user (required)
      */
     @PostMapping(path="/add")
     public @ResponseBody void add(@RequestParam(required=true)  String name,
@@ -34,11 +33,15 @@ public class UserController extends SqlObjController<User,UserRepository> {
                                   @RequestParam(required=true)  String email) {
 
       User a = new User();
+      Blog b = new Blog();
 
       a.setName(name);
       a.setFname(fname);
       a.setLname(lname);
       a.setEmail(email);
+
+      a.setBlog(b);
+      b.setUser(a);
 
       super.repo.save(a);
     }
@@ -46,7 +49,7 @@ public class UserController extends SqlObjController<User,UserRepository> {
     /**
      * Updates the user's information
      *
-     * @param  id     The id of the user to be updated
+     * @param  id     The id of the user to be updated (required)
      * @param  name   The updated name of the user
      * @param  fname  The updated fname of the user
      * @param  lname  The updated lname of the user

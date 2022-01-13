@@ -25,12 +25,12 @@ public abstract class SqlObjController<T,E extends CrudRepository> {
     /**
      * Removes a row by id
      *
-     * @param  id  Id of row to remove
+     * @param  id  Id of row to remove (required)
      */
     @PostMapping(path="/removeId")
     public @ResponseBody void removeId(@RequestParam(required=true) String id) {
-            int x = Integer.parseInt(id);
-            repo.deleteById(x);
+        int x = Integer.parseInt(id);
+        repo.deleteById(x);
     }
 
     /**
@@ -44,11 +44,11 @@ public abstract class SqlObjController<T,E extends CrudRepository> {
     /**
      * Gets a row by id
      * 
-     * @param  id  id of user to get
+     * @param  id  id of user to get (required)
      * @return     returns the rows if it exists, otherwise return null
      */
     @GetMapping(path="/getId")
-    public @ResponseBody Optional<T> getId(String id) {
+    public @ResponseBody Optional<T> getId(@RequestParam(required=true) String id) {
         int x = Integer.parseInt(id);
         return repo.findById(x);
     }

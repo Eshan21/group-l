@@ -22,21 +22,18 @@ public class BlogController extends SqlObjController<Blog,BlogRepository> {
   /**
    * Add a blog
    * 
-   * @param  name    name of blog
-   * @param  userid  the user id of the blog author
+   * @param  name    name of blog (required)
    * @param  tags    tags that the blog are given
-   * @param  date    date that the blog was published
+   * @param  date    date that the blog was published (required)
    */
   @PostMapping(path="/add")
   public @ResponseBody void add(@RequestParam(required=true)  String name,
-                                @RequestParam(required=true)  String userid,
                                 @RequestParam(required=false) String tags,
                                 @RequestParam(required=true) String date) {
 
     Blog a = new Blog();
 
     a.setName(name);
-    a.setUserId(userid);
     a.setTags(tags);
     a.setDate(date);
 
@@ -46,7 +43,7 @@ public class BlogController extends SqlObjController<Blog,BlogRepository> {
   /**
    * Update a blog
    * 
-   * @param  id      id of the blog to be updated
+   * @param  id      id of the blog to be updated (required)
    * @param  name    the updated name of blog
    * @param  userid  the updated user id of blog author
    * @param  tags    the updated tags of blog
@@ -55,14 +52,12 @@ public class BlogController extends SqlObjController<Blog,BlogRepository> {
   @PostMapping(path="/update")
   public @ResponseBody void update(@RequestParam(required=true)   String id,
                                    @RequestParam(required=false)  String name,
-                                   @RequestParam(required=false)  String userid,
                                    @RequestParam(required=false)  String tags,
                                    @RequestParam(required=false)  String date) {
 
     Blog a = getId(id).get();
 
     a.setName(name);
-    a.setUserId(userid);
     a.setTags(tags);
     a.setDate(date);
 
