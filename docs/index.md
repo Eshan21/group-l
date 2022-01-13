@@ -1,37 +1,66 @@
-## Welcome to GitHub Pages
+# group-l
+[scrum_board](https://github.com/iskapoor/group-l/projects/1), [contributors](https://github.com/iskapoor/group-l/graphs/contributors), [PBL Journal](), [Link to Site]()
 
-You can use the [editor on GitHub](https://github.com/jlaaa/group-l/edit/markdown/docs/index.md) to maintain and preview the content for your website in Markdown files.
+|  Contributors | Github ID and Profile| Tasks  | Scrum Board | Commits |
+| :------------ | :---------------     | :----- | :---------- | :------ |
+| Akhil Guntur  | [algolg][alg-git]    | [Tasks][alg-tsk] | [Scrum Board][alg-scb] | [Commits][alg-cmt] |
+| Ishan Kapoor  | [iskapoor][ish-git1] and [Eshan21][ish-git2] | [Tasks][ish-tsk] | [Scrum Board][ish-scb] | [Commits][ish-cmt1] and [Commits][ish-cmt2] |
+| Jonathan Lin  | [jlaaa][jla-git]     | [Tasks][jla-tsk] | [Scrum Board][jla-scb] | [Commits][jla-cmt] |
+| Michael Zhang | [TKperson][TKp-git]  | [Tasks][TKp-tsk] | [Scrum Board][TKp-scb] | [Commits][TKp-cmt] |
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[alg-git]: https://github.com/algolg
+[alg-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3Aalgolg+
+[alg-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Aalgolg
+[alg-cmt]: https://github.com/iskapoor/group-l/commits?author=algolg
+[ish-git1]: https://github.com/iskapoor
+[ish-git2]: https://github.com/Eshan21
+[ish-tsk]: https://github.com/iskapoor/group-l/issues?q=label%3Aishan
+[ish-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=label%3Aishan
+[ish-cmt1]: https://github.com/iskapoor/group-l/commits?author=iskapoor
+[ish-cmt2]: https://github.com/iskapoor/group-l/commits?author=Eshan21
+[jla-git]: https://github.com/jlaaa
+[jla-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3Ajlaaa+
+[jla-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Ajlaaa
+[jla-cmt]: https://github.com/iskapoor/group-l/commits?author=jlaaa
+[TKp-git]: https://github.com/TKperson
+[TKp-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3ATKperson+
+[TKp-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3ATKperson
+[TKp-cmt]: https://github.com/iskapoor/group-l/commits?author=TKperson
 
-### Markdown
+# Purpose
+RiceLab is a project made for people that want to show or see other people's [rice](https://thatnixguy.github.io/posts/ricing/). Ricing experts will be able to post their own rice for their environment on the site for other people to use and learn from.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Install
+To install a pre-built release:
 
-```markdown
-Syntax highlighted code block
+- Install [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
+- Download and extract a RiceLab [release][] file
+- Run server with `java -jar Ricelab-x.y.z*.jar`
 
-# Header 1
-## Header 2
-### Header 3
+[release]: https://github.com/iskapoor/group-l/releases
 
-- Bulleted
-- List
+# Build or Run
 
-1. Numbered
-2. List
+## Install dependencies
+- [JDK 11](https://adoptium.net/releases.html?variant=openjdk11)
+- [Maven 3.8.3](https://maven.apache.org/download.cgi)
 
-**Bold** and _Italic_ and `Code` text
+Download the source code as a [zip][source] or via git:
 
-[Link](url) and ![Image](src)
+[source]: https://github.com/iskapoor/group-l/archive/refs/heads/main.zip
+
+```
+git clone https://github.com/iskapoor/group-l.git
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Then build the JAR file with the build scripts:
+- Run `./build` or `./build.cmd`
 
-### Jekyll Themes
+Or run in place:
+- Run `./run` or `./run.cmd`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jlaaa/group-l/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# How to Contribute / Policies
+See [CONTRIBUTING.md](CONTRIBUTING.md) on how to contribute to our project.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# Wiki / Documentation
+Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `doc/` directory.
