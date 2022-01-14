@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -78,7 +79,22 @@ public class AkhilAbout {
         model.addAttribute("Player2Input", round);
         model.addAttribute("Player2Move", output);
         return "about/akhilabout";
-        }
+    }
+
+    @PostMapping("about/akhilabout/Unit5FRQQuestion2-1")
+    @ResponseBody
+    public String PasswordGenerate1(@RequestParam(name="len", required=false, defaultValue="0") int len,
+                                 Model model) {
+        return PasswordGenerator.PasswordGenerator(len);
+    }
+    
+    @PostMapping("about/akhilabout/Unit5FRQQuestion2-2")
+    @ResponseBody
+    public String PasswordGenerate2(@RequestParam(name="len", required=false, defaultValue="0") int len,
+                                    @RequestParam(name="prefix", required=false, defaultValue="0") String prefix,
+                                    Model model) {
+        return PasswordGenerator.PasswordGenerator(len, prefix);
+    }
 
         
     @PostMapping("about/akhilabout/comment")
@@ -96,4 +112,24 @@ public class AkhilAbout {
     }
 }
 
-
+class PasswordGenerator {
+    private static int count;
+    
+    public static String PasswordGenerator(int len) {
+        String password = "A.";
+        for (int ii=0;ii<len;ii++) {
+            password += (int) (Math.random() *10);
+        }
+        return password;
+    }
+    public static String PasswordGenerator(int len, String prefix) {
+        String password = prefix + ".";
+        for (int ii=0;ii<len;ii++) {
+            password += (int) (Math.random() *10);
+        }
+        return password;
+    }
+    public static int pwCount() {
+        return count;
+    }
+}
