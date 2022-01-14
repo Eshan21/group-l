@@ -189,6 +189,28 @@
 				</details>
 			</div>
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
+				<details open>
+					<summary><h4 style="display:inline;"><strong>FRQ Unit 5</strong></h4></summary>
+					<h5>1a. Write a method for the Invitation class that returns the name of the host.</h5>
+					<code style="margin-left:00px;">public String getHostName() {</code><br>
+					<code style="margin-left:40px;">return hostName;</code><br>
+					<code style="margin-left:00px;">}</code><br>
+					<h5>1b. Write a method for the Invitation class that accepts a parameter and uses it to update the address for the event.</h5>
+					<code style="margin-left:00px;">public void setAddress(String newAddress) {</code><br>
+					<code style="margin-left:40px;">address = newAddress;</code><br>
+					<code style="margin-left:00px;">}</code><br>
+					<h5>1c. Write the method below. Your implementation must conform to the example above.</h5>
+					<code style="margin-left:00px;">public String invite(String person) {</code><br>
+					<code style="margin-left:40px;">"Dear " + person + ", please attend my event at " + address + ". See you then, " + hostName + "."</code><br>
+					<h5>Write a correct implementation of the one-parameter Invitation constructor that avoids the error in the student’s implementation. Write the method below.</h5>
+					<code style="margin-left:00px;">public Invitation(String address)</code><br>
+					<code style="margin-left:00px;">{</code><br>
+					<code style="margin-left:40px;">this.address = address;</code><br>
+					<code style="margin-left:40px;">hostName = "Host";</code><br>
+					<code style="margin-left:00px;">}</code><br>
+				</details>
+			</div>
+			<div class="body-window articles" style="margin:10px 0; padding:30px;">
 
 				<h3 id="comment-section" class="text-center font-monospace">Comment Section</h3>
 				<div th:each="Comment: ${Comments}">
