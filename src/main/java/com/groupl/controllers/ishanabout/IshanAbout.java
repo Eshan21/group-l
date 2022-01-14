@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Random;
 import java.util.Scanner;
 
 @Controller
@@ -32,6 +33,14 @@ public class IshanAbout {
 
         String[] longChar = Frq4(longestChar);
 
+        String[] passwords = new String[8];
+        int k = 0;
+        for (String i : passwords) {
+            passwords[k] = passGen();
+            k++;
+        }
+
+        model.addAttribute(passwords);
         model.addAttribute("newSeq", newSeq);
         model.addAttribute("longestChar", longChar);
         return "about/ishanabout";
@@ -77,6 +86,28 @@ public class IshanAbout {
             return output;
 
     }
+
+    protected String password = "";
+    protected String specialChar = "!@#?";
+
+    Random r = new Random();
+
+    public String passGen() {
+        password += (int) (Math.random() * 10000);
+        password += rndChar();
+        password += rndChar();
+        password += rndChar();
+        password += specialChar.charAt(r.nextInt(specialChar.length()));
+        return password;
+    }
+
+    private static char rndChar() {
+        int rnd = (int) (Math.random() * 52); // or use Random or whatever
+        char base = (rnd < 26) ? 'A' : 'a';
+        return (char) (base + rnd % 26);
+
+    }
+
 
 }
 

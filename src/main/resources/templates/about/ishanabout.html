@@ -500,6 +500,8 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 				<code style="margin-left:00px;">}</code><br>
 			</details>
 		</div>
+
+		<p th:each="password : ${passwords}" th:text="${password}, "></p>
 	</main>
 </div>
 </body>
