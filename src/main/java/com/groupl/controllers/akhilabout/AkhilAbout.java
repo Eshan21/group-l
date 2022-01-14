@@ -96,6 +96,12 @@ public class AkhilAbout {
         return PasswordGenerator.PasswordGenerator(len, prefix);
     }
 
+    @PostMapping("about/akhilabout/Unit5FRQQuestion2-3")
+    @ResponseBody
+    public int PasswordGenerate3(Model model) {
+        return PasswordGenerator.pwCount();
+    }
+
         
     @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,
@@ -120,6 +126,7 @@ class PasswordGenerator {
         for (int ii=0;ii<len;ii++) {
             password += (int) (Math.random() *10);
         }
+        count++;
         return password;
     }
     public static String PasswordGenerator(int len, String prefix) {
@@ -127,6 +134,7 @@ class PasswordGenerator {
         for (int ii=0;ii<len;ii++) {
             password += (int) (Math.random() *10);
         }
+        count++;
         return password;
     }
     public static int pwCount() {
