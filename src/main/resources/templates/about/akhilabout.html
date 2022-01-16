@@ -268,44 +268,44 @@
 				</details>
 				<script>
 					(function () {
-						let Unit5Frq2Form_1 = document.getElementById('Unit5Frq2Form_1');
-						let Unit5FRQ2Output_1 = document.getElementById("Unit5FRQ2Output_1");
-						Unit5Frq2Form_1.addEventListener('submit', e => e.preventDefault());
+						let form = document.getElementById('Unit5Frq2Form_1');
+						let output = document.getElementById("Unit5FRQ2Output_1");
+						form.addEventListener('submit', e => e.preventDefault());
 						document.getElementById('Unit5Frq2FormButton_1').onclick = Unit5Frq2_1;
 						async function Unit5Frq2_1() {
 							let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-1', {
 								method: 'POST',
-								body: new FormData(Unit5Frq2Form_1)
+								body: new FormData(form)
 							})).text();
-							Unit5FRQ2Output_1.innerText = data;
+							output.innerText = data;
 						}
 					})();
 					
 					(function () {
-						let Unit5Frq2Form_2 = document.getElementById('Unit5Frq2Form_2');
-						let Unit5FRQ2Output_2 = document.getElementById("Unit5FRQ2Output_2");
-						Unit5Frq2Form_2.addEventListener('submit', e => e.preventDefault());
+						let form = document.getElementById('Unit5Frq2Form_2');
+						let output = document.getElementById("Unit5FRQ2Output_2");
+						form.addEventListener('submit', e => e.preventDefault());
 						document.getElementById('Unit5Frq2FormButton_2').onclick = Unit5Frq2_2;
 						async function Unit5Frq2_2() {
 							let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-2', {
 								method: 'POST',
-								body: new FormData(Unit5Frq2Form_2)
+								body: new FormData(form)
 							})).text();
-							Unit5FRQ2Output_2.innerText = data;
+							output.innerText = data;
 						}
 					})();
 
 					(function () {
-						let Unit5Frq2Form_3= document.getElementById('Unit5Frq2Form_3');
-						let Unit5FRQ2Output_3 = document.getElementById("Unit5FRQ2Output_3");
-						Unit5Frq2Form_3.addEventListener('submit', e => e.preventDefault());
+						let form= document.getElementById('Unit5Frq2Form_3');
+						let output = document.getElementById("Unit5FRQ2Output_3");
+						form.addEventListener('submit', e => e.preventDefault());
 						document.getElementById('Unit5Frq2FormButton_3').onclick = Unit5Frq2_3;
 						async function Unit5Frq2_3() {
 							let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-3', {
 								method: 'POST',
-								body: new FormData(Unit5Frq2Form_3)
+								body: new FormData(form)
 							})).text();
-							Unit5FRQ2Output_3.innerText = data;
+							output.innerText = data;
 						}
 					})();
 				</script>
@@ -362,7 +362,7 @@
 						<form id="Unit6Frq2aForm">
 							<label for="">Input a comma-separated list of ints</label>
 							<label for="">Do not include any spaces</label>
-							<input name="items" class="form-control sub-window"><br>
+							<input name="items" class="form-control sub-window" id="Unit6Frq2aField"><br>
 							<button id="Unit6Frq2aButton" class="button">Submit</button>
 							<p id="Unit6Frq2aOutput">&nbsp;</p>
 						</form>
@@ -374,6 +374,7 @@
 							form.addEventListener('submit', e => e.preventDefault());
 							document.getElementById('Unit6Frq2aButton').onclick = post;
 							async function post() {
+								document.getElementById("Unit6Frq2bField1").value = document.getElementById("Unit6Frq2aField").value;
 								let data = await (await fetch('/about/akhilabout/Unit6Frq2a', {
 									method: 'POST',
 									body: new FormData(form)
@@ -398,7 +399,7 @@
 						<form id="Unit6Frq2bForm">
 							<label for="">Input a comma-separated list of ints</label>
 							<label for="">Do not include any spaces</label>
-							<input name="items" class="form-control sub-window"><br>
+							<input name="items" class="form-control sub-window" id="Unit6Frq2bField1"><br>
 							<label for="">Fixed Wage</label>
 							<input name="fixedWage" class="form-control sub-window"><br>
 							<label for="">Per Item Wage</label>
