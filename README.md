@@ -7,11 +7,13 @@
 | Ishan Kapoor  | [iskapoor][ish-git1] and [Eshan21][ish-git2] | [Tasks][ish-tsk] | [Scrum Board][ish-scb] | [Commits][ish-cmt1] and [Commits][ish-cmt2] |
 | Jonathan Lin  | [jlaaa][jla-git]     | [Tasks][jla-tsk] | [Scrum Board][jla-scb] | [Commits][jla-cmt] |
 | Michael Zhang | [TKperson][TKp-git]  | [Tasks][TKp-tsk] | [Scrum Board][TKp-scb] | [Commits][TKp-cmt] |
+| Luca Pinto    | [luc-git]            | [Tasks]          | [Scrum Board]          | [Commits]          |
 
 [alg-git]: https://github.com/algolg
 [alg-tsk]: https://github.com/iskapoor/group-l/issues?q=assignee%3Aalgolg+
 [alg-scb]: https://github.com/iskapoor/group-l/projects/1?card_filter_query=assignee%3Aalgolg
 [alg-cmt]: https://github.com/iskapoor/group-l/commits?author=algolg
+[luc-git]: https://github.com/lucap2527
 [ish-git1]: https://github.com/iskapoor
 [ish-git2]: https://github.com/Eshan21
 [ish-tsk]: https://github.com/iskapoor/group-l/issues?q=label%3Aishan
