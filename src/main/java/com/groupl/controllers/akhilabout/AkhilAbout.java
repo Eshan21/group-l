@@ -15,6 +15,7 @@ import java.util.HashMap;
 @Controller
 public class AkhilAbout {
     HashMap<String[], String> Comments = new HashMap<>();
+    double computeBonusThreshold;
 
     @GetMapping("about/akhilabout")
     public String akhilabout(Model model) {
@@ -92,6 +93,77 @@ public class AkhilAbout {
         return PasswordGenerator.PasswordGenerator(len, prefix);
     }
 
+    @PostMapping("about/akhilabout/Unit5FRQQuestion2-3")
+    @ResponseBody
+    public int PasswordGenerate3(Model model) {
+        return PasswordGenerator.pwCount();
+    }
+
+    @PostMapping("about/akhilabout/Unit6Frq1")
+    @ResponseBody
+    public String Unit6Frq1(@RequestParam(name="words", required=false, defaultValue="0") String wordsString) {
+        String[] words = wordsString.split(",");
+        String output = "";
+        for (String ii : words) {
+            if (ii.substring(ii.length()-3, ii.length()).equals("ing")) {
+                output += (ii + ", ");
+            }
+        }
+        return output;
+
+    }
+    @PostMapping("about/akhilabout/Unit6Frq2a")
+    @ResponseBody
+    public double Unit6Frq2a(@RequestParam(name="items", required=false, defaultValue="0") String itemsSoldString) {
+        int emoloyeeCount = itemsSoldString.split(",").length;
+        int[] itemsSold = new int[emoloyeeCount];
+        for (int ii=0;ii<emoloyeeCount;ii++) {
+            itemsSold[ii] += Integer.parseInt(itemsSoldString.split(",")[ii]);
+        }
+
+        int total = 0;
+        double threshold = 0.0;
+        int lowest = 0;
+        int greatest = 0;
+        for (int ii : itemsSold) {
+            total += ii;
+            if (lowest == 0 || ii<lowest) {lowest = ii;}
+            if (ii>greatest) {greatest = ii;}
+        }
+
+        threshold = ((double) (total-(greatest+lowest)))/((double) itemsSold.length-2);
+        computeBonusThreshold = threshold;
+        return threshold;
+    }
+
+    @PostMapping("about/akhilabout/Unit6Frq2b")
+    @ResponseBody
+    public String Unit6Frq2b(@RequestParam(name="items", required=false, defaultValue="0") String itemsSoldString,
+                             @RequestParam(name="fixedWage", required=false, defaultValue="0") double fixedWage,
+                             @RequestParam(name="perItemWage", required=false, defaultValue="0") double perItemWage) {
+        int emoloyeeCount = itemsSoldString.split(",").length;
+        int[] itemsSold = new int[emoloyeeCount];
+        double[] wages = new double[emoloyeeCount];
+        for (int ii=0;ii<emoloyeeCount;ii++) {
+            itemsSold[ii] += Integer.parseInt(itemsSoldString.split(",")[ii]);
+        }
+        double wage = fixedWage;
+        for (int ii=0;ii<itemsSold.length;ii++) {
+            wage += itemsSold[ii]*1.5;
+            if (((double) itemsSold[ii]) > computeBonusThreshold) {
+            wage*=1.1;
+        }
+        wages[ii] = wage;
+        wage = 10.0;
+        }
+
+        String output = "";
+        for (double ii : wages) {
+            output += ((Math.floor(ii*100)/100) + ", ");
+        }
+        return output;
+    }
+
         
     @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,
@@ -116,6 +188,7 @@ class PasswordGenerator {
         for (int ii=0;ii<len;ii++) {
             password += (int) (Math.random() *10);
         }
+        count++;
         return password;
     }
     public static String PasswordGenerator(int len, String prefix) {
@@ -123,6 +196,7 @@ class PasswordGenerator {
         for (int ii=0;ii<len;ii++) {
             password += (int) (Math.random() *10);
         }
+        count++;
         return password;
     }
     public static int pwCount() {
