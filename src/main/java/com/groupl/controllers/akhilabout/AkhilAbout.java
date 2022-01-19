@@ -1,5 +1,6 @@
 package com.groupl.controllers.akhilabout;
 
+import com.groupl.controllers.ishanabout.IshanAbout;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,12 +28,7 @@ public class AkhilAbout {
                           Model model) {
         String newSeq = "";
 
-        for (int ii=0; ii<=oldSeq.length()-segment.length(); ii++) {
-            if (oldSeq.substring(ii, ii + segment.length()).equals(segment)) {
-                newSeq = oldSeq.substring(0, ii) + oldSeq.substring(ii + segment.length(), oldSeq.length());
-                break;
-            }
-        }
+        newSeq = IshanAbout.getString(oldSeq, segment, newSeq);
         model.addAttribute("newSeq", newSeq);
         model.addAttribute("Comments", Comments);
         System.out.println("Sequence: " + newSeq);

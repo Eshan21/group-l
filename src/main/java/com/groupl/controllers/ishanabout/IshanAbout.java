@@ -24,12 +24,7 @@ public class IshanAbout {
         oldSeq = oldSeq + " ";
         segment = segment + " ";
 
-        for (int ii=0; ii<=oldSeq.length()-segment.length(); ii++) {
-            if (oldSeq.substring(ii, ii + segment.length()).equals(segment)) {
-                newSeq = oldSeq.substring(0, ii) + oldSeq.substring(ii + segment.length(), oldSeq.length());
-                break;
-            }
-        }
+        newSeq = getString(oldSeq, segment, newSeq);
 
         String[] longChar = Frq4(longestChar);
 
@@ -40,10 +35,21 @@ public class IshanAbout {
             k++;
         }
 
-        model.addAttribute(passwords);
+
+        model.addAttribute("passwords", passwords);
         model.addAttribute("newSeq", newSeq);
         model.addAttribute("longestChar", longChar);
         return "about/ishanabout";
+    }
+
+    public static String getString(@RequestParam(name = "oldSeq", required = false, defaultValue = "") String oldSeq, @RequestParam(name = "segment", required = false, defaultValue = "") String segment, String newSeq) {
+        for (int ii=0; ii<=oldSeq.length()-segment.length(); ii++) {
+            if (oldSeq.substring(ii, ii + segment.length()).equals(segment)) {
+                newSeq = oldSeq.substring(0, ii) + oldSeq.substring(ii + segment.length(), oldSeq.length());
+                break;
+            }
+        }
+        return newSeq;
     }
 
     public static String[] Frq4(String input) {

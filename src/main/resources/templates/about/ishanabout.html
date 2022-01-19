@@ -501,7 +501,14 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 			</details>
 		</div>
 
-		<p th:each="password : ${passwords}" th:text="${password}, "></p>
+		<div class="body-window p-5" style="background-color:#e182e0">
+			<details>
+				<summary>Unit 5 FRQ</summary>
+				<div th:each="password : ${passwords}" >
+					<p th:text="${password}, "></p>
+				</div>
+			</details>
+		</div>
 	</main>
 </div>
 </body>
