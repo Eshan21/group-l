@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}" lang="en">
+
+<head>
+    <div layout:fragment="metadata" th:remove="tag">
+        <title>Jonathan About</title>
+        <link href="/css/about/jonathanabout.css" rel="stylesheet">
+
+        <style>
+            input {
+                margin: 5px 0;
+            }
+            
+            button {
+                margin: 5px;
+            }
+
+            .response {
+                background-color: green;
+                color: springgreen;
+                padding: 0 2px;
+                margin: 5px 0;
+                min-width: 150px;
+            }
+        </style>
+    </div>
+</head>
+
+<body>
+    <div layout:fragment="content" th:remove="tag">
+
+        <main class="container">
+            <div class="body-window p-5">
+                <div class="p-5">
+                    <fieldset class="border p-5 my-5">
+                        <legend class="label">Get User List</legend>
+
+                        <div class="row">
+                            <div class="response col-sm-auto">
+                                <p id="userList">?</p>
+                            </div>
+                        </div>
+
+                        <button id="getUsers" class="btn btn-primary" onclick="getUsers()">Submit</button>
+                    </fieldset>
+
+                    <fieldset class="border p-5 my-5">
+                        <div class="row">
+                            <legend class="label col">Add new user</legend>
+                            <legend class="label col">Remove a user by id</legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="col row">
+                                <div class="response col-sm-auto">
+                                    <p id="addUserResponse">?</p>
+                                </div>
+                            </div>
+
+                            <div class="col row">
+                                <div class="response col-sm-auto">
+                                    <p id="removeUserResponse">?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="addUserName" class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-4">
+                                        <input id="addUserName" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="addUserFname" class="col-sm-2 col-form-label">First Name</label>
+                                    <div class="col-sm-4">
+                                        <input id="addUserFname" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="addUserLname" class="col-sm-2 col-form-label">Last Name</label>
+                                    <div class="col-sm-4">
+                                        <input id="addUserLname" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="addUserEmail" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-4">
+                                        <input id="addUserEmail" class="form-control" type="text">
+                                    </div>
+                                </div>
+
+                                <button id="addUser" class="btn btn-primary" onclick="addUser()">Submit</button>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="removeUserId" class="col-sm-2 col-form-label">Id</label>
+                                    <div class="col-sm-4">
+                                        <input id="removeUserId" class="form-control" type="text">
+                                    </div>
+                                </div>
+
+                                <button id="removeUser" class="btn btn-primary" onclick="removeUser()">Submit</button>
+                                <button id="removeAll" class="btn btn-danger" onclick="removeAllUsers()">Remove All Users</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div layout:fragment="script" th:remove="tag">
+        <script>
+            getUsers();
+
+            function getUrl(url = '') {
+                return "http://localhost:8080" + url;
+            }
+
+            async function postData(url = '', data = {}) {
+                let formData = new FormData();
+
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        console.log(`${key} : ${data[key]}`);
+                        formData.append(key, data[key]);
+                    }
+                }
+
+                const response = await fetch(getUrl(url), {
+                    method: 'POST',
+                    body: formData
+                });
+
+                return response;
+            }
+
+            function getUsers() {
+                const req = new XMLHttpRequest();
+                req.onreadystatechange = function() {
+                    document.getElementById("userList").innerHTML = req.response;
+                };
+                req.open("GET", "http://localhost:8080/sql/user/getAll", true);
+                req.send();
+            }
+
+            async function addUser() {
+                let data = await postData("/sql/user/add", {
+                    name:  document.getElementById('addUserName').value,
+                    fname: document.getElementById('addUserFname').value,
+                    lname: document.getElementById('addUserLname').value,
+                    email: document.getElementById('addUserEmail').value
+                });
+
+                document.getElementById("addUserResponse").innerHTML = "Ok: " + data.ok;
+                getUsers();
+            }
+
+            async function removeUser() {
+                let data = await postData("/sql/user/removeId", {
+                    id:  document.getElementById('removeUserId').value,
+                });
+
+                document.getElementById("removeUserResponse").innerHTML = "Ok: " + data.ok;
+                getUsers();
+            }
+
+            async function removeAllUsers() {
+                let data = await postData("/sql/user/removeAll", {});
+
+                document.getElementById("removeUserResponse").innerHTML = "Ok: " + data.ok;
+                getUsers();
+            }
+        </script>
+    </div>
+</body>
+
+</html>
+
