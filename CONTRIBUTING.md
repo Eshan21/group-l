@@ -17,7 +17,7 @@
 ## Getting Started
 
 #### Building
-- Read our deployment [guide](https://github.com/iskapoor/group-l/wiki/Deployment) on instructions on how to build.
+- Read our [deployment guide](https://github.com/iskapoor/group-l/wiki/Deployment-Guide) on instructions on how to build.
 
 #### Bug Fix and Feature Request
 - Make sure your source is up to date.
