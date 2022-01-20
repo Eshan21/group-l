@@ -82,6 +82,35 @@ public class AkhilAbout {
         return "about/akhilabout";
     }
 
+    @PostMapping("about/akhilabout/Unit5Frq1a")
+    @ResponseBody
+    public String Unit5Frq1a(@RequestParam(name="hostname", required=false, defaultValue="0") String hostname,
+                                 Model model) {
+        return Unit5Frq1.getHostName(hostname);
+    }
+
+    @PostMapping("about/akhilabout/Unit5Frq1b")
+    @ResponseBody
+    public String Unit5Frq1b(@RequestParam(name="address", required=false, defaultValue="0") String address,
+                                 Model model) {
+        return Unit5Frq1.setAddress(address);
+    }
+
+    @PostMapping("about/akhilabout/Unit5Frq1c")
+    @ResponseBody
+    public String Unit5Frq1c(@RequestParam(name="person", required=false, defaultValue="0") String person,
+                                 Model model) {
+        return Unit5Frq1.invite(person);
+    }
+
+    @PostMapping("about/akhilabout/Unit5Frq1d")
+    @ResponseBody
+    public String Unit5Frq1d(@RequestParam(name="address", required=false, defaultValue="0") String address,
+                                 Model model) {
+        Unit5Frq1.invitation(address);
+        return "Object initialized";
+    }
+
     @PostMapping("about/akhilabout/Unit5FRQQuestion2-1")
     @ResponseBody
     public String PasswordGenerate1(@RequestParam(name="len", required=false, defaultValue="0") int len,
@@ -181,6 +210,27 @@ public class AkhilAbout {
         Comments.put(new String[]{name, dtf.format(now)}, content);
         model.addAttribute("Comments", Comments);
         return "about/akhilabout";
+    }
+}
+
+class Unit5Frq1 {
+    private static String hostName;
+    private static String address;
+
+    public static String getHostName(String newHostName) {
+        hostName = newHostName;
+        return hostName;
+    }
+    public static String setAddress(String newAddress) {
+        address = newAddress;
+        return address;
+    }
+    public static String invite(String person) {
+        return "Dear " + person + ", please attend my event at " + address + ". See you then, " + hostName + ".";
+    }
+    public static void invitation(String newAddress) {
+        address = newAddress;
+        hostName = "Host";
     }
 }
 
