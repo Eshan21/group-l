@@ -195,19 +195,111 @@
 					<code style="margin-left:00px;">public String getHostName() {</code><br>
 					<code style="margin-left:40px;">return hostName;</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit5Frq1aForm">
+							<label for="">Input the host's name</label>
+							<input name="hostname" class="form-control sub-window"><br>
+							<button id="Unit5Frq1aButton" class="button">Submit</button>
+							<p id="Unit5Frq1aOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit5Frq1aForm');
+							let output = document.getElementById("Unit5Frq1aOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit5Frq1aButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit5Frq1a', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 					<h5>1b. Write a method for the Invitation class that accepts a parameter and uses it to update the address for the event.</h5>
 					<code style="margin-left:00px;">public void setAddress(String newAddress) {</code><br>
 					<code style="margin-left:40px;">address = newAddress;</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit5Frq1bForm">
+							<label for="">Input the new address</label>
+							<input name="address" class="form-control sub-window"><br>
+							<button id="Unit5Frq1bButton" class="button">Submit</button>
+							<p id="Unit5Frq1bOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit5Frq1bForm');
+							let output = document.getElementById("Unit5Frq1bOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit5Frq1bButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit5Frq1b', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 					<h5>1c. Write the method below. Your implementation must conform to the example above.</h5>
 					<code style="margin-left:00px;">public String invite(String person) {</code><br>
 					<code style="margin-left:40px;">"Dear " + person + ", please attend my event at " + address + ". See you then, " + hostName + "."</code><br>
+					<div class="frq-form">
+						<form id="Unit5Frq1cForm">
+							<label for="">Input a name</label>
+							<input name="person" class="form-control sub-window"><br>
+							<button id="Unit5Frq1cButton" class="button">Submit</button>
+							<p id="Unit5Frq1cOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit5Frq1cForm');
+							let output = document.getElementById("Unit5Frq1cOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit5Frq1cButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit5Frq1c', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 					<h5>1d. Write a correct implementation of the one-parameter Invitation constructor that avoids the error in the student’s implementation. Write the method below.</h5>
 					<code style="margin-left:00px;">public Invitation(String address)</code><br>
 					<code style="margin-left:00px;">{</code><br>
 					<code style="margin-left:40px;">this.address = address;</code><br>
 					<code style="margin-left:40px;">hostName = "Host";</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit5Frq1dForm">
+							<label for="">Input a new address</label>
+							<input name="address" class="form-control sub-window"><br>
+							<button id="Unit5Frq1dButton" class="button">Submit</button>
+							<p id="Unit5Frq1dOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit5Frq1dForm');
+							let output = document.getElementById("Unit5Frq1dOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit5Frq1dButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit5Frq1d', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 					<h5>2. Write the PasswordGenerator Class</h5>
 					<code style="margin-left:00px;">public class class PasswordGenerator {</code><br>
 					<code style="margin-left:40px;">private static int count;</code><br>
