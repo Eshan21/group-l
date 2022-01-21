@@ -8,13 +8,22 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User extends SqlObj {
-
     private String fname;
 
     private String lname;
 
     @NotEmpty
     private String email;
+
+    public User(String name, String fname, String lname, String email) {
+        super.setName(name);
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+    }
+
+    public User() {
+    }
 
     public String getFname() {
         return fname;

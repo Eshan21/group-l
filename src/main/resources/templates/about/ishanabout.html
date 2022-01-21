@@ -501,7 +501,128 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 			</details>
 		</div>
 
-		<p th:each="password : ${passwords}" th:text="${password}, "></p>
+		<div class="body-window articles" style="margin:10px 0; padding:30px;">
+			<details>
+				<summary><h4 style="display:inline;"><strong>FRQ Unit 5</strong></h4></summary>
+				<h5>1a. Write a method for the Invitation class that returns the name of the host.</h5>
+				<code style="margin-left:00px;">public String getHostName() {</code><br>
+				<code style="margin-left:40px;">return hostName;</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<h5>1b. Write a method for the Invitation class that accepts a parameter and uses it to update the address for the event.</h5>
+				<code style="margin-left:00px;">public void setAddress(String newAddress) {</code><br>
+				<code style="margin-left:40px;">address = newAddress;</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<h5>1c. Write the method below. Your implementation must conform to the example above.</h5>
+				<code style="margin-left:00px;">public String invite(String person) {</code><br>
+				<code style="margin-left:40px;">"Dear " + person + ", please attend my event at " + address + ". See you then, " + hostName + "."</code><br>
+				<h5>1d. Write a correct implementation of the one-parameter Invitation constructor that avoids the error in the student’s implementation. Write the method below.</h5>
+				<code style="margin-left:00px;">public Invitation(String address)</code><br>
+				<code style="margin-left:00px;">{</code><br>
+				<code style="margin-left:40px;">this.address = address;</code><br>
+				<code style="margin-left:40px;">hostName = "Host";</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<h5>2. Write the PasswordGenerator Class</h5>
+				<code style="margin-left:00px;">public class class PasswordGenerator {</code><br>
+				<code style="margin-left:40px;">private static int count;</code><br>
+				<code style="margin-left:40px;">ppublic String PasswordGenerator(int len) {</code><br>
+				<code style="margin-left:80px;">String password = "A.";</code><br>
+				<code style="margin-left:80px;">for (int ii=0;ii&lt;len;ii++) {</code><br>
+				<code style="margin-left:120px;">password += (int) (Math.random() *10);</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:80px;">count++;</code><br>
+				<code style="margin-left:80px;">return password;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">public String PasswordGenerator(int len, String prefix) {</code><br>
+				<code style="margin-left:80px;">String password = prefix + ".";</code><br>
+				<code style="margin-left:80px;">public String getHostName() {</code><br>
+				<code style="margin-left:80px;">for (int ii=0;ii&lt;len;ii++) {</code><br>
+				<code style="margin-left:120px;">password += (int) (Math.random() *10);</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:80px;">count++;</code><br>
+				<code style="margin-left:80px;">return password;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">public int pwCount() {</code><br>
+				<code style="margin-left:80px;">return count;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}<br></code>
+				<div class="frq-form">
+					<div style="display:inline-block;margin:10px;">
+						<form id="Unit5Frq2Form_1">
+							<div>
+								<label for="">Length</label><br>
+								<input name="len" class="form-control sub-window"><br>
+								<button id="Unit5Frq2FormButton_1" class="button">Submit</button>
+								<p id="Unit5FRQ2Output_1">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<div style="display:inline-block;margin:10px;">
+						<form id="Unit5Frq2Form_2">
+							<div>
+								<label for="">Length</label><br>
+								<input name="len" class="form-control sub-window"><br>
+								<label for="">Prefix</label><br>
+								<input name="prefix" class="form-control sub-window"><br>
+								<button id="Unit5Frq2FormButton_2" class="button">Submit</button>
+								<p id="Unit5FRQ2Output_2">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<div style="display:inline-block;margin:10px;">
+						<form id="Unit5Frq2Form_3">
+							<div>
+								<p>Output Password Count</p>
+								<button id="Unit5Frq2FormButton_3" class="button">Submit</button>
+								<p id="Unit5FRQ2Output_3">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</details>
+			<script>
+				(function () {
+					let form = document.getElementById('Unit5Frq2Form_1');
+					let output = document.getElementById("Unit5FRQ2Output_1");
+					form.addEventListener('submit', e => e.preventDefault());
+					document.getElementById('Unit5Frq2FormButton_1').onclick = Unit5Frq2_1;
+					async function Unit5Frq2_1() {
+						let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-1', {
+							method: 'POST',
+							body: new FormData(form)
+						})).text();
+						output.innerText = data;
+					}
+				})();
+
+				(function () {
+					let form = document.getElementById('Unit5Frq2Form_2');
+					let output = document.getElementById("Unit5FRQ2Output_2");
+					form.addEventListener('submit', e => e.preventDefault());
+					document.getElementById('Unit5Frq2FormButton_2').onclick = Unit5Frq2_2;
+					async function Unit5Frq2_2() {
+						let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-2', {
+							method: 'POST',
+							body: new FormData(form)
+						})).text();
+						output.innerText = data;
+					}
+				})();
+
+				(function () {
+					let form= document.getElementById('Unit5Frq2Form_3');
+					let output = document.getElementById("Unit5FRQ2Output_3");
+					form.addEventListener('submit', e => e.preventDefault());
+					document.getElementById('Unit5Frq2FormButton_3').onclick = Unit5Frq2_3;
+					async function Unit5Frq2_3() {
+						let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-3', {
+							method: 'POST',
+							body: new FormData(form)
+						})).text();
+						output.innerText = data;
+					}
+				})();
+			</script>
+		</div>
 	</main>
 </div>
 </body>

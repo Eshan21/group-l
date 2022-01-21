@@ -23,15 +23,113 @@
 					<summary><h4 style="display:inline;"><strong>FRQ Unit 2</strong></h4></summary>
 					<h5>1a. Write a statement to create a LightSequence object gradShow that has the initial light sequence "0101 0101 0101".</h5>
 					<code>LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
+					<div class="frq-form">
+						<form id="Unit2Frq1aForm">
+							<div>
+								<button id="Unit2Frq1aButton" class="button">Submit</button>
+								<p id="Unit2Frq1aOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit2Frq1aForm');
+							let output = document.getElementById("Unit2Frq1aOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit2Frq1aButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit2Frq1a', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 
 					<h5>1b. Write a statement that will call the display method to display the light sequence for the gradShow object.</h5>
 					<code>gradShow.display();</code>
+					<div class="frq-form">
+						<form id="Unit2Frq1bForm">
+							<div>
+								<button id="Unit2Frq1bButton" class="button">Submit</button>
+								<p id="Unit2Frq1bOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit2Frq1bForm');
+							let output = document.getElementById("Unit2Frq1bOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit2Frq1bButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit2Frq1b', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 
 					<h5>1c. Write a statement that will be used to update the gradShow light sequence to "0011 0011 0011".</h5>
 					<code>gradShow.changeSequence("0011 0011 0011");</code>
+					<div class="frq-form">
+						<form id="Unit2Frq1cForm">
+							<div>
+								<label for="">New sequence</label><br>
+								<input name="gradShow" class="form-control sub-window"><br>
+								<button id="Unit2Frq1cButton" class="button">Submit</button>
+								<p id="Unit2Frq1cOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit2Frq1cForm');
+							let output = document.getElementById("Unit2Frq1cOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit2Frq1cButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit2Frq1c', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 
 					<h5>1d. Write a code segment that will call the insertSegment method to insert the segment "1111 1111" in the current sequence for gradShow at index 4. The resulting sequence will be stored in the string resultSeq.</h5>
 					<code>String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
+					<div class="frq-form">
+						<form id="Unit2Frq1dForm">
+							<div>
+								<label for="">Segment to add</label><br>
+								<input name="segment" class="form-control sub-window"><br>
+								<label for="">Index</label><br>
+								<input name="index" class="form-control sub-window"><br>
+								<button id="Unit2Frq1dButton" class="button">Submit</button>
+								<p id="Unit2Frq1dOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit2Frq1dForm');
+							let output = document.getElementById("Unit2Frq1dOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit2Frq1dButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit2Frq1d', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 
 					<h5>1e. Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider the following examples.
 
@@ -49,13 +147,13 @@
 						<code style="margin-left: 00px;">}</code>
 					</div>
 					<div class="frq-form">
-						<form action="/about/akhilabout/Unit2FRQQuestion1PartE" method="GET" id="Unit2FRQQuestion1PartE">
+						<form action="/about/akhilabout/Unit2Frq1e" method="GET" id="Unit2Frq1e">
 							<div>
 								<label for="oldSeqField">Input the original sequence</label><br>
 								<input class="form-control sub-window" name="oldSeq" id="oldSeqField"><br>
 								<label for="segField">Input the segment to remove</label>
 								<input class="form-control sub-window" name="segment" id="segField"><br>
-								<button class="btn btn-light">Submit</button>
+								<button class="button">Submit</button>
 								<p th:text="'New sequence: ' + ${newSeq}"></p>
 							</div>
 						</form>
@@ -77,21 +175,125 @@
 					<h5>1a. Write a code segment that prints "attending" if rsvp is true and prints "not attending" otherwise.</h5>
 					<code>if (rsvp) {System.out.print("attending");}</code>
 					<code>else {System.out.print("not attending");}</code>
-
+					<div class="frq-form">
+						<form id="Unit3Frq1aForm">
+							<div>
+								<label for="">true or false</label><br>
+								<input name="rsvp" class="form-control sub-window"><br>
+								<button id="Unit3Frq1aButton" class="button">Submit</button>
+								<p id="Unit3Frq1aOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit3Frq1aForm');
+							let output = document.getElementById("Unit3Frq1aOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit3Frq1aButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit3Frq1a', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 					<h5>1b. Write a code segment that prints the food item associated with selection. For example, if selection is 3, the code segment should print "pasta". Write the code segment below. Your code segment should meet all specifications and conform to the example.</h5>
-					<code>String options[] = {"beef", "chicken", "pasta"};</code>
-					<code>if (selection < 4) {System.out.println(options[selection-1]);}</code>
-					<code>else {System.out.println("fish");}</code>
+					<code style="margin-left:00px;">String options[] = {"beef", "chicken", "pasta"};</code><br>
+					<code style="margin-left:00px;">if (selection < 4 && selection > 0) {System.out.println(options[selection-1]);}</code><br>
+					<code style="margin-left:40px;">else {System.out.println("fish");</code><br>
+					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit3Frq1bForm">
+							<div>
+								<label for="">Input your selection (an integer)</label><br>
+								<input name="selection" class="form-control sub-window"><br>
+								<button id="Unit3Frq1bButton" class="button">Submit</button>
+								<p id="Unit3Frq1bOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit3Frq1bForm');
+							let output = document.getElementById("Unit3Frq1bOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit3Frq1bButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit3Frq1b', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 
 					<h5>1c. Write a code segment that will store a dinner selection in option1 based on the values of rsvp and selection. The intended behavior of the code segment is described below.</h5>
 					<code style="margin-left:00px;">String option1;</code><br>
 					<code style="margin-left:00px;">if (rsvp) {</code><br>
 					<code style="margin-left:40px;">if (selection < 4) {options1 = "Thanks for attending. You will be served " + options[selection-1];} + "."</code><br>
 					<code style="margin-left:00px;">} else {options1 = "Sorry you can't make it."}</code>
+					<div class="frq-form">
+						<form id="Unit3Frq1cForm">
+							<div>
+								<label for="">true or false</label><br>
+								<input name="rsvp" class="form-control sub-window"><br>
+								<label for="">Input your selection (an integer)</label><br>
+								<input name="selection" class="form-control sub-window"><br>
+								<button id="Unit3Frq1cButton" class="button">Submit</button>
+								<p id="Unit3Frq1cOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit3Frq1cForm');
+							let output = document.getElementById("Unit3Frq1cOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit3Frq1cButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit3Frq1c', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 
 					<h5>1d. Write a code segment that will print true if the strings option1 and option2 contain the same values and will print false otherwise.</h5>
-					<code>if (option1.equals(option2)) {System.out.println("true")}</code>
-					<code>else {System.out.println("false")}</code>
+					<code>if (option1.equals(option2)) {System.out.println("true");}</code><br>
+					<code>else {System.out.println("false");}</code><br>
+					<div class="frq-form">
+						<form id="Unit3Frq1dForm">
+							<div>
+								<label for="">Input a string</label><br>
+								<input name="option1" class="form-control sub-window"><br>
+								<label for="">Input a string</label><br>
+								<input name="option2" class="form-control sub-window"><br>
+								<button id="Unit3Frq1dButton" class="button">Submit</button>
+								<p id="Unit3Frq1dOutput">&nbsp;</p>
+							</div>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit3Frq1dForm');
+							let output = document.getElementById("Unit3Frq1dOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit3Frq1dButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit3Frq1d', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 
 					<h5>2. draw a square</h5>
 					<code style="margin-left:00px;">public void drawSquare(int x, int y, int len) {</code><br>
@@ -113,6 +315,160 @@
 					<code style="margin-left:80px;">}</code><br>
 					<code style="margin-left:40px;">}</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<details>
+						<summary>Demo</summary>
+
+						<h1 class="text-center">Java - Draw on Canvas</h1>
+						<div class="container sub-window bg-primary" style="text-align:center;">
+							<canvas id="canvas" width="512" height="384"></canvas>
+						</div>
+						
+						<div class="frq-form" style="margin-left:auto;margin-right:auto;">
+							<label for="">X</label>
+							<input value="0" id='X' type='number' class="form-control sub-window"/>
+							<label for="">Y</label>
+							<input value="0" id="Y" type='number' class="form-control sub-window"/>
+							<label for="">size</label>
+							<input value="4" id="size" type='number' class="form-control sub-window"/>
+						</div>
+						<script>
+							// https://www.w3schools.com/graphics/canvas_intro.asp
+							const canvas = document.getElementById('canvas');
+							const ctx = canvas.getContext('2d');
+							const width = canvas.width;
+							const height = canvas.height;
+							const unit = 16; // unit block size
+							const inputx = document.getElementById("X");
+							const inputy = document.getElementById("Y");
+							const inputsize = document.getElementById("size");
+
+							let inputxV = 0;
+							let inputyV = 0;
+							let inputsizeV = 4;
+
+							clearScreen();
+
+							inputsize.onchange = function() {
+
+								inputsizeV = parseInt(inputsize.value);
+								ctx.strokeStyle = 'black';
+								ctx.lineWidth = 5;
+								update();
+							};
+
+							inputx.onchange = function() {
+
+								inputxV = parseInt(inputx.value);
+								ctx.strokeStyle = 'black';
+								ctx.lineWidth = 5;
+								update();
+							};
+
+							inputy.onchange = function() {
+
+								inputyV = parseInt(inputy.value);
+								ctx.strokeStyle = 'black';
+								ctx.lineWidth = 5;
+								update();
+
+							};
+
+							function update() {
+								// checking box out of bounds
+								if ((inputxV + inputsizeV) > 16 || // Right
+										(inputxV) < -16 || // left
+										(inputyV + inputsizeV) > 12 || // Top
+										(inputyV) < -12) { // Bottom
+									alert("Nothing changed -> Box is can't fit inside of the grid system");
+									return;
+								}
+
+								clearScreen();
+								ctx.strokeStyle = 'black'
+								square();
+								grid();
+								axis();
+								logStats();
+							}
+
+							function logStats() {
+								console.log(
+										`Area of the square: ${inputsizeV * inputsizeV}, side length of the square: ${(inputsizeV + inputsizeV) << 1}`
+								)
+							}
+
+
+							function clearScreen() {
+								ctx.clearRect(0, 0, canvas.width, canvas.height);
+								ctx.fillStyle = 'white';
+								ctx.fillRect(0, 0, canvas.width, canvas.height);
+							}
+
+
+							// grid based off of width, height
+							function grid() {
+								// color and pen width
+								ctx.strokeStyle = 'black';
+								ctx.lineWidth = 1;
+								// make graph paper look
+								for (let col = 0; col < width; col += unit) {
+									for (let row = 0; row < height; row += unit) {
+										ctx.strokeRect(col, row, unit, unit);
+									}
+								}
+							}
+
+							// axis lines
+							function axis() {
+								// color and pen width
+								ctx.strokeStyle = 'red';
+								ctx.lineWidth = 3;
+
+								// x & y zero midpoints of grid
+								const x0 = width * .5;
+								const y0 = height * .5;
+								// x-axis
+								ctx.moveTo(0, y0);
+								ctx.lineTo(width, y0);
+								ctx.stroke();
+								// y-axis
+								ctx.moveTo(x0, 0);
+								ctx.lineTo(x0, height);
+								ctx.stroke();
+							}
+
+
+
+							// square using lines
+							function square() {
+								ctx.strokeStyle = 'red';
+								ctx.lineWidth = 5;
+
+								// starting coordinates
+								var offsetX = width * 0.5;
+								var offsetY = height * 0.5;
+
+								// length of sides is 4 units
+								const l = Math.abs(unit * inputsizeV);
+
+								const x = unit + offsetX + inputxV * unit - unit;
+								const y = -unit + offsetY - l - inputyV * unit + unit;
+
+								// draw a square
+								ctx.beginPath();
+								ctx.moveTo(x, y);
+								ctx.lineTo(x, y + l);
+								ctx.lineTo(x + l, y + l);
+								ctx.lineTo(x + l, y);
+								ctx.lineTo(x, y);
+								ctx.stroke();
+							}
+							// three actions
+							grid();
+							axis();
+							square();
+						</script>
+					</details>
 				</details>
 			</div>
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
@@ -163,15 +519,30 @@
 					<code style="margin-left:40px;">return output;</code><br>
 					<code style="margin-left:00px;">}</code><br>
 					<div class="frq-form">
-						<form action="/about/akhilabout/Unit4FRQQuestion2PartA" method="GET" id="Unit4FRQQuestion2PartA">
+						<form id="Unit4Frq2aForm">
 							<div>
 								<label for="roundNumberField">Input the round number</label><br>
-								<input class="form-control sub-window" name="round" id="roundNumberField" th:value="${Player2Input}"><br>
-								<button class="button">Submit</button>
-								<p th:text="'Player 2\'s Bet: ' + ${Player2Move}"></p>
+								<input name="round" class="form-control sub-window"><br>
+								<button id="Unit4Frq2aButton" class="button">Submit</button>
+								<p id="Unit4Frq2aOutput">&nbsp;</p>
 							</div>
 						</form>
 					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit4Frq2aForm');
+							let output = document.getElementById("Unit4Frq2aOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit4Frq2aButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit4Frq2a', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 					<h5>2b. playGame method</h5>
 					<code style="margin-left:00px;">public void playGame() {</code><br>
 					<code style="margin-left:40px;">private int currentRound;</code><br>
@@ -186,6 +557,31 @@
 					<code style="margin-left:40px;">else if (player2Coins > player1Coins) {System.out.println("player 2 wins");}</code><br>
 					<code style="margin-left:40px;">else if (player2Coins == player1Coins) {System.out.println("tie");}</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit4Frq2bForm">
+							<label for="">Max Rounds</label>
+							<input name="maxRounds" class="form-control sub-window"><br>
+							<label for="">Starting Coins</label>
+							<input name="startingCoins" class="form-control sub-window"><br>
+							<button id="Unit4Frq2bButton" class="button">Submit</button>
+							<p id="Unit4Frq2bOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit4Frq2bForm');
+							let output = document.getElementById("Unit4Frq2bOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit4Frq2bButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit4Frq2b', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 				</details>
 			</div>
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
@@ -403,7 +799,7 @@
 				</script>
 			</div>
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
-				<details open>
+				<details>
 					<summary><h4 style="display:inline;"><strong>FRQ Unit 6</strong></h4></summary>
 					<h5>1. Using an enhanced for loop, write a code segment that will print out elements of an array of String objects, words, that end in "ing"</h5>
 					<code style="margin-left:00px;">for (String ii : words) {</code><br>

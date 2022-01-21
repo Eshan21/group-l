@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import java.io.*; 
 import java.util.*; 
 import org.json.simple.JSONObject; 
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 @Controller
 public class MichaelAbout {
@@ -85,5 +88,51 @@ public class MichaelAbout {
         model.addAttribute("Player2Input", round);
         model.addAttribute("Player2Move", output);
         return "about/michaelabout";
+    }
+
+
+    private PasswordGenerator pg;
+
+    @PostMapping("about/michaelabout/unit5-q2")
+    @ResponseBody
+    public String genPassword(
+        @RequestParam(name="unit5-ques2-pass-prefix", required=false, defaultValue="amongus") String passPrefix,
+        @RequestParam(name="unit5-ques2-pass-length", required=false, defaultValue="amongus") String passLength,
+        @RequestParam(name="createNew", required=false, defaultValue="amongus") boolean createNew,
+                                     Model model){
+        if(pg == null || createNew) {
+            pg = new PasswordGenerator(Integer.parseInt(passLength), passPrefix);
+            pg.clearPasswordList();
+        }
+
+        pg.pwGen();
+
+        JSONObject jo = new JSONObject(); 
+        jo.put("passwords", pg.getGeneratedPassword()); 
+
+        return jo.toString();
+    }
+
+    @PostMapping("about/michaelabout/unit6-q2b")
+    @ResponseBody
+    public String genPassword(
+        @RequestParam(name="unit6-ques2-sold-count", required=false, defaultValue="a") String soldList,
+        @RequestParam(name="unit6-ques2-fixed-wage", required=false, defaultValue="ab") String fixedWage,
+        @RequestParam(name="unit6-ques2-per-item-wage", required=false, defaultValue="ac") String perItemWage,
+                                     Model model){
+
+        Pattern pattern = Pattern.compile(",");
+        int[] itemSoldList = pattern.splitAsStream(soldList) 
+                                .mapToInt(Integer::parseInt)
+                                .toArray();
+
+        Payroll pr = new Payroll(itemSoldList);
+        double threshold = pr.computeBonusThreshold();
+        pr.computeWages(Double.parseDouble(fixedWage), Double.parseDouble(perItemWage));
+        JSONObject jo = new JSONObject(); 
+        jo.put("threshold", threshold);
+        jo.put("wages", DoubleStream.of(pr.wages).boxed().collect(Collectors.toList())); 
+
+        return jo.toString();
     }
 }

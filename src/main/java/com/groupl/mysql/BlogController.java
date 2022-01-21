@@ -33,13 +33,7 @@ public class BlogController extends SqlObjController<Blog,BlogRepository> {
                                 @RequestParam(required=false) String tags,
                                 @RequestParam(required=true) String date) {
 
-    Blog a = new Blog();
-
-    a.setName(name);
-    a.setUserId(userid);
-    a.setTags(tags);
-    a.setDate(date);
-
+    Blog a = new Blog(name, Integer.parseInt(userid), tags, date);
     super.repo.save(a);
   }
 

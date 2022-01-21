@@ -7,8 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
-@MappedSuperclass // This tells Hibernate to make a table out of this class
-public class SqlObj {
+@MappedSuperclass
+public abstract class SqlObj {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;

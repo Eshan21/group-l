@@ -15,6 +15,16 @@ public class Blog extends SqlObj {
     @NotEmpty
     private String date;
 
+    public Blog(String name, Integer userid, String tags, String date) {
+        super.setName(name);
+        this.userid = userid;
+        this.tags = tags;
+        this.date = date;
+    }
+
+    public Blog() {
+    }
+
     public Integer getUserId() {
         return userid;
     }

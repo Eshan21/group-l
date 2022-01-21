@@ -473,31 +473,30 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                 <details>
                     <summary>FRQ Unit 4</summary>
                     <h5>1. Write the Longest Streak method</h5>
-                    <code style="margin-left:00px;">public static void longestStreak(String str){</code><br>
-                    <code style="margin-left:40px;">int longestCount = 0;</code><br>
-                    <code style="margin-left:40px;">String longestChar = null;</code><br>
-                    <code style="margin-left:40px;">int currentCount = 1;</code><br>
-                    <code style="margin-left:40px;">String currentChar = null;</code><br>
-                    <code style="margin-left:40px;">String prevChar = null;</code><br>
-                    <code style="margin-left:40px;">int start = 0;</code><br>
-                    <code style="margin-left:40px;">int end = 0;</code><br>
-                    <code style="margin-left:40px;">for (int ii=0;ii&lt;str.length();ii++) {</code><br>
-                    <code style="margin-left:80px;">currentChar = String.valueOf(str.charAt(ii));</code><br>
-                    <code style="margin-left:80px;">if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}</code><br>
-                    <code style="margin-left:80px;">if (currentChar.equals(prevChar)) {</code><br>
-                    <code style="margin-left:120px;">currentCount++;</code><br>
-                    <code style="margin-left:120px;">if (currentCount > longestCount) {</code><br>
-                    <code style="margin-left:160px;">longestChar = currentChar;</code><br>
-                    <code style="margin-left:160px;">longestCount = currentCount;</code><br>
-                    <code style="margin-left:120px;">}</code><br>
-                    <code style="margin-left:80px;">}</code><br>
-                    <code style="margin-left:80px;">else {</code><br>
-                    <code style="margin-left:120px;">currentCount = 1;</code><br>
-                    <code style="margin-left:120px;">currentChar = null;</code><br>
-                    <code style="margin-left:80px;">}</code><br>
-                    <code style="margin-left:40px;">}</code><br>
-                    <code style="margin-left:40px;">System.out.printf("%s %d\n", longestChar, longestCount);</code><br>
-                    <code style="margin-left:00px;">}</code><br>
+                    <pre><code class="language-java">public static char longestStreakf(String a) {
+    char answer = &#39; &#39;;
+    int streak = 1;
+    int longestStreak = 1;
+
+    for(int i = 0; i &lt; a.length() - 1; i++) {
+
+        if(a.charAt(i) == a.charAt(i + 1)) {
+            streak++;
+            if(streak &gt; longestStreak) {
+                longestStreak = streak;
+                answer = a.charAt(i);
+            }
+        } else {
+            streak = 1;
+        }
+        
+    }
+
+    System.out.println(longestStreak);
+    return answer;
+}
+</code></pre>
+
                     <h5>Demo</h5>
                     <div class="frq-form">
                         <form method="GET" id="unit4-frq1">
@@ -524,7 +523,6 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                                 })).json();
                                 output.innerText = `Your input: ${data['userin']}\nLongest character: ${data['unit4-frq1-longestChar']}\nLongest Streak: ${data['unit4-frq1-longestStreak']}`;
                             }
-
                         })();
                     </script>
 
@@ -562,7 +560,377 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                     <code style="margin-left:00px;">}</code><br>
                 </details>
 
+                <details>
+                    <summary>FRQ Unit 5</summary>
 
+                    <h2 id="question-1">Question 1</h2>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>The following class represents an invitation to an event. The variable hostName represents the name of the host of the event and the variable address represents the location of the event.</p>
+                    <pre><code class="language-java">public class Invitation
+
+{
+
+    private String hostName;
+
+    private String address;
+
+     
+
+    public Invitation(String n, String a)
+
+    {
+
+        hostName = n;
+
+        address = a;
+
+    }
+
+}
+</code></pre>
+                    <p>(a) Write a method for the Invitation class that returns the name of the host.</p>
+                    <p>Write the method below.</p>
+                    <pre><code class="language-java">    
+</code></pre>
+                    <p>(b) Write a method for the Invitation class that accepts a parameter and uses it to update the address for the event.</p>
+                    <p>Write the method below.</p>
+                    <pre><code class="language-java">public void setAddress(String s) {
+    this.address = s;
+}
+</code></pre>
+                    <p>(c) Write a method for the Invitation class that will accept the name of a person who will be invited as a string parameter and return a string consisting of the name of the person being invited along with name of the host and location
+                        of the event.</p>
+                    <p>For example, if the host name is &quot;<code>Karen</code>&quot;, the party location is &quot;<code>1234 Walnut Street</code>&quot;, and the person invited is &quot;<code>Cheryl</code>&quot;, the method should return a string in the
+                        following format.</p>
+                    <p><code>Dear Cheryl, please attend my event at 1234 Walnut Street. See you then, Karen.</code></p>
+                    <p>Write the method below. Your implementation must conform to the example above.</p>
+                    <pre><code class="language-java">public String invite(String friend) {
+    return (&quot;Dear &quot; + friend + &quot;please attend my event at &quot; + this.address + &quot;. See you then, &quot; + this.hostName);
+}
+</code></pre>
+                    <p>(d) A student has written the following one-parameter constructor to be included in the Invitation class. The method is intended to construct a new Invitation object that sets address to the value of the parameter and sets hostName
+                        to the default name &quot;Host&quot;. The constructor does not work as intended.</p>
+                    <pre><code class="language-java">public Invitation(String address) {
+    address = address;
+    hostName = &quot;Host&quot;;
+}
+</code></pre>
+                    <p>Write a correct implementation of the one-parameter Invitation constructor that avoids the error in the student’s implementation.</p>
+                    <p>Write the method below.</p>
+                    <pre><code class="language-java">public Invitation(String address) {
+    this.address = address;
+    hostName = &quot;Host&quot;;
+}
+</code></pre>
+                    <h2 id="question-2">Question 2</h2>
+                    <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>This question involves the implementation of the PasswordGenerator class, which generates strings containing initial passwords for online accounts. The PasswordGenerator class supports the following functions.</p>
+                    <p>Creating a password consisting of a specified prefix, a period, and a randomly generated numeric portion of specified length Creating a password consisting of the default prefix &quot;A&quot;, a period, and a randomly generated numeric
+                        portion of specified length Reporting how many passwords have been generated The following table contains a sample code execution sequence and the corresponding results.</p>
+                    <p>Write the complete PasswordGenerator class. Your implementation must meet all specifications and conform to the example.</p>
+                    <pre><code class="language-java">import java.util.*;
+
+class PasswordGenerator {
+    private String passwordPrefix;
+    private int randomNumLength;
+    private static ArrayList&lt;String&gt; passwordList = new ArrayList&lt;String&gt;();
+
+    private String numberListCache = &quot;0123456789&quot;;
+
+    public PasswordGenerator(int length, String prefix) {
+        this.passwordPrefix = prefix;
+        this.randomNumLength = length;
+    }
+
+    public PasswordGenerator(int length) {
+        this.passwordPrefix = &quot;A&quot;;
+        this.randomNumLength = length;
+    }
+
+    public String pwGen() {
+        String output = this.passwordPrefix + &quot;.&quot;;
+        for(int i = 0; i &lt; this.randomNumLength; i++) {
+            output += numberListCache.charAt((int)(Math.random() * 10));
+        }
+
+        this.passwordList.add(output);
+        return output;
+
+    }
+
+    public int pwCount() {
+        return this.passwordList.size();
+    }
+
+    public static void runTests() {
+        Object output, expectOutput;
+        
+        PasswordGenerator pw1 = new PasswordGenerator(4, &quot;chs&quot;);
+        output = pw1.pwCount();
+        System.out.println(output);
+
+        output = pw1.pwGen();
+        System.out.println(output);
+
+        output = pw1.pwGen();
+        System.out.println(output);
+
+        output = pw1.pwCount();
+        System.out.println(output);
+
+        PasswordGenerator pw2 = new PasswordGenerator(6);
+
+        output = pw2.pwCount();
+        System.out.println(output);
+
+        output = pw2.pwGen();
+        System.out.println(output);
+
+        output = pw2.pwCount();
+        System.out.println(output);
+
+        output = pw1.pwCount();
+        System.out.println(output);
+    }
+
+
+    public static void main(String[] args) {
+        PasswordGenerator.runTests();
+    }
+}
+</code></pre>
+                    <div class="frq-form">
+                        <form id="unit5-ques2">
+                            <div>
+                                <label for="">Password prefix</label><br>
+                                <input class="form-control sub-window" name="unit5-ques2-pass-prefix" /><br>
+                                <label for="">Random number length</label><br>
+                                <input class="form-control sub-window" name="unit5-ques2-pass-length" /><br>
+                                <button id="unit5-ques2-generate-new" class="button">Generate new</button>
+                                <button id="unit5-ques2-generate-more" class="button">Generate more</button>
+                                <ul id="unit5-ques2-output"></ul>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit5-ques2");
+                            let output = document.getElementById('unit5-ques2-output');
+                            let generateNew = document.getElementById("unit5-ques2-generate-new");
+                            let generateMore = document.getElementById("unit5-ques2-generate-more");
+
+                            form.addEventListener('submit', e => e.preventDefault());
+                            generateNew.onclick = _ => uploadfile(true);
+                            generateMore.onclick = _ => uploadfile(false);
+
+                            function htmlEncode(s) {
+                                var el = document.createElement("div");
+                                el.innerText = el.textContent = s;
+                                s = el.innerHTML;
+                                return s;
+                            }
+
+                            async function uploadfile(createNew) {
+                                let tempForm = new FormData(form);
+                                tempForm.append("createNew", createNew);
+
+                                let data = await (await fetch('/about/michaelabout/unit5-q2', {
+                                    method: 'POST',
+                                    body: tempForm
+                                })).json();
+                                console.log(data);
+                                output.innerText = "";
+                                for (let password of data["passwords"]) {
+                                    // idk y ol is not showing up but idc
+                                    output.innerHTML += `<ol>${htmlEncode(password)}</ol>`;
+                                }
+                            }
+                        })();
+                    </script>
+                </details>
+
+                <details>
+                    <summary>FRQ unit 6</summary>
+
+                    <h2 id="question-1">Question 1</h2>
+                    <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>An array of String objects, words, has been properly declared and initialized. Each element of words contains a String consisting of at least 3 lowercase letters (a–z).</p>
+                    <p>Write a code segment that uses an enhanced for loop to print all elements of words that end with &quot;ing&quot;. As an example, if words contains <code>{&quot;ten&quot;, &quot;fading&quot;, &quot;post&quot;, &quot;card&quot;, &quot;thunder&quot;, &quot;hinge&quot;, &quot;trailing&quot;, &quot;batting&quot;}</code>,
+                        then the following output should be produced by the code segment.</p>
+                    <pre><code>fading
+
+trailing
+
+batting
+</code></pre>
+                    <p>Write the code segment as described above. The code segment must use an enhanced for loop to earn full credit.</p>
+                    <pre><code class="language-java">import java.util.*;
+
+public class temp {
+
+    public static ArrayList&lt;String&gt; wordList = new ArrayList&lt;String&gt;(Arrays.asList(&quot;ten&quot;, &quot;fading&quot;, &quot;post&quot;, &quot;card&quot;, &quot;thunder&quot;, &quot;hinge&quot;, &quot;trailing&quot;, &quot;batting&quot;));
+
+    public static ArrayList&lt;String&gt; findWordsWith(String input) {
+        ArrayList&lt;String&gt; outputList = new ArrayList&lt;String&gt;();
+        for (String word : wordList) {
+            if (word.endsWith(input)) {
+                outputList.add(word);
+            }
+        }
+        return outputList;
+    }
+
+    public static void main(String args[]) {
+        for (String word : findWordsWith(&quot;ing&quot;)) {
+            System.out.println(word);
+        }
+    }
+}
+</code></pre>
+                    <h1 id="question-2">Question 2</h1>
+                    <pre><code class="language-java">public class Payroll {
+
+    private int[] itemsSold; // number of items sold by each employee
+
+    public double[] wages; // wages to be computed in part (b)
+
+    /** Returns the bonus threshold as described in part (a).
+
+    */
+
+    public Payroll(int[] itemsSold) {
+
+        this.itemsSold = itemsSold;
+
+    }
+
+    public double computeBonusThreshold() {
+    /* To be implemented in part (a) */
+
+        int biggest = itemsSold[0], smallest = itemsSold[0], currentCount = 0;
+
+        for (int temp : itemsSold ) {
+            // int temp = soldCount;
+            if(biggest &lt; temp) {
+                biggest = temp;
+            } else if(smallest &gt; temp) {
+                smallest = temp;
+            }
+
+            currentCount += temp;
+        }
+
+        return (double)(currentCount - biggest - smallest) / 8.0;
+
+    }
+
+    
+
+    /** Computes employee wages as described in part (b)
+
+    * and stores them in wages.
+
+    * The parameter fixedWage represents the fixed amount each employee
+
+    * is paid per day.
+
+    * The parameter perItemWage represents the amount each employee
+
+    * is paid per item sold.
+
+    */
+
+    public void computeWages(double fixedWage, double perItemWage) {
+
+        /* To be implemented in part (b) */
+
+        double threshold = this.computeBonusThreshold();
+        wages = new double[itemsSold.length];
+
+        int i = 0;
+        for (int soldCount : itemsSold ) {
+            wages[i] = fixedWage + fixedWage * soldCount;
+            // int temp = soldCount;
+            if(soldCount &gt; threshold) {
+                wages[i] *= 1.1;
+            }
+            i++;
+        }
+
+    }
+
+    public static void main(String args[])  {
+        int[] soldAmount= {48,50,37,62,38,70,55,37,64,60};
+        Payroll pr = new Payroll(soldAmount);
+        System.out.println(&quot;threshold: &quot; + pr.computeBonusThreshold());
+        pr.computeWages(10.0, 1.5);
+        for(double wage : pr.wages) {
+            System.out.println(wage);
+        }
+        
+    }
+    // Other instance variables, constructors, and methods not shown.
+}
+</code></pre>
+                </details>
+
+                <details>
+                    <summary>FRQ unit 6 demo</summary>
+                    <div class="frq-form">
+                        <form id="unit6-ques2">
+                            <div>
+                                <label for="">Input wage for employee (separate with comma)</label><br>
+                                <input class="form-control sub-window" name="unit6-ques2-sold-count" /><br>
+                                <label for="">Enter fixed wage</label><br>
+                                <input class="form-control sub-window" name="unit6-ques2-fixed-wage" /><br>
+                                <label for="">Enter budget per item sold</label><br>
+                                <input class="form-control sub-window" name="unit6-ques2-per-item-wage" /><br>
+                                <button id="unit6-ques2-submit" class="button">Submit</button>
+                                <p id="unit6-ques2-output"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit6-ques2");
+                            let output = document.getElementById('unit6-ques2-output');
+                            document.getElementById("unit6-ques2-submit").onclick = uploadfile;
+
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            function htmlEncode(s) {
+                                var el = document.createElement("div");
+                                el.innerText = el.textContent = s;
+                                s = el.innerHTML;
+                                return s;
+                            }
+
+                            async function uploadfile(createNew) {
+                                let data = await (await fetch('/about/michaelabout/unit6-q2b', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).json();
+
+                                console.log(data);
+                                output.innerText = "";
+                                for (let wage of data["wages"]) {
+                                    // idk y ol is not showing up but idc
+                                    output.innerText += `${Math.floor(wage*100)/100}\n`;
+                                }
+                            }
+                        })();
+                    </script>
+                </details>
             </div>
         </main>
     </div>
