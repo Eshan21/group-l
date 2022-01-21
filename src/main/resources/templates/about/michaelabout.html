@@ -524,7 +524,6 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                                 })).json();
                                 output.innerText = `Your input: ${data['userin']}\nLongest character: ${data['unit4-frq1-longestChar']}\nLongest Streak: ${data['unit4-frq1-longestStreak']}`;
                             }
-
                         })();
                     </script>
 
@@ -562,6 +561,200 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                     <code style="margin-left:00px;">}</code><br>
                 </details>
 
+                <details>
+                    <summary>FRQ Unit 5</summary>
+
+                    <h2 id="question-1">Question 1</h2>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>The following class represents an invitation to an event. The variable hostName represents the name of the host of the event and the variable address represents the location of the event.</p>
+                    <pre><code class="language-java">public class Invitation
+
+{
+
+    private String hostName;
+
+    private String address;
+
+     
+
+    public Invitation(String n, String a)
+
+    {
+
+        hostName = n;
+
+        address = a;
+
+    }
+
+}
+</code></pre>
+                    <p>(a) Write a method for the Invitation class that returns the name of the host.</p>
+                    <p>Write the method below.</p>
+                    <pre><code class="language-java">    
+</code></pre>
+                    <p>(b) Write a method for the Invitation class that accepts a parameter and uses it to update the address for the event.</p>
+                    <p>Write the method below.</p>
+                    <pre><code class="language-java">public void setAddress(String s) {
+    this.address = s;
+}
+</code></pre>
+                    <p>(c) Write a method for the Invitation class that will accept the name of a person who will be invited as a string parameter and return a string consisting of the name of the person being invited along with name of the host and location
+                        of the event.</p>
+                    <p>For example, if the host name is &quot;<code>Karen</code>&quot;, the party location is &quot;<code>1234 Walnut Street</code>&quot;, and the person invited is &quot;<code>Cheryl</code>&quot;, the method should return a string in the
+                        following format.</p>
+                    <p><code>Dear Cheryl, please attend my event at 1234 Walnut Street. See you then, Karen.</code></p>
+                    <p>Write the method below. Your implementation must conform to the example above.</p>
+                    <pre><code class="language-java">public String invite(String friend) {
+    return (&quot;Dear &quot; + friend + &quot;please attend my event at &quot; + this.address + &quot;. See you then, &quot; + this.hostName);
+}
+</code></pre>
+                    <p>(d) A student has written the following one-parameter constructor to be included in the Invitation class. The method is intended to construct a new Invitation object that sets address to the value of the parameter and sets hostName
+                        to the default name &quot;Host&quot;. The constructor does not work as intended.</p>
+                    <pre><code class="language-java">public Invitation(String address) {
+    address = address;
+    hostName = &quot;Host&quot;;
+}
+</code></pre>
+                    <p>Write a correct implementation of the one-parameter Invitation constructor that avoids the error in the student’s implementation.</p>
+                    <p>Write the method below.</p>
+                    <pre><code class="language-java">public Invitation(String address) {
+    this.address = address;
+    hostName = &quot;Host&quot;;
+}
+</code></pre>
+                    <h2 id="question-2">Question 2</h2>
+                    <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>This question involves the implementation of the PasswordGenerator class, which generates strings containing initial passwords for online accounts. The PasswordGenerator class supports the following functions.</p>
+                    <p>Creating a password consisting of a specified prefix, a period, and a randomly generated numeric portion of specified length Creating a password consisting of the default prefix &quot;A&quot;, a period, and a randomly generated numeric
+                        portion of specified length Reporting how many passwords have been generated The following table contains a sample code execution sequence and the corresponding results.</p>
+                    <p>Write the complete PasswordGenerator class. Your implementation must meet all specifications and conform to the example.</p>
+                    <pre><code class="language-java">import java.util.*;
+
+class PasswordGenerator {
+    private String passwordPrefix;
+    private int randomNumLength;
+    private static ArrayList&lt;String&gt; passwordList = new ArrayList&lt;String&gt;();
+
+    private String numberListCache = &quot;0123456789&quot;;
+
+    public PasswordGenerator(int length, String prefix) {
+        this.passwordPrefix = prefix;
+        this.randomNumLength = length;
+    }
+
+    public PasswordGenerator(int length) {
+        this.passwordPrefix = &quot;A&quot;;
+        this.randomNumLength = length;
+    }
+
+    public String pwGen() {
+        String output = this.passwordPrefix + &quot;.&quot;;
+        for(int i = 0; i &lt; this.randomNumLength; i++) {
+            output += numberListCache.charAt((int)(Math.random() * 10));
+        }
+
+        this.passwordList.add(output);
+        return output;
+
+    }
+
+    public int pwCount() {
+        return this.passwordList.size();
+    }
+
+    public static void runTests() {
+        Object output, expectOutput;
+        
+        PasswordGenerator pw1 = new PasswordGenerator(4, &quot;chs&quot;);
+        output = pw1.pwCount();
+        System.out.println(output);
+
+        output = pw1.pwGen();
+        System.out.println(output);
+
+        output = pw1.pwGen();
+        System.out.println(output);
+
+        output = pw1.pwCount();
+        System.out.println(output);
+
+        PasswordGenerator pw2 = new PasswordGenerator(6);
+
+        output = pw2.pwCount();
+        System.out.println(output);
+
+        output = pw2.pwGen();
+        System.out.println(output);
+
+        output = pw2.pwCount();
+        System.out.println(output);
+
+        output = pw1.pwCount();
+        System.out.println(output);
+    }
+
+
+    public static void main(String[] args) {
+        PasswordGenerator.runTests();
+    }
+}
+</code></pre>
+                    <div class="frq-form">
+                        <form id="unit5-ques2">
+                            <div>
+                                <label for="">Password prefix</label><br>
+                                <input class="form-control sub-window" name="unit5-ques2-pass-prefix" /><br>
+                                <label for="">Random number length</label><br>
+                                <input class="form-control sub-window" name="unit5-ques2-pass-length" /><br>
+                                <button id="unit5-ques2-generate-new" class="button">Generate new</button>
+                                <button id="unit5-ques2-generate-more" class="button">Generate more</button>
+                                <ul id="unit5-ques2-output"></ul>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit5-ques2");
+                            let output = document.getElementById('unit5-ques2-output');
+                            let generateNew = document.getElementById("unit5-ques2-generate-new");
+                            let generateMore = document.getElementById("unit5-ques2-generate-more");
+
+                            form.addEventListener('submit', e => e.preventDefault());
+                            generateNew.onclick = _ => uploadfile(true);
+                            generateMore.onclick = _ => uploadfile(false);
+
+                            function htmlEncode(s) {
+                                var el = document.createElement("div");
+                                el.innerText = el.textContent = s;
+                                s = el.innerHTML;
+                                return s;
+                            }
+
+                            async function uploadfile(createNew) {
+                                let tempForm = new FormData(form);
+                                tempForm.append("createNew", createNew);
+
+                                let data = await (await fetch('/about/michaelabout/unit5-q2', {
+                                    method: 'POST',
+                                    body: tempForm
+                                })).json();
+                                console.log(data);
+                                output.innerText = "";
+                                for (let password of data["passwords"]) {
+                                    // idk y ol is not showing up but idc
+                                    output.innerHTML += `<ol>${htmlEncode(password)}</ol>`;
+                                }
+                            }
+                        })();
+                    </script>
+                </details>
 
             </div>
         </main>

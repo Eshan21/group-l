@@ -86,4 +86,27 @@ public class MichaelAbout {
         model.addAttribute("Player2Move", output);
         return "about/michaelabout";
     }
+
+
+    private PasswordGenerator pg;
+
+    @PostMapping("about/michaelabout/unit5-q2")
+    @ResponseBody
+    public String genPassword(
+        @RequestParam(name="unit5-ques2-pass-prefix", required=false, defaultValue="amongus") String passPrefix,
+        @RequestParam(name="unit5-ques2-pass-length", required=false, defaultValue="amongus") String passLength,
+        @RequestParam(name="createNew", required=false, defaultValue="amongus") boolean createNew,
+                                     Model model){
+        if(pg == null || createNew) {
+            pg = new PasswordGenerator(Integer.parseInt(passLength), passPrefix);
+            pg.clearPasswordList();
+        }
+
+        pg.pwGen();
+
+        JSONObject jo = new JSONObject(); 
+        jo.put("passwords", pg.getGeneratedPassword()); 
+
+        return jo.toString();
+    }
 }
