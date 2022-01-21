@@ -473,31 +473,30 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                 <details>
                     <summary>FRQ Unit 4</summary>
                     <h5>1. Write the Longest Streak method</h5>
-                    <code style="margin-left:00px;">public static void longestStreak(String str){</code><br>
-                    <code style="margin-left:40px;">int longestCount = 0;</code><br>
-                    <code style="margin-left:40px;">String longestChar = null;</code><br>
-                    <code style="margin-left:40px;">int currentCount = 1;</code><br>
-                    <code style="margin-left:40px;">String currentChar = null;</code><br>
-                    <code style="margin-left:40px;">String prevChar = null;</code><br>
-                    <code style="margin-left:40px;">int start = 0;</code><br>
-                    <code style="margin-left:40px;">int end = 0;</code><br>
-                    <code style="margin-left:40px;">for (int ii=0;ii&lt;str.length();ii++) {</code><br>
-                    <code style="margin-left:80px;">currentChar = String.valueOf(str.charAt(ii));</code><br>
-                    <code style="margin-left:80px;">if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}</code><br>
-                    <code style="margin-left:80px;">if (currentChar.equals(prevChar)) {</code><br>
-                    <code style="margin-left:120px;">currentCount++;</code><br>
-                    <code style="margin-left:120px;">if (currentCount > longestCount) {</code><br>
-                    <code style="margin-left:160px;">longestChar = currentChar;</code><br>
-                    <code style="margin-left:160px;">longestCount = currentCount;</code><br>
-                    <code style="margin-left:120px;">}</code><br>
-                    <code style="margin-left:80px;">}</code><br>
-                    <code style="margin-left:80px;">else {</code><br>
-                    <code style="margin-left:120px;">currentCount = 1;</code><br>
-                    <code style="margin-left:120px;">currentChar = null;</code><br>
-                    <code style="margin-left:80px;">}</code><br>
-                    <code style="margin-left:40px;">}</code><br>
-                    <code style="margin-left:40px;">System.out.printf("%s %d\n", longestChar, longestCount);</code><br>
-                    <code style="margin-left:00px;">}</code><br>
+                    <pre><code class="language-java">public static char longestStreakf(String a) {
+    char answer = &#39; &#39;;
+    int streak = 1;
+    int longestStreak = 1;
+
+    for(int i = 0; i &lt; a.length() - 1; i++) {
+
+        if(a.charAt(i) == a.charAt(i + 1)) {
+            streak++;
+            if(streak &gt; longestStreak) {
+                longestStreak = streak;
+                answer = a.charAt(i);
+            }
+        } else {
+            streak = 1;
+        }
+        
+    }
+
+    System.out.println(longestStreak);
+    return answer;
+}
+</code></pre>
+
                     <h5>Demo</h5>
                     <div class="frq-form">
                         <form method="GET" id="unit4-frq1">
@@ -756,6 +755,182 @@ class PasswordGenerator {
                     </script>
                 </details>
 
+                <details>
+                    <summary>FRQ unit 6</summary>
+
+                    <h2 id="question-1">Question 1</h2>
+                    <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
+                    <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
+                        preconditions are satisfied. In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question. Writing significant amounts of code that can be replaced by a call
+                        to one of these methods will not receive full credit.</p>
+                    <p>An array of String objects, words, has been properly declared and initialized. Each element of words contains a String consisting of at least 3 lowercase letters (a–z).</p>
+                    <p>Write a code segment that uses an enhanced for loop to print all elements of words that end with &quot;ing&quot;. As an example, if words contains <code>{&quot;ten&quot;, &quot;fading&quot;, &quot;post&quot;, &quot;card&quot;, &quot;thunder&quot;, &quot;hinge&quot;, &quot;trailing&quot;, &quot;batting&quot;}</code>,
+                        then the following output should be produced by the code segment.</p>
+                    <pre><code>fading
+
+trailing
+
+batting
+</code></pre>
+                    <p>Write the code segment as described above. The code segment must use an enhanced for loop to earn full credit.</p>
+                    <pre><code class="language-java">import java.util.*;
+
+public class temp {
+
+    public static ArrayList&lt;String&gt; wordList = new ArrayList&lt;String&gt;(Arrays.asList(&quot;ten&quot;, &quot;fading&quot;, &quot;post&quot;, &quot;card&quot;, &quot;thunder&quot;, &quot;hinge&quot;, &quot;trailing&quot;, &quot;batting&quot;));
+
+    public static ArrayList&lt;String&gt; findWordsWith(String input) {
+        ArrayList&lt;String&gt; outputList = new ArrayList&lt;String&gt;();
+        for (String word : wordList) {
+            if (word.endsWith(input)) {
+                outputList.add(word);
+            }
+        }
+        return outputList;
+    }
+
+    public static void main(String args[]) {
+        for (String word : findWordsWith(&quot;ing&quot;)) {
+            System.out.println(word);
+        }
+    }
+}
+</code></pre>
+                    <h1 id="question-2">Question 2</h1>
+                    <pre><code class="language-java">public class Payroll {
+
+    private int[] itemsSold; // number of items sold by each employee
+
+    public double[] wages; // wages to be computed in part (b)
+
+    /** Returns the bonus threshold as described in part (a).
+
+    */
+
+    public Payroll(int[] itemsSold) {
+
+        this.itemsSold = itemsSold;
+
+    }
+
+    public double computeBonusThreshold() {
+    /* To be implemented in part (a) */
+
+        int biggest = itemsSold[0], smallest = itemsSold[0], currentCount = 0;
+
+        for (int temp : itemsSold ) {
+            // int temp = soldCount;
+            if(biggest &lt; temp) {
+                biggest = temp;
+            } else if(smallest &gt; temp) {
+                smallest = temp;
+            }
+
+            currentCount += temp;
+        }
+
+        return (double)(currentCount - biggest - smallest) / 8.0;
+
+    }
+
+    
+
+    /** Computes employee wages as described in part (b)
+
+    * and stores them in wages.
+
+    * The parameter fixedWage represents the fixed amount each employee
+
+    * is paid per day.
+
+    * The parameter perItemWage represents the amount each employee
+
+    * is paid per item sold.
+
+    */
+
+    public void computeWages(double fixedWage, double perItemWage) {
+
+        /* To be implemented in part (b) */
+
+        double threshold = this.computeBonusThreshold();
+        wages = new double[itemsSold.length];
+
+        int i = 0;
+        for (int soldCount : itemsSold ) {
+            wages[i] = fixedWage + fixedWage * soldCount;
+            // int temp = soldCount;
+            if(soldCount &gt; threshold) {
+                wages[i] *= 1.1;
+            }
+            i++;
+        }
+
+    }
+
+    public static void main(String args[])  {
+        int[] soldAmount= {48,50,37,62,38,70,55,37,64,60};
+        Payroll pr = new Payroll(soldAmount);
+        System.out.println(&quot;threshold: &quot; + pr.computeBonusThreshold());
+        pr.computeWages(10.0, 1.5);
+        for(double wage : pr.wages) {
+            System.out.println(wage);
+        }
+        
+    }
+    // Other instance variables, constructors, and methods not shown.
+}
+</code></pre>
+                </details>
+
+                <details>
+                    <summary>FRQ unit 6 demo</summary>
+                    <div class="frq-form">
+                        <form id="unit6-ques2">
+                            <div>
+                                <label for="">Input wage for employee (separate with comma)</label><br>
+                                <input class="form-control sub-window" name="unit6-ques2-sold-count" /><br>
+                                <label for="">Enter fixed wage</label><br>
+                                <input class="form-control sub-window" name="unit6-ques2-fixed-wage" /><br>
+                                <label for="">Enter budget per item sold</label><br>
+                                <input class="form-control sub-window" name="unit6-ques2-per-item-wage" /><br>
+                                <button id="unit6-ques2-submit" class="button">Submit</button>
+                                <p id="unit6-ques2-output"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit6-ques2");
+                            let output = document.getElementById('unit6-ques2-output');
+                            document.getElementById("unit6-ques2-submit").onclick = uploadfile;
+
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            function htmlEncode(s) {
+                                var el = document.createElement("div");
+                                el.innerText = el.textContent = s;
+                                s = el.innerHTML;
+                                return s;
+                            }
+
+                            async function uploadfile(createNew) {
+                                let data = await (await fetch('/about/michaelabout/unit6-q2b', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).json();
+
+                                console.log(data);
+                                output.innerText = "";
+                                for (let wage of data["wages"]) {
+                                    // idk y ol is not showing up but idc
+                                    output.innerText += `${Math.floor(wage*100)/100}\n`;
+                                }
+                            }
+                        })();
+                    </script>
+                </details>
             </div>
         </main>
     </div>

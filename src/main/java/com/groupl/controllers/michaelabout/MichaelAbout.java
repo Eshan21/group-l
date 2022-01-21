@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import java.io.*; 
 import java.util.*; 
 import org.json.simple.JSONObject; 
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 @Controller
 public class MichaelAbout {
@@ -106,6 +109,29 @@ public class MichaelAbout {
 
         JSONObject jo = new JSONObject(); 
         jo.put("passwords", pg.getGeneratedPassword()); 
+
+        return jo.toString();
+    }
+
+    @PostMapping("about/michaelabout/unit6-q2b")
+    @ResponseBody
+    public String genPassword(
+        @RequestParam(name="unit6-ques2-sold-count", required=false, defaultValue="a") String soldList,
+        @RequestParam(name="unit6-ques2-fixed-wage", required=false, defaultValue="ab") String fixedWage,
+        @RequestParam(name="unit6-ques2-per-item-wage", required=false, defaultValue="ac") String perItemWage,
+                                     Model model){
+
+        Pattern pattern = Pattern.compile(",");
+        int[] itemSoldList = pattern.splitAsStream(soldList) 
+                                .mapToInt(Integer::parseInt)
+                                .toArray();
+
+        Payroll pr = new Payroll(itemSoldList);
+        double threshold = pr.computeBonusThreshold();
+        pr.computeWages(Double.parseDouble(fixedWage), Double.parseDouble(perItemWage));
+        JSONObject jo = new JSONObject(); 
+        jo.put("threshold", threshold);
+        jo.put("wages", DoubleStream.of(pr.wages).boxed().collect(Collectors.toList())); 
 
         return jo.toString();
     }
