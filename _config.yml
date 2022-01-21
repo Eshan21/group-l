@@ -23,7 +23,7 @@ email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
     Ricelab is a blog site for people to share their rice. It is still
     in development.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/group-l" # the subpath of your site, e.g. /blog
 url: "github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 # github_username:  jekyll

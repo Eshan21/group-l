@@ -23,7 +23,7 @@ permalink: /contributor-guide
 ## Getting Started
 
 #### Building
-- Read our [deployment guide](/deployment-guide) on instructions on how to build.
+- Read our [deployment guide](/group-l/deployment-guide) on instructions on how to build.
 
 #### Bug Fix and Feature Request
 - Make sure your source is up to date.

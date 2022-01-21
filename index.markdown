@@ -16,7 +16,7 @@ To install a pre-built release:
 - Run server with `java -jar Ricelab-x.y.z*.jar`
 
 # How to Contribute / Policies
-See the [Contributor Guide](/contributor-guide) on how to contribute to our project.
+See the [Contributor Guide](/group-l/contributor-guide) on how to contribute to our project.
 
 # Wiki / Documentation
 Javadocs is used for generating documentation. Run `./gendocs` or `./gendocs.cmd` to generate documentation in the `target/site/apidocs/` directory.
