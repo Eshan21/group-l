@@ -298,9 +298,14 @@ public class AkhilAbout {
 
 class Unit2Frq1 {
     private String gradShow;
+    private String funVariable;
 
     public Unit2Frq1(String gradShow) {
         this.gradShow = gradShow;
+    }
+    public Unit2Frq1(String gradShow, String funVariable) {
+        this.gradShow = gradShow;
+        this.funVariable = funVariable;
     }
     public void setGradShow(String gradShow) {
         this.gradShow = gradShow;
