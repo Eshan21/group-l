@@ -33,13 +33,7 @@ public class UserController extends SqlObjController<User,UserRepository> {
                                   @RequestParam(required=false) String lname,
                                   @RequestParam(required=true)  String email) {
 
-      User a = new User();
-
-      a.setName(name);
-      a.setFname(fname);
-      a.setLname(lname);
-      a.setEmail(email);
-
+      User a = new User(name, fname, lname, email);
       super.repo.save(a);
     }
 
