@@ -1,5 +1,6 @@
 package com.groupl.mysql;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,16 +9,16 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Blog extends SqlObj {
-    private Integer userid;
+    private Integer userId;
 
     private String tags;
 
     @NotEmpty
     private String date;
 
-    public Blog(String name, Integer userid, String tags, String date) {
+    public Blog(String name, Integer userId, String tags, String date) {
         super.setName(name);
-        this.userid = userid;
+        this.userId = userId;
         this.tags = tags;
         this.date = date;
     }
@@ -26,11 +27,11 @@ public class Blog extends SqlObj {
     }
 
     public Integer getUserId() {
-        return userid;
+        return userId;
     }
 
-    public void setUserId(String userid) {
-        this.userid = Integer.parseInt(userid);
+    public void setUserId(String userId) {
+        this.userId = Integer.parseInt(userId);
     }
 
     public String getTags() {

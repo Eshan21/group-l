@@ -23,17 +23,17 @@ public class BlogController extends SqlObjController<Blog,BlogRepository> {
    * Add a blog
    * 
    * @param  name    name of blog
-   * @param  userid  the user id of the blog author
+   * @param  userId  the user id of the blog author
    * @param  tags    tags that the blog are given
    * @param  date    date that the blog was published
    */
   @PostMapping(path="/add")
   public @ResponseBody void add(@RequestParam(required=true)  String name,
-                                @RequestParam(required=true)  String userid,
+                                @RequestParam(required=true)  String userId,
                                 @RequestParam(required=false) String tags,
                                 @RequestParam(required=true) String date) {
 
-    Blog a = new Blog(name, Integer.parseInt(userid), tags, date);
+    Blog a = new Blog(name, Integer.parseInt(userId), tags, date);
     super.repo.save(a);
   }
 
@@ -42,21 +42,21 @@ public class BlogController extends SqlObjController<Blog,BlogRepository> {
    * 
    * @param  id      id of the blog to be updated
    * @param  name    the updated name of blog
-   * @param  userid  the updated user id of blog author
+   * @param  userId  the updated user id of blog author
    * @param  tags    the updated tags of blog
    * @param  date    the updated date the blog was published
    */
   @PostMapping(path="/update")
   public @ResponseBody void update(@RequestParam(required=true)   String id,
                                    @RequestParam(required=false)  String name,
-                                   @RequestParam(required=false)  String userid,
+                                   @RequestParam(required=false)  String userId,
                                    @RequestParam(required=false)  String tags,
                                    @RequestParam(required=false)  String date) {
 
     Blog a = getId(id).get();
 
     a.setName(name);
-    a.setUserId(userid);
+    a.setUserId(userId);
     a.setTags(tags);
     a.setDate(date);
 
