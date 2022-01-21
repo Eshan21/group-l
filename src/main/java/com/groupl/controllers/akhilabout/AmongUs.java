@@ -10,6 +10,11 @@ public class AmongUs {
     static String playerName;
     private Scanner s = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        AmongUs game = new AmongUs();
+        game.round();
+    }
+
     public void accuse(String name) {
         if (name == "mort") {
             System.out.println("CANNOT COMPREHEND");
