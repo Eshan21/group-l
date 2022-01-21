@@ -18,117 +18,202 @@
 
                 <p>I am a person who is interested in computer science.</p>
             </div>
-            <!-- FRQ #2 -->
-            <div class="body-window p-3">
+
+            <!-- Midterm Vocab -->
+            <div class="body-window d-flex p-3">
                 <details>
-                        <summary>Unit 2 FRQ</summary>
+                    <summary>Midterm Vocab</summary>
 
-                        <div class="p-5">
-                            <h1 class="text-info text-center fw-bold">Unit 2 FRQ</h1>
-                            <h3 class="fw-bold">Question 1</h3>
-                            
-                            <hr color="red">
+                    <div class="my-5">
+                        <h3>Competency means some or all of the following</h3>
+                        <hr>
+                        <ol>
+                            <li>Wikis, Jekyll, or other illustrations showing experience</li>
+                            <li>Running code from within your project</li>
+                            <li>Correct vocabulary used in explanations</li>
+                        </ol>
+                    </div>
 
-                            <pre>
-                            <code class="q-code">public class LightSequence</code>
-                            <code class="q-code">{</code>
-                            <code class="q-code">// attributes not shown</code>
-                            <code class="q-code">/** The parameter seq is the initial sequence used for</code>
-                            <code class="q-code">* the light display</code>
-                            <code class="q-code">*/</code>
+                    <div class="my-5">
+                        <h3>List of tech terms required to show FRQ year-to-date competency</h3>
+                        <hr>
+                        <ul>
+                            <li>Casting, specifically for Division</li>
+                            <li>Casting, specifically for Truncating or Rounding</li>
+                            <li>Wrapper Classes, why wrap int, double</li>
+                            <li>Concatenation, rules on mixed type Concatenation</li>
+                            <li>Math class, specifically Random usage</li>
+                            <li>Compound Boolean Expression</li>
+                            <li>Truth Tables</li>
+                            <li>De Morgan's Law</li>
+                            <li>Comparing Numbers</li>
+                            <li>Comparing Strings</li>
+                            <li>Comparing Objects</li>
+                            <li>for loop, enhanced for loop</li>
+                            <li>while loop versus do while loop</li>
+                            <li>nested loops</li>
+                            <li>Big O notation (Hash map, Binary Search, Single loop, Nested Loop)</li>
+                            <li>Creating a Class, describe Naming Conventions</li>
+                            <li>Constructor, describe why there is no return</li>
+                            <li>Accessor methods, relationship to getter</li>
+                            <li>Mutator methods, relationship to setter, describe void return type</li>
+                            <li>Static variables, Class variables</li>
+                            <li>Static methods, Class methods</li>
+                            <li>this Keyword</li>
+                            <li>main method, tester methods</li>
+                            <li>Inheritance, extends</li>
+                            <li>Subclass constructor, super Keyword</li>
+                            <li>Overloading a method, same name different parameters</li>
+                            <li>Overriding a method, same signature of a method</li>
+                            <li>Abstract Class, Abstract Method</li>
+                            <li>Object superclass methods: toString(), compare(), clone()</li>
+                            <li>Late binding of object, referencing superclass object, ie Animal a = new Chicken(); Animal b = new Goat();</li>
+                            <li>Polymorphism: any of overloading, overriding, late binding</li>
+                        </ul>
+                    </div>
 
-                            <code class="q-code">public LightSequence(String seq)</code>
-                            <code class="q-code">{ /* implementation not shown */ }</code>
-                            <code class="q-code">/** Inserts the string segment in the current sequence,</code>
-                            <code class="q-code">* starting at the index ind. Returns the new sequence.</code>
-                            <code class="q-code">*/</code>
+                    <div class="my-5">
+                        <h3>List of tech terms required to show PBL year-to-date competency</h3>
+                        <hr>
+                        <ul>
+                            <li>Web API, REST, FETCH, Async, Request, Response</li>
+                            <li>CRUD</li>
+                        </ul>
+                    </div>
 
-                            <code class="q-code">public String insertSegment(String segment, int ind)</code>
-                            <code class="q-code">{ /* implementation not shown */ }</code>
-                            <code class="q-code">/** Updates the sequence to the value in seq</code>
-                            <code class="q-code">*/</code>
+                </details>
+            </div>
 
-                            <code class="q-code">public void changeSequence(String seq)</code>
-                            <code class="q-code">{ /* implementation not shown */ }</code>
-                            <code class="q-code">/** Uses the current sequence to turn the light on and off</code>
-                            <code class="q-code">* for the show</code>
-                            <code class="q-code">*/</code>
+            <!-- Unit 6 FRQ -->
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 6 FRQ Question 1 Demo - Parse Words</summary>
 
-                            <code class="q-code">public void display()</code>
-                            <code class="q-code">{ /* implementation not shown */ }</code>
-                            <code class="q-code">}</code>
-                            </pre>
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-word-parse" method="POST">
+                            <label for="words" class="form-label">Filter words that end in 'ing' (seperate with ',')</label>
+                            <input id="words" class="form-control" name="words">
 
-                            <hr color="red">
-                            <p>(a) Write a statement to create a <code class="text-success">LightSequence</code> object <code class="text-success">gradShow</code> that has the initial light sequence "0101 0101 0101".</p>
-                            <p>Write the statement below.</p>
+                            <button type="submit" class="btn btn-primary mt-3">Parse words</button>
 
-                            <code class="a-code">LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
-                            <hr color="red">
-
-                            <p>(b) Write a statement that will call the display method to <code class="text-success">display</code> the light sequence for the <code class="text-success">gradShow</code> object.</p>
-                             
-                            <code class="a-code">gradShow.display();</code>
-                            <hr color="red">
-
-                            <p>(c) Write a statement that will be used to update the <code class="text-success">gradShow</code> light sequence to "0011 0011 0011".</p>
-
-                            <code class="a-code">gradShow.changeSequence("0011 0011 0011");</code>
-                            <hr color="red">
-
-                            <p>(d) Write a code segment that will call the <code class="text-success">insertSegment</code> method to insert the segment "1111 1111" in the current sequence for <code class="text-success">gradShow</code> at index 4. The resulting sequence will be stored in the string <code class="text-success">resultSeq</code>.</p>
-
-                            <code class="a-code">String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
-                            <hr color="red">
-
-                            <p>(e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider the following examples.</p>
-                            <p>If oldSeq is "1100000111" and segment is "11", then "00000111" should be stored in <code class="text-success">newSeq</code>.</p>
-                            <p>If oldSeq is "0000011" and segment is "11", then "00000" should be stored in <code class="text-success">newSeq</code>.</p>
-                            <p>If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in <code class="text-success">newSeq</code>.</p>
-                            <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
-
-                            <code class="a-code">newSeq = oldSeq.replace(segment, "");</code>
-                            <hr color="red">
-
-                            <p>(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable <code class="text-success">a</code>. The horizontal distance between the two lights is stored in the double variable <code class="text-success">b</code>.</p>
-                            <p>The straight-line distance between the two lights is given by the formula <code class="text-success"><span>&#8730;</span><span style="text-decoration: overline">a<span>&#178;</span> + b<span>&#178;</span></span></code>.<p>
-                            <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
-
-                            <code class="text-primary fw-bold">System.out.println(sqrt(a * a + b * b));</code>
-
-                        </div>
+                            <div class="bg-success">
+                                <th:block th:each="word : ${wordsObj}">
+                                    <p class="p-1 my-3" th:text="${word}"></p>
+                                </th:block>
+                            </div>
+                        </form>
+                    </div>
                 </details>
             </div>
 
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 2 FRQ Demo</summary>
+                    <summary>Unit 6 FRQ Question 2 Demo - Payroll</summary>
 
                     <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-light-seq" method="POST">
-                            <label for="seq" class="form-label">Set Light Sequence</label>
-                            <input id="seq" class="form-control" name="seq" th:value=${lightSeqResult}>
+                        <form class="col-md" action="/about/jonathan-compute-wages" method="POST">
+                            <label for="addItems" class="form-label">Items List (seperate with ',')</label>
+                            <input id="addItems" class="form-control" name="addItems" th:value="${addItems}">
 
-                            <label for="changeLightSeq" class="form-label">Change Light Sequence</label>
-                            <input id="changeLightSeq" class="form-control" name="changeLightSeq">
+                            <label for="fixedWage" class="form-label">Fixed wage</label>
+                            <input id="fixedWage" class="form-control" name="fixedWage" th:value="${fixedWage}">
 
-                            <div class="row">
-                                <div class="col-auto ps-0 pe-1">
-                                    <label for="insertLightSeq" class="form-label">Insert into Light Sequence</label>
-                                    <input id="insertLightSeq" class="form-control" name="insertLightSeq">
-                                </div>
+                            <label for="perItemWage" class="form-label">Per item wage</label>
+                            <input id="perItemWage" class="form-control" name="perItemWage" th:value="${perItemWage}">
 
-                                <div class="col-auto ps-1 pe-0">
-                                    <label for="insertIdxLightSeq" class="form-label">Index</label>
-                                    <input id="insertIdxLightSeq" class="form-control" name="insertIdxLightSeq">
-                                </div>
+                            <button type="submit" class="btn btn-primary mt-3">Compute Wages</button>
+
+                            <div class="bg-success">
+                                <th:block th:each="wage : ${wages}">
+                                    <p class="p-1 my-3" th:text="${wage}" th:if="${wage}"></p>
+                                </th:block>
                             </div>
+                        </form>
+                    </div>
+                </details>
+            </div>
 
-                            <label for="rmFirstLightSeq" class="form-label">Remove first match in Light Sequence</label>
-                            <input id="rmFirstLightSeq" class="form-control" name="rmFirstLightSeq">
+            <!-- Unit 5 FRQ -->
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 5 FRQ Question 1 Demo - Invitation Generator</summary>
 
-                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
-                            <p th:text="${lightSeqResult}" th:if="${lightSeqResult}" class="bg-success p-1 my-3"></p>
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-invitation" method="POST">
+                            <label for="name" class="form-label">Name</label>
+                            <input id="name" class="form-control" name="name">
+
+                            <label for="hostname" class="form-label">Hostname</label>
+                            <input id="hostname" class="form-control" name="hostname" th:value="${hostname}">
+
+                            <label for="address" class="form-label">Address</label>
+                            <input id="address" class="form-control" name="address" th:value="*{address}" >
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Invitation</button>
+
+                            <p th:text="${invMsg}" th:if="${invMsg}" class="bg-success p-1 my-3" ></p>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 5 FRQ Question 2 Demo - Passowrd Generator</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-gen-pass" method="POST">
+                            <label for="prefix" class="form-label">Prefix</label>
+                            <input id="prefix" class="form-control" name="prefix" th:value="${passGenPrefix}">
+
+                            <label for="numlen" class="form-label">Number Length</label>
+                            <input id="numlen" class="form-control" name="numlen" th:value="${passGenNumlen}" >
+
+                            <input type="hidden" name="count" th:value="${count}">
+
+                            <button type="submit" class="btn btn-primary mt-3">Generate Password</button>
+                            <div class="bg-success">
+                                <p class="p-1 my-3" th:text="${passGenPass}" th:if="${passGenPass}"></p>
+                                <p class="p-1 my-3" th:text="${passGenCount}" th:if="${passGenCount}"></p>
+                            </div>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Unit 4 FRQ -->
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 4 FRQ Question 1 Demo - Get Longest Streak of Chars</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-longest-streak" method="POST">
+                            <label for="streak" class="form-label">Input String</label>
+                            <input id="streak" class="form-control" name="streak">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Longest Streak</button>
+
+                            <p th:text="${longestStreakResult}" th:if="${longestStreakResult}" class="bg-success p-1 my-3" ></p>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 4 FRQ Question 2 Demo - Coin Game</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-coin-game" method="POST">
+                            <label for="rounds" class="form-label">Rounds</label>
+                            <input id="rounds" class="form-control" name="rounds">
+
+                            <label for="startingCoins" class="form-label">Starting Coins</label>
+                            <input id="startingCoins" class="form-control" name="startingCoins">
+
+                            <button type="submit" class="btn btn-primary mt-3">Play Game</button>
+
+                            <p th:text="${coinGameResult}" th:if="${coinGameResult}" class="bg-success p-1 my-3" ></p>
                         </form>
                     </div>
                 </details>
@@ -137,7 +222,7 @@
             <!-- FRQ #3 -->
             <div class="body-window p-3">
                 <details>
-                    <summary>Unit 3 FRQ</summary>
+                    <summary>Unit 3 FRQ Prompt</summary>
 
                     <div class="p-5">
                         <h1 class="text-info text-center fw-bold">Unit 3 FRQ</h1>
@@ -293,7 +378,7 @@
 
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 3 FRQ Question 1 Demo</summary>
+                    <summary>Unit 3 FRQ Question 1 Demo - Attending RSVP</summary>
 
                     <div class="row p-5">
                         <form class="col-md" action="/about/jonathan-attending" method="POST">
@@ -308,6 +393,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
                             <p th:text="${attendingResult}" th:if="${attendingResult}" class="bg-success p-1 my-3"></p>
                         </form>
                     </div>
@@ -316,7 +402,7 @@
 
             <div class="body-window p-3">
                <details>
-                    <summary>Unit 3 FRQ Question 2 Demo</summary>
+                    <summary>Unit 3 FRQ Question 2 Demo - JS Box</summary>
 
                     <div class="p-5">
                         <div class="container py-4 bg-primary" style="text-align:center;">
@@ -470,88 +556,119 @@
                 </details>
             </div>
 
-            <!-- Unit 4 FRQ -->
-            <div class="body-window d-flex p-3">
+
+            <!-- FRQ #2 -->
+            <div class="body-window p-3">
                 <details>
-                    <summary>Unit 4 FRQ Question 1 Demo</summary>
+                        <summary>Unit 2 FRQ Prompt</summary>
 
-                    <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-longest-streak" method="POST">
-                            <label for="streak" class="form-label">Streak</label>
-                            <input id="streak" class="form-control" name="streak">
+                        <div class="p-5">
+                            <h1 class="text-info text-center fw-bold">Unit 2 FRQ</h1>
+                            <h3 class="fw-bold">Question 1</h3>
+                            
+                            <hr color="red">
 
-                            <button type="submit" class="btn btn-primary mt-3">Get Longest Streak</button>
-                            <p th:text="${longestStreakResult}" th:if="${longestStreakResult}" class="bg-success p-1 my-3" ></p>
-                        </form>
-                    </div>
-                </details>
-            </div>
-
-            <div class="body-window d-flex p-3">
-                <details>
-                    <summary>Unit 4 FRQ Question 2 Demo</summary>
-
-                    <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-coin-game" method="POST">
-                            <label for="rounds" class="form-label">Rounds</label>
-                            <input id="rounds" class="form-control" name="rounds">
-
-                            <label for="startingCoins" class="form-label">Starting Coins</label>
-                            <input id="startingCoins" class="form-control" name="startingCoins">
-
-                            <button type="submit" class="btn btn-primary mt-3">Play Game</button>
-                            <p th:text="${coinGameResult}" th:if="${coinGameResult}" class="bg-success p-1 my-3" ></p>
-                        </form>
-                    </div>
-                </details>
-            </div>
-
-            <!-- Unit 5 FRQ -->
-            <div class="body-window d-flex p-3">
-                <details>
-                    <summary>Unit 5 FRQ Question 1 Demo</summary>
-
-                    <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-invitation" method="POST">
-                            <label for="name" class="form-label">Name</label>
-                            <input id="name" class="form-control" name="name">
-
-                            <label for="hostname" class="form-label">Hostname</label>
-                            <input id="hostname" class="form-control" name="hostname" th:value="${hostname}">
-
-                            <label for="address" class="form-label">Address</label>
-                            <input id="address" class="form-control" name="address" th:value="*{address}" >
-
-                            <button type="submit" class="btn btn-primary mt-3">Get Invitation</button>
                             <pre>
-                            <p th:text="${invMsg}" th:if="${invMsg}" class="bg-success p-1 my-3" ></p>
+                            <code class="q-code">public class LightSequence</code>
+                            <code class="q-code">{</code>
+                            <code class="q-code">// attributes not shown</code>
+                            <code class="q-code">/** The parameter seq is the initial sequence used for</code>
+                            <code class="q-code">* the light display</code>
+                            <code class="q-code">*/</code>
+
+                            <code class="q-code">public LightSequence(String seq)</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">/** Inserts the string segment in the current sequence,</code>
+                            <code class="q-code">* starting at the index ind. Returns the new sequence.</code>
+                            <code class="q-code">*/</code>
+
+                            <code class="q-code">public String insertSegment(String segment, int ind)</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">/** Updates the sequence to the value in seq</code>
+                            <code class="q-code">*/</code>
+
+                            <code class="q-code">public void changeSequence(String seq)</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">/** Uses the current sequence to turn the light on and off</code>
+                            <code class="q-code">* for the show</code>
+                            <code class="q-code">*/</code>
+
+                            <code class="q-code">public void display()</code>
+                            <code class="q-code">{ /* implementation not shown */ }</code>
+                            <code class="q-code">}</code>
                             </pre>
-                        </form>
-                    </div>
+
+                            <hr color="red">
+                            <p>(a) Write a statement to create a <code class="text-success">LightSequence</code> object <code class="text-success">gradShow</code> that has the initial light sequence "0101 0101 0101".</p>
+                            <p>Write the statement below.</p>
+
+                            <code class="a-code">LightSequence gradShow = new LightSequence("0101 0101 0101");</code>
+                            <hr color="red">
+
+                            <p>(b) Write a statement that will call the display method to <code class="text-success">display</code> the light sequence for the <code class="text-success">gradShow</code> object.</p>
+                             
+                            <code class="a-code">gradShow.display();</code>
+                            <hr color="red">
+
+                            <p>(c) Write a statement that will be used to update the <code class="text-success">gradShow</code> light sequence to "0011 0011 0011".</p>
+
+                            <code class="a-code">gradShow.changeSequence("0011 0011 0011");</code>
+                            <hr color="red">
+
+                            <p>(d) Write a code segment that will call the <code class="text-success">insertSegment</code> method to insert the segment "1111 1111" in the current sequence for <code class="text-success">gradShow</code> at index 4. The resulting sequence will be stored in the string <code class="text-success">resultSeq</code>.</p>
+
+                            <code class="a-code">String resultSeq = gradShow.insertSegment("1111 1111", 4);</code>
+                            <hr color="red">
+
+                            <p>(e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment. Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq. Consider the following examples.</p>
+                            <p>If oldSeq is "1100000111" and segment is "11", then "00000111" should be stored in <code class="text-success">newSeq</code>.</p>
+                            <p>If oldSeq is "0000011" and segment is "11", then "00000" should be stored in <code class="text-success">newSeq</code>.</p>
+                            <p>If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in <code class="text-success">newSeq</code>.</p>
+                            <p>Write the code segment below. Your code segment should meet all specifications and conform to the examples.</p>
+
+                            <code class="a-code">newSeq = oldSeq.replace(segment, "");</code>
+                            <hr color="red">
+
+                            <p>(f) Two lights will be arranged on a two-dimensional plane. The vertical distance between the two lights is stored in the double variable <code class="text-success">a</code>. The horizontal distance between the two lights is stored in the double variable <code class="text-success">b</code>.</p>
+                            <p>The straight-line distance between the two lights is given by the formula <code class="text-success"><span>&#8730;</span><span style="text-decoration: overline">a<span>&#178;</span> + b<span>&#178;</span></span></code>.<p>
+                            <p>Write a code segment that prints the straight-line distance between the two lights according to the formula above.</p>
+
+                            <code class="text-primary fw-bold">System.out.println(sqrt(a * a + b * b));</code>
+
+                        </div>
                 </details>
             </div>
 
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 5 FRQ Question 2 Demo</summary>
+                    <summary>Unit 2 FRQ Demo - Light Sequence</summary>
 
                     <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-gen-pass" method="POST">
-                            <label for="prefix" class="form-label">Prefix</label>
-                            <input id="prefix" class="form-control" name="prefix" th:value="${passGenPrefix}">
+                        <form class="col-md" action="/about/jonathan-light-seq" method="POST">
+                            <label for="seq" class="form-label">Set Light Sequence</label>
+                            <input id="seq" class="form-control" name="seq" th:value=${lightSeqResult}>
 
-                            <label for="numlen" class="form-label">Number Length</label>
-                            <input id="numlen" class="form-control" name="numlen" th:value="${passGenNumlen}" >
+                            <label for="changeLightSeq" class="form-label">Change Light Sequence</label>
+                            <input id="changeLightSeq" class="form-control" name="changeLightSeq">
 
-                            <input type="hidden" name="count" th:value="${count}">
+                            <div class="row">
+                                <div class="col-auto ps-0 pe-1">
+                                    <label for="insertLightSeq" class="form-label">Insert into Light Sequence</label>
+                                    <input id="insertLightSeq" class="form-control" name="insertLightSeq">
+                                </div>
 
-                            <button type="submit" class="btn btn-primary mt-3">Generate Password</button>
-                            <pre>
-                            <div class="bg-success p-1 my-3">
-                                <p th:text="${passGenPass}" th:if="${passGenPass}"></p>
-                                <p th:text="${passGenCount}" th:if="${passGenCount}"></p>
+                                <div class="col-auto ps-1 pe-0">
+                                    <label for="insertIdxLightSeq" class="form-label">Index</label>
+                                    <input id="insertIdxLightSeq" class="form-control" name="insertIdxLightSeq">
+                                </div>
                             </div>
-                            </pre>
+
+                            <label for="rmFirstLightSeq" class="form-label">Remove first match in Light Sequence</label>
+                            <input id="rmFirstLightSeq" class="form-control" name="rmFirstLightSeq">
+
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+                            <p th:text="${lightSeqResult}" th:if="${lightSeqResult}" class="bg-success p-1 my-3"></p>
                         </form>
                     </div>
                 </details>
