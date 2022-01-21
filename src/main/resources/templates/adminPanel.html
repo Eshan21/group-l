@@ -32,6 +32,7 @@
         <main class="container">
             <div class="body-window p-5">
                 <div class="p-5">
+                    <h1>User Controls</h1>
                     <fieldset class="border p-5 my-5">
                         <legend class="label">Get User List</legend>
 
@@ -47,7 +48,7 @@
                     <fieldset class="border p-5 my-5">
                         <div class="row">
                             <legend class="label col">Add new user</legend>
-                            <legend class="label col">Remove a user by id</legend>
+                            <legend class="label col">Remove users</legend>
                         </div>
 
                         <div class="row">
@@ -103,7 +104,88 @@
                                 </div>
 
                                 <button id="removeUser" class="btn btn-primary" onclick="removeUser()">Submit</button>
-                                <button id="removeAll" class="btn btn-danger" onclick="removeAllUsers()">Remove All Users</button>
+                                <button id="removeAllUsers" class="btn btn-danger" onclick="removeAllUsers()">Remove All Users</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="body-window p-5">
+                <div class="p-5">
+                    <h1>Blog Controls</h1>
+                    <fieldset class="border p-5 my-5">
+                        <legend class="label">Get Blog List</legend>
+
+                        <div class="row">
+                            <div class="response col-sm-auto">
+                                <p id="blogList">?</p>
+                            </div>
+                        </div>
+
+                        <button id="blogList" class="btn btn-primary" onclick="getBlogs()">Submit</button>
+                    </fieldset>
+
+                    <fieldset class="border p-5 my-5">
+                        <div class="row">
+                            <legend class="label col">Add new blog</legend>
+                            <legend class="label col">Remove blogs</legend>
+                        </div>
+
+                        <div class="row">
+                            <div class="col row">
+                                <div class="response col-sm-auto">
+                                    <p id="addBlogResponse">?</p>
+                                </div>
+                            </div>
+
+                            <div class="col row">
+                                <div class="response col-sm-auto">
+                                    <p id="removeBlogResponse">?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="addBlogName" class="col-sm-2 col-form-label">Blog Name</label>
+                                    <div class="col-sm-4">
+                                        <input id="addBlogName" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="addBlogUserId" class="col-sm-2 col-form-label">User ID</label>
+                                    <div class="col-sm-4">
+                                        <input id="addBlogUserId" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="addBlogTags" class="col-sm-2 col-form-label">Blog Tags (seperated with ',')</label>
+                                    <div class="col-sm-4">
+                                        <input id="addBlogTags" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="addBlogDate" class="col-sm-2 col-form-label">Date</label>
+                                    <div class="col-sm-4">
+                                        <input id="addBlogDate" class="form-control" type="text">
+                                    </div>
+                                </div>
+
+                                <button id="addUser" class="btn btn-primary" onclick="addBlog()">Submit</button>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="removeBlogId" class="col-sm-2 col-form-label">Id</label>
+                                    <div class="col-sm-4">
+                                        <input id="removeBlogId" class="form-control" type="text">
+                                    </div>
+                                </div>
+
+                                <button id="removeBlog" class="btn btn-primary" onclick="removeUser()">Submit</button>
+                                <button id="removeAllBlog" class="btn btn-danger" onclick="removeAllBlogs()">Remove All Blogs</button>
                             </div>
                         </div>
                     </fieldset>
@@ -115,6 +197,7 @@
     <div layout:fragment="script" th:remove="tag">
         <script>
             getUsers();
+            getBlogs();
 
             function getUrl(url = '') {
                 return "http://localhost:8080" + url;
@@ -173,6 +256,43 @@
 
                 document.getElementById("removeUserResponse").innerHTML = "Ok: " + data.ok;
                 getUsers();
+            }
+
+            function getBlogs() {
+                const req = new XMLHttpRequest();
+                req.onreadystatechange = function() {
+                    document.getElementById("blogList").innerHTML = req.response;
+                };
+                req.open("GET", "http://localhost:8080/sql/blog/getAll", true);
+                req.send();
+            }
+
+            async function addBlog() {
+                let data = await postData("/sql/blog/add", {
+                    name:  document.getElementById('addBlogName').value,
+                    userId: document.getElementById('addBlogUserId').value,
+                    tags: document.getElementById('addBlogTags').value,
+                    date: document.getElementById('addBlogDate').value
+                });
+
+                document.getElementById("addBlogResponse").innerHTML = "Ok: " + data.ok;
+                getBlogs();
+            }
+
+            async function removeBlog() {
+                let data = await postData("/sql/blog/removeId", {
+                    id:  document.getElementById('removeBlogId').value,
+                });
+
+                document.getElementById("removeBlogResponse").innerHTML = "Ok: " + data.ok;
+                getBlogs();
+            }
+
+            async function removeAllBlogs() {
+                let data = await postData("/sql/blog/removeAll", {});
+
+                document.getElementById("removeBlogResponse").innerHTML = "Ok: " + data.ok;
+                getBlogs();
             }
         </script>
     </div>
