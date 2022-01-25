@@ -1,20 +1,55 @@
 package com.groupl.controllers.jonathanabout;
 
-import org.springframework.stereotype.Controller;
+import java.util.ArrayList;
 import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class JonathanAbout {
-    @PostMapping("/about/jonathan-word-parse")
-    public String getWordParse(@RequestParam String words, Model model) {
-        Object[] result = WordParse.parse(words.split(","));
+    @PostMapping("/about/jonathan-possible-names")
+    public String getPossibleNames(@RequestParam String fname,
+                                   @RequestParam String lname,
+                                   @RequestParam String setNames,
+                                   Model model) {
+        UserName username = new UserName(fname, lname);
 
-        System.out.println(result);
+        if (!isNullOrEmpty(setNames)) {
+            username.setAvailableUserNames(setNames.split(","));
+        }
 
-        model.addAttribute("wordsObj", result);
+        model.addAttribute("possibleNames", username.getPossibleNames());
+        model.addAttribute("fname");
+        model.addAttribute("lname");
+        model.addAttribute("setNames");
+
+        return "/about/jonathanabout";
+    }
+
+    @PostMapping("/about/jonathan-farm-plots")
+    public String getFarmPlots(@RequestParam String plots,
+                               @RequestParam String highestYield,
+                               @RequestParam String sameCrop,
+                               Model model) {
+        System.out.println(plots);
+        String[] plotrow = plots.split("/");
+        int len = plotrow.length;
+        ArrayList<Plot>[] plotarr = new ArrayList[len];
+
+        for (int i = 0; i < len; i++) {
+            plotarr[i] = new ArrayList<Plot>();
+            for (String row: plotrow[i].split(",")) {
+                plotarr[i].add(new Plot(row.split(" ")));
+            }
+        }
+
+        ExperimentalFarm farm = new ExperimentalFarm(plotarr);
+
+        model.addAttribute("resHighestYield", farm.getHighestYield(highestYield));
+        model.addAttribute("resSameCrop", farm.sameCrop(Integer.parseInt(sameCrop)));
+        model.addAttribute("plots", plots);
 
         return "/about/jonathanabout";
     }

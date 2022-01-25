@@ -17,6 +17,8 @@
                 <img class="imgCollapse collapse h-25 w-25" data-bs-toggle="collapse" data-bs-target=".imgCollapse" src="/images/jonathanabout/nomask.jpg">
 
                 <p>I am a person who is interested in computer science.</p>
+
+                <p><a class="text-primary" href="https://github.com/jlaaa/group-l/tree/main/src/main/java/com/groupl/controllers/jonathanabout">Java Source Code</a> for page and FRQs</p>
             </div>
 
             <!-- Midterm Vocab -->
@@ -84,21 +86,27 @@
                 </details>
             </div>
 
-            <!-- Unit 6 FRQ -->
+            <!-- Unit 7 FRQ -->
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 6 FRQ Question 1 Demo - Parse Words</summary>
+                    <summary>Unit 7 FRQ Question 1 Demo - Possible User Names</summary>
 
                     <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-word-parse" method="POST">
-                            <label for="words" class="form-label">Filter words that end in 'ing' (seperate with ',')</label>
-                            <input id="words" class="form-control" name="words">
+                        <form class="col-md" action="/about/jonathan-possible-names" method="POST">
+                            <label for="fname" class="form-label">First Name</label>
+                            <input id="fname" class="form-control" name="fname" th:value="${fname}">
 
-                            <button type="submit" class="btn btn-primary mt-3">Parse words</button>
+                            <label for="lname" class="form-label">Last Name</label>
+                            <input id="lname" class="form-control" name="lname" th:value="${lname}">
+
+                            <label for="setNames" class="form-label">Set possible names (Removes all names not in list)</label>
+                            <input id="setNames" class="form-control" name="setNames" th:value="${setNames}">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Names</button>
 
                             <div class="bg-success">
-                                <th:block th:each="word : ${wordsObj}">
-                                    <p class="p-1 my-3" th:text="${word}"></p>
+                                <th:block th:each="name : ${possibleNames}">
+                                    <p class="p-1 my-3" th:text="${name}" th:if="${name}"></p>
                                 </th:block>
                             </div>
                         </form>
@@ -108,25 +116,24 @@
 
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 6 FRQ Question 2 Demo - Payroll</summary>
+                    <summary>Unit 7 FRQ Question 2 Demo - Farm Plots</summary>
 
                     <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-compute-wages" method="POST">
-                            <label for="addItems" class="form-label">Items List (seperate with ',')</label>
-                            <input id="addItems" class="form-control" name="addItems" th:value="${addItems}">
+                        <form class="col-md" action="/about/jonathan-farm-plots" method="POST">
+                            <label for="plots" class="form-label">Plot Array (Format ([crop] [yield]) Rows separated with ',' Columns seperarated with '/'</label>
+                            <input id="plots" class="form-control" name="plots" th:value="${plots}">
 
-                            <label for="fixedWage" class="form-label">Fixed wage</label>
-                            <input id="fixedWage" class="form-control" name="fixedWage" th:value="${fixedWage}">
+                            <label for="highestYield" class="form-label">Get Highest Yield of Crop</label>
+                            <input id="highestYield" class="form-control" name="highestYield">
 
-                            <label for="perItemWage" class="form-label">Per item wage</label>
-                            <input id="perItemWage" class="form-control" name="perItemWage" th:value="${perItemWage}">
+                            <label for="sameCrop" class="form-label">Get if column is all the same crop</label>
+                            <input id="sameCrop" class="form-control" name="sameCrop">
 
-                            <button type="submit" class="btn btn-primary mt-3">Compute Wages</button>
+                            <button type="submit" class="btn btn-primary mt-3">Get Plot Information</button>
 
                             <div class="bg-success">
-                                <th:block th:each="wage : ${wages}">
-                                    <p class="p-1 my-3" th:text="${wage}" th:if="${wage}"></p>
-                                </th:block>
+                                <p class="p-1 my-3" th:text="${resHighestYield}"></p>
+                                <p class="p-1 my-3" th:text="${resSameCrop}"></p>
                             </div>
                         </form>
                     </div>
