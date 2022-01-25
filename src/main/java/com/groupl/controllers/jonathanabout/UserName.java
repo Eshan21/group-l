@@ -14,7 +14,7 @@ public class UserName {
 
     public void setAvailableUserNames(String[] usedNames) {
         for (String name : possibleNames) {
-            if (!isUsed(name, usedNames)) {
+            if (isUsed(name, usedNames)) {
                 possibleNames.remove(name);
             }
         }
