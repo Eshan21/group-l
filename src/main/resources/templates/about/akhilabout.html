@@ -915,7 +915,7 @@
 			</div>
 
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
-				<details open>
+				<details>
 					<summary><h4 style="display:inline;"><strong>FRQ Unit 7</strong></h4></summary>
 					<h5>1a. Write a constructor for the UserName class</h5>
 					<code style="margin-left:00px;">public void UserName(String firstName, String lastName)</code><br>
@@ -933,6 +933,37 @@
 					<code style="margin-left:00px;">}</code><br>
 				</details>
 			</div>
+
+			<div class="body-window articles" style="margin:10px 0; padding:30px;">
+				<details>
+					<summary><h4 style="display:inline;"><strong>FRQ Unit 8</strong></h4></summary>
+					<h5>1a. Write the getHighestYield method</h5>
+					<code style="margin-left:00px;">public Plot getHighestYield(String c)</code><br>
+					<code style="margin-left:40px;">Plot output;</code><br>
+					<code style="margin-left:40px;">for (Plot[] ii : farmPlots) {</code><br>
+					<code style="margin-left:80px;">for (Plot jj : Plot[]) {</code><br>
+					<code style="margin-left:120px;">if (jj.getCropType().equals(c)) {</code><br>
+					<code style="margin-left:160px;">if (jj.getCropYield()>output) {</code><br>
+					<code style="margin-left:200px;">output = jj;</code><br>
+					<code style="margin-left:160px;">}</code><br>
+					<code style="margin-left:120px;">}</code><br>
+					<code style="margin-left:80px;">}</code><br>
+					<code style="margin-left:40px;">}</code><br>
+					<code style="margin-left:40px;">return output;</code><br>
+					<code style="margin-left:00px;">}</code><br>
+					<h5>1b. Write the sameCrop method</h5>
+					<code style="margin-left:00px;">public boolean sameCrop(int col)</code><br>
+					<code style="margin-left:40px;">String type = farmPlots[0][col].getCropType()</code><br>
+					<code style="margin-left:40px;">for (Plot[] ii : farmPlots) {</code><br>
+					<code style="margin-left:80px;">if (!ii[col].getCropType().equals(type)) {</code><br>
+					<code style="margin-left:120px;">return false;</code><br>
+					<code style="margin-left:80px;">}</code><br>
+					<code style="margin-left:40px;">}</code><br>
+					<code style="margin-left:40px;">return true;</code><br>
+					<code style="margin-left:00px;">}</code><br>
+				</details>
+			</div>
+
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
 
 				<h3 id="comment-section" class="text-center font-monospace">Comment Section</h3>
