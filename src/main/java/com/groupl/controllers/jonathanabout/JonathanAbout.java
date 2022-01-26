@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class JonathanAbout {
-    @PostMapping("/about/jonathan-possible-names")
-    public String getPossibleNames(@RequestParam String fname,
+    @PostMapping("/about/jonathan-user-names")
+    public String getUserNames(@RequestParam String fname,
                                    @RequestParam String lname,
                                    @RequestParam String setNames,
                                    Model model) {
@@ -24,6 +24,7 @@ public class JonathanAbout {
         model.addAttribute("fname");
         model.addAttribute("lname");
         model.addAttribute("setNames");
+        model.addAttribute("userNames", true);
 
         return "/about/jonathanabout";
     }
@@ -50,6 +51,7 @@ public class JonathanAbout {
         model.addAttribute("resHighestYield", farm.getHighestYield(highestYield));
         model.addAttribute("resSameCrop", farm.sameCrop(Integer.parseInt(sameCrop)));
         model.addAttribute("plots", plots);
+        model.addAttribute("farmPlots", true);
 
         return "/about/jonathanabout";
     }
@@ -78,6 +80,7 @@ public class JonathanAbout {
         model.addAttribute("fixedWage");
         model.addAttribute("perItemWage");
         model.addAttribute("wages", payroll.getWages());
+        model.addAttribute("
 
         return "/about/jonathanabout";
     }
@@ -111,6 +114,7 @@ public class JonathanAbout {
         model.addAttribute("invMsg", message);
         model.addAttribute("hostname", inv.getHostname());
         model.addAttribute("address", inv.getAddress());
+        model.addAttribute("invitation", true);
 
         return "/about/jonathanabout";
     }
@@ -122,6 +126,7 @@ public class JonathanAbout {
         System.out.println(result);
 
         model.addAttribute("longestStreakResult", result);
+        model.addAttribute("longestStreak", true);
 
         return "/about/jonathanabout";
     }
@@ -144,6 +149,7 @@ public class JonathanAbout {
         model.addAttribute("passGenCount", count);
         model.addAttribute("passGenPrefix", prefix);
         model.addAttribute("passGenNumlen", numlen);
+        model.addAttribute("genPass", true);
 
         return "/about/jonathanabout";
     }
@@ -171,6 +177,7 @@ public class JonathanAbout {
         }
 
         model.addAttribute("attendingResult", result);
+        model.addAttribute("attending", true);
 
         return "/about/jonathanabout";
     }
@@ -198,6 +205,7 @@ public class JonathanAbout {
 
         String result = lightSeq.getSeq();
         model.addAttribute("lightSeqResult", result);
+        model.addAttribute("lightSeq", true);
 
         return "/about/jonathanabout";
     }
@@ -210,6 +218,7 @@ public class JonathanAbout {
         String result = game.playGame();
 
         model.addAttribute("coinGameResult", result);
+        model.addAttribute("coinGame", true);
 
         return "/about/jonathanabout";
     }
