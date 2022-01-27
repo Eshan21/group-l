@@ -17,8 +17,30 @@
         <main class="container">
             <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <p>Journal: <a href="https://docs.google.com/document/d/1jmdsYbP60p7yWNzBAcWEXtwyzjCm1xpadUrxf3_-VSQ/edit">link</a></p>
+            </div>
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
-                    <summary>FRQ #2</summary>
+                    <summary>Image Mask Switch</summary>
+
+                    <img id="mask-image" src="/images/lmaoyoudoxxedme.jpg" alt="loading..." />
+
+                    <script>
+                        let image = document.getElementById("mask-image");
+                        let unmasked = false;
+                        image.onclick = function() {
+                            if (unmasked) {
+                                image.src = "/images/lmaoyoudoxxedmeharder.jpg";
+                            } else {
+                                image.src = "/images/lmaoyoudoxxedme.jpg";
+                            }
+                            unmasked = !unmasked;
+                        }
+                    </script>
+                </details>
+            </div>
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
+                <details>
+                    <summary>FRQ Unit 2</summary>
                     <h1>Question 1</h1>
                     <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
                     <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
@@ -127,9 +149,10 @@
 }
 	</code></pre>
                 </details>
-
+            </div>
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
-                    <summary>FRQ #2 demo</summary>
+                    <summary>FRQ Unit 2 Demo</summary>
                     <form action="/about/michaelabout/frq2" method="GET" id="frq2form">
                         <div>
                             <!-- HTML tags copied over from issue bc I'm not planning to write a differernt one and this saves me time -->
@@ -142,30 +165,10 @@
                         </div>
                     </form>
                 </details>
-
+            </div>
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
-                    <summary>Image mask switch</summary>
-
-                    <img id="mask-image" src="/images/lmaoyoudoxxedme.jpg" alt="loading..." />
-
-                    <script>
-                        let image = document.getElementById("mask-image");
-                        let unmasked = false;
-                        image.onclick = function() {
-                            if (unmasked) {
-                                image.src = "/images/lmaoyoudoxxedmeharder.jpg";
-                            } else {
-                                image.src = "/images/lmaoyoudoxxedme.jpg";
-                            }
-                            unmasked = !unmasked;
-                        }
-                    </script>
-                </details>
-
-
-                <details>
-
-                    <summary>FRQ #3</summary>
+                    <summary>FRQ Unit 3</summary>
                     <h1>Question 1</h1>
                     <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
                     <p>Assume that the classes listed in the Java Quick Reference have been imported where appropriate. Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their
@@ -317,9 +320,10 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 </code></pre>
 
                 </details>
-
+            </div>
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
-                    <summary>FRQ #3 grid demo</summary>
+                    <summary>FRQ Unit 3 Grid Demo</summary>
 
                     <h1 class="text-center">JavaScript - Draw on Canvas</h1>
                     <div class="container py-4 bg-primary" style="text-align:center;">
@@ -470,6 +474,8 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                         square();
                     </script>
                 </details>
+            </div>
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
                     <summary>FRQ Unit 4</summary>
                     <h5>1. Write the Longest Streak method</h5>
@@ -559,7 +565,9 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
                     <code style="margin-left:40px;">else if (player2Coins == player1Coins) {System.out.println("tie");}</code><br>
                     <code style="margin-left:00px;">}</code><br>
                 </details>
+            </div>
 
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
                     <summary>FRQ Unit 5</summary>
 
@@ -754,9 +762,11 @@ class PasswordGenerator {
                         })();
                     </script>
                 </details>
+            </div>
 
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
-                    <summary>FRQ unit 6</summary>
+                    <summary>FRQ Unit 6</summary>
 
                     <h2 id="question-1">Question 1</h2>
                     <p>SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.</p>
@@ -882,9 +892,10 @@ public class temp {
 }
 </code></pre>
                 </details>
-
+            </div>
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
-                    <summary>FRQ unit 6 demo</summary>
+                    <summary>FRQ Unit 6 Demo</summary>
                     <div class="frq-form">
                         <form id="unit6-ques2">
                             <div>
