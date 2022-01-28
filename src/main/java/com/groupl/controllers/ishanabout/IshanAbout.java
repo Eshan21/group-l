@@ -12,9 +12,19 @@ import java.util.Scanner;
 
 @Controller
 public class IshanAbout {
+    double computeBonusThreshold;
+
     @GetMapping("/about/ishanabout")
     public String ishanabout() {
         return "about/ishanabout";
+    }
+
+
+    @PostMapping("about/ishanabout/Unit4Frq2a")
+    @ResponseBody
+    public int Unit4Frq2a(@RequestParam(name="round", required=false, defaultValue="0") int round,
+                          Model model) {
+        return com.groupl.controllers.ishanabout.Unit4Frq2.a(round);
     }
 
     @PostMapping("about/ishanabout/Unit5Frq1a")
@@ -94,6 +104,102 @@ public class IshanAbout {
         return "about/ishanabout";
     }
 
+    @GetMapping("about/ishanabout/Unit4FRQQuestion1")
+    public String longestStreak(@RequestParam(name="str", required=false, defaultValue="amongus") String str,
+                                Model model){
+        int longestCount = 0;
+        String longestChar = null;
+        int currentCount = 1;
+        String currentChar = null;
+        String prevChar = null;
+        int start = 0;
+        int end = 0;
+        for (int ii=0;ii<str.length();ii++) {
+            currentChar = String.valueOf(str.charAt(ii));
+            if (ii>0){prevChar = String.valueOf(str.charAt(ii-1));}
+            if (currentChar.equals(prevChar)) {
+                currentCount++;
+                if (currentCount > longestCount) {
+                    longestChar = currentChar;
+                    longestCount = currentCount;
+                }
+            }
+            else {
+                currentCount = 1;
+                currentChar = null;
+            }
+        }
+        model.addAttribute("Unit4Q2Input", str);
+        model.addAttribute("Unit4Q2Output", longestChar + " " + longestCount);
+        return "about/ishanabout";
+    }
+
+    @PostMapping("about/ishanabout/Unit6Frq1")
+    @ResponseBody
+    public String Unit6Frq1(@RequestParam(name="words", required=false, defaultValue="0") String wordsString) {
+        String[] words = wordsString.split(",");
+        String output = "";
+        for (String ii : words) {
+            if (ii.substring(ii.length()-3, ii.length()).equals("ing")) {
+                output += (ii + ", ");
+            }
+        }
+        return output;
+
+    }
+    @PostMapping("about/ishanabout/Unit6Frq2a")
+    @ResponseBody
+    public double Unit6Frq2a(@RequestParam(name="items", required=false, defaultValue="0") String itemsSoldString) {
+        int emoloyeeCount = itemsSoldString.split(",").length;
+        int[] itemsSold = new int[emoloyeeCount];
+        for (int ii=0;ii<emoloyeeCount;ii++) {
+            itemsSold[ii] += Integer.parseInt(itemsSoldString.split(",")[ii]);
+        }
+
+        int total = 0;
+        double threshold = 0.0;
+        int lowest = 0;
+        int greatest = 0;
+        for (int ii : itemsSold) {
+            total += ii;
+            if (lowest == 0 || ii<lowest) {lowest = ii;}
+            if (ii>greatest) {greatest = ii;}
+        }
+
+        threshold = ((double) (total-(greatest+lowest)))/((double) itemsSold.length-2);
+        computeBonusThreshold = threshold;
+        return threshold;
+    }
+
+    @PostMapping("about/ishanabout/Unit6Frq2b")
+    @ResponseBody
+    public String Unit6Frq2b(@RequestParam(name="items", required=false, defaultValue="0") String itemsSoldString,
+                             @RequestParam(name="fixedWage", required=false, defaultValue="0") double fixedWage,
+                             @RequestParam(name="perItemWage", required=false, defaultValue="0") double perItemWage) {
+        int emoloyeeCount = itemsSoldString.split(",").length;
+        int[] itemsSold = new int[emoloyeeCount];
+        double[] wages = new double[emoloyeeCount];
+        for (int ii=0;ii<emoloyeeCount;ii++) {
+            itemsSold[ii] += Integer.parseInt(itemsSoldString.split(",")[ii]);
+        }
+        double wage = fixedWage;
+        for (int ii=0;ii<itemsSold.length;ii++) {
+            wage += itemsSold[ii]*1.5;
+            if (((double) itemsSold[ii]) > computeBonusThreshold) {
+                wage*=1.1;
+            }
+            wages[ii] = wage;
+            wage = 10.0;
+        }
+
+        String output = "";
+        for (double ii : wages) {
+            output += ((Math.floor(ii*100)/100) + ", ");
+        }
+        return output;
+    }
+
+
     public static String getString(@RequestParam(name = "oldSeq", required = false, defaultValue = "") String oldSeq, @RequestParam(name = "segment", required = false, defaultValue = "") String segment, String newSeq) {
         for (int ii=0; ii<=oldSeq.length()-segment.length(); ii++) {
             if (oldSeq.substring(ii, ii + segment.length()).equals(segment)) {
@@ -167,7 +273,6 @@ public class IshanAbout {
     }
 
 
-
 }
 
 class Unit5Frq1 {
@@ -188,6 +293,31 @@ class Unit5Frq1 {
     public static void invitation(String newAddress) {
         address = newAddress;
         hostName = "Host";
+    }
+}
+
+class Unit4Frq2 {
+    public static int a(int round) {
+        int output;
+        if (round % 3 == 0) {output = 3;}
+        else if (round % 2 == 0) {output = 2;}
+        else {output = 1;}
+        return output;
+    }
+    public static String b(int maxRounds, int startingCoins) {
+        int currentRound = 0;
+        int player1Coins = startingCoins;
+        int player2Coins = startingCoins;
+        String output = "";
+        while (currentRound <= maxRounds && player1Coins > 3 && player2Coins > 3) {
+            player1Coins -= 2;
+            player2Coins -= a(currentRound);
+            currentRound++;
+        }
+        if (player1Coins > player2Coins) {output = "player 1 wins";}
+        else if (player2Coins > player1Coins) {output = "player 2 wins";}
+        else if (player2Coins == player1Coins) {output = "tie";}
+        return output;
     }
 }
 
@@ -213,4 +343,26 @@ class PasswordGenerator {
     public static int pwCount() {
         return count;
     }
+}
+
+class MineSweeper {
+    private int width = 10;
+    private int height = 10;
+    int[][] field = new int[width][height];
+    private int difficulty = 0;
+    private int mineCount = (int) ((double) width*height/10-difficulty);
+    Random r = new Random();
+
+    private int[][] createField () {
+        int[][] temp = new int[width][height];
+        int move = 0;
+        for (int i = 0; i < mineCount; i++) {
+            move = r.nextInt(width*height);
+            temp[move/width][move%width] = -1;
+        }
+
+        return temp;
+    }
+
+
 }

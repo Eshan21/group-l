@@ -474,13 +474,13 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 				<code style="margin-left:40px;">else {output = 1;}</code><br>
 				<code style="margin-left:40px;">return output;</code><br>
 				<code style="margin-left:00px;">}</code><br>
-				<div style="background-color: var(--bright-black); border-radius: 10px; padding:10px; margin:10px; width:fit-content;">
-					<form action="/about/akhilabout/Unit4FRQQuestion2PartA" method="GET" id="Unit4FRQQuestion2PartA">
+				<div class="frq-form">
+					<form action="/about/ishanabout/Unit4FRQQuestion1" method="GET" id="Unit4FRQQuestion1">
 						<div>
-							<label for="roundNumberField">Input the round number</label><br>
-							<input class="form-control" name="round" id="roundNumberField"><br>
-							<button class="btn btn-light">Submit</button>
-							<p th:text="'Player 2\'s Bet: ' + ${Player2Move}"></p>
+							<label for="longestStreakField">Input the string</label><br>
+							<input class="form-control sub-window" name="str" id="longestStreakField" th:value="${Unit4Q2Input}"><br>
+							<button class="button">Submit</button>
+							<p th:text="'Output: ' + ${Unit4Q2Output}"></p>
 						</div>
 					</form>
 				</div>
@@ -503,7 +503,7 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 
 		<div class="body-window p-5">
 			<details>
-				<summary>FRQ Unit 5</summary>
+				<summary>Unit 5 FRQ</summary>
 				<h5>1a. Write a method for the Invitation class that returns the name of the host.</h5>
 				<code style="margin-left:00px;">public String getHostName() {</code><br>
 				<code style="margin-left:40px;">return hostName;</code><br>
@@ -586,7 +586,7 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 					form.addEventListener('submit', e => e.preventDefault());
 					document.getElementById('Unit5Frq2FormButton_1').onclick = Unit5Frq2_1;
 					async function Unit5Frq2_1() {
-						let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-1', {
+						let data = await (await fetch('/about/ishanabout/Unit5FRQQuestion2-1', {
 							method: 'POST',
 							body: new FormData(form)
 						})).text();
@@ -600,7 +600,7 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 					form.addEventListener('submit', e => e.preventDefault());
 					document.getElementById('Unit5Frq2FormButton_2').onclick = Unit5Frq2_2;
 					async function Unit5Frq2_2() {
-						let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-2', {
+						let data = await (await fetch('/about/ishanabout/Unit5FRQQuestion2-2', {
 							method: 'POST',
 							body: new FormData(form)
 						})).text();
@@ -614,7 +614,7 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 					form.addEventListener('submit', e => e.preventDefault());
 					document.getElementById('Unit5Frq2FormButton_3').onclick = Unit5Frq2_3;
 					async function Unit5Frq2_3() {
-						let data = await (await fetch('/about/akhilabout/Unit5FRQQuestion2-3', {
+						let data = await (await fetch('/about/ishanabout/Unit5FRQQuestion2-3', {
 							method: 'POST',
 							body: new FormData(form)
 						})).text();
@@ -623,6 +623,123 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 				})();
 			</script>
 		</div>
+
+		<div class="body-window p-5">
+			<details>
+				<summary>Unit 6 FRQ</summary>
+				<h5>1. Using an enhanced for loop, write a code segment that will print out elements of an array of String objects, words, that end in "ing"</h5>
+				<code style="margin-left:00px;">for (String ii : words) {</code><br>
+				<code style="margin-left:40px;">if (ii.substring(ii.length()-3, ii.length()).equals("ing"))</code><br>
+				<code style="margin-left:80px;">System.out.println(ii);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit6Frq1Form">
+						<label for="">Input a comma-separated list of words</label>
+						<label for="">Do not include any spaces</label>
+						<label for="">All words must be 3 or more characters long</label>
+						<input name="words" class="form-control sub-window"><br>
+						<button id="Unit6Frq1Button" class="button">Submit</button>
+						<p id="Unit6Frq1Output">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit6Frq1Form');
+						let output = document.getElementById("Unit6Frq1Output");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit6Frq1Button').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit6Frq1', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>2a. Write the computeBonusThreshold() method</h5>
+				<code style="margin-left:00px;">public double computeBonusThreshold() {</code><br>
+				<code style="margin-left:40px;">int total = 0;</code><br>
+				<code style="margin-left:40px;">double threshold = 0.0;</code><br>
+				<code style="margin-left:40px;">int lowest = 0;</code><br>
+				<code style="margin-left:40px;">int greatest = 0;</code><br>
+				<code style="margin-left:40px;">for (int ii : itemsSold) {</code><br>
+				<code style="margin-left:80px;">total += ii;</code><br>
+				<code style="margin-left:80px;">if (ii&lt;lowest) {lowest = ii;}</code><br>
+				<code style="margin-left:80px;">if (ii&gt;greatest) {greatest = ii;}</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">threshold = ((double) (total-(greatest+lowest)))/((double) itemsSold.length);</code><br>
+				<code style="margin-left:40px;">return threshold;</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit6Frq2aForm">
+						<label for="">Input a comma-separated list of ints</label>
+						<label for="">Do not include any spaces</label>
+						<input name="items" class="form-control sub-window" id="Unit6Frq2aField"><br>
+						<button id="Unit6Frq2aButton" class="button">Submit</button>
+						<p id="Unit6Frq2aOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit6Frq2aForm');
+						let output = document.getElementById("Unit6Frq2aOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit6Frq2aButton').onclick = post;
+						async function post() {
+							document.getElementById("Unit6Frq2bField1").value = document.getElementById("Unit6Frq2aField").value;
+							let data = await (await fetch('/about/ishanabout/Unit6Frq2a', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>2b. Write the computeWages() method</h5>
+				<code style="margin-left:00px;">public void computeWages(double fixedWage, double perItemWage)</code><br>
+				<code style="margin-left:40px;">double wage = 10.0;</code><br>
+				<code style="margin-left:40px;">for (int ii=0;ii&lt;itemsSold.length;ii++) {</code><br>
+				<code style="margin-left:80px;">wage += itemsSold[ii]*1.5;</code><br>
+				<code style="margin-left:80px;">if (((double) itemsSold[ii]) > computeBonusThreshold()) {</code><br>
+				<code style="margin-left:120px;">wage*=1.1;</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:80px;">wages[ii] = wage;</code><br>
+				<code style="margin-left:80px;">wage = 10.0;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit6Frq2bForm">
+						<label for="">Input a comma-separated list of ints</label>
+						<label for="">Do not include any spaces</label>
+						<input name="items" class="form-control sub-window" id="Unit6Frq2bField1"><br>
+						<label for="">Fixed Wage</label>
+						<input name="fixedWage" class="form-control sub-window"><br>
+						<label for="">Per Item Wage</label>
+						<input name="perItemWage" class="form-control sub-window"><br>
+						<button id="Unit6Frq2bButton" class="button">Submit</button>
+						<p id="Unit6Frq2bOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit6Frq2bForm');
+						let output = document.getElementById("Unit6Frq2bOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit6Frq2bButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit6Frq2b', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+			</details>
+		</div>
+
 	</main>
 </div>
 </body>
