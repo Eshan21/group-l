@@ -923,6 +923,33 @@
 					<code style="margin-left:80px;">possibleNames.add(lastName + firstName.substring(0, ii))</code><br>
 					<code style="margin-left:40px;">}</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit7Frq1aForm">
+							<label for="">First Name</label>
+							<input name="firstName" class="form-control sub-window"><br>
+							<label for="">Last Name</label>
+							<input name="lastName" class="form-control sub-window"><br>
+							<button id="Unit7Frq1aButton" class="button">Submit</button>
+							<p id="Unit7Frq1aOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit7Frq1aForm');
+							let output = document.getElementById("Unit7Frq1aOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit7Frq1aButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit7Frq1a', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+								localStorage.setItem("Unit7Frq1a", data);
+								console.log(data.split(", "));
+							}
+						})();
+					</script>
 					<h5>1b. Write the setAvailableUserNames method</h5>
 					<code style="margin-left:00px;">public void setAvailableUserNames(String[] usedNames)</code><br>
 					<code style="margin-left:40px;">for (ii=0;ii&lt;possibleNames.size();ii++)</code><br>
@@ -931,6 +958,31 @@
 					<code style="margin-left:80px;">}</code><br>
 					<code style="margin-left:40px;">}</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit7Frq1bForm">
+							<label for="">First Name</label>
+							<input name="firstName" class="form-control sub-window"><br>
+							<label for="">Last Name</label>
+							<input name="lastName" class="form-control sub-window"><br>
+							<button id="Unit7Frq1bButton" class="button">Submit</button>
+							<p id="Unit7Frq1bOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit7Frq1bForm');
+							let output = document.getElementById("Unit7Frq1bOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit7Frq1bButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit7Frq1b', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 				</details>
 			</div>
 

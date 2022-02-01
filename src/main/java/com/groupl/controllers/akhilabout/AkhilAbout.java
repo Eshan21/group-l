@@ -280,6 +280,31 @@ public class AkhilAbout {
         return output;
     }
 
+    @PostMapping("about/akhilabout/Unit7Frq1a")
+    @ResponseBody
+    public String Unit7Frq1a(@RequestParam(name="firstName", required = false) String firstName,
+    @RequestParam(name="lastName", required = false) String lastName) {
+        String possibleNames = "";
+        for (int ii=1;ii<=firstName.length();ii++) {
+            possibleNames += lastName + firstName.substring(0, ii) + ", ";
+        }
+        possibleNames = possibleNames.substring(0, possibleNames.length()-2);
+        System.out.println(possibleNames);
+        return possibleNames;
+    }
+
+    @PostMapping("about/akhilabout/Unit7Frq1b")
+    @ResponseBody
+    public String Unit7Frq1b(@RequestParam(name="usedNames", required = false) String usedNames,
+    @RequestParam(name="lastName", required = false) String lastName) {
+        String possibleNamesNew = "";
+        String[] userNamesArr = usedNames.split(",");
+        for (String ii : userNamesArr) {
+            
+        }
+        return possibleNamesNew;
+    }
+
         
     @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,
