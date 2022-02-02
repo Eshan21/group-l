@@ -1,0 +1,4 @@
+#!/bin/sh
+javac *java
+java test2
+rm *class
