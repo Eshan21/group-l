@@ -1,8 +1,28 @@
 ---
+
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
+
+---
+
+<details>
+  <summary>FRQ Learning</summary>
+
+  <pre>
+      FRQ 2  - We learned String manipulation (inserting at an index and removing first match)
+      FRQ 3  - If statements and boolean expressions (if-else, && and || operations)
+      FRQ 4  - for, while loops and nested loops
+      FRQ 5  - Class accessor and mutator methods, static methods, this keyword
+      FRQ 6  - Iterating over arrays, enhanced for loops
+      FRQ 7  - Using ArrayLists, searching and sorting
+      FRQ 8  - 2D arrays, nested loops
+      FRQ 9  - Subclasses and super keyword, Overriding and Overloading, Polymorphism
+      FRQ 10 - Recursion and recursive sorting
+    </pre>
+</details>
+
 ---
 
 # Purpose
