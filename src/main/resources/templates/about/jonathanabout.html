@@ -67,7 +67,7 @@
                             <li><a class="text-primary" href="https://github.com/jlaaa/group-l/blob/main/src/main/java/com/groupl/mysql/User.java#L18-L23">Link</a> Subclass constructor, super Keyword</li>
                             <li><a class="text-primary" href="https://replit.com/@jlaaa/Overloading-and-Overriding-a-Method-Java">Link</a> Overloading a method, same name different parameters</li>
                             <li><a class="text-primary" href="https://replit.com/@jlaaa/Overloading-and-Overriding-a-Method-Java">Link</a> Overriding a method, same signature of a method</li>
-                            <li><a class="text-primary" href="https://replit.com/@jlaaa/Overloading-and-Overriding-a-Method-Javahttps://github.com/jlaaa/group-l/blob/main/src/main/java/com/groupl/mysql/SqlObj.java#L11-L35">Link</a> Abstract Class, Abstract Method</li>
+                            <li><a class="text-primary" href="https://replit.com/@jlaaa/Overloading-and-Overriding-a-Method-Java">Link</a> Abstract Class, Abstract Method</li>
                             <li><a class="text-primary" href="https://replit.com/@jlaaa/Overloading-and-Overriding-a-Method-Java">Link</a> Object superclass methods: toString(), compare(), clone()</li>
                             <li><a class="text-primary" href="https://replit.com/@jlaaa/Overloading-and-Overriding-a-Method-Java">Link</a> Late binding of object, referencing superclass object, ie Animal a = new Chicken(); Animal b = new Goat();</li>
                             <li><a class="text-primary" href="https://replit.com/@jlaaa/Overloading-and-Overriding-a-Method-Java">Link</a> Polymorphism: any of overloading, overriding, late binding</li>
@@ -87,7 +87,7 @@
 
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Learning from FRQs</summary>
+                    <summary>FRQs Topics</summary>
 
                     <h3>FRQ 8 - 2D arrays</h3>
                     <h3>FRQ 7 - arrayList and searching and sorting</h3>
@@ -100,10 +100,111 @@
                 </details>
             </div>
 
+            <!-- Unit 10 FRQ -->
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 10 FRQ Question 1 Demo - Number System</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-number-system" method="POST">
+                            <label for="numA" class="form-label">Number A</label>
+                            <input id="numA" class="form-control" name="numA" th:value="${numA}">
+
+                            <label for="numB" class="form-label">Number B</label>
+                            <input id="numB" class="form-control" name="numB" th:value="${numB}">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Reduced Fraction</button>
+
+                            <div class="bg-success">
+                                <p class="p-1 my-3" th:text="${gcf}" th:if="${gcf}"></p>
+                                <p class="p-1 my-3" th:text="${reducedFraction}" th:if="${reducedFraction}"></p>
+                            </div>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 10 FRQ Question 2 Demo - Animal</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-animal" method="POST">
+                            <label for="type" class="form-label">Type (carnivore, herbivore)</label>
+                            <input id="type" class="form-control" name="type" th:value="${type}">
+
+                            <label for="species" class="form-label">Species</label>
+                            <input id="species" class="form-control" name="species" th:value="${species}">
+
+                            <label for="name" class="form-label">Name</label>
+                            <input id="name" class="form-control" name="name" th:value="${name}">
+
+                            <label for="tusklen" class="form-label">Tusk Length (if speciees is 'elephant'</label>
+                            <input id="tusklen" class="form-control" name="tusklen" th:value="${tusklen}">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Animal</button>
+
+                            <div class="bg-success">
+                                <p class="p-1 my-3" th:text="${animal}" th:if="${animal}"></p>
+                            </div>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Unit 9 FRQ -->
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 9 FRQ Question 1 Demo - Books</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-books" method="POST">
+                            <label for="books" class="form-label">List of Books (title, author, [illustrator])</label>
+                            <input id="books" class="form-control" name="books" th:value="${books}">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Books</button>
+
+                            <div class="bg-success">
+                                <th:block th:each="book : ${bookList}">
+                                    <p class="p-1 my-3" th:text="${book.getBookInfo()}" th:if="${book.getBookInfo()}"></p>
+                                </th:block>
+                            </div>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Unit 8 FRQ -->
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 8 FRQ Question 1 Demo - Farm Plots</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-farm-plots" method="POST">
+                            <label for="plots" class="form-label">Plot Array (Format ([crop] [yield]) Rows separated with ',' Columns seperarated with '/'</label>
+                            <input id="plots" class="form-control" name="plots" th:value="${plots}">
+
+                            <label for="highestYield" class="form-label">Get Highest Yield of Crop</label>
+                            <input id="highestYield" class="form-control" name="highestYield">
+
+                            <label for="sameCrop" class="form-label">Get if column is all the same crop</label>
+                            <input id="sameCrop" class="form-control" name="sameCrop">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Plot Information</button>
+
+                            <div class="bg-success">
+                                <p class="p-1 my-3" th:text="${resHighestYield}" th:if="${resHighestYield}"></p>
+                                <p class="p-1 my-3" th:text="${resSameCrop}" th:if="${resSameCrop}"></p>
+                            </div>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
             <!-- Unit 7 FRQ -->
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 8 FRQ Question 1 Demo - Possible User Names</summary>
+                    <summary>Unit 7 FRQ Question 1 Demo - Possible User Names</summary>
 
                     <div class="row p-5">
                         <form class="col-md" action="/about/jonathan-user-names" method="POST">
@@ -128,26 +229,48 @@
                 </details>
             </div>
 
+            <!-- Unit 6 FRQ -->
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 7 FRQ Question 2 Demo - Farm Plots</summary>
+                    <summary>Unit 6 FRQ Question 1 Demo - Word Parse</summary>
 
                     <div class="row p-5">
-                        <form class="col-md" action="/about/jonathan-farm-plots" method="POST">
-                            <label for="plots" class="form-label">Plot Array (Format ([crop] [yield]) Rows separated with ',' Columns seperarated with '/'</label>
-                            <input id="plots" class="form-control" name="plots" th:value="${plots}">
+                        <form class="col-md" action="/about/jonathan-word-parse" method="POST">
+                            <label for="words" class="form-label">Words (separated by ',')</label>
+                            <input id="words" class="form-control" name="words" th:value="${words}">
 
-                            <label for="highestYield" class="form-label">Get Highest Yield of Crop</label>
-                            <input id="highestYield" class="form-control" name="highestYield">
-
-                            <label for="sameCrop" class="form-label">Get if column is all the same crop</label>
-                            <input id="sameCrop" class="form-control" name="sameCrop">
-
-                            <button type="submit" class="btn btn-primary mt-3">Get Plot Information</button>
+                            <button type="submit" class="btn btn-primary mt-3">Get Words</button>
 
                             <div class="bg-success">
-                                <p class="p-1 my-3" th:text="${resHighestYield}"></p>
-                                <p class="p-1 my-3" th:text="${resSameCrop}"></p>
+                                <th:block th:each="word : ${resWords}">
+                                    <p class="p-1 my-3" th:text="${word}" th:if="${word}"></p>
+                                </th:block>
+                            </div>
+                        </form>
+                    </div>
+                </details>
+            </div>
+
+            <div class="body-window d-flex p-3">
+                <details>
+                    <summary>Unit 6 FRQ Question 2 Demo - Payroll</summary>
+
+                    <div class="row p-5">
+                        <form class="col-md" action="/about/jonathan-payroll" method="POST">
+                            <label for="addItems" class="form-label">Items (separated by ',')</label>
+                            <input id="addItems" class="form-control" name="addItems" th:value="${addItems}">
+
+                            <label for="fixedWage" class="form-label">Fixed Wage</label>
+                            <input id="fixedWage" class="form-control" name="fixedWage" th:value="${fixedWage}" >
+
+                            <label for="perItemWage" class="form-label">Per Item Wage</label>
+                            <input type="text" name="perItemWage" th:value="${perItemWage}">
+
+                            <button type="submit" class="btn btn-primary mt-3">Get Wages</button>
+                            <div class="bg-success">
+                                <th:block th:each="wage : resWages">
+                                    <p class="p-1 my-3" th:text="${wage}" th:if="${wage}"></p>
+                                </th:block>
                             </div>
                         </form>
                     </div>
@@ -180,7 +303,7 @@
 
             <div class="body-window d-flex p-3">
                 <details>
-                    <summary>Unit 5 FRQ Question 2 Demo - Passowrd Generator</summary>
+                    <summary>Unit 5 FRQ Question 2 Demo - Password Generator</summary>
 
                     <div class="row p-5">
                         <form class="col-md" action="/about/jonathan-gen-pass" method="POST">

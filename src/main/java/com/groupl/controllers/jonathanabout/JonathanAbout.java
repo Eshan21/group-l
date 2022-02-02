@@ -1,39 +1,103 @@
 package com.groupl.controllers.jonathanabout;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.groupl.controllers.jonathanabout.animal.Animal;
+import com.groupl.controllers.jonathanabout.animal.Elephant;
+import com.groupl.controllers.jonathanabout.animal.Carnivore;
+import com.groupl.controllers.jonathanabout.animal.Herbivore;
+
 @Controller
 public class JonathanAbout {
-    @PostMapping("/about/jonathan-user-names")
-    public String getUserNames(@RequestParam String fname,
-                                   @RequestParam String lname,
-                                   @RequestParam String setNames,
-                                   Model model) {
-        UserName username = new UserName(fname, lname);
+    @PostMapping("/about/jonathan-number-system")
+    public String
+    numberSystem(@RequestParam int numA,
+                 @RequestParam int numB,
+                 Model model)
+    {
+        model.addAttribute("numA", numA);
+        model.addAttribute("numB", numB);
+        model.addAttribute("gcf", NumberSystem.gcf(numA, numB));
+        model.addAttribute("reducedFraction", NumberSystem.reduceFraction(numA, numB));
+        model.addAttribute("numberSystem", true);
 
-        if (!isNullOrEmpty(setNames)) {
-            username.setAvailableUserNames(setNames.split(","));
+        return "/about/jonathanabout";
+    }
+
+    @PostMapping("/about/jonathan-books")
+    public String
+    getBooks(@RequestParam String books,
+             Model model)
+    {
+        String[] bookArr = books.split("/");
+        ArrayList<Book> bookList = new ArrayList();
+
+        for(String bookStr : bookArr){
+            System.out.println("bookStr: " + bookStr);
+            List<String> attr = Arrays.asList(bookStr.split(","));
+
+            Book book = null;
+            if(attr.size() == 3){
+                System.out.println("Picture Book");
+                // Picture book (title, author, illustrator)
+                book = new PictureBook(attr.get(0), attr.get(1), attr.get(2));
+            } else if(attr.size() == 2){
+                // Regular book (title, author)
+                book = new Book(attr.get(0), attr.get(1));
+            } else { 
+                System.out.println("Expected at least 2 arguments");
+            }
+
+            System.out.println(book.getBookInfo());
+            bookList.add(book);
         }
 
-        model.addAttribute("possibleNames", username.getPossibleNames());
-        model.addAttribute("fname");
-        model.addAttribute("lname");
-        model.addAttribute("setNames");
-        model.addAttribute("userNames", true);
+        model.addAttribute("bookList", bookList);
+        model.addAttribute("book", true);
+
+        return "/about/jonathanabout";
+    }
+
+    @PostMapping("/about/jonathan-animal")
+    public String
+    getAnimal(@RequestParam String type,
+              @RequestParam String species,
+              @RequestParam String name,
+              @RequestParam(required = false) String tusklen,
+              Model model)
+    {
+        Animal animal = new Animal(type, species, name);
+
+        if(!isNullOrEmpty(tusklen)){
+            animal = new Elephant(name, Float.parseFloat(tusklen));
+        } else if(species.equals("carnivore")){
+            animal = new Carnivore(species, name);
+        } else if(species.equals("herbivore")){
+            animal = new Herbivore(species, name);
+        }
+
+        model.addAttribute("type", type);
+        model.addAttribute("species", species);
+        model.addAttribute("name", name);
+        model.addAttribute("animal", animal);
 
         return "/about/jonathanabout";
     }
 
     @PostMapping("/about/jonathan-farm-plots")
-    public String getFarmPlots(@RequestParam String plots,
-                               @RequestParam String highestYield,
-                               @RequestParam String sameCrop,
-                               Model model) {
+    public String
+    getFarmPlots(@RequestParam String plots,
+                 @RequestParam String highestYield,
+                 @RequestParam String sameCrop,
+                 Model model)
+    {
         System.out.println(plots);
         String[] plotrow = plots.split("/");
         int len = plotrow.length;
@@ -56,11 +120,45 @@ public class JonathanAbout {
         return "/about/jonathanabout";
     }
 
-    @PostMapping("/about/jonathan-compute-wages")
-    public String getWordParse(@RequestParam String addItems,
-                               @RequestParam String fixedWage,
-                               @RequestParam String perItemWage,
+    @PostMapping("/about/jonathan-user-names")
+    public String getUserNames(@RequestParam String fname,
+                               @RequestParam String lname,
+                               @RequestParam String setNames,
                                Model model) {
+        UserName username = new UserName(fname, lname);
+
+        if (!isNullOrEmpty(setNames)) {
+            username.setAvailableUserNames(setNames.split(","));
+        }
+
+        model.addAttribute("possibleNames", username.getPossibleNames());
+        model.addAttribute("fname", fname);
+        model.addAttribute("lname", lname);
+        model.addAttribute("setNames", setNames);
+        model.addAttribute("userNames", true);
+
+        return "/about/jonathanabout";
+    }
+
+    @PostMapping("/about/jonathan-word-parse")
+    public String getWordParse(@RequestParam String words,
+                               Model model) {
+        Object[] resWords = WordParse.parse(words.split(","));
+
+        for (Object word : resWords) {
+            System.out.println(word);
+        }
+        model.addAttribute("resWords", resWords);
+        model.addAttribute("wordParse", true);
+
+        return "/about/jonathanabout";
+    }
+
+    @PostMapping("/about/jonathan-payroll")
+    public String getPayroll(@RequestParam String addItems,
+                             @RequestParam String fixedWage,
+                             @RequestParam String perItemWage,
+                             Model model) {
         Payroll payroll = new Payroll();
 
         String[] addItemsArr = addItems.split(",");
@@ -76,11 +174,11 @@ public class JonathanAbout {
 
         payroll.computeWages(Double.parseDouble(fixedWage), Double.parseDouble(perItemWage));
 
-        model.addAttribute("addItems");
-        model.addAttribute("fixedWage");
-        model.addAttribute("perItemWage");
-        model.addAttribute("wages", payroll.getWages());
-        model.addAttribute("
+        model.addAttribute("addItems", addItems);
+        model.addAttribute("fixedWage", fixedWage);
+        model.addAttribute("perItemWage", perItemWage);
+        model.addAttribute("resWages", payroll.getWages());
+        model.addAttribute("payroll", true);
 
         return "/about/jonathanabout";
     }

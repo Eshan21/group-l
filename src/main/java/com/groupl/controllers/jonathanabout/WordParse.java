@@ -11,7 +11,7 @@ public class WordParse {
             if (len >= 3) {
                 if (word.substring(len - 3).equals("ing")) {
                     res.add(word);
-                    System.out.println("Checking " + word);
+                    System.out.println("Added '" + word + "'");
                 }
             }
         }
