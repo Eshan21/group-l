@@ -1,3 +1,5 @@
+package com.groupl.controllers.michaelabout.unit8;
+
 public class Plot {
 
 	private String cropType;
