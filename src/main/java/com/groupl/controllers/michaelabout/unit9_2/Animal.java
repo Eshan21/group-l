@@ -1,3 +1,5 @@
+package com.groupl.controllers.michaelabout.unit9_2;
+
 public class Animal {
 
 	protected String kind;
