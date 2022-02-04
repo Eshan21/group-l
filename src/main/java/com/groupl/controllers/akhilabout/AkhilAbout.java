@@ -317,6 +317,23 @@ public class AkhilAbout {
         return possibleNamesNew;
     }
 
+    @PostMapping("about/akhilabout/Unit8Frq1a")
+    @ResponseBody
+    public String Unit8Frq1a(
+        @RequestParam(name="1", required = false) String plot1,
+        @RequestParam(name="2", required = false) String plot2,
+        @RequestParam(name="3", required = false) String plot3,
+        @RequestParam(name="4", required = false) String plot4,
+        @RequestParam(name="5", required = false) String plot5,
+        @RequestParam(name="6", required = false) String plot6,
+        @RequestParam(name="7", required = false) String plot7,
+        @RequestParam(name="8", required = false) String plot8,
+        @RequestParam(name="9", required = false) String plot9
+    ) {
+        String output = "";
+        return output;
+    }
+
         
     @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,
