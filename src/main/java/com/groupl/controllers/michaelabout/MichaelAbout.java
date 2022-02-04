@@ -14,6 +14,9 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
 import com.groupl.controllers.michaelabout.unit7.*;
+import com.groupl.controllers.michaelabout.unit8.*;
+import com.groupl.controllers.michaelabout.unit9.*;
+import com.groupl.controllers.michaelabout.unit10.*;
 
 @Controller
 public class MichaelAbout {
@@ -157,5 +160,54 @@ public class MichaelAbout {
         jo.put("usernames", person.getPossibleNames());
 
         return jo.toString();
+    }
+
+    @PostMapping("about/michaelabout/unit8-q1")
+    @ResponseBody
+    public String unit8q1(
+        @RequestParam(name="unit8-ques1-username", required=true) String username_input,
+        @RequestParam(name="unit8-ques1-used", required=false, defaultValue = "") String used_names,
+                                     Model model){
+
+        //
+
+
+    
+        return "lol";
+
+    }
+
+
+    private ArrayList<Book> myLibrary = new ArrayList<Book>();
+
+    @PostMapping("about/michaelabout/unit9-q1")
+    @ResponseBody
+    public String unit9q1(
+        @RequestParam(name="unit8-ques1-username", required=true) String username_input,
+        @RequestParam(name="unit8-ques1-used", required=false, defaultValue = "") String used_names,
+                                     Model model){
+
+        //
+        
+
+        return "book";
+
+    }
+
+    @PostMapping("about/michaelabout/unit10-q1")
+    @ResponseBody
+    public String unit10q1(
+        @RequestParam(name="unit10-ques1-numerator", required=true) String numerator,
+        @RequestParam(name="unit10-ques1-denominator", required=false, defaultValue = "") String denominator,
+                                     Model model){
+
+        //
+
+        
+        JSONObject jo = new JSONObject();
+        jo.put("output", NumberSystem.reduceFraction(Integer.parseInt(numerator), Integer.parseInt(denominator)));
+
+        return jo.toString();
+
     }
 }

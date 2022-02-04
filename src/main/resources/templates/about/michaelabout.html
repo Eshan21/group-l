@@ -17,7 +17,7 @@
         <main class="container">
             <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <p>Journal: <a href="https://docs.google.com/document/d/1jmdsYbP60p7yWNzBAcWEXtwyzjCm1xpadUrxf3_-VSQ/edit">link</a></p>
-		<p> Source: <a href="https://github.com/jlaaa/group-l/tree/main/src/main/java/com/groupl/controllers/michaelabout"> GitHub link</a></p>
+                <p> Source: <a href="https://github.com/jlaaa/group-l/tree/main/src/main/java/com/groupl/controllers/michaelabout"> GitHub link</a></p>
             </div>
             <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
@@ -985,7 +985,121 @@ public class temp {
                                 })).json();
 
                                 console.log(data);
-				output.innerText = `${data["usernames"]}`;
+                                output.innerText = `${data["usernames"]}`;
+                            }
+                        })();
+                    </script>
+                </details>
+            </div>
+
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
+                <details>
+                    <summary>FRQ Unit 8 Demo</summary>
+                    <div class="frq-form">
+                        <form id="unit8-ques1">
+                            <div>
+                                <label for="">enter</label><br>
+                                <input class="form-control sub-window" name="unit8-ques1-username" /><br>
+                                <label for="">Enter used names (optional)</label><br>
+                                <input class="form-control sub-window" name="unit8-ques1-used" /><br>
+                                <button id="unit8-ques1-submit" class="button">Submit</button>
+                                <p id="unit8-ques1-output"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit8-ques1");
+                            let output = document.getElementById('unit8-ques1-output');
+                            document.getElementById("unit8-ques1-submit").onclick = uploadfile;
+
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            async function uploadfile() {
+                                let data = await (await fetch('/about/michaelabout/unit8-q1', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).json();
+
+                                console.log(data);
+                                output.innerText = `${data["usernames"]}`;
+                            }
+                        })();
+                    </script>
+                </details>
+            </div>
+
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
+                <details>
+                    <summary>FRQ Unit 9 Demo</summary>
+                    <div class="frq-form">
+                        <form id="unit9-ques1">
+                            <div>
+                                <label for="">enter</label><br>
+                                <input class="form-control sub-window" name="unit9-ques1-username" /><br>
+                                <label for="">Enter used names (optional)</label><br>
+                                <input class="form-control sub-window" name="unit9-ques1-used" /><br>
+                                <button id="unit9-ques1-submit" class="button">Submit</button>
+                                <p id="unit9-ques1-output"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit9-ques1");
+                            let output = document.getElementById('unit9-ques1-output');
+                            document.getElementById("unit9-ques1-submit").onclick = uploadfile;
+
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            async function uploadfile() {
+                                let data = await (await fetch('/about/michaelabout/unit9-q1', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).json();
+
+                                console.log(data);
+                                output.innerText = `${data["usernames"]}`;
+                            }
+                        })();
+                    </script>
+                </details>
+            </div>
+
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
+                <details>
+                    <summary>FRQ Unit 10 Demo</summary>
+                    <div class="frq-form">
+                        <form id="unit10-ques1">
+                            <div>
+                                <label for="">Enter a positive integer. (numerator)</label><br>
+                                <input class="form-control sub-window" name="unit10-ques1-numerator" <br>
+                                <label for="">Enter a positive integer. (denominator)</label><br>
+                                <input class="form-control sub-window" name="unit10-ques1-denominator" /><br>
+                                <button id="unit10-ques1-submit" class="button">Submit</button>
+                                <p id="unit10-ques1-output"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit10-ques1");
+                            let output = document.getElementById('unit10-ques1-output');
+                            document.getElementById("unit10-ques1-submit").onclick = uploadfile;
+
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            async function uploadfile() {
+                                let data = await (await fetch('/about/michaelabout/unit10-q1', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).json();
+
+                                console.log(data);
+                                output.innerText = `${data["output"]}`;
                             }
                         })();
                     </script>
