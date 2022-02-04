@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import aj.org.objectweb.asm.Type;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 @Controller
 public class AkhilAbout {
@@ -289,18 +292,27 @@ public class AkhilAbout {
             possibleNames += lastName + firstName.substring(0, ii) + ", ";
         }
         possibleNames = possibleNames.substring(0, possibleNames.length()-2);
-        System.out.println(possibleNames);
         return possibleNames;
     }
 
     @PostMapping("about/akhilabout/Unit7Frq1b")
     @ResponseBody
     public String Unit7Frq1b(@RequestParam(name="usedNames", required = false) String usedNames,
-    @RequestParam(name="lastName", required = false) String lastName) {
+    @RequestParam(name="possibleNames", required = false) String possibleNames) {
         String possibleNamesNew = "";
-        String[] userNamesArr = usedNames.split(",");
+        String[] possibleNamesArr = possibleNames.split(", ");
+        String[] userNamesArr = usedNames.split(", ");
+        int n = 0;
         for (String ii : userNamesArr) {
-            
+            n = 0;
+            for (String jj : possibleNamesArr) {
+                if (jj.equals(ii)) {
+                    n+=1;
+                }
+            }
+            if (n==0) {
+                possibleNamesNew += ii + ", ";
+            }
         }
         return possibleNamesNew;
     }
@@ -412,5 +424,21 @@ class PasswordGenerator {
     }
     public static int pwCount() {
         return count;
+    }
+}
+
+class Plot {
+    private String cropType;
+    private int cropYield;
+
+    public Plot(String cropType, int cropYield) {
+        this.cropType = cropType;
+        this.cropYield = cropYield;
+    }
+    public String getCropType() {
+        return this.cropType;
+    }
+    public int getCropYield() {
+        return this.cropYield;
     }
 }
