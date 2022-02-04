@@ -13,6 +13,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
+import com.groupl.controllers.michaelabout.unit7.*;
+
 @Controller
 public class MichaelAbout {
     @GetMapping("/about/michaelabout")
@@ -132,6 +134,27 @@ public class MichaelAbout {
         JSONObject jo = new JSONObject(); 
         jo.put("threshold", threshold);
         jo.put("wages", DoubleStream.of(pr.wages).boxed().collect(Collectors.toList())); 
+
+        return jo.toString();
+    }
+
+    @PostMapping("about/michaelabout/unit7-q1b")
+    @ResponseBody
+    public String genPassword(
+        @RequestParam(name="unit7-ques1-username", required=true) String username_input,
+        @RequestParam(name="unit7-ques1-used", required=false, defaultValue = "") String used_names,
+                                     Model model){
+
+	String[] temp = username_input.split(" "); 
+	String firstName = temp[0];
+	String lastName = temp[1];
+
+	UserName person = new UserName(firstName, lastName);
+	String[] used = used_names.split(" ");
+	person.setAvailableUserNames(used);
+
+        JSONObject jo = new JSONObject(); 
+        jo.put("usernames", person.getPossibleNames());
 
         return jo.toString();
     }

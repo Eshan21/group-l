@@ -1,4 +1,4 @@
-package com.groupl.controllers.michaelabout;
+package com.groupl.controllers.michaelabout.unit7;
 
 import java.util.ArrayList;
 
@@ -78,11 +78,14 @@ public class UserName {
 		for(String usedName : usedNames) {
 			for(int i = 0; i < possibleNames.size(); i++) {
 				if(usedName.equals(possibleNames.get(i))) {
-					// remove not working
 					possibleNames.remove(i);
 				}
 			}
 		}
+	}
+
+	public ArrayList<String> getPossibleNames() {
+		return this.possibleNames;
 	}
 
 	public static void main(String args[]) {

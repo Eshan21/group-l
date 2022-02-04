@@ -946,6 +946,51 @@ public class temp {
                     </script>
                 </details>
             </div>
+
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
+                <details>
+                    <summary>FRQ Unit 7 Demo</summary>
+                    <div class="frq-form">
+                        <form id="unit7-ques1">
+                            <div>
+                                <label for="">Enter username (1 space only; ex. first_name last_name)</label><br>
+                                <input class="form-control sub-window" name="unit7-ques1-username" /><br>
+                                <label for="">Enter used names (optional)</label><br>
+                                <input class="form-control sub-window" name="unit7-ques1-used" /><br>
+                                <button id="unit7-ques1-submit" class="button">Submit</button>
+                                <p id="unit7-ques1-output"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit7-ques1");
+                            let output = document.getElementById('unit7-ques1-output');
+                            document.getElementById("unit7-ques1-submit").onclick = uploadfile;
+
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            function htmlEncode(s) {
+                                var el = document.createElement("div");
+                                el.innerText = el.textContent = s;
+                                s = el.innerHTML;
+                                return s;
+                            }
+
+                            async function uploadfile() {
+                                let data = await (await fetch('/about/michaelabout/unit7-q1b', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).json();
+
+                                console.log(data);
+				output.innerText = `${data["usernames"]}`;
+                            }
+                        })();
+                    </script>
+                </details>
+            </div>
         </main>
     </div>
 </body>
