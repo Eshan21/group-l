@@ -16,6 +16,7 @@ import java.util.stream.DoubleStream;
 import com.groupl.controllers.michaelabout.unit7.*;
 import com.groupl.controllers.michaelabout.unit8.*;
 import com.groupl.controllers.michaelabout.unit9.*;
+import com.groupl.controllers.michaelabout.unit9_2.*;
 import com.groupl.controllers.michaelabout.unit10.*;
 
 @Controller
@@ -148,13 +149,13 @@ public class MichaelAbout {
         @RequestParam(name="unit7-ques1-used", required=false, defaultValue = "") String used_names,
                                      Model model){
 
-	String[] temp = username_input.split(" "); 
-	String firstName = temp[0];
-	String lastName = temp[1];
+        String[] temp = username_input.split(" "); 
+        String firstName = temp[0];
+        String lastName = temp[1];
 
-	UserName person = new UserName(firstName, lastName);
-	String[] used = used_names.split(" ");
-	person.setAvailableUserNames(used);
+        UserName person = new UserName(firstName, lastName);
+        String[] used = used_names.split(" ");
+        person.setAvailableUserNames(used);
 
         JSONObject jo = new JSONObject(); 
         jo.put("usernames", person.getPossibleNames());
@@ -165,16 +166,32 @@ public class MichaelAbout {
     @PostMapping("about/michaelabout/unit8-q1")
     @ResponseBody
     public String unit8q1(
-        @RequestParam(name="unit8-ques1-username", required=true) String username_input,
-        @RequestParam(name="unit8-ques1-used", required=false, defaultValue = "") String used_names,
+        @RequestParam(name="unit8-ques1-cropList", required=true) String cropListInput,
+        @RequestParam(name="unit8-ques1-mostYieldType", required=true) String mostYieldType,
                                      Model model){
+        
+        // 
+        String[] row = cropListInput.split("/");
+        int column_length = row[0].split(",").length;
 
-        //
+        Plot[][] cropList = new Plot[row.length][column_length];
+        for (int i = 0; i < row.length; i++) {
+            String[] column = row[i].split(",");
+            for (int j = 0; j < column.length; j++) {
+                String[] item = column[j].split(" ");
+                cropList[i][j] = new Plot(item[0], Integer.parseInt(item[1]));
+            }
+        }
 
+        // System.out.println("fuckoffbitch2");
 
-    
-        return "lol";
+		ExperimentalFarm ef = new ExperimentalFarm(cropList);
+		String cropType = ef.getHighestYield(mostYieldType).getCropType();
 
+        JSONObject jo = new JSONObject(); 
+        jo.put("cropType", cropType);
+
+        return jo.toString();
     }
 
 
@@ -183,15 +200,51 @@ public class MichaelAbout {
     @PostMapping("about/michaelabout/unit9-q1")
     @ResponseBody
     public String unit9q1(
-        @RequestParam(name="unit8-ques1-username", required=true) String username_input,
-        @RequestParam(name="unit8-ques1-used", required=false, defaultValue = "") String used_names,
+        @RequestParam(name="unit9-ques1-bookType", required=true) String bookType,
+        @RequestParam(name="unit9-ques1-bookDescription", required=true) String bookDescription,
                                      Model model){
+        String output = new String();
+        String[] temp;
+        switch (bookType) {
+            case "Book":
+                temp = bookDescription.split(",");
+                output = new Book(temp[0], temp[1]).toString();
+                break;
+            case "Picture book":
+                temp = bookDescription.split(",");
+                output = new PictureBook(temp[0], temp[1], temp[2]).toString();
+                break;
+            default:
+                return "error";
+        }
+        return output;
+    }
 
-        //
-        
-
-        return "book";
-
+    @PostMapping("about/michaelabout/unit9-q2")
+    @ResponseBody
+    public String unit9q2(
+        @RequestParam(name="unit9-ques2-animalType", required=true) String animalType,
+        @RequestParam(name="unit9-ques2-animalDescription", required=true) String animalDescription,
+                                     Model model){
+        String output = new String();
+        String[] temp;
+        switch (animalType) {
+            case "Animal":
+                temp = animalDescription.split(",");
+                output = new Animal(temp[0], temp[1], temp[2]).toString();
+                break;
+            case "Herbivore":
+                temp = animalDescription.split(",");
+                output = new Herbivore(temp[0], temp[1]).toString();
+                break;
+            case "Elephant":
+                temp = animalDescription.split(",");
+                output = new Elephant(temp[0], Double.parseDouble(temp[1])).toString();
+                break;
+            default:
+                return "error";
+        }
+        return output;
     }
 
     @PostMapping("about/michaelabout/unit10-q1")
@@ -200,10 +253,6 @@ public class MichaelAbout {
         @RequestParam(name="unit10-ques1-numerator", required=true) String numerator,
         @RequestParam(name="unit10-ques1-denominator", required=false, defaultValue = "") String denominator,
                                      Model model){
-
-        //
-
-        
         JSONObject jo = new JSONObject();
         jo.put("output", NumberSystem.reduceFraction(Integer.parseInt(numerator), Integer.parseInt(denominator)));
 

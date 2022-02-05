@@ -992,17 +992,17 @@ public class temp {
                 </details>
             </div>
 
-            <div class="body-window articles" style="margin:10px 0; padding:30px;">
+            <div class="body-window articles " style="margin:10px 0; padding:30px; ">
                 <details>
                     <summary>FRQ Unit 8 Demo</summary>
-                    <div class="frq-form">
+                    <div class="frq-form ">
                         <form id="unit8-ques1">
                             <div>
-                                <label for="">enter</label><br>
-                                <input class="form-control sub-window" name="unit8-ques1-username" /><br>
+                                <label for="">Crop list; format: cropType Yield; use comma to separate each column and use / to separate each row</label><br>
+                                <input class="form-control sub-window sub-window-dark" name="unit8-ques1-cropList"><br>
                                 <label for="">Enter used names (optional)</label><br>
-                                <input class="form-control sub-window" name="unit8-ques1-used" /><br>
-                                <button id="unit8-ques1-submit" class="button">Submit</button>
+                                <input class="form-control sub-window sub-window-dark" name="unit8-ques1-mostYieldType"><br>
+                                <button id="unit8-ques1-submit" class="button sub-window-dark">Submit</button>
                                 <p id="unit8-ques1-output"></p>
                             </div>
                         </form>
@@ -1012,7 +1012,7 @@ public class temp {
                         (function() {
                             let form = document.getElementById("unit8-ques1");
                             let output = document.getElementById('unit8-ques1-output');
-                            document.getElementById("unit8-ques1-submit").onclick = uploadfile;
+                            document.getElementById("unit8-ques1-submit ").onclick = uploadfile;
 
                             form.addEventListener('submit', e => e.preventDefault());
 
@@ -1023,7 +1023,7 @@ public class temp {
                                 })).json();
 
                                 console.log(data);
-                                output.innerText = `${data["usernames"]}`;
+                                output.innerText = `${data["cropType"]}`;
                             }
                         })();
                     </script>
@@ -1036,10 +1036,13 @@ public class temp {
                     <div class="frq-form">
                         <form id="unit9-ques1">
                             <div>
-                                <label for="">enter</label><br>
-                                <input class="form-control sub-window" name="unit9-ques1-username" /><br>
-                                <label for="">Enter used names (optional)</label><br>
-                                <input class="form-control sub-window" name="unit9-ques1-used" /><br>
+                                <input type="list" value="Book" name="unit9-ques1-bookType" list="bookType" /><br>
+                                <datalist id="bookType">
+                                    <option>Book</option>
+                                    <option>Picture book</option>
+                                </datalist>
+                                <label>Book Detail</label><br>
+                                <input class="form-control sub-window" name="unit9-ques1-bookDescription" /><br>
                                 <button id="unit9-ques1-submit" class="button">Submit</button>
                                 <p id="unit9-ques1-output"></p>
                             </div>
@@ -1058,10 +1061,8 @@ public class temp {
                                 let data = await (await fetch('/about/michaelabout/unit9-q1', {
                                     method: 'POST',
                                     body: new FormData(form)
-                                })).json();
-
-                                console.log(data);
-                                output.innerText = `${data["usernames"]}`;
+                                })).text();
+                                output.innerText = `${data}`;
                             }
                         })();
                     </script>
@@ -1070,25 +1071,65 @@ public class temp {
 
             <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
-                    <summary>FRQ Unit 10 Demo</summary>
+                    <summary>FRQ Unit 9 part 2 Demo</summary>
                     <div class="frq-form">
-                        <form id="unit10-ques1">
+                        <form id="unit9-ques2">
                             <div>
-                                <label for="">Enter a positive integer. (numerator)</label><br>
-                                <input class="form-control sub-window" name="unit10-ques1-numerator" <br>
-                                <label for="">Enter a positive integer. (denominator)</label><br>
-                                <input class="form-control sub-window" name="unit10-ques1-denominator" /><br>
-                                <button id="unit10-ques1-submit" class="button">Submit</button>
-                                <p id="unit10-ques1-output"></p>
+                                <input type="list" name="unit9-ques2-animalType" list="animalType" /><br>
+                                <datalist id="animalType">
+                                    <option>Animal</option>
+                                    <option>Herbivore</option>
+                                    <option>Elephant</option>
+                                </datalist>
+                                <label>Animal detail</label><br>
+                                <input class="form-control sub-window" name="unit9-ques2-animalDescription" /><br>
+                                <button id="unit9-ques2-submit" class="button">Submit</button>
+                                <p id="unit9-ques2-output"></p>
                             </div>
                         </form>
                     </div>
 
                     <script>
                         (function() {
-                            let form = document.getElementById("unit10-ques1");
+                            let form = document.getElementById("unit9-ques2");
+                            let output = document.getElementById('unit9-ques2-output');
+                            document.getElementById("unit9-ques2-submit").onclick = uploadfile;
+
+                            form.addEventListener('submit', e => e.preventDefault());
+
+                            async function uploadfile() {
+                                let data = await (await fetch('/about/michaelabout/unit9-q2', {
+                                    method: 'POST',
+                                    body: new FormData(form)
+                                })).text();
+                                output.innerText = `${data}`;
+                            }
+                        })();
+                    </script>
+                </details>
+            </div>
+
+            <div class="body-window articles " style="margin:10px 0; padding:30px; ">
+                <details>
+                    <summary>FRQ Unit 10 Demo</summary>
+                    <div class="frq-form ">
+                        <form id="unit10-ques1 ">
+                            <div>
+                                <label for=" ">Enter a positive integer. (numerator)</label><br>
+                                <input class="form-control sub-window " name="unit10-ques1-numerator " <br>
+                                <label for=" ">Enter a positive integer. (denominator)</label><br>
+                                <input class="form-control sub-window " name="unit10-ques1-denominator " /><br>
+                                <button id="unit10-ques1-submit " class="button ">Submit</button>
+                                <p id="unit10-ques1-output "></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        (function() {
+                            let form = document.getElementById("unit10-ques1 ");
                             let output = document.getElementById('unit10-ques1-output');
-                            document.getElementById("unit10-ques1-submit").onclick = uploadfile;
+                            document.getElementById("unit10-ques1-submit ").onclick = uploadfile;
 
                             form.addEventListener('submit', e => e.preventDefault());
 
@@ -1099,7 +1140,7 @@ public class temp {
                                 })).json();
 
                                 console.log(data);
-                                output.innerText = `${data["output"]}`;
+                                output.innerText = `${data["output "]}`;
                             }
                         })();
                     </script>

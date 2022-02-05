@@ -90,7 +90,6 @@ public class ExperimentalFarm
 		System.out.println(ef.sameCrop(0));
 		System.out.println(ef.sameCrop(1));
 	}
-
 }
 
 // for testing purposes
