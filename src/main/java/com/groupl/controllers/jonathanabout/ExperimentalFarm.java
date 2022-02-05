@@ -14,8 +14,8 @@ public class ExperimentalFarm {
         int max_yield = 0;
         Plot max_plot = null;
 
-        int x = 0;
-        int y = 0;
+        int x = -1;
+        int y = -1;
         for (ArrayList<Plot> plots : farmPlots) {
             for (Plot plot : plots) {
                 System.out.println(c + ".equals(" + plot.getCrop() + ")");
