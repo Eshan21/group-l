@@ -1,6 +1,6 @@
 package com.groupl.controllers.akhilabout;
 
-import com.groupl.controllers.ishanabout.IshanAbout;
+import com.groupl.controllers.akhilabout.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,12 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import aj.org.objectweb.asm.Type;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
-import java.util.ArrayList;
 
 @Controller
 public class AkhilAbout {
@@ -379,15 +377,80 @@ public class AkhilAbout {
             }
         }
         String type = farmPlots[0][col].getCropType();
-            for (Plot[] ii : farmPlots) {
-                if (!ii[col].getCropType().equals(type)) {
-                    return "false";
-                }
+        for (Plot[] ii : farmPlots) {
+            if (!ii[col].getCropType().equals(type)) {
+                return "false";
             }
-            return "true"; 
         }
-            
-        @PostMapping("about/akhilabout/comment")
+        return "true"; 
+    }
+    @PostMapping("about/akhilabout/Unit9Frq1a")
+    @ResponseBody
+    public String Unit9Frq1a(
+        @RequestParam(name="title", required = false) String title,
+        @RequestParam(name="author", required = false) String author,
+        @RequestParam(name="illustrator", required = false) String illustrator 
+    ) {
+        PictureBook book = new PictureBook(title, author, illustrator);
+        return book.printBookInfo();
+    }
+
+    @PostMapping("about/akhilabout/Unit9Frq1c")
+    @ResponseBody
+    public String Unit9Frq1c(
+        @RequestParam(name="title", required = false) String title,
+        @RequestParam(name="author", required = false) String author,
+        @RequestParam(name="value", required = false) double value
+    ) {
+        Book book = new Book(title, author);
+        BookListing bookListing = new BookListing(book, value);
+        return bookListing.printDescription();
+    }
+
+    @PostMapping("about/akhilabout/Unit9Frq1b")
+    @ResponseBody
+    public String Unit9Frq1b(
+        @RequestParam(name="book1Title", required = false) String book1Title,
+        @RequestParam(name="book1Author", required = false) String book1Author,
+        @RequestParam(name="book2Title", required = false) String book2Title,
+        @RequestParam(name="book2Author", required = false) String book2Author,
+        @RequestParam(name="book2Illustrator", required = false) String book2Illustrator 
+    ) {
+        Book book = new Book(book1Title, book1Author);
+        PictureBook pictureBook = new PictureBook(book2Title, book2Author, book2Illustrator);
+        return "Book1: " + book.printBookInfo() + "\n" + "Book2: " + pictureBook.printBookInfo();
+    }
+
+    @PostMapping("about/akhilabout/Unit9Frq2a")
+    @ResponseBody
+    public String Unit9Frq2a(
+        @RequestParam(name="diet", required = false) String diet,
+        @RequestParam(name="species", required = false) String species,
+        @RequestParam(name="name", required = false) String name
+    ) {
+        Animal animal = new Animal(diet, species, name);
+        return animal.toString();
+    }
+    @PostMapping("about/akhilabout/Unit9Frq2b")
+    @ResponseBody
+    public String Unit9Frq2b(
+        @RequestParam(name="species", required = false) String species,
+        @RequestParam(name="name", required = false) String name
+    ) {
+        Herbivore herbivore = new Herbivore(species, name);
+        return herbivore.toString();
+    }
+    @PostMapping("about/akhilabout/Unit9Frq2c")
+    @ResponseBody
+    public String Unit9Frq2c(
+        @RequestParam(name="name", required = false) String name,
+        @RequestParam(name="tuskLength", required = false) double tuskLength
+    ) {
+        Elephant elephant = new Elephant(name, tuskLength);
+        return elephant.toString();
+    }
+
+    @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,
                               @RequestParam(name="content", required = false) String content,
                               Model model) {
