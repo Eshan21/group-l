@@ -328,14 +328,66 @@ public class AkhilAbout {
         @RequestParam(name="6", required = false) String plot6,
         @RequestParam(name="7", required = false) String plot7,
         @RequestParam(name="8", required = false) String plot8,
-        @RequestParam(name="9", required = false) String plot9
+        @RequestParam(name="9", required = false) String plot9,
+        @RequestParam(name="c", required = false) String c
     ) {
-        String output = "";
-        return output;
+        Plot output = null;
+        String plots[] = {plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9};
+        Plot farmPlots[][] = new Plot[3][3];
+        for (int i=0;i<farmPlots.length;i++) {
+            for (int j=0;j<farmPlots[i].length;j++) {
+                farmPlots[i][j] = new Plot(plots[i*3+j].split(",")[0], Integer.parseInt(plots[i*3+j].split(",")[1]));
+            }
+        }
+        for (Plot[] ii : farmPlots) {
+            for (Plot jj : ii) {
+                if (jj.getCropType().equals(c)) {
+                    if (output == null || jj.getCropYield()>output.getCropYield()) {
+                        output = jj;
+                    }
+                }
+            }
+        }
+        if (output != null)
+            return output.getCropType() + "," + output.getCropYield();
+        return "null";
     }
 
-        
-    @PostMapping("about/akhilabout/comment")
+    @PostMapping("about/akhilabout/Unit8Frq1b")
+    @ResponseBody
+    public String Unit8Frq1b(
+        @RequestParam(name="1", required = false) String plot1,
+        @RequestParam(name="2", required = false) String plot2,
+        @RequestParam(name="3", required = false) String plot3,
+        @RequestParam(name="4", required = false) String plot4,
+        @RequestParam(name="5", required = false) String plot5,
+        @RequestParam(name="6", required = false) String plot6,
+        @RequestParam(name="7", required = false) String plot7,
+        @RequestParam(name="8", required = false) String plot8,
+        @RequestParam(name="9", required = false) String plot9,
+        @RequestParam(name="col", required = false) int col
+    ) {
+        Plot output = null;
+        if (col<0 || col>2) {
+            return "Column value must be between 0 and 2, inclusive";
+        }
+        String plots[] = {plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9};
+        Plot farmPlots[][] = new Plot[3][3];
+        for (int i=0;i<farmPlots.length;i++) {
+            for (int j=0;j<farmPlots[i].length;j++) {
+                farmPlots[i][j] = new Plot(plots[i*3+j].split(",")[0], Integer.parseInt(plots[i*3+j].split(",")[1]));
+            }
+        }
+        String type = farmPlots[0][col].getCropType();
+            for (Plot[] ii : farmPlots) {
+                if (!ii[col].getCropType().equals(type)) {
+                    return "false";
+                }
+            }
+            return "true"; 
+        }
+            
+        @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,
                               @RequestParam(name="content", required = false) String content,
                               Model model) {

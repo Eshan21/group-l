@@ -987,7 +987,7 @@
 			</div>
 
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
-				<details open>
+				<details>
 					<summary><h4 style="display:inline;"><strong>FRQ Unit 8</strong></h4></summary>
 					<h5>1a. Write the getHighestYield method</h5>
 					<code style="margin-left:00px;">public Plot getHighestYield(String c)</code><br>
@@ -995,7 +995,7 @@
 					<code style="margin-left:40px;">for (Plot[] ii : farmPlots) {</code><br>
 					<code style="margin-left:80px;">for (Plot jj : Plot[]) {</code><br>
 					<code style="margin-left:120px;">if (jj.getCropType().equals(c)) {</code><br>
-					<code style="margin-left:160px;">if (jj.getCropYield()>output) {</code><br>
+					<code style="margin-left:160px;">if (jj.getCropYield()>output.getCropYield()) {</code><br>
 					<code style="margin-left:200px;">output = jj;</code><br>
 					<code style="margin-left:160px;">}</code><br>
 					<code style="margin-left:120px;">}</code><br>
@@ -1008,32 +1008,34 @@
 							<label for="">Create an array of Plot objects</label>
 							<label for="">Format: CropType,CropYield</label>
 							<div style="display:flex; margin-bottom:10px;">
-								<input name="1" class="form-control sub-window">
-								<input name="2" class="form-control sub-window" style="margin:0px 10px 0px 10px;">
-								<input name="3" class="form-control sub-window">
+								<input name="1" class="form-control sub-window" value="Sugar,15">
+								<input name="2" class="form-control sub-window" value="Potato,5" style="margin:0px 10px 0px 10px;">
+								<input name="3" class="form-control sub-window" value="Corn,5">
 							</div>
 							<div style="display:flex; margin-bottom:10px;">
-								<input name="4" class="form-control sub-window">
-								<input name="5" class="form-control sub-window" style="margin:0px 10px 0px 10px;">
-								<input name="6" class="form-control sub-window">
+								<input name="4" class="form-control sub-window" value="Wheat,5">
+								<input name="5" class="form-control sub-window" value="Wheat,7" style="margin:0px 10px 0px 10px;">
+								<input name="6" class="form-control sub-window" value="Corn,5">
 							</div>
 							<div style="display:flex; margin-bottom:10px;">
-								<input name="7" class="form-control sub-window">
-								<input name="8" class="form-control sub-window" style="margin:0px 10px 0px 10px;">
-								<input name="9" class="form-control sub-window">
+								<input name="7" class="form-control sub-window" value="Nether Wart,5">
+								<input name="8" class="form-control sub-window" value="Carrots,3" style="margin:0px 10px 0px 10px;">
+								<input name="9" class="form-control sub-window" value="Corn,10">
 							</div>
+							<label for="">Input a CropType</label>
+							<input name="c" class="form-control sub-window"><br>
 							<button id="Unit8Frq1aButton" class="button">Submit</button>
 							<p id="Unit8Frq1aOutput">&nbsp;</p>
 						</form>
 					</div>
 					<script>
 						(function () {
-							let form = document.getElementById('Unit7Frq1bForm');
-							let output = document.getElementById("Unit7Frq1bOutput");
+							let form = document.getElementById('Unit8Frq1aForm');
+							let output = document.getElementById("Unit8Frq1aOutput");
 							form.addEventListener('submit', e => e.preventDefault());
-							document.getElementById('Unit7Frq1bButton').onclick = post;
+							document.getElementById('Unit8Frq1aButton').onclick = post;
 							async function post() {
-								let data = await (await fetch('/about/akhilabout/Unit7Frq1b', {
+								let data = await (await fetch('/about/akhilabout/Unit8Frq1a', {
 									method: 'POST',
 									body: new FormData(form)
 								})).text();
@@ -1043,7 +1045,7 @@
 					</script>
 					<h5>1b. Write the sameCrop method</h5>
 					<code style="margin-left:00px;">public boolean sameCrop(int col)</code><br>
-					<code style="margin-left:40px;">String type = farmPlots[0][col].getCropType()</code><br>
+					<code style="margin-left:40px;">String type = farmPlots[0][col].getCropType();</code><br>
 					<code style="margin-left:40px;">for (Plot[] ii : farmPlots) {</code><br>
 					<code style="margin-left:80px;">if (!ii[col].getCropType().equals(type)) {</code><br>
 					<code style="margin-left:120px;">return false;</code><br>
@@ -1051,6 +1053,46 @@
 					<code style="margin-left:40px;">}</code><br>
 					<code style="margin-left:40px;">return true;</code><br>
 					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form" style="width:35%;">
+						<form id="Unit8Frq1bForm">
+							<label for="">Create an array of Plot objects</label>
+							<label for="">Format: CropType,CropYield</label>
+							<div style="display:flex; margin-bottom:10px;">
+								<input name="1" class="form-control sub-window" value="Sugar,15">
+								<input name="2" class="form-control sub-window" value="Potato,5" style="margin:0px 10px 0px 10px;">
+								<input name="3" class="form-control sub-window" value="Corn,5">
+							</div>
+							<div style="display:flex; margin-bottom:10px;">
+								<input name="4" class="form-control sub-window" value="Wheat,5">
+								<input name="5" class="form-control sub-window" value="Wheat,7" style="margin:0px 10px 0px 10px;">
+								<input name="6" class="form-control sub-window" value="Corn,5">
+							</div>
+							<div style="display:flex; margin-bottom:10px;">
+								<input name="7" class="form-control sub-window" value="Nether Wart,5">
+								<input name="8" class="form-control sub-window" value="Carrots,3" style="margin:0px 10px 0px 10px;">
+								<input name="9" class="form-control sub-window" value="Corn,10">
+							</div>
+							<label for="">Input a column number</label>
+							<input name="col" type="number" min="0" max="2" id="num-select" class="form-control sub-window"><br>
+							<button id="Unit8Frq1bButton" class="button">Submit</button>
+							<p id="Unit8Frq1bOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit8Frq1bForm');
+							let output = document.getElementById("Unit8Frq1bOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit8Frq1bButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit8Frq1b', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
 				</details>
 			</div>
 
