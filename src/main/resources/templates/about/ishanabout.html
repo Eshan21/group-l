@@ -740,6 +740,501 @@ public void drawSquare(<span class="hljs-keyword">int</span> x, <span class="hlj
 			</details>
 		</div>
 
+
+		<div class="body-window p-5">
+			<details>
+				<summary>Unit 7 FRQ</summary>
+				<h5>1a. Write a constructor for the UserName class</h5>
+				<code style="margin-left:00px;">public void UserName(String firstName, String lastName)</code><br>
+				<code style="margin-left:40px;">for (int ii=1;ii&lt;=firstName.length();ii++) {</code><br>
+				<code style="margin-left:80px;">possibleNames.add(lastName + firstName.substring(0, ii))</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit7Frq1aForm">
+						<label for="">First Name</label>
+						<input name="firstName" class="form-control sub-window"><br>
+						<label for="">Last Name</label>
+						<input name="lastName" class="form-control sub-window"><br>
+						<button id="Unit7Frq1aButton" class="button">Submit</button>
+						<p id="Unit7Frq1aOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit7Frq1aForm');
+						let output = document.getElementById("Unit7Frq1aOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit7Frq1aButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit7Frq1a', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+							localStorage.setItem("Unit7Frq1a", data);
+							console.log(data.split(", "));
+						}
+					})();
+				</script>
+				<h5>1b. Write the setAvailableUserNames method</h5>
+				<code style="margin-left:00px;">public void setAvailableUserNames(String[] usedNames)</code><br>
+				<code style="margin-left:40px;">for (ii=0;ii&lt;possibleNames.size();ii++)</code><br>
+				<code style="margin-left:80px;">if (isUsed(possibleNames.get(ii), userNames)</code><br>
+				<code style="margin-left:120px;">possibleNames.remove(ii);</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit7Frq1bForm">
+						<label for="">Used Names</label>
+						<input name="usedNames" class="form-control sub-window"><br>
+						<label for="">Possible Names</label>
+						<input name="possibleNames" class="form-control sub-window"><br>
+						<button id="Unit7Frq1bButton" class="button">Submit</button>
+						<p id="Unit7Frq1bOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit7Frq1bForm');
+						let output = document.getElementById("Unit7Frq1bOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit7Frq1bButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/akhilabout/Unit7Frq1b', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+			</details>
+		</div>
+
+		<div class="body-window p-5">
+			<details>
+				<summary>Unit 8 FRQ</summary>
+				<h5>1a. Write the getHighestYield method</h5>
+				<code style="margin-left:00px;">public Plot getHighestYield(String c)</code><br>
+				<code style="margin-left:40px;">Plot output;</code><br>
+				<code style="margin-left:40px;">for (Plot[] ii : farmPlots) {</code><br>
+				<code style="margin-left:80px;">for (Plot jj : Plot[]) {</code><br>
+				<code style="margin-left:120px;">if (jj.getCropType().equals(c)) {</code><br>
+				<code style="margin-left:160px;">if (jj.getCropYield()>output.getCropYield()) {</code><br>
+				<code style="margin-left:200px;">output = jj;</code><br>
+				<code style="margin-left:160px;">}</code><br>
+				<code style="margin-left:120px;">}</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">return output;</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form" style="width:35%;">
+					<form id="Unit8Frq1aForm">
+						<label for="">Create an array of Plot objects</label>
+						<label for="">Format: CropType,CropYield</label>
+						<div style="display:flex; margin-bottom:10px;">
+							<input name="1" class="form-control sub-window" value="Sugar,15">
+							<input name="2" class="form-control sub-window" value="Potato,5" style="margin:0px 10px 0px 10px;">
+							<input name="3" class="form-control sub-window" value="Corn,5">
+						</div>
+						<div style="display:flex; margin-bottom:10px;">
+							<input name="4" class="form-control sub-window" value="Wheat,5">
+							<input name="5" class="form-control sub-window" value="Wheat,7" style="margin:0px 10px 0px 10px;">
+							<input name="6" class="form-control sub-window" value="Corn,5">
+						</div>
+						<div style="display:flex; margin-bottom:10px;">
+							<input name="7" class="form-control sub-window" value="Nether Wart,5">
+							<input name="8" class="form-control sub-window" value="Carrots,3" style="margin:0px 10px 0px 10px;">
+							<input name="9" class="form-control sub-window" value="Corn,10">
+						</div>
+						<label for="">Input a CropType</label>
+						<input name="c" class="form-control sub-window"><br>
+						<button id="Unit8Frq1aButton" class="button">Submit</button>
+						<p id="Unit8Frq1aOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit8Frq1aForm');
+						let output = document.getElementById("Unit8Frq1aOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit8Frq1aButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit8Frq1a', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>1b. Write the sameCrop method</h5>
+				<code style="margin-left:00px;">public boolean sameCrop(int col)</code><br>
+				<code style="margin-left:40px;">String type = farmPlots[0][col].getCropType();</code><br>
+				<code style="margin-left:40px;">for (Plot[] ii : farmPlots) {</code><br>
+				<code style="margin-left:80px;">if (!ii[col].getCropType().equals(type)) {</code><br>
+				<code style="margin-left:120px;">return false;</code><br>
+				<code style="margin-left:80px;">}</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">return true;</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form" style="width:35%;">
+					<form id="Unit8Frq1bForm">
+						<label for="">Create an array of Plot objects</label>
+						<label for="">Format: CropType,CropYield</label>
+						<div style="display:flex; margin-bottom:10px;">
+							<input name="1" class="form-control sub-window" value="Sugar,15">
+							<input name="2" class="form-control sub-window" value="Potato,5" style="margin:0px 10px 0px 10px;">
+							<input name="3" class="form-control sub-window" value="Corn,5">
+						</div>
+						<div style="display:flex; margin-bottom:10px;">
+							<input name="4" class="form-control sub-window" value="Wheat,5">
+							<input name="5" class="form-control sub-window" value="Wheat,7" style="margin:0px 10px 0px 10px;">
+							<input name="6" class="form-control sub-window" value="Corn,5">
+						</div>
+						<div style="display:flex; margin-bottom:10px;">
+							<input name="7" class="form-control sub-window" value="Nether Wart,5">
+							<input name="8" class="form-control sub-window" value="Carrots,3" style="margin:0px 10px 0px 10px;">
+							<input name="9" class="form-control sub-window" value="Corn,10">
+						</div>
+						<label for="">Input a column number</label>
+						<input name="col" type="number" min="0" max="2" id="num-select" class="form-control sub-window"><br>
+						<button id="Unit8Frq1bButton" class="button">Submit</button>
+						<p id="Unit8Frq1bOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit8Frq1bForm');
+						let output = document.getElementById("Unit8Frq1bOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit8Frq1bButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit8Frq1b', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+			</details>
+		</div>
+
+		<div class="body-window p-5">
+			<details>
+				<summary>Unit 9 FRQ</summary>
+				<h5>1a. Write the PictureBook class</h5>
+				<code style="margin-left:00px;">public class PictureBook extends Book</code><br>
+				<code style="margin-left:40px;">private String illustrator;</code><br>
+				<code style="margin-left:40px;">public PictureBook (String t, String a, String i) {</code><br>
+				<code style="margin-left:80px;">super(t, a);</code><br>
+				<code style="margin-left:80px;">this.illustrator = i;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">public void printBookInfo() {</code><br>
+				<code style="margin-left:80px;">super.printBookInfo();</code><br>
+				<code style="margin-left:80px;">System.out.print(" and illustrated by " + illustrator);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit9Frq1aForm">
+						<label for="">Book Title</label>
+						<input name="title" class="form-control sub-window"><br>
+						<label for="">Author Name</label>
+						<input name="author" class="form-control sub-window"><br>
+						<label for="">Illustrator</label>
+						<input name="illustrator" class="form-control sub-window"><br>
+						<button id="Unit9Frq1aButton" class="button">Submit</button>
+						<p id="Unit9Frq1aOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit9Frq1aForm');
+						let output = document.getElementById("Unit9Frq1aOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit9Frq1aButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit9Frq1a', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>1b. Initialize book1 and book2 into myLibrary</h5>
+				<code style="margin-left:00px;">ArrayList&lt;Book&gt; myLibrary = new ArrayList&lt;Book&gt;();</code><br>
+				<code style="margin-left:00px;">Book book1 = new Book("Frankenstein", "Mary Shelley");</code><br>
+				<code style="margin-left:00px;">Book book2 = new PictureBook("The Wonderful Wizard of Oz", "L. Frank Baum", "W.W. Denslow");</code><br>
+				<code style="margin-left:00px;">myLibrary.add(book1);</code><br>
+				<code style="margin-left:00px;">myLibrary.add(book2);</code><br>
+				<div class="frq-form">
+					<form id="Unit9Frq1bForm">
+						<div style="display:flex;">
+							<div style="margin-right:10px">
+								<label for="">Book1 Title</label>
+								<input name="book1Title" class="form-control sub-window" value="Frankenstein"><br>
+								<label for="">Book1 Author Name</label>
+								<input name="book1Author" class="form-control sub-window" value="Mary Shelley"><br>
+							</div>
+							<div>
+								<label for="">Book2 Title</label>
+								<input name="book2Title" class="form-control sub-window" value="The Wonderful Wizard of Oz"><br>
+								<label for="">Book2 Author Name</label>
+								<input name="book2Author" class="form-control sub-window" value="L. Frank Baum"><br>
+								<label for="">Book2Illustrator</label>
+								<input name="book2Illustrator" class="form-control sub-window" value="W.W. Denslow"><br>
+							</div>
+						</div>
+						<button id="Unit9Frq1bButton" class="button">Submit</button>
+						<p id="Unit9Frq1bOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit9Frq1bForm');
+						let output = document.getElementById("Unit9Frq1bOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit9Frq1bButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit9Frq1b', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>1c. Write the BookListing Class</h5>
+				<code style="margin-left:00px;">public class BookListing {</code><br>
+				<code style="margin-left:40px;">private Book book;</code><br>
+				<code style="margin-left:40px;">private double value;</code><br>
+				<code style="margin-left:40px;">public BookListing(Book book, double value) {</code><br>
+				<code style="margin-left:80px;">this.book = book;</code><br>
+				<code style="margin-left:80px;">this.value = value;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">public void printDescription() {</code><br>
+				<code style="margin-left:80px;">book.printBookInfo();</code><br>
+				<code style="margin-left:80px;">System.out.print(", $" + value);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit9Frq1cForm">
+						<label for="">Title</label>
+						<input name="title" class="form-control sub-window"><br>
+						<label for="">Author Name</label>
+						<input name="author" class="form-control sub-window"><br>
+						<label for="">Value</label>
+						<input name="value" class="form-control sub-window"><br>
+						<button id="Unit9Frq1cButton" class="button">Submit</button>
+						<p id="Unit9Frq1cOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit9Frq1cForm');
+						let output = document.getElementById("Unit9Frq1cOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit9Frq1cButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit9Frq1c', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>2a. Write the Animal Class</h5>
+				<code style="margin-left:00px;">public class Animal {</code><br>
+				<code style="margin-left:40px;">private String diet;</code><br>
+				<code style="margin-left:40px;">private String species;</code><br>
+				<code style="margin-left:40px;">private String name;</code><br>
+				<code style="margin-left:40px;">public Animal(String diet, String species, String name) {</code><br>
+				<code style="margin-left:80px;">this.diet = diet;</code><br>
+				<code style="margin-left:80px;">this.species = species;</code><br>
+				<code style="margin-left:80px;">this.name = name;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">public String toString() {</code><br>
+				<code style="margin-left:80px;">return name + " the " + species + " is a " + diet;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit9Frq2aForm">
+						<label for="">Diet</label>
+						<input name="diet" class="form-control sub-window"><br>
+						<label for="">Species</label>
+						<input name="species" class="form-control sub-window"><br>
+						<label for="">Name</label>
+						<input name="name" class="form-control sub-window"><br>
+						<button id="Unit9Frq2aButton" class="button">Submit</button>
+						<p id="Unit9Frq2aOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit9Frq2aForm');
+						let output = document.getElementById("Unit9Frq2aOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit9Frq2aButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit9Frq2a', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>2b. Write the Herbivore Subclass</h5>
+				<code style="margin-left:00px;">public class Herbivore extends Animal {</code><br>
+				<code style="margin-left:40px;">public Herbivore(String species, String name) {</code><br>
+				<code style="margin-left:80px;">super("herbivore", species, name);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit9Frq2bForm">
+						<label for="">Species</label>
+						<input name="species" class="form-control sub-window"><br>
+						<label for="">Name</label>
+						<input name="name" class="form-control sub-window"><br>
+						<button id="Unit9Frq2bButton" class="button">Submit</button>
+						<p id="Unit9Frq2bOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit9Frq2bForm');
+						let output = document.getElementById("Unit9Frq2bOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit9Frq2bButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit9Frq2b', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>2c. Write the Elephant Subclass</h5>
+				<code style="margin-left:00px;">public class Elephant extends Herbivore {</code><br>
+				<code style="margin-left:40px;">private double tuskLength;</code><br>
+				<code style="margin-left:40px;">public Elephant(String name, tuskLength) {</code><br>
+				<code style="margin-left:80px;">super("herbivore", "elephant", name);</code><br>
+				<code style="margin-left:80px;">this.tuskLength = tuskLength;</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">public toString() {</code><br>
+				<code style="margin-left:80px;">return super.toString + " with tusks " + tuskLength + " meters long";</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit9Frq2cForm">
+						<label for="">Name</label>
+						<input name="name" class="form-control sub-window"><br>
+						<label for="">Tusk Length (in meters)</label>
+						<input name="tuskLength" class="form-control sub-window"><br>
+						<button id="Unit9Frq2cButton" class="button">Submit</button>
+						<p id="Unit9Frq2cOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit9Frq2cForm');
+						let output = document.getElementById("Unit9Frq2cOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit9Frq2cButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit9Frq2c', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+			</details>
+		</div>
+
+		<div class="body-window p-5">
+			<details>
+				<summary>Unit 10 FRQ</summary>
+				<h5>1a. Write the gcf method</h5>
+				<code style="margin-left:00px;">public static int gcf(int a, int b) {</code><br>
+				<code style="margin-left:40px;">if (a%b==0) {</code><br>
+				<code style="margin-left:80px;">return (b);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">else {</code><br>
+				<code style="margin-left:80px;">return gcf(b, a%b);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit10Frq1aForm">
+						<label for="">Integer 1</label>
+						<input name="a" type="number" class="form-control sub-window"><br>
+						<label for="">Integer 2</label>
+						<input name="b" type="number" class="form-control sub-window"><br>
+						<button id="Unit10Frq1aButton" class="button">Submit</button>
+						<p id="Unit10Frq1aOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit10Frq1aForm');
+						let output = document.getElementById("Unit10Frq1aOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit10Frq1aButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit10Frq1a', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+				<h5>1b. Write the reduceFraction method</h5>
+				<code style="margin-left:00px;">public static void reducefraction(int numerator, int denominator) {</code><br>
+				<code style="margin-left:40px;">if (numerator%denominator==0) {</code><br>
+				<code style="margin-left:80px;">System.out.println(numerator + "/" + denominator + " reduces to " + numerator/denominator);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:40px;">else {</code><br>
+				<code style="margin-left:80px;">int gcf = gcf(numerator, denominator);</code><br>
+				<code style="margin-left:80px;">System.out.println(numerator + "/" + denominator + " reduces to " + numerator/gcf + "/" + denominator/gcf);</code><br>
+				<code style="margin-left:40px;">}</code><br>
+				<code style="margin-left:00px;">}</code><br>
+				<div class="frq-form">
+					<form id="Unit10Frq1bForm">
+						<label for="">Numerator</label>
+						<input name="numerator" type="number" class="form-control sub-window"><br>
+						<label for="">Denominator</label>
+						<input name="denominator" type="number" class="form-control sub-window"><br>
+						<button id="Unit10Frq1bButton" class="button">Submit</button>
+						<p id="Unit10Frq1bOutput">&nbsp;</p>
+					</form>
+				</div>
+				<script>
+					(function () {
+						let form = document.getElementById('Unit10Frq1bForm');
+						let output = document.getElementById("Unit10Frq1bOutput");
+						form.addEventListener('submit', e => e.preventDefault());
+						document.getElementById('Unit10Frq1bButton').onclick = post;
+						async function post() {
+							let data = await (await fetch('/about/ishanabout/Unit10Frq1b', {
+								method: 'POST',
+								body: new FormData(form)
+							})).text();
+							output.innerText = data;
+						}
+					})();
+				</script>
+			</details>
+		</div>
+
+
 	</main>
 </div>
 </body>

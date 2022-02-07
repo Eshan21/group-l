@@ -1,5 +1,6 @@
 package com.groupl.controllers.ishanabout;
 
+import com.groupl.controllers.akhilabout.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -272,6 +273,190 @@ public class IshanAbout {
 
     }
 
+    @PostMapping("about/ishanabout/Unit7Frq1a")
+    @ResponseBody
+    public String Unit7Frq1a(@RequestParam(name="firstName", required = false) String firstName,
+                             @RequestParam(name="lastName", required = false) String lastName) {
+        String possibleNames = "";
+        for (int ii=1;ii<=firstName.length();ii++) {
+            possibleNames += lastName + firstName.substring(0, ii) + ", ";
+        }
+        possibleNames = possibleNames.substring(0, possibleNames.length()-2);
+        return possibleNames;
+    }
+
+    @PostMapping("about/ishanabout/Unit7Frq1b")
+    @ResponseBody
+    public String Unit7Frq1b(@RequestParam(name="usedNames", required = false) String usedNames,
+                             @RequestParam(name="possibleNames", required = false) String possibleNames) {
+        String possibleNamesNew = "";
+        String[] possibleNamesArr = possibleNames.split(", ");
+        String[] userNamesArr = usedNames.split(", ");
+        int n = 0;
+        for (String ii : userNamesArr) {
+            n = 0;
+            for (String jj : possibleNamesArr) {
+                if (jj.equals(ii)) {
+                    n+=1;
+                }
+            }
+            if (n==0) {
+                possibleNamesNew += ii + ", ";
+            }
+        }
+        return possibleNamesNew;
+    }
+
+    @PostMapping("about/ishanabout/Unit8Frq1a")
+    @ResponseBody
+    public String Unit8Frq1a(
+            @RequestParam(name="1", required = false) String plot1,
+            @RequestParam(name="2", required = false) String plot2,
+            @RequestParam(name="3", required = false) String plot3,
+            @RequestParam(name="4", required = false) String plot4,
+            @RequestParam(name="5", required = false) String plot5,
+            @RequestParam(name="6", required = false) String plot6,
+            @RequestParam(name="7", required = false) String plot7,
+            @RequestParam(name="8", required = false) String plot8,
+            @RequestParam(name="9", required = false) String plot9,
+            @RequestParam(name="c", required = false) String c
+    ) {
+        Plot output = null;
+        String plots[] = {plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9};
+        Plot farmPlots[][] = new Plot[3][3];
+        for (int i=0;i<farmPlots.length;i++) {
+            for (int j=0;j<farmPlots[i].length;j++) {
+                farmPlots[i][j] = new Plot(plots[i*3+j].split(",")[0], Integer.parseInt(plots[i*3+j].split(",")[1]));
+            }
+        }
+        for (Plot[] ii : farmPlots) {
+            for (Plot jj : ii) {
+                if (jj.getCropType().equals(c)) {
+                    if (output == null || jj.getCropYield()>output.getCropYield()) {
+                        output = jj;
+                    }
+                }
+            }
+        }
+        if (output != null)
+            return output.getCropType() + "," + output.getCropYield();
+        return "null";
+    }
+
+    @PostMapping("about/ishanabout/Unit8Frq1b")
+    @ResponseBody
+    public String Unit8Frq1b(
+            @RequestParam(name="1", required = false) String plot1,
+            @RequestParam(name="2", required = false) String plot2,
+            @RequestParam(name="3", required = false) String plot3,
+            @RequestParam(name="4", required = false) String plot4,
+            @RequestParam(name="5", required = false) String plot5,
+            @RequestParam(name="6", required = false) String plot6,
+            @RequestParam(name="7", required = false) String plot7,
+            @RequestParam(name="8", required = false) String plot8,
+            @RequestParam(name="9", required = false) String plot9,
+            @RequestParam(name="col", required = false) int col
+    ) {
+        Plot output = null;
+        if (col<0 || col>2) {
+            return "Column value must be between 0 and 2, inclusive";
+        }
+        String plots[] = {plot1, plot2, plot3, plot4, plot5, plot6, plot7, plot8, plot9};
+        Plot farmPlots[][] = new Plot[3][3];
+        for (int i=0;i<farmPlots.length;i++) {
+            for (int j=0;j<farmPlots[i].length;j++) {
+                farmPlots[i][j] = new Plot(plots[i*3+j].split(",")[0], Integer.parseInt(plots[i*3+j].split(",")[1]));
+            }
+        }
+        String type = farmPlots[0][col].getCropType();
+        for (Plot[] ii : farmPlots) {
+            if (!ii[col].getCropType().equals(type)) {
+                return "false";
+            }
+        }
+        return "true";
+    }
+    @PostMapping("about/ishanabout/Unit9Frq1a")
+    @ResponseBody
+    public String Unit9Frq1a(
+            @RequestParam(name="title", required = false) String title,
+            @RequestParam(name="author", required = false) String author,
+            @RequestParam(name="illustrator", required = false) String illustrator
+    ) {
+        PictureBook book = new PictureBook(title, author, illustrator);
+        return book.printBookInfo();
+    }
+
+    @PostMapping("about/ishanabout/Unit9Frq1c")
+    @ResponseBody
+    public String Unit9Frq1c(
+            @RequestParam(name="title", required = false) String title,
+            @RequestParam(name="author", required = false) String author,
+            @RequestParam(name="value", required = false) double value
+    ) {
+        Book book = new Book(title, author);
+        BookListing bookListing = new BookListing(book, value);
+        return bookListing.printDescription();
+    }
+
+    @PostMapping("about/ishanabout/Unit9Frq1b")
+    @ResponseBody
+    public String Unit9Frq1b(
+            @RequestParam(name="book1Title", required = false) String book1Title,
+            @RequestParam(name="book1Author", required = false) String book1Author,
+            @RequestParam(name="book2Title", required = false) String book2Title,
+            @RequestParam(name="book2Author", required = false) String book2Author,
+            @RequestParam(name="book2Illustrator", required = false) String book2Illustrator
+    ) {
+        Book book = new Book(book1Title, book1Author);
+        PictureBook pictureBook = new PictureBook(book2Title, book2Author, book2Illustrator);
+        return "Book1: " + book.printBookInfo() + "\n" + "Book2: " + pictureBook.printBookInfo();
+    }
+
+    @PostMapping("about/ishanabout/Unit9Frq2a")
+    @ResponseBody
+    public String Unit9Frq2a(
+            @RequestParam(name="diet", required = false) String diet,
+            @RequestParam(name="species", required = false) String species,
+            @RequestParam(name="name", required = false) String name
+    ) {
+        Animal animal = new Animal(diet, species, name);
+        return animal.toString();
+    }
+    @PostMapping("about/ishanabout/Unit9Frq2b")
+    @ResponseBody
+    public String Unit9Frq2b(
+            @RequestParam(name="species", required = false) String species,
+            @RequestParam(name="name", required = false) String name
+    ) {
+        Herbivore herbivore = new Herbivore(species, name);
+        return herbivore.toString();
+    }
+    @PostMapping("about/ishanabout/Unit9Frq2c")
+    @ResponseBody
+    public String Unit9Frq2c(
+            @RequestParam(name="name", required = false) String name,
+            @RequestParam(name="tuskLength", required = false) double tuskLength
+    ) {
+        Elephant elephant = new Elephant(name, tuskLength);
+        return elephant.toString();
+    }
+    @PostMapping("about/ishanabout/Unit10Frq1a")
+    @ResponseBody
+    public String Unit10Frq1a(
+            @RequestParam(name="a", required = false) int a,
+            @RequestParam(name="b", required = false) int b
+    ) {
+        return "The GCF of " + a + " and " + b + " is " + NumberSystem.gcf(a, b);
+    }
+    @PostMapping("about/ishanabout/Unit10Frq1b")
+    @ResponseBody
+    public String Unit10Frqba(
+            @RequestParam(name="numerator", required = false) int numerator,
+            @RequestParam(name="denominator", required = false) int denominator
+    ) {
+        return NumberSystem.reducefraction(numerator, denominator);
+    }
 
 }
 
@@ -365,4 +550,82 @@ class MineSweeper {
     }
 
 
+}
+
+class Plot {
+    private String cropType;
+    private int cropYield;
+
+    public Plot(String cropType, int cropYield) {
+        this.cropType = cropType;
+        this.cropYield = cropYield;
+    }
+    public String getCropType() {
+        return this.cropType;
+    }
+    public int getCropYield() {
+        return this.cropYield;
+    }
+}
+
+class Animal {
+    private String diet;
+    private String species;
+    private String name;
+    public Animal(String diet, String species, String name) {
+        this.diet = diet;
+        this.species = species;
+        this.name = name;
+    }
+    public String toString() {
+        return name + " the " + species + " is a " + diet;
+    }
+}
+class Herbivore extends com.groupl.controllers.ishanabout.Animal {
+    public Herbivore(String species, String name) {
+        super("herbivore", species, name);
+    }
+}
+class Elephant extends com.groupl.controllers.ishanabout.Herbivore {
+    private double tuskLength;
+    public Elephant(String name, double tuskLength) {
+        super("elephant", name);
+        this.tuskLength = tuskLength;
+    }
+    public String toString() {
+        return super.toString() + " with tusks " + tuskLength + " meters long";
+    }
+}
+
+class Book {
+    private String title;
+    private String author;
+    public Book(String t, String a) {
+        title = t;
+        author = a;
+    }
+    public String printBookInfo() {
+        return title + ", written by " + author;
+    }
+}
+class PictureBook extends com.groupl.controllers.akhilabout.Book {
+    private String illustrator;
+    public PictureBook (String t, String a, String i) {
+        super(t, a);
+        this.illustrator = i;
+    }
+    public String printBookInfo() {
+        return super.printBookInfo() + " and illustrated by " + illustrator;
+    }
+}
+class BookListing {
+    private com.groupl.controllers.ishanabout.Book book;
+    private double value;
+    public BookListing(com.groupl.controllers.ishanabout.Book book, double value) {
+        this.book = book;
+        this.value = value;
+    }
+    public String printDescription() {
+        return book.printBookInfo() + ", $" + value;
+    }
 }
