@@ -1109,27 +1109,27 @@ public class temp {
                 </details>
             </div>
 
-            <div class="body-window articles " style="margin:10px 0; padding:30px; ">
+            <div class="body-window articles" style="margin:10px 0; padding:30px;">
                 <details>
                     <summary>FRQ Unit 10 Demo</summary>
-                    <div class="frq-form ">
-                        <form id="unit10-ques1 ">
+                    <div class="frq-form">
+                        <form id="unit10-ques1">
                             <div>
                                 <label for=" ">Enter a positive integer. (numerator)</label><br>
-                                <input class="form-control sub-window " name="unit10-ques1-numerator " <br>
+				<input class="form-control sub-window" name="unit10-ques1-numerator"><br>
                                 <label for=" ">Enter a positive integer. (denominator)</label><br>
-                                <input class="form-control sub-window " name="unit10-ques1-denominator " /><br>
-                                <button id="unit10-ques1-submit " class="button ">Submit</button>
-                                <p id="unit10-ques1-output "></p>
+                                <input class="form-control sub-window" name="unit10-ques1-denominator" /><br>
+                                <button id="unit10-ques1-submit" class="button">Submit</button>
+                                <p id="unit10-ques1-output"></p>
                             </div>
                         </form>
                     </div>
 
                     <script>
                         (function() {
-                            let form = document.getElementById("unit10-ques1 ");
+                            let form = document.getElementById("unit10-ques1");
                             let output = document.getElementById('unit10-ques1-output');
-                            document.getElementById("unit10-ques1-submit ").onclick = uploadfile;
+                            document.getElementById("unit10-ques1-submit").onclick = uploadfile;
 
                             form.addEventListener('submit', e => e.preventDefault());
 
