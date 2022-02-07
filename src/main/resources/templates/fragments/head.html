@@ -397,6 +397,53 @@
             .frq-form:hover {
                 border: 2px dashed var(--bright-blue);
             }
+
+            .centered-svg-container {
+                display: flex;
+                align-items: center;
+            }
+            .centered-svg {
+                margin: 0 auto;
+                display: block;
+            }
+
+            .grid-2x2 {
+                display: grid;
+                width: 50%;
+                float: right;
+                margin-left: auto;
+                grid-template-columns: [start] 50% [middle] 50% [end];
+                grid-template-rows: [start] 50% [middle] 50% [end];
+            }
+            .grid-2x2-top {
+                grid-row-start: start;
+                grid-row-end: middle;
+            }
+            .grid-2x2-bot {
+                grid-column-start: middle;
+                grid-column-start: end;
+            }
+            .grid-2x2-left { 
+                grid-column-start: start;
+                grid-column-end: middle;
+            }
+            .grid-2x2-rght {
+                grid-column-start: middle;
+                grid-column-end: end;
+            }
+            .grid-box {
+                border-radius: 10px;
+                height: 100%;
+                width: 100%; 
+                transition: 0.2s;
+            }
+            .grid-box:hover {
+                transform: translate(5px, -5px);
+                box-shadow: -5px 5px 0px;
+            }
+            .grid-box-parent {
+                margin: 5px;
+            }
             
 
         </style>
