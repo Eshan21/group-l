@@ -69,13 +69,42 @@
 							</div>
 						</div>
 						<script>
+							egg1 = 0;
+							egg2 = 0;
 							detailsElements = document.getElementsByTagName("details");
 							function openDetails() {
+                            if (egg2 == 4) {
+                                for (i=0;i<detailsElements.length;i++) {
+                                    detailsElements[i].setAttribute("hidden", "");
+                                }
+                                setTimeout(() => {
+                                    for (i=0;i<detailsElements.length;i++) {
+                                        detailsElements[i].removeAttribute("hidden");
+                                    }
+                                }, 3000)
+								egg2 = 0;
+                            }
+								egg1 = 0;
+								egg2++;
+								console.log(egg2);
 								for (i=0;i<detailsElements.length;i++) {
 									detailsElements[i].setAttribute("open", "");
 								}
 							}
 							function closeDetails() {
+								if (egg1 == 4) {
+									for (i=0;i<detailsElements.length;i++) {
+										detailsElements[i].setAttribute("hidden", "");
+									}
+									setTimeout(() => {
+										for (i=0;i<detailsElements.length;i++) {
+											detailsElements[i].removeAttribute("hidden");
+										}
+									}, 3000)
+									egg1 = 0;
+								}
+								egg2 = 0;
+								egg1++;
 								for (i=0;i<detailsElements.length;i++) {
 									detailsElements[i].removeAttribute("open");
 								}
