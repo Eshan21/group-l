@@ -449,6 +449,22 @@ public class AkhilAbout {
         Elephant elephant = new Elephant(name, tuskLength);
         return elephant.toString();
     }
+    @PostMapping("about/akhilabout/Unit10Frq1a")
+    @ResponseBody
+    public String Unit10Frq1a(
+        @RequestParam(name="a", required = false) int a,
+        @RequestParam(name="b", required = false) int b
+    ) {
+        return "The GCF of " + a + " and " + b + " is " + NumberSystem.gcf(a, b);
+    }
+    @PostMapping("about/akhilabout/Unit10Frq1b")
+    @ResponseBody
+    public String Unit10Frqba(
+        @RequestParam(name="numerator", required = false) int numerator,
+        @RequestParam(name="denominator", required = false) int denominator
+    ) {
+        return NumberSystem.reducefraction(numerator, denominator);
+    }
 
     @PostMapping("about/akhilabout/comment")
     public String postComment(@RequestParam(name="name", required = false) String name,

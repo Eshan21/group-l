@@ -1332,6 +1332,81 @@
 			</div>
 
 			<div class="body-window articles" style="margin:10px 0; padding:30px;">
+				<details>
+					<summary><h4 style="display:inline;"><strong>FRQ Unit 10</strong></h4></summary>
+					<h5>1a. Write the gcf method</h5>
+					<code style="margin-left:00px;">public static int gcf(int a, int b) {</code><br>
+					<code style="margin-left:40px;">if (a%b==0) {</code><br>
+					<code style="margin-left:80px;">return (b);</code><br>
+					<code style="margin-left:40px;">}</code><br>
+					<code style="margin-left:40px;">else {</code><br>
+					<code style="margin-left:80px;">return gcf(b, a%b);</code><br>
+					<code style="margin-left:40px;">}</code><br>
+					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit10Frq1aForm">
+							<label for="">Integer 1</label>
+							<input name="a" type="number" class="form-control sub-window"><br>
+							<label for="">Integer 2</label>
+							<input name="b" type="number" class="form-control sub-window"><br>
+							<button id="Unit10Frq1aButton" class="button">Submit</button>
+							<p id="Unit10Frq1aOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit10Frq1aForm');
+							let output = document.getElementById("Unit10Frq1aOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit10Frq1aButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit10Frq1a', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
+					<h5>1b. Write the reduceFraction method</h5>
+					<code style="margin-left:00px;">public static void reducefraction(int numerator, int denominator) {</code><br>
+					<code style="margin-left:40px;">if (numerator%denominator==0) {</code><br>
+					<code style="margin-left:80px;">System.out.println(numerator + "/" + denominator + " reduces to " + numerator/denominator);</code><br>
+					<code style="margin-left:40px;">}</code><br>
+					<code style="margin-left:40px;">else {</code><br>
+					<code style="margin-left:80px;">int gcf = gcf(numerator, denominator);</code><br>
+					<code style="margin-left:80px;">System.out.println(numerator + "/" + denominator + " reduces to " + numerator/gcf + "/" + denominator/gcf);</code><br>
+					<code style="margin-left:40px;">}</code><br>
+					<code style="margin-left:00px;">}</code><br>
+					<div class="frq-form">
+						<form id="Unit10Frq1bForm">
+							<label for="">Numerator</label>
+							<input name="numerator" type="number" class="form-control sub-window"><br>
+							<label for="">Denominator</label>
+							<input name="denominator" type="number" class="form-control sub-window"><br>
+							<button id="Unit10Frq1bButton" class="button">Submit</button>
+							<p id="Unit10Frq1bOutput">&nbsp;</p>
+						</form>
+					</div>
+					<script>
+						(function () {
+							let form = document.getElementById('Unit10Frq1bForm');
+							let output = document.getElementById("Unit10Frq1bOutput");
+							form.addEventListener('submit', e => e.preventDefault());
+							document.getElementById('Unit10Frq1bButton').onclick = post;
+							async function post() {
+								let data = await (await fetch('/about/akhilabout/Unit10Frq1b', {
+									method: 'POST',
+									body: new FormData(form)
+								})).text();
+								output.innerText = data;
+							}
+						})();
+					</script>
+				</details>
+			</div>
+
+			<div class="body-window articles" style="margin:10px 0; padding:30px;">
 
 				<h3 id="comment-section" class="text-center font-monospace">Comment Section</h3>
 				<div th:each="Comment: ${Comments}">
